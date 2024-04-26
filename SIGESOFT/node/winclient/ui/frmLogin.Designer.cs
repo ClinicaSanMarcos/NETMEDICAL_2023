@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLicense = new System.Windows.Forms.Button();
             this.txtAppVersion = new System.Windows.Forms.TextBox();
             this.txtNode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,10 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblLicense = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.btnLicense = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +66,21 @@
             this.groupBox2.TabIndex = 107;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información de la Aplicación";
+            // 
+            // btnLicense
+            // 
+            this.btnLicense.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLicense.Image = global::Sigesoft.Node.WinClient.UI.Properties.Resources.add;
+            this.btnLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLicense.Location = new System.Drawing.Point(138, -4);
+            this.btnLicense.Name = "btnLicense";
+            this.btnLicense.Size = new System.Drawing.Size(114, 24);
+            this.btnLicense.TabIndex = 111;
+            this.btnLicense.Text = "Generar Licencia";
+            this.btnLicense.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLicense.UseVisualStyleBackColor = false;
+            this.btnLicense.Visible = false;
+            this.btnLicense.Click += new System.EventHandler(this.btnLicense_Click);
             // 
             // txtAppVersion
             // 
@@ -203,21 +217,6 @@
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // btnLicense
-            // 
-            this.btnLicense.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLicense.Image = global::Sigesoft.Node.WinClient.UI.Properties.Resources.add;
-            this.btnLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLicense.Location = new System.Drawing.Point(138, -4);
-            this.btnLicense.Name = "btnLicense";
-            this.btnLicense.Size = new System.Drawing.Size(114, 24);
-            this.btnLicense.TabIndex = 111;
-            this.btnLicense.Text = "Generar Licencia";
-            this.btnLicense.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLicense.UseVisualStyleBackColor = false;
-            this.btnLicense.Visible = false;
-            this.btnLicense.Click += new System.EventHandler(this.btnLicense_Click);
-            // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -241,25 +240,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sigesoft.Node.WinClient.UI.Resources.uroLogo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 6);
+            this.pictureBox1.Image = global::Sigesoft.Node.WinClient.UI.Resources.logo_ware;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(210, 199);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 106;
             this.pictureBox1.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(43, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 35);
-            this.label5.TabIndex = 111;
-            this.label5.Text = "UROCENTRO";
             // 
             // frmLogin
             // 
@@ -269,7 +256,6 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(473, 233);
             this.ControlBox = false;
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblLicense);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
@@ -304,10 +290,9 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblLicense;
         private System.Windows.Forms.Button btnLicense;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

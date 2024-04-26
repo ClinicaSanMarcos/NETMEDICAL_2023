@@ -6811,7 +6811,9 @@
     <None Include="Resources\calendar_view_week.png" />
     <None Include="Resources\chart_organisation.png" />
     <None Include="Resources\creditcards.png" />
-    <Content Include="Backgrounds\LOGO FONDO.png" />
+    <Content Include="Backgrounds\FOTO-01.jpg" />
+    <Content Include="Backgrounds\FOTO-02.jpg" />
+    <Content Include="Backgrounds\FOTO-03.jpg" />
     <Content Include="Images\folder.png" />
     <Content Include="Resources\cuadradoazul.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
