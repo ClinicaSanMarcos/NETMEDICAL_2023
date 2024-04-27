@@ -326,7 +326,9 @@ namespace Sigesoft.Node.Contasol.Integration
 
         public List<recetadespachoDto> GetReceta(string serviceId)
         {
-             using (var dbContext = new SigesoftEntitiesModel())
+            try
+            {
+                using (var dbContext = new SigesoftEntitiesModel())
                 {
                     var medicamentos = MedicamentoDao.ObtenerContasolMedicamentos();
                     var consulta = (from r in dbContext.receta
@@ -334,9 +336,9 @@ namespace Sigesoft.Node.Contasol.Integration
                                     from d in dJoin.DefaultIfEmpty()
                                     join s in dbContext.service on d.v_ServiceId equals s.v_ServiceId into sJoin
                                     from s in sJoin.DefaultIfEmpty()
-                                    
+
                                     where s.v_ServiceId == serviceId && r.i_isDelete == 0
-                                   
+
                                     select new recetadespachoDto
                                     {
                                         RecetaId = r.i_IdReceta,
@@ -344,7 +346,7 @@ namespace Sigesoft.Node.Contasol.Integration
                                         //FechaFin = r.t_FechaFin.ToString() ?? DateTime.Now.ToString(),
                                         Duracion = r.v_Duracion,
                                         Dosis = r.v_Posologia,
-                                        
+
                                         Despacho = (r.i_Lleva ?? 0) == 1,
                                         MedicinaId = r.v_IdProductoDetalle
                                     }).ToList();
@@ -360,6 +362,13 @@ namespace Sigesoft.Node.Contasol.Integration
 
                     return consulta;
                 }
+            }
+            catch (Exception)
+            {
+                return null;
+                //throw;
+            }
+             
            
         }
 
