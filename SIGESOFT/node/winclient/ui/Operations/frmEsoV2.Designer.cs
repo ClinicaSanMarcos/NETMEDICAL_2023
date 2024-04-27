@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance120 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEsoV2));
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
@@ -1014,14 +1014,14 @@
             // 
             // uvExamen
             // 
-            appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            appearance1.BackColor2 = System.Drawing.Color.Transparent;
-            appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance1.BorderAlpha = Infragistics.Win.Alpha.Opaque;
-            appearance1.BorderColor = System.Drawing.Color.Red;
-            appearance1.BorderColor2 = System.Drawing.Color.Red;
-            appearance1.BorderColor3DBase = System.Drawing.Color.Red;
-            this.uvExamen.ErrorAppearance = appearance1;
+            appearance120.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            appearance120.BackColor2 = System.Drawing.Color.Transparent;
+            appearance120.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance120.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance120.BorderColor = System.Drawing.Color.Red;
+            appearance120.BorderColor2 = System.Drawing.Color.Red;
+            appearance120.BorderColor3DBase = System.Drawing.Color.Red;
+            this.uvExamen.ErrorAppearance = appearance120;
             this.uvExamen.ErrorImageAlignment = System.Windows.Forms.ErrorIconAlignment.TopLeft;
             this.uvExamen.ErrorImageTransparentColor = System.Drawing.Color.Transparent;
             this.uvExamen.MessageBoxIcon = System.Windows.Forms.MessageBoxIcon.None;
@@ -2569,7 +2569,7 @@
             this.tpExam.Location = new System.Drawing.Point(4, 22);
             this.tpExam.Name = "tpExam";
             this.tpExam.Padding = new System.Windows.Forms.Padding(3);
-            this.tpExam.Size = new System.Drawing.Size(1331, 588);
+            this.tpExam.Size = new System.Drawing.Size(1313, 548);
             this.tpExam.TabIndex = 1;
             this.tpExam.Text = "EVALUACIÓN MÉDICA";
             this.tpExam.ToolTipText = "EXAMENES";
@@ -2594,8 +2594,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer2.Panel2.Controls.Add(this.gbDiagnosticoExamen);
             this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
-            this.splitContainer2.Size = new System.Drawing.Size(1324, 576);
-            this.splitContainer2.SplitterDistance = 462;
+            this.splitContainer2.Size = new System.Drawing.Size(1306, 536);
+            this.splitContainer2.SplitterDistance = 391;
             this.splitContainer2.TabIndex = 59;
             // 
             // splitContainer1
@@ -2606,7 +2606,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Linen;
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.LightBlue;
             this.splitContainer1.Panel1.Controls.Add(this.btnVerServicioAnterior);
             this.splitContainer1.Panel1.Controls.Add(this.label158);
             this.splitContainer1.Panel1.Controls.Add(this.ultraGrid1);
@@ -2615,8 +2615,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(1324, 462);
-            this.splitContainer1.SplitterDistance = 203;
+            this.splitContainer1.Size = new System.Drawing.Size(1306, 391);
+            this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 104;
             // 
             // btnVerServicioAnterior
@@ -2630,7 +2630,7 @@
             this.btnVerServicioAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerServicioAnterior.ForeColor = System.Drawing.Color.Black;
             this.btnVerServicioAnterior.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_osx_start;
-            this.btnVerServicioAnterior.Location = new System.Drawing.Point(142, 3);
+            this.btnVerServicioAnterior.Location = new System.Drawing.Point(139, 3);
             this.btnVerServicioAnterior.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerServicioAnterior.Name = "btnVerServicioAnterior";
             this.btnVerServicioAnterior.Size = new System.Drawing.Size(58, 24);
@@ -2643,12 +2643,12 @@
             // 
             this.label158.AutoSize = true;
             this.label158.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label158.ForeColor = System.Drawing.Color.Red;
+            this.label158.ForeColor = System.Drawing.Color.Blue;
             this.label158.Location = new System.Drawing.Point(3, 3);
             this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(111, 23);
+            this.label158.Size = new System.Drawing.Size(93, 23);
             this.label158.TabIndex = 103;
-            this.label158.Text = "ATENCIONES";
+            this.label158.Text = "HISTORIAL";
             // 
             // ultraGrid1
             // 
@@ -2729,7 +2729,7 @@
             this.ultraGrid1.Location = new System.Drawing.Point(2, 29);
             this.ultraGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid1.Name = "ultraGrid1";
-            this.ultraGrid1.Size = new System.Drawing.Size(198, 433);
+            this.ultraGrid1.Size = new System.Drawing.Size(195, 362);
             this.ultraGrid1.TabIndex = 95;
             this.ultraGrid1.ClickCell += new Infragistics.Win.UltraWinGrid.ClickCellEventHandler(this.ultraGrid1_ClickCell);
             // 
@@ -2745,7 +2745,7 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.Linen;
+            this.splitContainer3.Panel2.BackColor = System.Drawing.Color.LightBlue;
             this.splitContainer3.Panel2.Controls.Add(this.btnAnexoHistoriaManual);
             this.splitContainer3.Panel2.Controls.Add(this.button3);
             this.splitContainer3.Panel2.Controls.Add(this.txtAntFamiliares);
@@ -2755,8 +2755,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.btnVerEditarAntecedentes);
             this.splitContainer3.Panel2.Controls.Add(this.label157);
             this.splitContainer3.Panel2.Controls.Add(this.ultraGrid2);
-            this.splitContainer3.Size = new System.Drawing.Size(1117, 462);
-            this.splitContainer3.SplitterDistance = 905;
+            this.splitContainer3.Size = new System.Drawing.Size(1102, 391);
+            this.splitContainer3.SplitterDistance = 903;
             this.splitContainer3.TabIndex = 0;
             // 
             // tcExamList
@@ -2768,7 +2768,8 @@
             this.tcExamList.Location = new System.Drawing.Point(0, 0);
             this.tcExamList.Name = "tcExamList";
             this.tcExamList.SharedControlsPage = this.ultraTabSharedControlsPage1;
-            this.tcExamList.Size = new System.Drawing.Size(905, 462);
+            this.tcExamList.Size = new System.Drawing.Size(903, 391);
+            this.tcExamList.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.VisualStudio;
             this.tcExamList.TabIndex = 1;
             this.tcExamList.TabOrientation = Infragistics.Win.UltraWinTabs.TabOrientation.TopLeft;
             this.tcExamList.TextOrientation = Infragistics.Win.UltraWinTabs.TextOrientation.Horizontal;
@@ -2781,7 +2782,7 @@
             this.ultraTabSharedControlsPage1.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(1, 20);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(903, 441);
+            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(901, 370);
             this.ultraTabSharedControlsPage1.MouseLeave += new System.EventHandler(this.ultraTabSharedControlsPage1_MouseLeave);
             // 
             // btnAnexoHistoriaManual
@@ -2796,10 +2797,10 @@
             this.btnAnexoHistoriaManual.ForeColor = System.Drawing.Color.Black;
             this.btnAnexoHistoriaManual.Image = global::Sigesoft.Node.WinClient.UI.Resources.report;
             this.btnAnexoHistoriaManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(2, 3);
+            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(7, 3);
             this.btnAnexoHistoriaManual.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnexoHistoriaManual.Name = "btnAnexoHistoriaManual";
-            this.btnAnexoHistoriaManual.Size = new System.Drawing.Size(201, 24);
+            this.btnAnexoHistoriaManual.Size = new System.Drawing.Size(183, 24);
             this.btnAnexoHistoriaManual.TabIndex = 210;
             this.btnAnexoHistoriaManual.Text = "ANEXO HISTORIA MANUAL";
             this.btnAnexoHistoriaManual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2817,7 +2818,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = global::Sigesoft.Node.WinClient.UI.Properties.Resources.pencil;
-            this.button3.Location = new System.Drawing.Point(171, 31);
+            this.button3.Location = new System.Drawing.Point(158, 31);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(32, 24);
@@ -2834,7 +2835,7 @@
             this.txtAntFamiliares.Multiline = true;
             this.txtAntFamiliares.Name = "txtAntFamiliares";
             this.txtAntFamiliares.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAntFamiliares.Size = new System.Drawing.Size(198, 72);
+            this.txtAntFamiliares.Size = new System.Drawing.Size(185, 72);
             this.txtAntFamiliares.TabIndex = 208;
             this.txtAntFamiliares.Text = "NO REFIERE ANTECEDENTES";
             // 
@@ -2876,7 +2877,7 @@
             this.txtAntPersonales.Multiline = true;
             this.txtAntPersonales.Name = "txtAntPersonales";
             this.txtAntPersonales.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAntPersonales.Size = new System.Drawing.Size(198, 72);
+            this.txtAntPersonales.Size = new System.Drawing.Size(185, 72);
             this.txtAntPersonales.TabIndex = 104;
             this.txtAntPersonales.Text = "NO REFIERE ANTECEDENTES";
             // 
@@ -2891,7 +2892,7 @@
             this.btnVerEditarAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerEditarAntecedentes.ForeColor = System.Drawing.Color.Black;
             this.btnVerEditarAntecedentes.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_form_edit;
-            this.btnVerEditarAntecedentes.Location = new System.Drawing.Point(142, 338);
+            this.btnVerEditarAntecedentes.Location = new System.Drawing.Point(129, 338);
             this.btnVerEditarAntecedentes.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerEditarAntecedentes.Name = "btnVerEditarAntecedentes";
             this.btnVerEditarAntecedentes.Size = new System.Drawing.Size(63, 24);
@@ -2904,7 +2905,7 @@
             // 
             this.label157.AutoSize = true;
             this.label157.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label157.ForeColor = System.Drawing.Color.Red;
+            this.label157.ForeColor = System.Drawing.Color.Blue;
             this.label157.Location = new System.Drawing.Point(3, 30);
             this.label157.Name = "label157";
             this.label157.Size = new System.Drawing.Size(133, 23);
@@ -2987,10 +2988,10 @@
             this.ultraGrid2.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
             this.ultraGrid2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraGrid2.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ultraGrid2.Location = new System.Drawing.Point(2, 366);
+            this.ultraGrid2.Location = new System.Drawing.Point(6, 366);
             this.ultraGrid2.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid2.Name = "ultraGrid2";
-            this.ultraGrid2.Size = new System.Drawing.Size(207, 93);
+            this.ultraGrid2.Size = new System.Drawing.Size(186, 22);
             this.ultraGrid2.TabIndex = 96;
             this.ultraGrid2.Visible = false;
             // 
@@ -3024,7 +3025,7 @@
             // rbPorAprobacion
             // 
             this.rbPorAprobacion.AutoSize = true;
-            this.rbPorAprobacion.Location = new System.Drawing.Point(176, 20);
+            this.rbPorAprobacion.Location = new System.Drawing.Point(179, 30);
             this.rbPorAprobacion.Name = "rbPorAprobacion";
             this.rbPorAprobacion.Size = new System.Drawing.Size(97, 17);
             this.rbPorAprobacion.TabIndex = 109;
@@ -3034,7 +3035,7 @@
             // rbNoRealizado
             // 
             this.rbNoRealizado.AutoSize = true;
-            this.rbNoRealizado.Location = new System.Drawing.Point(279, 20);
+            this.rbNoRealizado.Location = new System.Drawing.Point(282, 30);
             this.rbNoRealizado.Name = "rbNoRealizado";
             this.rbNoRealizado.Size = new System.Drawing.Size(84, 17);
             this.rbNoRealizado.TabIndex = 108;
@@ -3044,7 +3045,7 @@
             // rbPorReevaluar
             // 
             this.rbPorReevaluar.AutoSize = true;
-            this.rbPorReevaluar.Location = new System.Drawing.Point(81, 20);
+            this.rbPorReevaluar.Location = new System.Drawing.Point(84, 30);
             this.rbPorReevaluar.Name = "rbPorReevaluar";
             this.rbPorReevaluar.Size = new System.Drawing.Size(89, 17);
             this.rbPorReevaluar.TabIndex = 107;
@@ -3055,7 +3056,7 @@
             // 
             this.rbCulminado.AutoSize = true;
             this.rbCulminado.Checked = true;
-            this.rbCulminado.Location = new System.Drawing.Point(3, 20);
+            this.rbCulminado.Location = new System.Drawing.Point(6, 30);
             this.rbCulminado.Name = "rbCulminado";
             this.rbCulminado.Size = new System.Drawing.Size(75, 17);
             this.rbCulminado.TabIndex = 106;
@@ -3096,10 +3097,10 @@
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_edit;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(372, 48);
+            this.button2.Location = new System.Drawing.Point(390, 56);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(255, 27);
+            this.button2.Size = new System.Drawing.Size(219, 27);
             this.button2.TabIndex = 105;
             this.button2.Text = "Bandeja EXAMENES";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3118,10 +3119,10 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_form_add;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(372, 17);
+            this.button1.Location = new System.Drawing.Point(390, 25);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(255, 27);
+            this.button1.Size = new System.Drawing.Size(219, 27);
             this.button1.TabIndex = 104;
             this.button1.Text = "Registro rápido EXAMENES AUXILIARES";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3166,10 +3167,10 @@
             this.btnVisorReporteExamen.ForeColor = System.Drawing.Color.Black;
             this.btnVisorReporteExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnVisorReporteExamen.Image")));
             this.btnVisorReporteExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVisorReporteExamen.Location = new System.Drawing.Point(372, 79);
+            this.btnVisorReporteExamen.Location = new System.Drawing.Point(279, 104);
             this.btnVisorReporteExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnVisorReporteExamen.Name = "btnVisorReporteExamen";
-            this.btnVisorReporteExamen.Size = new System.Drawing.Size(255, 31);
+            this.btnVisorReporteExamen.Size = new System.Drawing.Size(79, 31);
             this.btnVisorReporteExamen.TabIndex = 101;
             this.btnVisorReporteExamen.Text = "Ver Reporte de";
             this.btnVisorReporteExamen.UseVisualStyleBackColor = false;
@@ -3187,10 +3188,10 @@
             this.btnReceta.ForeColor = System.Drawing.Color.Black;
             this.btnReceta.Image = ((System.Drawing.Image)(resources.GetObject("btnReceta.Image")));
             this.btnReceta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReceta.Location = new System.Drawing.Point(24, 79);
+            this.btnReceta.Location = new System.Drawing.Point(390, 87);
             this.btnReceta.Margin = new System.Windows.Forms.Padding(2);
             this.btnReceta.Name = "btnReceta";
-            this.btnReceta.Size = new System.Drawing.Size(305, 31);
+            this.btnReceta.Size = new System.Drawing.Size(219, 31);
             this.btnReceta.TabIndex = 100;
             this.btnReceta.Text = "Receta";
             this.btnReceta.UseVisualStyleBackColor = false;
@@ -3209,10 +3210,10 @@
             this.btnGuardarExamen.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnGuardarExamen.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarExamen.Image")));
             this.btnGuardarExamen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarExamen.Location = new System.Drawing.Point(24, 48);
+            this.btnGuardarExamen.Location = new System.Drawing.Point(9, 59);
             this.btnGuardarExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarExamen.Name = "btnGuardarExamen";
-            this.btnGuardarExamen.Size = new System.Drawing.Size(305, 27);
+            this.btnGuardarExamen.Size = new System.Drawing.Size(354, 41);
             this.btnGuardarExamen.TabIndex = 64;
             this.btnGuardarExamen.Text = "      Guardar";
             this.btnGuardarExamen.UseVisualStyleBackColor = false;
@@ -3535,7 +3536,7 @@
             this.General.Location = new System.Drawing.Point(4, 22);
             this.General.Name = "General";
             this.General.Padding = new System.Windows.Forms.Padding(3);
-            this.General.Size = new System.Drawing.Size(1331, 588);
+            this.General.Size = new System.Drawing.Size(1331, 565);
             this.General.TabIndex = 0;
             this.General.Text = "ANAMNESIS - ANTECEDENTES";
             this.General.UseVisualStyleBackColor = true;
@@ -3975,7 +3976,7 @@
             this.gbServiciosAnteriores.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbServiciosAnteriores.Location = new System.Drawing.Point(8, 257);
             this.gbServiciosAnteriores.Name = "gbServiciosAnteriores";
-            this.gbServiciosAnteriores.Size = new System.Drawing.Size(773, 299);
+            this.gbServiciosAnteriores.Size = new System.Drawing.Size(773, 276);
             this.gbServiciosAnteriores.TabIndex = 96;
             this.gbServiciosAnteriores.TabStop = false;
             this.gbServiciosAnteriores.Text = "Servicios Anteriores";
@@ -4059,7 +4060,7 @@
             this.grdServiciosAnteriores.Location = new System.Drawing.Point(5, 19);
             this.grdServiciosAnteriores.Margin = new System.Windows.Forms.Padding(2);
             this.grdServiciosAnteriores.Name = "grdServiciosAnteriores";
-            this.grdServiciosAnteriores.Size = new System.Drawing.Size(761, 275);
+            this.grdServiciosAnteriores.Size = new System.Drawing.Size(761, 252);
             this.grdServiciosAnteriores.TabIndex = 94;
             // 
             // gbAntecedentes
@@ -4071,7 +4072,7 @@
             this.gbAntecedentes.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbAntecedentes.Location = new System.Drawing.Point(7, 6);
             this.gbAntecedentes.Name = "gbAntecedentes";
-            this.gbAntecedentes.Size = new System.Drawing.Size(753, 269);
+            this.gbAntecedentes.Size = new System.Drawing.Size(753, 246);
             this.gbAntecedentes.TabIndex = 95;
             this.gbAntecedentes.TabStop = false;
             this.gbAntecedentes.Text = "Antecedentes";
@@ -4155,7 +4156,7 @@
             this.grdAntecedentes.Location = new System.Drawing.Point(-2, 19);
             this.grdAntecedentes.Margin = new System.Windows.Forms.Padding(2);
             this.grdAntecedentes.Name = "grdAntecedentes";
-            this.grdAntecedentes.Size = new System.Drawing.Size(743, 245);
+            this.grdAntecedentes.Size = new System.Drawing.Size(743, 222);
             this.grdAntecedentes.TabIndex = 93;
             // 
             // btnGuardarAnamnesis
@@ -4812,7 +4813,7 @@
             this.tcSubMain.Location = new System.Drawing.Point(0, 0);
             this.tcSubMain.Name = "tcSubMain";
             this.tcSubMain.SelectedIndex = 0;
-            this.tcSubMain.Size = new System.Drawing.Size(1339, 614);
+            this.tcSubMain.Size = new System.Drawing.Size(1321, 574);
             this.tcSubMain.TabIndex = 4;
             this.tcSubMain.Tag = "";
             this.tcSubMain.SelectedIndexChanged += new System.EventHandler(this.tcSubMain_SelectedIndexChanged);
@@ -8682,7 +8683,7 @@
             this.lblView.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.lblView.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblView.ForeColor = System.Drawing.Color.Blue;
-            this.lblView.Location = new System.Drawing.Point(1114, 25);
+            this.lblView.Location = new System.Drawing.Point(1090, 24);
             this.lblView.Name = "lblView";
             this.lblView.Size = new System.Drawing.Size(75, 18);
             this.lblView.TabIndex = 80;
@@ -8760,13 +8761,13 @@
             // 
             // btnPerson
             // 
-            this.btnPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPerson.BackColor = System.Drawing.SystemColors.Control;
             this.btnPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerson.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerson.Location = new System.Drawing.Point(1170, 7);
+            this.btnPerson.Location = new System.Drawing.Point(1194, 5);
             this.btnPerson.Name = "btnPerson";
-            this.btnPerson.Size = new System.Drawing.Size(142, 26);
+            this.btnPerson.Size = new System.Drawing.Size(123, 26);
             this.btnPerson.TabIndex = 100;
             this.btnPerson.Text = "Ver Datos Generales";
             this.btnPerson.UseVisualStyleBackColor = false;
@@ -8815,8 +8816,8 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer4.Size = new System.Drawing.Size(1339, 696);
-            this.splitContainer4.SplitterDistance = 46;
+            this.splitContainer4.Size = new System.Drawing.Size(1321, 650);
+            this.splitContainer4.SplitterDistance = 42;
             this.splitContainer4.TabIndex = 101;
             // 
             // lblPersonId
@@ -8836,7 +8837,7 @@
             this.btnActualizarSignosVitales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarSignosVitales.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarSignosVitales.Image = global::Sigesoft.Node.WinClient.UI.Resources.arrow_refresh;
-            this.btnActualizarSignosVitales.Location = new System.Drawing.Point(897, 24);
+            this.btnActualizarSignosVitales.Location = new System.Drawing.Point(897, 20);
             this.btnActualizarSignosVitales.Name = "btnActualizarSignosVitales";
             this.btnActualizarSignosVitales.Size = new System.Drawing.Size(53, 18);
             this.btnActualizarSignosVitales.TabIndex = 205;
@@ -9126,8 +9127,8 @@
             this.splitContainer5.Panel2.Controls.Add(this.label21);
             this.splitContainer5.Panel2.Controls.Add(this.label17);
             this.splitContainer5.Panel2.Controls.Add(this.lblFechaGraba);
-            this.splitContainer5.Size = new System.Drawing.Size(1339, 646);
-            this.splitContainer5.SplitterDistance = 614;
+            this.splitContainer5.Size = new System.Drawing.Size(1321, 604);
+            this.splitContainer5.SplitterDistance = 574;
             this.splitContainer5.TabIndex = 0;
             // 
             // btnMostrarOcultar
@@ -9140,7 +9141,7 @@
             this.btnMostrarOcultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrarOcultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarOcultar.ForeColor = System.Drawing.Color.Green;
-            this.btnMostrarOcultar.Location = new System.Drawing.Point(1052, 1);
+            this.btnMostrarOcultar.Location = new System.Drawing.Point(1052, -1);
             this.btnMostrarOcultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMostrarOcultar.Name = "btnMostrarOcultar";
             this.btnMostrarOcultar.Size = new System.Drawing.Size(255, 24);
@@ -9154,8 +9155,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1339, 696);
+            this.ClientSize = new System.Drawing.Size(1321, 650);
             this.Controls.Add(this.splitContainer4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;

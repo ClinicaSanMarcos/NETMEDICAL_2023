@@ -8511,7 +8511,7 @@ namespace Sigesoft.Node.WinClient.BLL
 			{
 				SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
 
-				var service = (from A in dbContext.service
+				var serviceList = (from A in dbContext.service
                                 join B in dbContext.protocol on A.v_ProtocolId equals B.v_ProtocolId
 							   join C in dbContext.systemparameter on new { a = A.i_MasterServiceId.Value, b = 119 }  // TIPO SERVICIO
 														  equals new { a = C.i_ParameterId, b = C.i_GroupId }
@@ -8526,7 +8526,9 @@ namespace Sigesoft.Node.WinClient.BLL
 								   d_ServiceDate = A.d_ServiceDate
 							   });
 
-				var q = (from A in service.ToList()
+                serviceList = serviceList.OrderBy(p => p.d_ServiceDate);
+
+                var q = (from A in serviceList.ToList()
 						 select new ServiceList
 						 {
 							 v_ServiceId = A.v_ServiceId,

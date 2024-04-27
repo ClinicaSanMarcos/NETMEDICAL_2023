@@ -41,7 +41,7 @@
             this.tcContEso.Location = new System.Drawing.Point(9, 36);
             this.tcContEso.Name = "tcContEso";
             this.tcContEso.SelectedIndex = 0;
-            this.tcContEso.Size = new System.Drawing.Size(1325, 650);
+            this.tcContEso.Size = new System.Drawing.Size(1320, 650);
             this.tcContEso.TabIndex = 2;
             // 
             // ddlExamenesAnterioes
@@ -66,7 +66,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1346, 705);
+            this.BackColor = System.Drawing.Color.LightBlue;
+            this.ClientSize = new System.Drawing.Size(1341, 705);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ddlExamenesAnterioes);
             this.Controls.Add(this.tcContEso);
