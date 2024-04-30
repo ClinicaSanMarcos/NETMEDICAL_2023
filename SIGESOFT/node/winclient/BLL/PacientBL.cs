@@ -213,6 +213,7 @@ namespace Sigesoft.Node.WinClient.BLL
 
                         var querySystemUser = "select i_SystemUserId from systemuser where i_IsDeleted = 0 and i_PersonId = " + personId.ToString();
                         int systemuserId = cnx.Query<int>(querySystemUser).FirstOrDefault();
+
                         var updateSystemUser = "update systemuser set " +
                                                "i_RoleId = " + dataUser.i_RoleId + ", " +
                                                "v_Password = '" + dataUser.v_Password + "', " +
@@ -11039,6 +11040,28 @@ namespace Sigesoft.Node.WinClient.BLL
             }
             
         }
+
+        public PersonInformation GetPersonPersonalInformationESO(string personId)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelperSige.GetConnection)
+                {
+
+                    var queryPersonInformation = "EXEC GetPersonPersonalInformationESO_S '" + personId + "'";
+                    //var queryPersonInformation = "EXEC [Prueba_3005].[dbo].[GetPersonPersonalInformationESO_S] '" + personId + "'";
+
+                    var personObj = cnx.Query<PersonInformation>(queryPersonInformation).FirstOrDefault();
+                    return personObj;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        
     }
 }
 

@@ -260,4 +260,33 @@ namespace Sigesoft.Node.WinClient.BE
         public string AntecedentesFamiliares { get; set; }
 
     }
+
+
+    public class PersonInformation
+    {
+        public string Historia { get; set; }
+        public string Paciente { get; set; }
+        public string Dni { get; set; }
+        public string Genero { get; set; }
+        public string LugarNacimiento { get; set; }
+        public string FNacimiento { get; set; }
+        public string EstadoCivil { get; set; }
+        public string NivelEstudios { get; set; }
+        public string Email { get; set; }
+        public string Telefono { get; set; }
+        public byte[] Foto { get; set; }
+        public string Direccion { get; set; }
+        public string Distrito { get; set; }
+        public string Provincia { get; set; }
+        public string Departamento { get; set; }
+        public string Religion { get; set; }
+        public int? Hijos { get; set; }
+        public string MKT { get; set; }
+        public string Ocupacion { get; set; }
+        public string Nacionalidad { get; set; }
+        public string ContactoEm { get; set; }
+        public string TelefonoEm { get; set; }
+        public string IdPersona { get; set; }
+
+    }
 }

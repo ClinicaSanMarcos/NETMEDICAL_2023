@@ -29,113 +29,113 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPacientInformacion));
-            this.pbPersonImage = new System.Windows.Forms.PictureBox();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtOcupacion = new System.Windows.Forms.TextBox();
+            this.txtDepartamento = new System.Windows.Forms.TextBox();
+            this.txtProvincia = new System.Windows.Forms.TextBox();
+            this.txtDistrito = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFNacimiento = new System.Windows.Forms.TextBox();
+            this.txtNivelEstudios = new System.Windows.Forms.TextBox();
+            this.txtEstadoCivil = new System.Windows.Forms.TextBox();
+            this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtReligion = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtNacionalidad = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPaciente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtNumberLivingChildren = new System.Windows.Forms.TextBox();
-            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtHijos = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTelephoneNumber = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtAdressLocation = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtDocNumber = new System.Windows.Forms.TextBox();
-            this.txtBirthPlace = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.txtLugarNacimiento = new System.Windows.Forms.TextBox();
             this.btnAnexoHistoriaManual = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAntecedentes = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtContactoEm = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtTelefonoEm = new System.Windows.Forms.TextBox();
             this.lblHistoriaClinica = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
+            this.txtMKT = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pbPersonImage
+            // pbFoto
             // 
-            this.pbPersonImage.Location = new System.Drawing.Point(578, 47);
-            this.pbPersonImage.Margin = new System.Windows.Forms.Padding(2);
-            this.pbPersonImage.Name = "pbPersonImage";
-            this.pbPersonImage.Size = new System.Drawing.Size(229, 190);
-            this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPersonImage.TabIndex = 2;
-            this.pbPersonImage.TabStop = false;
+            this.pbFoto.Location = new System.Drawing.Point(578, 47);
+            this.pbFoto.Margin = new System.Windows.Forms.Padding(2);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(229, 190);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbFoto.TabIndex = 2;
+            this.pbFoto.TabStop = false;
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Controls.Add(this.textBox11);
+            this.groupBox6.Controls.Add(this.txtMKT);
             this.groupBox6.Controls.Add(this.lblHistoriaClinica);
             this.groupBox6.Controls.Add(this.label23);
             this.groupBox6.Controls.Add(this.label3);
-            this.groupBox6.Controls.Add(this.textBox10);
-            this.groupBox6.Controls.Add(this.textBox9);
+            this.groupBox6.Controls.Add(this.txtTelefonoEm);
+            this.groupBox6.Controls.Add(this.txtContactoEm);
             this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.textBox8);
-            this.groupBox6.Controls.Add(this.textBox7);
-            this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.textBox5);
+            this.groupBox6.Controls.Add(this.txtOcupacion);
+            this.groupBox6.Controls.Add(this.txtDepartamento);
+            this.groupBox6.Controls.Add(this.txtProvincia);
+            this.groupBox6.Controls.Add(this.txtDistrito);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.label41);
             this.groupBox6.Controls.Add(this.label42);
-            this.groupBox6.Controls.Add(this.textBox4);
-            this.groupBox6.Controls.Add(this.textBox3);
-            this.groupBox6.Controls.Add(this.pbPersonImage);
-            this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.txtFNacimiento);
+            this.groupBox6.Controls.Add(this.txtNivelEstudios);
+            this.groupBox6.Controls.Add(this.pbFoto);
+            this.groupBox6.Controls.Add(this.txtEstadoCivil);
+            this.groupBox6.Controls.Add(this.txtGenero);
             this.groupBox6.Controls.Add(this.txtReligion);
             this.groupBox6.Controls.Add(this.label24);
             this.groupBox6.Controls.Add(this.txtNacionalidad);
             this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.txtName);
+            this.groupBox6.Controls.Add(this.txtPaciente);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label7);
-            this.groupBox6.Controls.Add(this.txtNumberLivingChildren);
-            this.groupBox6.Controls.Add(this.txtMail);
+            this.groupBox6.Controls.Add(this.txtHijos);
+            this.groupBox6.Controls.Add(this.txtEmail);
             this.groupBox6.Controls.Add(this.label45);
             this.groupBox6.Controls.Add(this.label6);
-            this.groupBox6.Controls.Add(this.txtTelephoneNumber);
+            this.groupBox6.Controls.Add(this.txtTelefono);
             this.groupBox6.Controls.Add(this.label1);
-            this.groupBox6.Controls.Add(this.txtAdressLocation);
+            this.groupBox6.Controls.Add(this.txtDireccion);
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Controls.Add(this.txtDocNumber);
-            this.groupBox6.Controls.Add(this.txtBirthPlace);
+            this.groupBox6.Controls.Add(this.txtDni);
+            this.groupBox6.Controls.Add(this.txtLugarNacimiento);
             this.groupBox6.Location = new System.Drawing.Point(12, 12);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(828, 403);
@@ -143,45 +143,45 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Datos Generales";
             // 
-            // textBox8
+            // txtOcupacion
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(121, 310);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.MaxLength = 50;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(429, 20);
-            this.textBox8.TabIndex = 169;
+            this.txtOcupacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOcupacion.Location = new System.Drawing.Point(121, 310);
+            this.txtOcupacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOcupacion.MaxLength = 50;
+            this.txtOcupacion.Name = "txtOcupacion";
+            this.txtOcupacion.Size = new System.Drawing.Size(429, 20);
+            this.txtOcupacion.TabIndex = 169;
             // 
-            // textBox7
+            // txtDepartamento
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(649, 241);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.MaxLength = 50;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(158, 20);
-            this.textBox7.TabIndex = 168;
+            this.txtDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDepartamento.Location = new System.Drawing.Point(649, 241);
+            this.txtDepartamento.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDepartamento.MaxLength = 50;
+            this.txtDepartamento.Name = "txtDepartamento";
+            this.txtDepartamento.Size = new System.Drawing.Size(158, 20);
+            this.txtDepartamento.TabIndex = 168;
             // 
-            // textBox6
+            // txtProvincia
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(392, 241);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.MaxLength = 50;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(158, 20);
-            this.textBox6.TabIndex = 167;
+            this.txtProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvincia.Location = new System.Drawing.Point(392, 241);
+            this.txtProvincia.Margin = new System.Windows.Forms.Padding(2);
+            this.txtProvincia.MaxLength = 50;
+            this.txtProvincia.Name = "txtProvincia";
+            this.txtProvincia.Size = new System.Drawing.Size(158, 20);
+            this.txtProvincia.TabIndex = 167;
             // 
-            // textBox5
+            // txtDistrito
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(120, 241);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.MaxLength = 50;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(158, 20);
-            this.textBox5.TabIndex = 166;
+            this.txtDistrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDistrito.Location = new System.Drawing.Point(120, 241);
+            this.txtDistrito.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDistrito.MaxLength = 50;
+            this.txtDistrito.Name = "txtDistrito";
+            this.txtDistrito.Size = new System.Drawing.Size(158, 20);
+            this.txtDistrito.TabIndex = 166;
             // 
             // label14
             // 
@@ -219,45 +219,45 @@
             this.label42.TabIndex = 165;
             this.label42.Text = "Distrito";
             // 
-            // textBox4
+            // txtFNacimiento
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(391, 89);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.MaxLength = 250;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 20);
-            this.textBox4.TabIndex = 159;
+            this.txtFNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFNacimiento.Location = new System.Drawing.Point(391, 89);
+            this.txtFNacimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFNacimiento.MaxLength = 250;
+            this.txtFNacimiento.Name = "txtFNacimiento";
+            this.txtFNacimiento.Size = new System.Drawing.Size(159, 20);
+            this.txtFNacimiento.TabIndex = 159;
             // 
-            // textBox3
+            // txtNivelEstudios
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(392, 127);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.MaxLength = 250;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 20);
-            this.textBox3.TabIndex = 158;
+            this.txtNivelEstudios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNivelEstudios.Location = new System.Drawing.Point(392, 127);
+            this.txtNivelEstudios.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNivelEstudios.MaxLength = 250;
+            this.txtNivelEstudios.Name = "txtNivelEstudios";
+            this.txtNivelEstudios.Size = new System.Drawing.Size(159, 20);
+            this.txtNivelEstudios.TabIndex = 158;
             // 
-            // textBox2
+            // txtEstadoCivil
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(122, 127);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.MaxLength = 250;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 20);
-            this.textBox2.TabIndex = 156;
+            this.txtEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstadoCivil.Location = new System.Drawing.Point(122, 127);
+            this.txtEstadoCivil.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEstadoCivil.MaxLength = 250;
+            this.txtEstadoCivil.Name = "txtEstadoCivil";
+            this.txtEstadoCivil.Size = new System.Drawing.Size(159, 20);
+            this.txtEstadoCivil.TabIndex = 156;
             // 
-            // textBox1
+            // txtGenero
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(391, 47);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.MaxLength = 20;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
-            this.textBox1.TabIndex = 155;
+            this.txtGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGenero.Location = new System.Drawing.Point(391, 47);
+            this.txtGenero.Margin = new System.Windows.Forms.Padding(2);
+            this.txtGenero.MaxLength = 20;
+            this.txtGenero.Name = "txtGenero";
+            this.txtGenero.Size = new System.Drawing.Size(158, 20);
+            this.txtGenero.TabIndex = 155;
             // 
             // txtReligion
             // 
@@ -318,15 +318,15 @@
             this.label18.Text = "Nombres";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtName
+            // txtPaciente
             // 
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(120, 14);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtName.MaxLength = 50;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(429, 20);
-            this.txtName.TabIndex = 1;
+            this.txtPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaciente.Location = new System.Drawing.Point(120, 14);
+            this.txtPaciente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPaciente.MaxLength = 50;
+            this.txtPaciente.Name = "txtPaciente";
+            this.txtPaciente.Size = new System.Drawing.Size(429, 20);
+            this.txtPaciente.TabIndex = 1;
             // 
             // label4
             // 
@@ -353,26 +353,26 @@
             this.label7.Text = "Email";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtNumberLivingChildren
+            // txtHijos
             // 
-            this.txtNumberLivingChildren.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNumberLivingChildren.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumberLivingChildren.Location = new System.Drawing.Point(391, 274);
-            this.txtNumberLivingChildren.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNumberLivingChildren.MaxLength = 250;
-            this.txtNumberLivingChildren.Name = "txtNumberLivingChildren";
-            this.txtNumberLivingChildren.Size = new System.Drawing.Size(159, 20);
-            this.txtNumberLivingChildren.TabIndex = 16;
+            this.txtHijos.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtHijos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHijos.Location = new System.Drawing.Point(391, 274);
+            this.txtHijos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtHijos.MaxLength = 250;
+            this.txtHijos.Name = "txtHijos";
+            this.txtHijos.Size = new System.Drawing.Size(159, 20);
+            this.txtHijos.TabIndex = 16;
             // 
-            // txtMail
+            // txtEmail
             // 
-            this.txtMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMail.Location = new System.Drawing.Point(121, 165);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMail.MaxLength = 50;
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(161, 20);
-            this.txtMail.TabIndex = 10;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(121, 165);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.MaxLength = 50;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(161, 20);
+            this.txtEmail.TabIndex = 10;
             // 
             // label45
             // 
@@ -399,15 +399,15 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Teléfono";
             // 
-            // txtTelephoneNumber
+            // txtTelefono
             // 
-            this.txtTelephoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelephoneNumber.Location = new System.Drawing.Point(391, 165);
-            this.txtTelephoneNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTelephoneNumber.MaxLength = 20;
-            this.txtTelephoneNumber.Name = "txtTelephoneNumber";
-            this.txtTelephoneNumber.Size = new System.Drawing.Size(158, 20);
-            this.txtTelephoneNumber.TabIndex = 11;
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(391, 165);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefono.MaxLength = 20;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(158, 20);
+            this.txtTelefono.TabIndex = 11;
             // 
             // label1
             // 
@@ -421,15 +421,15 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Dirección";
             // 
-            // txtAdressLocation
+            // txtDireccion
             // 
-            this.txtAdressLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdressLocation.Location = new System.Drawing.Point(120, 201);
-            this.txtAdressLocation.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAdressLocation.MaxLength = 250;
-            this.txtAdressLocation.Name = "txtAdressLocation";
-            this.txtAdressLocation.Size = new System.Drawing.Size(430, 20);
-            this.txtAdressLocation.TabIndex = 17;
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Location = new System.Drawing.Point(120, 201);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDireccion.MaxLength = 250;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(430, 20);
+            this.txtDireccion.TabIndex = 17;
             // 
             // label12
             // 
@@ -504,25 +504,25 @@
             this.label17.TabIndex = 25;
             this.label17.Text = "Ocupación";
             // 
-            // txtDocNumber
+            // txtDni
             // 
-            this.txtDocNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocNumber.Location = new System.Drawing.Point(120, 47);
-            this.txtDocNumber.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDocNumber.MaxLength = 20;
-            this.txtDocNumber.Name = "txtDocNumber";
-            this.txtDocNumber.Size = new System.Drawing.Size(159, 20);
-            this.txtDocNumber.TabIndex = 5;
+            this.txtDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDni.Location = new System.Drawing.Point(120, 47);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDni.MaxLength = 20;
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(159, 20);
+            this.txtDni.TabIndex = 5;
             // 
-            // txtBirthPlace
+            // txtLugarNacimiento
             // 
-            this.txtBirthPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBirthPlace.Location = new System.Drawing.Point(121, 89);
-            this.txtBirthPlace.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBirthPlace.MaxLength = 250;
-            this.txtBirthPlace.Name = "txtBirthPlace";
-            this.txtBirthPlace.Size = new System.Drawing.Size(159, 20);
-            this.txtBirthPlace.TabIndex = 7;
+            this.txtLugarNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLugarNacimiento.Location = new System.Drawing.Point(121, 89);
+            this.txtLugarNacimiento.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLugarNacimiento.MaxLength = 250;
+            this.txtLugarNacimiento.Name = "txtLugarNacimiento";
+            this.txtLugarNacimiento.Size = new System.Drawing.Size(159, 20);
+            this.txtLugarNacimiento.TabIndex = 7;
             // 
             // btnAnexoHistoriaManual
             // 
@@ -610,15 +610,15 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Visible = false;
             // 
-            // textBox9
+            // txtContactoEm
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(121, 345);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.MaxLength = 50;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(429, 20);
-            this.textBox9.TabIndex = 171;
+            this.txtContactoEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactoEm.Location = new System.Drawing.Point(121, 345);
+            this.txtContactoEm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContactoEm.MaxLength = 50;
+            this.txtContactoEm.Name = "txtContactoEm";
+            this.txtContactoEm.Size = new System.Drawing.Size(429, 20);
+            this.txtContactoEm.TabIndex = 171;
             // 
             // label2
             // 
@@ -645,15 +645,15 @@
             this.label3.Text = "N° Celular";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox10
+            // txtTelefonoEm
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(649, 345);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.MaxLength = 50;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(158, 20);
-            this.textBox10.TabIndex = 173;
+            this.txtTelefonoEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoEm.Location = new System.Drawing.Point(649, 345);
+            this.txtTelefonoEm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefonoEm.MaxLength = 50;
+            this.txtTelefonoEm.Name = "txtTelefonoEm";
+            this.txtTelefonoEm.Size = new System.Drawing.Size(158, 20);
+            this.txtTelefonoEm.TabIndex = 173;
             // 
             // lblHistoriaClinica
             // 
@@ -691,15 +691,15 @@
             this.label5.Text = "MKT";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox11
+            // txtMKT
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(649, 274);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.MaxLength = 50;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(158, 20);
-            this.textBox11.TabIndex = 177;
+            this.txtMKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKT.Location = new System.Drawing.Point(649, 274);
+            this.txtMKT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMKT.MaxLength = 50;
+            this.txtMKT.Name = "txtMKT";
+            this.txtMKT.Size = new System.Drawing.Size(158, 20);
+            this.txtMKT.TabIndex = 177;
             // 
             // frmPacientInformacion
             // 
@@ -712,8 +712,10 @@
             this.Controls.Add(this.btnAnexoHistoriaManual);
             this.Controls.Add(this.groupBox6);
             this.Name = "frmPacientInformacion";
-            this.Text = "frmPacientInformacion";
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "INFORMACIÓN DEL PACIENTE";
+            this.Load += new System.EventHandler(this.frmPacientInformacion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -722,39 +724,39 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pbPersonImage;
+        private System.Windows.Forms.PictureBox pbFoto;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtReligion;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtNacionalidad;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtPaciente;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtNumberLivingChildren;
-        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.TextBox txtHijos;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTelephoneNumber;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtAdressLocation;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtDocNumber;
-        private System.Windows.Forms.TextBox txtBirthPlace;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDni;
+        private System.Windows.Forms.TextBox txtLugarNacimiento;
+        private System.Windows.Forms.TextBox txtFNacimiento;
+        private System.Windows.Forms.TextBox txtNivelEstudios;
+        private System.Windows.Forms.TextBox txtEstadoCivil;
+        private System.Windows.Forms.TextBox txtOcupacion;
+        private System.Windows.Forms.TextBox txtDepartamento;
+        private System.Windows.Forms.TextBox txtProvincia;
+        private System.Windows.Forms.TextBox txtDistrito;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
@@ -763,12 +765,12 @@
         private System.Windows.Forms.Button btnAntecedentes;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtMKT;
         private System.Windows.Forms.Label lblHistoriaClinica;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtTelefonoEm;
+        private System.Windows.Forms.TextBox txtContactoEm;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -18,8 +18,9 @@ namespace Sigesoft.Node.WinClient.UI
         {
             get
             {
-                var csConf = ConfigurationManager.ConnectionStrings["SigConnectionString"];
+                var csConf = ConfigurationManager.ConnectionStrings["SigesoftConnectionString2"];
                 return csConf != null ? csConf.ConnectionString : string.Empty;
+
             }
         }
 

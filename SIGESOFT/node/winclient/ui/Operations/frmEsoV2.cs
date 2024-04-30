@@ -7205,7 +7205,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void btnPerson_Click_1(object sender, EventArgs e)
         {
-            var frm = new frmPacient(_personId);
+            var frm = new frmPacientInformacion(_personId);
             frm.ShowDialog();
         }
 
