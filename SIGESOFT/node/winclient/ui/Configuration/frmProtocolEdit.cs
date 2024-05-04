@@ -233,17 +233,18 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
 
         private void frmProtocolEdit_Load(object sender, EventArgs e)
         {
-            
+            //var x = cbTipoServicio;
+            //cbTipoServicio.SelectedIndex = 1;
+            //cbServicio.SelectedIndex = 1;
+
             LoadData();
-            if (grdExternalUser.Rows.Count != 0)
-                grdExternalUser.Rows[0].Selected = true;
+            //if (grdExternalUser.Rows.Count != 0)
+            //    grdExternalUser.Rows[0].Selected = true;
             if (grdProtocolComponent.Rows.Count != 0)
                 grdProtocolComponent.Rows[0].Selected = true;
             
             SetOldValues();
-            var x = cbTipoServicio;
-            cbTipoServicio.SelectedIndex = 1;
-            cbServicio.SelectedIndex = 1;
+            
         }
         
         private void SearchControlAndSetEvents(Control ctrlContainer)
@@ -929,16 +930,16 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            _personId = grdExternalUser.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
-            _systemUserId = int.Parse(grdExternalUser.Selected.Rows[0].Cells["i_SystemUserId"].Value.ToString());
+            //_personId = grdExternalUser.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
+            //_systemUserId = int.Parse(grdExternalUser.Selected.Rows[0].Cells["i_SystemUserId"].Value.ToString());
 
-            var frm = new frmExternalUserEdit("Edit", _personId, _systemUserId, _protocolId);
-            frm.ShowDialog();
+            //var frm = new frmExternalUserEdit("Edit", _personId, _systemUserId, _protocolId);
+            //frm.ShowDialog();
 
-            if (frm.DialogResult != DialogResult.OK)
-                return;
+            //if (frm.DialogResult != DialogResult.OK)
+            //    return;
 
-            BindGridSystemUserExternal();
+            //BindGridSystemUserExternal();
         }
 
         private string BuildFilterExpression()
@@ -948,8 +949,8 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
 
             List<string> Filters = new List<string>();
 
-            if (!string.IsNullOrEmpty(txtUser.Text)) Filters.Add("v_UserName.Contains(\"" + txtUser.Text.Trim() + "\")");
-            if (!string.IsNullOrEmpty(txtDocNumber.Text)) Filters.Add("v_DocNumber==" + "\"" + txtDocNumber.Text.Trim() + "\"");
+            //if (!string.IsNullOrEmpty(txtUser.Text)) Filters.Add("v_UserName.Contains(\"" + txtUser.Text.Trim() + "\")");
+            //if (!string.IsNullOrEmpty(txtDocNumber.Text)) Filters.Add("v_DocNumber==" + "\"" + txtDocNumber.Text.Trim() + "\"");
             if (!string.IsNullOrEmpty(_protocolId)) Filters.Add("v_ProtocolId==" + "\"" + _protocolId + "\"");
 
             filterExpression = null;
@@ -973,19 +974,19 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
 
             var dataList = GetSystemUserExternal(0, null, "v_PersonName ASC", BuildFilterExpression());
 
-            if (dataList != null)
-            {
-                if (dataList.Count != 0)
-                {
-                    grdExternalUser.DataSource = dataList;
-                    lblRecordCountExternalUSer.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
-                }
-                else
-                {
-                    grdExternalUser.DataSource = dataList;
-                    lblRecordCountExternalUSer.Text = string.Format("Se encontraron {0} registros.", 0);
-                }
-            }
+            //if (dataList != null)
+            //{
+            //    if (dataList.Count != 0)
+            //    {
+            //        grdExternalUser.DataSource = dataList;
+            //        lblRecordCountExternalUSer.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+            //    }
+            //    else
+            //    {
+            //        grdExternalUser.DataSource = dataList;
+            //        lblRecordCountExternalUSer.Text = string.Format("Se encontraron {0} registros.", 0);
+            //    }
+            //}
 
         }
 
@@ -1019,16 +1020,16 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
         {
             BindGridSystemUserExternal();
 
-            if (grdExternalUser.Rows.Count > 0)
-            {
-                grdExternalUser.Rows[0].Selected = true;
+            //if (grdExternalUser.Rows.Count > 0)
+            //{
+            //    grdExternalUser.Rows[0].Selected = true;
                
-            }                   
+            //}                   
         }
 
         private void grdExternalUser_AfterSelectChange(object sender, Infragistics.Win.UltraWinGrid.AfterSelectChangeEventArgs e)
         {
-            btnDelete.Enabled = btnEdit.Enabled = (grdExternalUser.Selected.Rows.Count > 0);
+            //btnDelete.Enabled = btnEdit.Enabled = (grdExternalUser.Selected.Rows.Count > 0);
           
         }
 

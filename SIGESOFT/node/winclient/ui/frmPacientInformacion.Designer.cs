@@ -31,6 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPacientInformacion));
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMKT = new System.Windows.Forms.TextBox();
+            this.lblHistoriaClinica = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTelefonoEm = new System.Windows.Forms.TextBox();
+            this.txtContactoEm = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtOcupacion = new System.Windows.Forms.TextBox();
             this.txtDepartamento = new System.Windows.Forms.TextBox();
             this.txtProvincia = new System.Windows.Forms.TextBox();
@@ -69,14 +77,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAntecedentes = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.txtContactoEm = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTelefonoEm = new System.Windows.Forms.TextBox();
-            this.lblHistoriaClinica = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMKT = new System.Windows.Forms.TextBox();
+            this.lblPersonId = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +95,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lblPersonId);
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Controls.Add(this.txtMKT);
             this.groupBox6.Controls.Add(this.lblHistoriaClinica);
@@ -142,6 +145,97 @@
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Datos Generales";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(566, 278);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 176;
+            this.label5.Text = "MKT";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMKT
+            // 
+            this.txtMKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMKT.Location = new System.Drawing.Point(649, 274);
+            this.txtMKT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMKT.MaxLength = 50;
+            this.txtMKT.Name = "txtMKT";
+            this.txtMKT.Size = new System.Drawing.Size(158, 20);
+            this.txtMKT.TabIndex = 177;
+            // 
+            // lblHistoriaClinica
+            // 
+            this.lblHistoriaClinica.AutoSize = true;
+            this.lblHistoriaClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistoriaClinica.ForeColor = System.Drawing.Color.Red;
+            this.lblHistoriaClinica.Location = new System.Drawing.Point(666, 14);
+            this.lblHistoriaClinica.Name = "lblHistoriaClinica";
+            this.lblHistoriaClinica.Size = new System.Drawing.Size(54, 29);
+            this.lblHistoriaClinica.TabIndex = 175;
+            this.lblHistoriaClinica.Text = "- - -";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(574, 20);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(73, 13);
+            this.label23.TabIndex = 174;
+            this.label23.Text = "N° HISTORIA";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(581, 348);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 172;
+            this.label3.Text = "N° Celular";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTelefonoEm
+            // 
+            this.txtTelefonoEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefonoEm.Location = new System.Drawing.Point(649, 345);
+            this.txtTelefonoEm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefonoEm.MaxLength = 50;
+            this.txtTelefonoEm.Name = "txtTelefonoEm";
+            this.txtTelefonoEm.Size = new System.Drawing.Size(158, 20);
+            this.txtTelefonoEm.TabIndex = 173;
+            // 
+            // txtContactoEm
+            // 
+            this.txtContactoEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactoEm.Location = new System.Drawing.Point(121, 345);
+            this.txtContactoEm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContactoEm.MaxLength = 50;
+            this.txtContactoEm.Name = "txtContactoEm";
+            this.txtContactoEm.Size = new System.Drawing.Size(429, 20);
+            this.txtContactoEm.TabIndex = 171;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(39, 345);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 26);
+            this.label2.TabIndex = 170;
+            this.label2.Text = "Contacto de\r\nEmergencia";
             // 
             // txtOcupacion
             // 
@@ -536,14 +630,15 @@
             this.btnAnexoHistoriaManual.ForeColor = System.Drawing.Color.Black;
             this.btnAnexoHistoriaManual.Image = global::Sigesoft.Node.WinClient.UI.Resources.report;
             this.btnAnexoHistoriaManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(11, 420);
+            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(12, 422);
             this.btnAnexoHistoriaManual.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnexoHistoriaManual.Name = "btnAnexoHistoriaManual";
-            this.btnAnexoHistoriaManual.Size = new System.Drawing.Size(102, 59);
+            this.btnAnexoHistoriaManual.Size = new System.Drawing.Size(201, 34);
             this.btnAnexoHistoriaManual.TabIndex = 212;
             this.btnAnexoHistoriaManual.Text = "ANEXO HISTORIA MANUAL";
             this.btnAnexoHistoriaManual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAnexoHistoriaManual.UseVisualStyleBackColor = false;
+            this.btnAnexoHistoriaManual.Click += new System.EventHandler(this.btnAnexoHistoriaManual_Click);
             // 
             // button1
             // 
@@ -557,14 +652,15 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Sigesoft.Node.WinClient.UI.Resources.generar_2;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button1.Location = new System.Drawing.Point(132, 421);
+            this.button1.Location = new System.Drawing.Point(217, 422);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 59);
+            this.button1.Size = new System.Drawing.Size(193, 34);
             this.button1.TabIndex = 216;
             this.button1.Text = "HISTORIAL ATENCIONES";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAntecedentes
             // 
@@ -574,19 +670,19 @@
             this.btnAntecedentes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAntecedentes.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnAntecedentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAntecedentes.ForeColor = System.Drawing.Color.Black;
             this.btnAntecedentes.Image = global::Sigesoft.Node.WinClient.UI.Resources.book_open;
             this.btnAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAntecedentes.Location = new System.Drawing.Point(252, 422);
+            this.btnAntecedentes.Location = new System.Drawing.Point(414, 422);
             this.btnAntecedentes.Margin = new System.Windows.Forms.Padding(2);
             this.btnAntecedentes.Name = "btnAntecedentes";
-            this.btnAntecedentes.Size = new System.Drawing.Size(102, 57);
+            this.btnAntecedentes.Size = new System.Drawing.Size(147, 34);
             this.btnAntecedentes.TabIndex = 214;
             this.btnAntecedentes.Text = "Antecedentes";
             this.btnAntecedentes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAntecedentes.UseVisualStyleBackColor = false;
-            this.btnAntecedentes.Visible = false;
+            this.btnAntecedentes.Click += new System.EventHandler(this.btnAntecedentes_Click);
             // 
             // btnExit
             // 
@@ -597,115 +693,61 @@
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExit.Location = new System.Drawing.Point(738, 422);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(102, 59);
+            this.btnExit.Size = new System.Drawing.Size(102, 34);
             this.btnExit.TabIndex = 215;
             this.btnExit.Text = "   Salir";
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Visible = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // txtContactoEm
+            // lblPersonId
             // 
-            this.txtContactoEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContactoEm.Location = new System.Drawing.Point(121, 345);
-            this.txtContactoEm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtContactoEm.MaxLength = 50;
-            this.txtContactoEm.Name = "txtContactoEm";
-            this.txtContactoEm.Size = new System.Drawing.Size(429, 20);
-            this.txtContactoEm.TabIndex = 171;
+            this.lblPersonId.AutoSize = true;
+            this.lblPersonId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonId.ForeColor = System.Drawing.Color.Black;
+            this.lblPersonId.Location = new System.Drawing.Point(150, 377);
+            this.lblPersonId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPersonId.Name = "lblPersonId";
+            this.lblPersonId.Size = new System.Drawing.Size(51, 13);
+            this.lblPersonId.TabIndex = 178;
+            this.lblPersonId.Text = "Provincia";
+            this.lblPersonId.Visible = false;
             // 
-            // label2
+            // button2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(39, 345);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 26);
-            this.label2.TabIndex = 170;
-            this.label2.Text = "Contacto de\r\nEmergencia";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(581, 348);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 172;
-            this.label3.Text = "N° Celular";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtTelefonoEm
-            // 
-            this.txtTelefonoEm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoEm.Location = new System.Drawing.Point(649, 345);
-            this.txtTelefonoEm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTelefonoEm.MaxLength = 50;
-            this.txtTelefonoEm.Name = "txtTelefonoEm";
-            this.txtTelefonoEm.Size = new System.Drawing.Size(158, 20);
-            this.txtTelefonoEm.TabIndex = 173;
-            // 
-            // lblHistoriaClinica
-            // 
-            this.lblHistoriaClinica.AutoSize = true;
-            this.lblHistoriaClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistoriaClinica.ForeColor = System.Drawing.Color.Red;
-            this.lblHistoriaClinica.Location = new System.Drawing.Point(666, 14);
-            this.lblHistoriaClinica.Name = "lblHistoriaClinica";
-            this.lblHistoriaClinica.Size = new System.Drawing.Size(54, 29);
-            this.lblHistoriaClinica.TabIndex = 175;
-            this.lblHistoriaClinica.Text = "- - -";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(574, 20);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(73, 13);
-            this.label23.TabIndex = 174;
-            this.label23.Text = "N° HISTORIA";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(566, 278);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 13);
-            this.label5.TabIndex = 176;
-            this.label5.Text = "MKT";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtMKT
-            // 
-            this.txtMKT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMKT.Location = new System.Drawing.Point(649, 274);
-            this.txtMKT.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMKT.MaxLength = 50;
-            this.txtMKT.Name = "txtMKT";
-            this.txtMKT.Size = new System.Drawing.Size(158, 20);
-            this.txtMKT.TabIndex = 177;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.SystemColors.Control;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Image = global::Sigesoft.Node.WinClient.UI.Properties.Resources.pencil;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(565, 422);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(82, 34);
+            this.button2.TabIndex = 217;
+            this.button2.Text = "Editar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // frmPacientInformacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 490);
+            this.BackColor = System.Drawing.Color.Linen;
+            this.ClientSize = new System.Drawing.Size(855, 463);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnAntecedentes);
             this.Controls.Add(this.btnExit);
@@ -772,5 +814,7 @@
         private System.Windows.Forms.TextBox txtTelefonoEm;
         private System.Windows.Forms.TextBox txtContactoEm;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPersonId;
+        private System.Windows.Forms.Button button2;
     }
 }

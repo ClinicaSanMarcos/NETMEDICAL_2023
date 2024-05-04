@@ -218,7 +218,7 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
             OperationResult objOperationResult = new OperationResult();
             Utils.LoadDropDownList(cbGeso, "Value1", "Id", BLL.Utils.GetGESO(ref objOperationResult, null), DropDownListAction.All);
             LoadComboBox();
-            BindGrid();
+            //BindGrid();
 
             if (grd.Rows.Count != 0)          
                 grd.Rows[0].Selected = true;
@@ -386,6 +386,8 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
             }
         }
 
+        
+
         private void grd_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
         {
 
@@ -505,6 +507,36 @@ namespace Sigesoft.Node.WinClient.UI.Configuration
             {
                 this.ultraGridExcelExporter1.Export(this.grd, saveFileDialog1.FileName);
                 MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var NombreProtocolo = grd.ActiveRow.Cells["v_Protocol"].Value.ToString();
+
+                if (NombreProtocolo != null)
+                {
+                    string NombreArchivo = "";
+
+                    NombreArchivo = "DETALLE DE PROTOCOLO DE ATENCION SM - " + NombreProtocolo;
+
+                    NombreArchivo = NombreArchivo.Replace("/", "_");
+                    NombreArchivo = NombreArchivo.Replace(":", "_");
+
+                    saveFileDialog1.FileName = NombreArchivo;
+                    saveFileDialog1.Filter = "Files (*.xls;*.xlsx;*)|*.xls;*.xlsx;*";
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        this.ultraGridExcelExporter1.Export(this.grdProtocolComponent, saveFileDialog1.FileName);
+                        MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                
             }
         }
                

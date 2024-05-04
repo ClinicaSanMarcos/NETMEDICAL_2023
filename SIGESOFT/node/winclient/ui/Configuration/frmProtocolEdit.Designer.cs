@@ -47,20 +47,6 @@
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProtocolEdit));
-            Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_SystemUserId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PersonId");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PersonName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_UserName");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DocNumber");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_ExpireDate");
-            Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
             this.grdProtocolComponent = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.cmProtocol = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.New = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,9 +63,9 @@
             this.cbServicio = new System.Windows.Forms.ComboBox();
             this.txtNombreProtocolo = new System.Windows.Forms.TextBox();
             this.cbEmpresaTrabajo = new System.Windows.Forms.ComboBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.txtDocNumber = new System.Windows.Forms.TextBox();
+            this.cboProcedencia = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.lblDescuento = new System.Windows.Forms.Label();
             this.chkEsActivo = new System.Windows.Forms.CheckBox();
@@ -110,21 +96,9 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.tpUsuariosExternos = new System.Windows.Forms.TabPage();
-            this.btnAddUserExternal = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.BtnNew = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.grdExternalUser = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.lblRecordCountExternalUSer = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
-            this.cboProcedencia = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.ultraGridExcelExporter1 = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdProtocolComponent)).BeginInit();
@@ -133,8 +107,6 @@
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpExamenes.SuspendLayout();
-            this.tpUsuariosExternos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdExternalUser)).BeginInit();
             this.SuspendLayout();
             // 
             // grdProtocolComponent
@@ -422,25 +394,20 @@
             this.uvProtocol.GetValidationSettings(this.cbEmpresaTrabajo).IsRequired = true;
             this.cbEmpresaTrabajo.SelectedIndexChanged += new System.EventHandler(this.cbIntermediaryOrganization_SelectedIndexChanged);
             // 
-            // txtUser
+            // cboProcedencia
             // 
-            this.txtUser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUser.Location = new System.Drawing.Point(68, 23);
-            this.txtUser.MaxLength = 100;
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(338, 20);
-            this.txtUser.TabIndex = 49;
-            this.uvProtocol.GetValidationSettings(this.txtUser).EmptyValueCriteria = Infragistics.Win.Misc.EmptyValueCriteria.NullOrEmptyString;
-            // 
-            // txtDocNumber
-            // 
-            this.txtDocNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDocNumber.Location = new System.Drawing.Point(475, 23);
-            this.txtDocNumber.MaxLength = 100;
-            this.txtDocNumber.Name = "txtDocNumber";
-            this.txtDocNumber.Size = new System.Drawing.Size(133, 20);
-            this.txtDocNumber.TabIndex = 51;
-            this.uvProtocol.GetValidationSettings(this.txtDocNumber).EmptyValueCriteria = Infragistics.Win.Misc.EmptyValueCriteria.NullOrEmptyString;
+            this.cboProcedencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboProcedencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboProcedencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboProcedencia.FormattingEnabled = true;
+            this.cboProcedencia.Location = new System.Drawing.Point(112, 154);
+            this.cboProcedencia.Name = "cboProcedencia";
+            this.cboProcedencia.Size = new System.Drawing.Size(220, 21);
+            this.cboProcedencia.TabIndex = 65;
+            this.uvProtocol.GetValidationSettings(this.cboProcedencia).Condition = new Infragistics.Win.OperatorCondition(Infragistics.Win.ConditionOperator.NotEquals, "--Seleccionar--", true, typeof(string));
+            this.uvProtocol.GetValidationSettings(this.cboProcedencia).DataType = typeof(string);
+            this.uvProtocol.GetValidationSettings(this.cboProcedencia).EmptyValueCriteria = Infragistics.Win.Misc.EmptyValueCriteria.NullOrEmptyString;
+            this.uvProtocol.GetValidationSettings(this.cboProcedencia).IsRequired = true;
             // 
             // groupBox1
             // 
@@ -483,6 +450,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Protocolo";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(8, 154);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 19);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Consultorio";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtDiscount
             // 
@@ -811,7 +790,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpExamenes);
-            this.tabControl1.Controls.Add(this.tpUsuariosExternos);
             this.tabControl1.Location = new System.Drawing.Point(17, 198);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -899,222 +877,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // tpUsuariosExternos
-            // 
-            this.tpUsuariosExternos.Controls.Add(this.btnAddUserExternal);
-            this.tpUsuariosExternos.Controls.Add(this.btnDelete);
-            this.tpUsuariosExternos.Controls.Add(this.btnEdit);
-            this.tpUsuariosExternos.Controls.Add(this.BtnNew);
-            this.tpUsuariosExternos.Controls.Add(this.btnFilter);
-            this.tpUsuariosExternos.Controls.Add(this.txtDocNumber);
-            this.tpUsuariosExternos.Controls.Add(this.label6);
-            this.tpUsuariosExternos.Controls.Add(this.txtUser);
-            this.tpUsuariosExternos.Controls.Add(this.label5);
-            this.tpUsuariosExternos.Controls.Add(this.grdExternalUser);
-            this.tpUsuariosExternos.Controls.Add(this.lblRecordCountExternalUSer);
-            this.tpUsuariosExternos.Location = new System.Drawing.Point(4, 22);
-            this.tpUsuariosExternos.Name = "tpUsuariosExternos";
-            this.tpUsuariosExternos.Padding = new System.Windows.Forms.Padding(3);
-            this.tpUsuariosExternos.Size = new System.Drawing.Size(963, 416);
-            this.tpUsuariosExternos.TabIndex = 1;
-            this.tpUsuariosExternos.Text = "Usuarios Externos";
-            this.tpUsuariosExternos.UseVisualStyleBackColor = true;
-            // 
-            // btnAddUserExternal
-            // 
-            this.btnAddUserExternal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddUserExternal.Image = global::Sigesoft.Node.WinClient.UI.Resources.user_add;
-            this.btnAddUserExternal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddUserExternal.Location = new System.Drawing.Point(632, 385);
-            this.btnAddUserExternal.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddUserExternal.Name = "btnAddUserExternal";
-            this.btnAddUserExternal.Size = new System.Drawing.Size(167, 26);
-            this.btnAddUserExternal.TabIndex = 57;
-            this.btnAddUserExternal.Text = "Agregar Usuarios Externos";
-            this.btnAddUserExternal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddUserExternal.UseVisualStyleBackColor = true;
-            this.btnAddUserExternal.Click += new System.EventHandler(this.btnAddUserExternal_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Enabled = false;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(803, 155);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(88, 24);
-            this.btnDelete.TabIndex = 56;
-            this.btnDelete.Text = "    Eliminar";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEdit.Enabled = false;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(803, 127);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(88, 24);
-            this.btnEdit.TabIndex = 55;
-            this.btnEdit.Text = "Modificar";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // BtnNew
-            // 
-            this.BtnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnNew.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_form;
-            this.BtnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNew.Location = new System.Drawing.Point(803, 99);
-            this.BtnNew.Margin = new System.Windows.Forms.Padding(2);
-            this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(88, 24);
-            this.BtnNew.TabIndex = 54;
-            this.BtnNew.Text = "    Nuevo";
-            this.BtnNew.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnNew.UseVisualStyleBackColor = true;
-            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Image = global::Sigesoft.Node.WinClient.UI.Resources.find;
-            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(705, 20);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 24);
-            this.btnFilter.TabIndex = 53;
-            this.btnFilter.Text = "  Filtrar";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(421, 17);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 32);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "DNI";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(14, 17);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 32);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Usuario";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // grdExternalUser
-            // 
-            this.grdExternalUser.CausesValidation = false;
-            appearance8.BackColor = System.Drawing.Color.White;
-            appearance8.BackColor2 = System.Drawing.Color.LightGray;
-            appearance8.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            this.grdExternalUser.DisplayLayout.Appearance = appearance8;
-            ultraGridColumn10.Header.VisiblePosition = 0;
-            ultraGridColumn10.Hidden = true;
-            ultraGridColumn11.Header.VisiblePosition = 1;
-            ultraGridColumn11.Hidden = true;
-            ultraGridColumn12.Header.Caption = "Nombres";
-            ultraGridColumn12.Header.VisiblePosition = 2;
-            ultraGridColumn12.Width = 340;
-            ultraGridColumn13.Header.Caption = "Usuario";
-            ultraGridColumn13.Header.VisiblePosition = 3;
-            ultraGridColumn13.Width = 172;
-            ultraGridColumn14.Header.Caption = "DNI";
-            ultraGridColumn14.Header.VisiblePosition = 4;
-            ultraGridColumn14.Width = 123;
-            ultraGridColumn15.Header.Caption = "Fecha Caducidad";
-            ultraGridColumn15.Header.VisiblePosition = 5;
-            ultraGridColumn15.Width = 147;
-            ultraGridBand2.Columns.AddRange(new object[] {
-            ultraGridColumn10,
-            ultraGridColumn11,
-            ultraGridColumn12,
-            ultraGridColumn13,
-            ultraGridColumn14,
-            ultraGridColumn15});
-            this.grdExternalUser.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
-            this.grdExternalUser.DisplayLayout.InterBandSpacing = 10;
-            this.grdExternalUser.DisplayLayout.MaxColScrollRegions = 1;
-            this.grdExternalUser.DisplayLayout.MaxRowScrollRegions = 1;
-            this.grdExternalUser.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
-            this.grdExternalUser.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
-            this.grdExternalUser.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
-            this.grdExternalUser.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
-            this.grdExternalUser.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
-            this.grdExternalUser.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
-            this.grdExternalUser.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance9.BackColor = System.Drawing.Color.Transparent;
-            this.grdExternalUser.DisplayLayout.Override.CardAreaAppearance = appearance9;
-            appearance10.BackColor = System.Drawing.Color.White;
-            appearance10.BackColor2 = System.Drawing.Color.White;
-            appearance10.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
-            this.grdExternalUser.DisplayLayout.Override.CellAppearance = appearance10;
-            this.grdExternalUser.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
-            appearance11.BackColor = System.Drawing.Color.White;
-            appearance11.BackColor2 = System.Drawing.Color.LightGray;
-            appearance11.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance11.BorderColor = System.Drawing.Color.DarkGray;
-            appearance11.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
-            this.grdExternalUser.DisplayLayout.Override.HeaderAppearance = appearance11;
-            this.grdExternalUser.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            appearance12.AlphaLevel = ((short)(187));
-            appearance12.BackColor = System.Drawing.Color.Gainsboro;
-            appearance12.BackColor2 = System.Drawing.Color.LightGray;
-            appearance12.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
-            this.grdExternalUser.DisplayLayout.Override.RowAlternateAppearance = appearance12;
-            appearance13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grdExternalUser.DisplayLayout.Override.RowSelectorAppearance = appearance13;
-            this.grdExternalUser.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
-            appearance14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            appearance14.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
-            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
-            appearance14.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            appearance14.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
-            appearance14.FontData.BoldAsString = "False";
-            appearance14.ForeColor = System.Drawing.Color.Black;
-            this.grdExternalUser.DisplayLayout.Override.SelectedRowAppearance = appearance14;
-            this.grdExternalUser.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
-            this.grdExternalUser.DisplayLayout.RowConnectorColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grdExternalUser.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
-            this.grdExternalUser.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.grdExternalUser.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.grdExternalUser.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand;
-            this.grdExternalUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdExternalUser.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.grdExternalUser.Location = new System.Drawing.Point(17, 77);
-            this.grdExternalUser.Margin = new System.Windows.Forms.Padding(2);
-            this.grdExternalUser.Name = "grdExternalUser";
-            this.grdExternalUser.Size = new System.Drawing.Size(782, 295);
-            this.grdExternalUser.TabIndex = 47;
-            this.grdExternalUser.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.grdExternalUser_AfterSelectChange);
-            // 
-            // lblRecordCountExternalUSer
-            // 
-            this.lblRecordCountExternalUSer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRecordCountExternalUSer.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordCountExternalUSer.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblRecordCountExternalUSer.Location = new System.Drawing.Point(572, 57);
-            this.lblRecordCountExternalUSer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRecordCountExternalUSer.Name = "lblRecordCountExternalUSer";
-            this.lblRecordCountExternalUSer.Size = new System.Drawing.Size(259, 18);
-            this.lblRecordCountExternalUSer.TabIndex = 48;
-            this.lblRecordCountExternalUSer.Text = "No se ha realizado la búsqueda aún.";
-            this.lblRecordCountExternalUSer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1144,38 +906,11 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // cboProcedencia
-            // 
-            this.cboProcedencia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboProcedencia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboProcedencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboProcedencia.FormattingEnabled = true;
-            this.cboProcedencia.Location = new System.Drawing.Point(112, 154);
-            this.cboProcedencia.Name = "cboProcedencia";
-            this.cboProcedencia.Size = new System.Drawing.Size(220, 21);
-            this.cboProcedencia.TabIndex = 65;
-            this.uvProtocol.GetValidationSettings(this.cboProcedencia).Condition = new Infragistics.Win.OperatorCondition(Infragistics.Win.ConditionOperator.NotEquals, "--Seleccionar--", true, typeof(string));
-            this.uvProtocol.GetValidationSettings(this.cboProcedencia).DataType = typeof(string);
-            this.uvProtocol.GetValidationSettings(this.cboProcedencia).EmptyValueCriteria = Infragistics.Win.Misc.EmptyValueCriteria.NullOrEmptyString;
-            this.uvProtocol.GetValidationSettings(this.cboProcedencia).IsRequired = true;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(8, 154);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 19);
-            this.label14.TabIndex = 64;
-            this.label14.Text = "Consultorio";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // frmProtocolEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1010, 677);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboVendedor);
@@ -1201,9 +936,6 @@
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tpExamenes.ResumeLayout(false);
-            this.tpUsuariosExternos.ResumeLayout(false);
-            this.tpUsuariosExternos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdExternalUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1245,23 +977,11 @@
         private System.Windows.Forms.CheckBox chkEsActivo;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpExamenes;
-        private System.Windows.Forms.TabPage tpUsuariosExternos;
-        private System.Windows.Forms.TextBox txtDocNumber;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtUser;
-        private System.Windows.Forms.Label label5;
-        private Infragistics.Win.UltraWinGrid.UltraGrid grdExternalUser;
-        private System.Windows.Forms.Label lblRecordCountExternalUSer;
-        private System.Windows.Forms.Button btnFilter;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button BtnNew;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnAgregarEmpresaContrata;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button btnAddUserExternal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboVendedor;
         private System.Windows.Forms.TextBox txtEps;

@@ -9635,6 +9635,20 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             frmAnexoHistoriaManual frm = new frmAnexoHistoriaManual(lblTrabajador.Text, lblPersonId.Text);
             frm.ShowDialog();
         }
+
+        private void btnReportAsync_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var frm = new Reports.frmManagementReports_Async(_serviceId, "N009-OO000000052", _datosPersona.v_PersonId,
+                    "", "", "");
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
         
     }
 }

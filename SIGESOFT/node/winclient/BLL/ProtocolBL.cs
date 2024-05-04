@@ -91,7 +91,9 @@ namespace Sigesoft.Node.WinClient.BLL
                                 i_IsActive = A.i_IsActive,
                                 v_ComponenteNombre = K.v_Name,
                                 AseguradoraId = A.v_AseguradoraOrganizationId,
-                                v_Consultorio = M.v_Value1
+                                v_Consultorio = M.v_Value1,
+                                //Total = SumaComponentes(A.v_ProtocolId)
+                                //Total
                             };
 
                 if (!string.IsNullOrEmpty(pstrFilterExpression))
@@ -116,16 +118,54 @@ namespace Sigesoft.Node.WinClient.BLL
 
                 pobjOperationResult.Success = 1;
 
+                List<ProtocolList> objData_ = new List<ProtocolList>();
+                foreach (var item in objData)
+                {
+                    //ProtocolList listDat = new ProtocolList();
+
+                    item.Total = SumaComponentes(item.v_ProtocolId);
+
+                    //listDat.v_ProtocolId = item.v_ProtocolId;
+                    //listDat.v_Protocol = item.v_Protocol;
+                    //listDat.v_Organization = item.v_Organization;
+                    //listDat.v_Location = item.v_Location;
+                    //listDat.v_EsoType = item.v_EsoType;
+                    //listDat.v_GroupOccupation = item.v_GroupOccupation;
+                    //listDat.v_OrganizationInvoice = item.v_OrganizationInvoice;
+                    //listDat.v_CostCenter = item.v_CostCenter;
+                    //listDat.v_IntermediaryOrganization = item.v_IntermediaryOrganization;
+                    //listDat.i_ServiceTypeId = item.i_ServiceTypeId;
+                    //listDat.v_MasterServiceName = item.v_MasterServiceName;
+                    //listDat.i_MasterServiceId = item.i_MasterServiceId;
+                    //listDat.v_OrganizationId = item.v_OrganizationId;
+                    //listDat.i_EsoTypeId = item.i_EsoTypeId;
+                    //listDat.v_WorkingOrganizationId = item.v_WorkingOrganizationId;
+                    //listDat.v_OrganizationInvoiceId = item.v_OrganizationInvoiceId;
+                    //listDat.v_GroupOccupationId = item.v_GroupOccupationId;
+                    //listDat.v_CreationUser = item.v_CreationUser;
+                    //listDat.v_UpdateUser = item.v_UpdateUser;
+                    //listDat.d_CreationDate = item.d_CreationDate;
+                    //listDat.d_UpdateDate = item.d_UpdateDate;
+                    //listDat.v_LocationId = item.v_LocationId;
+                    //listDat.v_CustomerLocationId = item.v_CustomerLocationId;
+                    //listDat.v_WorkingLocationId = item.v_WorkingLocationId;
+                    //listDat.i_IsActive = item.i_IsActive;
+                    //listDat.v_ComponenteNombre = item.v_ComponenteNombre;
+                    //listDat.AseguradoraId = item.AseguradoraId;
+                    //listDat.v_Consultorio = item.v_Consultorio;
+                    objData_.Add(item);
+                }
+
                 if (pstrComponente == "")
                 {
-                    var ee = objData.GroupBy(x => x.v_ProtocolId)
+                    var ee = objData_.GroupBy(x => x.v_ProtocolId)
                           .Select(group => group.First());
 
                     return ee.ToList();
                 }
                 else
                 {
-                    return objData.FindAll(u => u.v_ComponenteNombre.Contains(pstrComponente.ToUpper())).ToList();
+                    return objData_.FindAll(u => u.v_ComponenteNombre.Contains(pstrComponente.ToUpper())).ToList();
                 }
 
                
@@ -140,6 +180,20 @@ namespace Sigesoft.Node.WinClient.BLL
 
         }
 
+        private float SumaComponentes(string ProtocolId)
+        {
+            OperationResult objOperationResult = new OperationResult();
+            var dataListPc = new ProtocolBL().GetProtocolComponents(ref objOperationResult, ProtocolId);
+
+            float Total = 0;
+
+            foreach (var item in dataListPc)
+            {
+                Total = Total + item.r_Price.Value;
+            }
+
+            return Total; 
+        }
         //public List<ProtocolList> DevolverFiltroDx(List<ProtocolList> l, string pstrComponente)
         //{
         //    List<ProtocolList> lServicios = new List<ProtocolList>();

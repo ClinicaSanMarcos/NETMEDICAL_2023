@@ -852,6 +852,7 @@
             this.btnViewWorker = new System.Windows.Forms.Button();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.btnMostrarOcultar = new System.Windows.Forms.Button();
+            this.btnReportAsync = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uvExamen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvAnamnesis)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -2569,7 +2570,7 @@
             this.tpExam.Location = new System.Drawing.Point(4, 22);
             this.tpExam.Name = "tpExam";
             this.tpExam.Padding = new System.Windows.Forms.Padding(3);
-            this.tpExam.Size = new System.Drawing.Size(1313, 548);
+            this.tpExam.Size = new System.Drawing.Size(1313, 544);
             this.tpExam.TabIndex = 1;
             this.tpExam.Text = "EVALUACIÓN MÉDICA";
             this.tpExam.ToolTipText = "EXAMENES";
@@ -2594,8 +2595,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer2.Panel2.Controls.Add(this.gbDiagnosticoExamen);
             this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
-            this.splitContainer2.Size = new System.Drawing.Size(1306, 536);
-            this.splitContainer2.SplitterDistance = 391;
+            this.splitContainer2.Size = new System.Drawing.Size(1306, 532);
+            this.splitContainer2.SplitterDistance = 388;
             this.splitContainer2.TabIndex = 59;
             // 
             // splitContainer1
@@ -2615,7 +2616,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(1306, 391);
+            this.splitContainer1.Size = new System.Drawing.Size(1306, 388);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 104;
             // 
@@ -2729,7 +2730,7 @@
             this.ultraGrid1.Location = new System.Drawing.Point(2, 29);
             this.ultraGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid1.Name = "ultraGrid1";
-            this.ultraGrid1.Size = new System.Drawing.Size(195, 362);
+            this.ultraGrid1.Size = new System.Drawing.Size(195, 359);
             this.ultraGrid1.TabIndex = 95;
             this.ultraGrid1.ClickCell += new Infragistics.Win.UltraWinGrid.ClickCellEventHandler(this.ultraGrid1_ClickCell);
             // 
@@ -2755,7 +2756,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.btnVerEditarAntecedentes);
             this.splitContainer3.Panel2.Controls.Add(this.label157);
             this.splitContainer3.Panel2.Controls.Add(this.ultraGrid2);
-            this.splitContainer3.Size = new System.Drawing.Size(1102, 391);
+            this.splitContainer3.Size = new System.Drawing.Size(1102, 388);
             this.splitContainer3.SplitterDistance = 903;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -2768,7 +2769,7 @@
             this.tcExamList.Location = new System.Drawing.Point(0, 0);
             this.tcExamList.Name = "tcExamList";
             this.tcExamList.SharedControlsPage = this.ultraTabSharedControlsPage1;
-            this.tcExamList.Size = new System.Drawing.Size(903, 391);
+            this.tcExamList.Size = new System.Drawing.Size(903, 388);
             this.tcExamList.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.VisualStudio;
             this.tcExamList.TabIndex = 1;
             this.tcExamList.TabOrientation = Infragistics.Win.UltraWinTabs.TabOrientation.TopLeft;
@@ -2782,7 +2783,7 @@
             this.ultraTabSharedControlsPage1.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(1, 20);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(901, 370);
+            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(901, 367);
             this.ultraTabSharedControlsPage1.MouseLeave += new System.EventHandler(this.ultraTabSharedControlsPage1_MouseLeave);
             // 
             // btnAnexoHistoriaManual
@@ -2991,12 +2992,13 @@
             this.ultraGrid2.Location = new System.Drawing.Point(6, 366);
             this.ultraGrid2.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid2.Name = "ultraGrid2";
-            this.ultraGrid2.Size = new System.Drawing.Size(186, 22);
+            this.ultraGrid2.Size = new System.Drawing.Size(186, 19);
             this.ultraGrid2.TabIndex = 96;
             this.ultraGrid2.Visible = false;
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnReportAsync);
             this.groupBox4.Controls.Add(this.rbPorAprobacion);
             this.groupBox4.Controls.Add(this.rbNoRealizado);
             this.groupBox4.Controls.Add(this.rbPorReevaluar);
@@ -3213,7 +3215,7 @@
             this.btnGuardarExamen.Location = new System.Drawing.Point(9, 59);
             this.btnGuardarExamen.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarExamen.Name = "btnGuardarExamen";
-            this.btnGuardarExamen.Size = new System.Drawing.Size(354, 41);
+            this.btnGuardarExamen.Size = new System.Drawing.Size(281, 41);
             this.btnGuardarExamen.TabIndex = 64;
             this.btnGuardarExamen.Text = "      Guardar";
             this.btnGuardarExamen.UseVisualStyleBackColor = false;
@@ -3536,7 +3538,7 @@
             this.General.Location = new System.Drawing.Point(4, 22);
             this.General.Name = "General";
             this.General.Padding = new System.Windows.Forms.Padding(3);
-            this.General.Size = new System.Drawing.Size(1313, 548);
+            this.General.Size = new System.Drawing.Size(1313, 544);
             this.General.TabIndex = 0;
             this.General.Text = "ANAMNESIS - ANTECEDENTES";
             this.General.UseVisualStyleBackColor = true;
@@ -3976,7 +3978,7 @@
             this.gbServiciosAnteriores.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbServiciosAnteriores.Location = new System.Drawing.Point(8, 257);
             this.gbServiciosAnteriores.Name = "gbServiciosAnteriores";
-            this.gbServiciosAnteriores.Size = new System.Drawing.Size(755, 259);
+            this.gbServiciosAnteriores.Size = new System.Drawing.Size(2068, 255);
             this.gbServiciosAnteriores.TabIndex = 96;
             this.gbServiciosAnteriores.TabStop = false;
             this.gbServiciosAnteriores.Text = "Servicios Anteriores";
@@ -4060,7 +4062,7 @@
             this.grdServiciosAnteriores.Location = new System.Drawing.Point(5, 19);
             this.grdServiciosAnteriores.Margin = new System.Windows.Forms.Padding(2);
             this.grdServiciosAnteriores.Name = "grdServiciosAnteriores";
-            this.grdServiciosAnteriores.Size = new System.Drawing.Size(743, 235);
+            this.grdServiciosAnteriores.Size = new System.Drawing.Size(2056, 231);
             this.grdServiciosAnteriores.TabIndex = 94;
             // 
             // gbAntecedentes
@@ -4072,7 +4074,7 @@
             this.gbAntecedentes.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbAntecedentes.Location = new System.Drawing.Point(7, 6);
             this.gbAntecedentes.Name = "gbAntecedentes";
-            this.gbAntecedentes.Size = new System.Drawing.Size(753, 229);
+            this.gbAntecedentes.Size = new System.Drawing.Size(753, 225);
             this.gbAntecedentes.TabIndex = 95;
             this.gbAntecedentes.TabStop = false;
             this.gbAntecedentes.Text = "Antecedentes";
@@ -4156,7 +4158,7 @@
             this.grdAntecedentes.Location = new System.Drawing.Point(-2, 19);
             this.grdAntecedentes.Margin = new System.Windows.Forms.Padding(2);
             this.grdAntecedentes.Name = "grdAntecedentes";
-            this.grdAntecedentes.Size = new System.Drawing.Size(743, 205);
+            this.grdAntecedentes.Size = new System.Drawing.Size(743, 201);
             this.grdAntecedentes.TabIndex = 93;
             // 
             // btnGuardarAnamnesis
@@ -4542,7 +4544,7 @@
             this.gbFuncionesBiologicas.ForeColor = System.Drawing.Color.MediumBlue;
             this.gbFuncionesBiologicas.Location = new System.Drawing.Point(13, 538);
             this.gbFuncionesBiologicas.Name = "gbFuncionesBiologicas";
-            this.gbFuncionesBiologicas.Size = new System.Drawing.Size(672, 154);
+            this.gbFuncionesBiologicas.Size = new System.Drawing.Size(1985, 154);
             this.gbFuncionesBiologicas.TabIndex = 1;
             this.gbFuncionesBiologicas.TabStop = false;
             this.gbFuncionesBiologicas.Text = "Funciones Biológicas";
@@ -4813,7 +4815,7 @@
             this.tcSubMain.Location = new System.Drawing.Point(0, 0);
             this.tcSubMain.Name = "tcSubMain";
             this.tcSubMain.SelectedIndex = 0;
-            this.tcSubMain.Size = new System.Drawing.Size(1321, 574);
+            this.tcSubMain.Size = new System.Drawing.Size(1321, 570);
             this.tcSubMain.TabIndex = 4;
             this.tcSubMain.Tag = "";
             this.tcSubMain.SelectedIndexChanged += new System.EventHandler(this.tcSubMain_SelectedIndexChanged);
@@ -5576,7 +5578,7 @@
             this.splitGeneral.Panel2.Controls.Add(this.splitAntecedentes);
             this.splitGeneral.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitGeneral_Panel2_Paint);
             this.splitGeneral.Size = new System.Drawing.Size(1304, 549);
-            this.splitGeneral.SplitterDistance = 630;
+            this.splitGeneral.SplitterDistance = 629;
             this.splitGeneral.TabIndex = 0;
             this.splitGeneral.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitGeneral_SplitterMoved);
             // 
@@ -5592,7 +5594,7 @@
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.96552F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.03448F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(630, 549);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(629, 549);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // panel20
@@ -5601,7 +5603,7 @@
             this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel20.Location = new System.Drawing.Point(3, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(624, 153);
+            this.panel20.Size = new System.Drawing.Size(623, 153);
             this.panel20.TabIndex = 0;
             // 
             // groupBox3
@@ -5642,7 +5644,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(624, 153);
+            this.groupBox3.Size = new System.Drawing.Size(623, 153);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DATOS PERSONALES";
@@ -5936,7 +5938,7 @@
             this.panel21.Controls.Add(this.tbcDatos);
             this.panel21.Location = new System.Drawing.Point(3, 162);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(624, 384);
+            this.panel21.Size = new System.Drawing.Size(623, 384);
             this.panel21.TabIndex = 1;
             // 
             // tbcDatos
@@ -5948,7 +5950,7 @@
             this.tbcDatos.Location = new System.Drawing.Point(0, 0);
             this.tbcDatos.Name = "tbcDatos";
             this.tbcDatos.SelectedIndex = 0;
-            this.tbcDatos.Size = new System.Drawing.Size(624, 384);
+            this.tbcDatos.Size = new System.Drawing.Size(623, 384);
             this.tbcDatos.TabIndex = 114;
             // 
             // tbpAdultoMayor
@@ -5976,7 +5978,7 @@
             this.tbpAdultoMayor.Location = new System.Drawing.Point(4, 22);
             this.tbpAdultoMayor.Name = "tbpAdultoMayor";
             this.tbpAdultoMayor.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpAdultoMayor.Size = new System.Drawing.Size(616, 358);
+            this.tbpAdultoMayor.Size = new System.Drawing.Size(615, 358);
             this.tbpAdultoMayor.TabIndex = 0;
             this.tbpAdultoMayor.Text = "Adulto Mayor / Adulto";
             this.tbpAdultoMayor.UseVisualStyleBackColor = true;
@@ -5999,7 +6001,7 @@
             this.pnlEmbarazo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlEmbarazo.Location = new System.Drawing.Point(3, 178);
             this.pnlEmbarazo.Name = "pnlEmbarazo";
-            this.pnlEmbarazo.Size = new System.Drawing.Size(610, 177);
+            this.pnlEmbarazo.Size = new System.Drawing.Size(609, 177);
             this.pnlEmbarazo.TabIndex = 130;
             this.pnlEmbarazo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEmbarazo_Paint);
             // 
@@ -6015,7 +6017,7 @@
             this.btnEditarEmbarazo.ForeColor = System.Drawing.Color.Black;
             this.btnEditarEmbarazo.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarEmbarazo.Image")));
             this.btnEditarEmbarazo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarEmbarazo.Location = new System.Drawing.Point(514, 63);
+            this.btnEditarEmbarazo.Location = new System.Drawing.Point(513, 63);
             this.btnEditarEmbarazo.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarEmbarazo.Name = "btnEditarEmbarazo";
             this.btnEditarEmbarazo.Size = new System.Drawing.Size(75, 24);
@@ -6120,7 +6122,7 @@
             this.grdEmbarazos.Location = new System.Drawing.Point(10, 29);
             this.grdEmbarazos.Margin = new System.Windows.Forms.Padding(2);
             this.grdEmbarazos.Name = "grdEmbarazos";
-            this.grdEmbarazos.Size = new System.Drawing.Size(500, 85);
+            this.grdEmbarazos.Size = new System.Drawing.Size(499, 85);
             this.grdEmbarazos.TabIndex = 136;
             // 
             // label105
@@ -6140,7 +6142,7 @@
             this.textObservacionesEmbarazo.Location = new System.Drawing.Point(10, 130);
             this.textObservacionesEmbarazo.Multiline = true;
             this.textObservacionesEmbarazo.Name = "textObservacionesEmbarazo";
-            this.textObservacionesEmbarazo.Size = new System.Drawing.Size(579, 32);
+            this.textObservacionesEmbarazo.Size = new System.Drawing.Size(578, 32);
             this.textObservacionesEmbarazo.TabIndex = 134;
             // 
             // btnNuevoEmbarazo
@@ -6155,7 +6157,7 @@
             this.btnNuevoEmbarazo.ForeColor = System.Drawing.Color.Black;
             this.btnNuevoEmbarazo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevoEmbarazo.Image")));
             this.btnNuevoEmbarazo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoEmbarazo.Location = new System.Drawing.Point(514, 35);
+            this.btnNuevoEmbarazo.Location = new System.Drawing.Point(513, 35);
             this.btnNuevoEmbarazo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevoEmbarazo.Name = "btnNuevoEmbarazo";
             this.btnNuevoEmbarazo.Size = new System.Drawing.Size(75, 24);
@@ -6176,7 +6178,7 @@
             this.btnEliminarEmbarazo.ForeColor = System.Drawing.Color.Black;
             this.btnEliminarEmbarazo.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarEmbarazo.Image")));
             this.btnEliminarEmbarazo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarEmbarazo.Location = new System.Drawing.Point(514, 91);
+            this.btnEliminarEmbarazo.Location = new System.Drawing.Point(513, 91);
             this.btnEliminarEmbarazo.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarEmbarazo.Name = "btnEliminarEmbarazo";
             this.btnEliminarEmbarazo.Size = new System.Drawing.Size(75, 24);
@@ -6486,7 +6488,7 @@
             this.tbpAdolescente.Location = new System.Drawing.Point(4, 22);
             this.tbpAdolescente.Name = "tbpAdolescente";
             this.tbpAdolescente.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpAdolescente.Size = new System.Drawing.Size(616, 358);
+            this.tbpAdolescente.Size = new System.Drawing.Size(615, 358);
             this.tbpAdolescente.TabIndex = 1;
             this.tbpAdolescente.Text = "Adolescente";
             // 
@@ -6793,7 +6795,7 @@
             this.tbpNinio.Controls.Add(this.ultgrboxDatosFamiliares);
             this.tbpNinio.Location = new System.Drawing.Point(4, 22);
             this.tbpNinio.Name = "tbpNinio";
-            this.tbpNinio.Size = new System.Drawing.Size(616, 358);
+            this.tbpNinio.Size = new System.Drawing.Size(615, 358);
             this.tbpNinio.TabIndex = 2;
             this.tbpNinio.Text = "Niño";
             this.tbpNinio.UseVisualStyleBackColor = true;
@@ -6804,12 +6806,12 @@
             this.ultgrboxVivienda.Controls.Add(this.ultraExpandableGroupBoxPanel5);
             this.ultgrboxVivienda.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultgrboxVivienda.Expanded = false;
-            this.ultgrboxVivienda.ExpandedSize = new System.Drawing.Size(599, 172);
+            this.ultgrboxVivienda.ExpandedSize = new System.Drawing.Size(598, 172);
             this.ultgrboxVivienda.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
             this.ultgrboxVivienda.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultgrboxVivienda.Location = new System.Drawing.Point(0, 395);
             this.ultgrboxVivienda.Name = "ultgrboxVivienda";
-            this.ultgrboxVivienda.Size = new System.Drawing.Size(599, 26);
+            this.ultgrboxVivienda.Size = new System.Drawing.Size(598, 26);
             this.ultgrboxVivienda.TabIndex = 158;
             this.ultgrboxVivienda.Text = "ANT. VIVIENDA / SANEAMIENTO BÁSICO";
             this.ultgrboxVivienda.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
@@ -6866,12 +6868,12 @@
             this.ultgrboxFamiliares.Controls.Add(this.ultraExpandableGroupBoxPanel4);
             this.ultgrboxFamiliares.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultgrboxFamiliares.Expanded = false;
-            this.ultgrboxFamiliares.ExpandedSize = new System.Drawing.Size(599, 380);
+            this.ultgrboxFamiliares.ExpandedSize = new System.Drawing.Size(598, 380);
             this.ultgrboxFamiliares.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
             this.ultgrboxFamiliares.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultgrboxFamiliares.Location = new System.Drawing.Point(0, 369);
             this.ultgrboxFamiliares.Name = "ultgrboxFamiliares";
-            this.ultgrboxFamiliares.Size = new System.Drawing.Size(599, 26);
+            this.ultgrboxFamiliares.Size = new System.Drawing.Size(598, 26);
             this.ultgrboxFamiliares.TabIndex = 157;
             this.ultgrboxFamiliares.Text = "ANT. FAMILIARES";
             this.ultgrboxFamiliares.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
@@ -7430,12 +7432,12 @@
             this.ultgrboxNacimiento.Controls.Add(this.ultraExpandableGroupBoxPanel3);
             this.ultgrboxNacimiento.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultgrboxNacimiento.Expanded = false;
-            this.ultgrboxNacimiento.ExpandedSize = new System.Drawing.Size(599, 339);
+            this.ultgrboxNacimiento.ExpandedSize = new System.Drawing.Size(598, 339);
             this.ultgrboxNacimiento.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
             this.ultgrboxNacimiento.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultgrboxNacimiento.Location = new System.Drawing.Point(0, 343);
             this.ultgrboxNacimiento.Name = "ultgrboxNacimiento";
-            this.ultgrboxNacimiento.Size = new System.Drawing.Size(599, 26);
+            this.ultgrboxNacimiento.Size = new System.Drawing.Size(598, 26);
             this.ultgrboxNacimiento.TabIndex = 156;
             this.ultgrboxNacimiento.Text = "ANT. PERSONALES - NACIMIENTO - ALIMENTACIÓN - PATOLOGÍAS ";
             this.ultgrboxNacimiento.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
@@ -7668,12 +7670,12 @@
             this.ultgrboxEmbarazo.Controls.Add(this.ultraExpandableGroupBoxPanel1);
             this.ultgrboxEmbarazo.Dock = System.Windows.Forms.DockStyle.Top;
             this.ultgrboxEmbarazo.Expanded = false;
-            this.ultgrboxEmbarazo.ExpandedSize = new System.Drawing.Size(599, 214);
+            this.ultgrboxEmbarazo.ExpandedSize = new System.Drawing.Size(598, 214);
             this.ultgrboxEmbarazo.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
             this.ultgrboxEmbarazo.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultgrboxEmbarazo.Location = new System.Drawing.Point(0, 317);
             this.ultgrboxEmbarazo.Name = "ultgrboxEmbarazo";
-            this.ultgrboxEmbarazo.Size = new System.Drawing.Size(599, 26);
+            this.ultgrboxEmbarazo.Size = new System.Drawing.Size(598, 26);
             this.ultgrboxEmbarazo.TabIndex = 155;
             this.ultgrboxEmbarazo.Text = "ANT. PERSONALES - EMBARAZO - PARTO";
             this.ultgrboxEmbarazo.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
@@ -7801,12 +7803,12 @@
             this.ultgrboxDatosFamiliares.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Near;
             this.ultgrboxDatosFamiliares.Controls.Add(this.ultraExpandableGroupBoxPanel2);
             this.ultgrboxDatosFamiliares.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ultgrboxDatosFamiliares.ExpandedSize = new System.Drawing.Size(599, 317);
+            this.ultgrboxDatosFamiliares.ExpandedSize = new System.Drawing.Size(598, 317);
             this.ultgrboxDatosFamiliares.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Far;
             this.ultgrboxDatosFamiliares.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder;
             this.ultgrboxDatosFamiliares.Location = new System.Drawing.Point(0, 0);
             this.ultgrboxDatosFamiliares.Name = "ultgrboxDatosFamiliares";
-            this.ultgrboxDatosFamiliares.Size = new System.Drawing.Size(599, 317);
+            this.ultgrboxDatosFamiliares.Size = new System.Drawing.Size(598, 317);
             this.ultgrboxDatosFamiliares.TabIndex = 154;
             this.ultgrboxDatosFamiliares.Text = "DATOS GENERALES - FAMILIARES";
             this.ultgrboxDatosFamiliares.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003;
@@ -7860,7 +7862,7 @@
             this.ultraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ultraExpandableGroupBoxPanel2.Location = new System.Drawing.Point(2, 24);
             this.ultraExpandableGroupBoxPanel2.Name = "ultraExpandableGroupBoxPanel2";
-            this.ultraExpandableGroupBoxPanel2.Size = new System.Drawing.Size(595, 291);
+            this.ultraExpandableGroupBoxPanel2.Size = new System.Drawing.Size(594, 291);
             this.ultraExpandableGroupBoxPanel2.TabIndex = 0;
             // 
             // label140
@@ -8245,7 +8247,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(595, 291);
+            this.shapeContainer1.Size = new System.Drawing.Size(594, 291);
             this.shapeContainer1.TabIndex = 193;
             this.shapeContainer1.TabStop = false;
             // 
@@ -8254,7 +8256,7 @@
             this.lineShape1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 5;
-            this.lineShape1.X2 = 567;
+            this.lineShape1.X2 = 566;
             this.lineShape1.Y1 = 219;
             this.lineShape1.Y2 = 219;
             // 
@@ -8268,7 +8270,7 @@
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(670, 93);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(671, 93);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
             // panel19
@@ -8281,7 +8283,7 @@
             this.panel19.Controls.Add(this.txtDescripcionAntecedentes);
             this.panel19.Location = new System.Drawing.Point(3, 3);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(664, 87);
+            this.panel19.Size = new System.Drawing.Size(665, 87);
             this.panel19.TabIndex = 0;
             // 
             // btnGuardarAntecedentes
@@ -8290,7 +8292,7 @@
             this.btnGuardarAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarAntecedentes.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarAntecedentes.Image")));
             this.btnGuardarAntecedentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarAntecedentes.Location = new System.Drawing.Point(555, 25);
+            this.btnGuardarAntecedentes.Location = new System.Drawing.Point(556, 25);
             this.btnGuardarAntecedentes.Name = "btnGuardarAntecedentes";
             this.btnGuardarAntecedentes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnGuardarAntecedentes.Size = new System.Drawing.Size(92, 38);
@@ -8332,7 +8334,7 @@
             // splitAntecedentes.Panel2
             // 
             this.splitAntecedentes.Panel2.Controls.Add(this.tableLayoutPanel10);
-            this.splitAntecedentes.Size = new System.Drawing.Size(664, 431);
+            this.splitAntecedentes.Size = new System.Drawing.Size(665, 431);
             this.splitAntecedentes.SplitterDistance = 334;
             this.splitAntecedentes.TabIndex = 0;
             // 
@@ -8434,7 +8436,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.583774F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.41623F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(326, 431);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(327, 431);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // panel16
@@ -8443,7 +8445,7 @@
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel16.Location = new System.Drawing.Point(3, 3);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(320, 26);
+            this.panel16.Size = new System.Drawing.Size(321, 26);
             this.panel16.TabIndex = 0;
             // 
             // label39
@@ -8464,7 +8466,7 @@
             this.panel18.Controls.Add(this.ultraAntAnteriores);
             this.panel18.Location = new System.Drawing.Point(3, 35);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(320, 393);
+            this.panel18.Size = new System.Drawing.Size(321, 393);
             this.panel18.TabIndex = 1;
             // 
             // ultraAntAnteriores
@@ -8506,7 +8508,7 @@
             this.ultraAntAnteriores.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ultraAntAnteriores.Location = new System.Drawing.Point(0, 0);
             this.ultraAntAnteriores.Name = "ultraAntAnteriores";
-            this.ultraAntAnteriores.Size = new System.Drawing.Size(320, 393);
+            this.ultraAntAnteriores.Size = new System.Drawing.Size(321, 393);
             this.ultraAntAnteriores.TabIndex = 111;
             // 
             // tpCuidadosPreventivos
@@ -8765,7 +8767,7 @@
             this.btnPerson.BackColor = System.Drawing.SystemColors.Control;
             this.btnPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPerson.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPerson.Location = new System.Drawing.Point(1194, 5);
+            this.btnPerson.Location = new System.Drawing.Point(1170, 4);
             this.btnPerson.Name = "btnPerson";
             this.btnPerson.Size = new System.Drawing.Size(123, 26);
             this.btnPerson.TabIndex = 100;
@@ -8817,7 +8819,7 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.splitContainer5);
             this.splitContainer4.Size = new System.Drawing.Size(1321, 650);
-            this.splitContainer4.SplitterDistance = 42;
+            this.splitContainer4.SplitterDistance = 46;
             this.splitContainer4.TabIndex = 101;
             // 
             // lblPersonId
@@ -8837,7 +8839,7 @@
             this.btnActualizarSignosVitales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarSignosVitales.Font = new System.Drawing.Font("Calibri", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizarSignosVitales.Image = global::Sigesoft.Node.WinClient.UI.Resources.arrow_refresh;
-            this.btnActualizarSignosVitales.Location = new System.Drawing.Point(897, 20);
+            this.btnActualizarSignosVitales.Location = new System.Drawing.Point(897, 25);
             this.btnActualizarSignosVitales.Name = "btnActualizarSignosVitales";
             this.btnActualizarSignosVitales.Size = new System.Drawing.Size(53, 18);
             this.btnActualizarSignosVitales.TabIndex = 205;
@@ -9127,8 +9129,8 @@
             this.splitContainer5.Panel2.Controls.Add(this.label21);
             this.splitContainer5.Panel2.Controls.Add(this.label17);
             this.splitContainer5.Panel2.Controls.Add(this.lblFechaGraba);
-            this.splitContainer5.Size = new System.Drawing.Size(1321, 604);
-            this.splitContainer5.SplitterDistance = 574;
+            this.splitContainer5.Size = new System.Drawing.Size(1321, 600);
+            this.splitContainer5.SplitterDistance = 570;
             this.splitContainer5.TabIndex = 0;
             // 
             // btnMostrarOcultar
@@ -9149,6 +9151,28 @@
             this.btnMostrarOcultar.Text = "Ver menos";
             this.btnMostrarOcultar.UseVisualStyleBackColor = false;
             this.btnMostrarOcultar.Click += new System.EventHandler(this.btnMostrarOcultar_Click);
+            // 
+            // btnReportAsync
+            // 
+            this.btnReportAsync.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReportAsync.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReportAsync.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnReportAsync.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnReportAsync.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnReportAsync.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReportAsync.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportAsync.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnReportAsync.Image = global::Sigesoft.Node.WinClient.UI.Resources.color_swatch;
+            this.btnReportAsync.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportAsync.Location = new System.Drawing.Point(294, 60);
+            this.btnReportAsync.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportAsync.Name = "btnReportAsync";
+            this.btnReportAsync.Size = new System.Drawing.Size(92, 41);
+            this.btnReportAsync.TabIndex = 156;
+            this.btnReportAsync.Text = "GENERAR REPORTES";
+            this.btnReportAsync.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReportAsync.UseVisualStyleBackColor = false;
+            this.btnReportAsync.Click += new System.EventHandler(this.btnReportAsync_Click);
             // 
             // FrmEsoV2
             // 
@@ -9954,5 +9978,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnAnexoHistoriaManual;
         private System.Windows.Forms.Label lblPersonId;
+        private System.Windows.Forms.Button btnReportAsync;
     }
 }

@@ -40,28 +40,6 @@
             Infragistics.Win.Appearance appearance5 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance6 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance7 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand4 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Examen");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn32 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Categoria");
-            Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistorialAtenciones));
-            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand3 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn36 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Diagnostico");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn34 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Recomendaciones");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn35 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Restricciones");
-            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
-            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn37 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Medicamento", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false);
@@ -74,11 +52,35 @@
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance15 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand3 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn36 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Diagnostico");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn34 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Recomendaciones");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn35 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Restricciones");
+            Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance19 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance20 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance21 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance22 = new Infragistics.Win.Appearance();
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand4 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Examen");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn32 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Categoria");
+            Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance26 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance27 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance28 = new Infragistics.Win.Appearance();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistorialAtenciones));
             this.btnVerServicioAnterior = new System.Windows.Forms.Button();
             this.label158 = new System.Windows.Forms.Label();
             this.ultraGrid1 = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAtencionMedica = new System.Windows.Forms.TabPage();
+            this.grdPlanTerapeutico = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.grdDiagnosticos = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.button1 = new System.Windows.Forms.Button();
             this.label156 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
@@ -182,17 +184,15 @@
             this.btnBrowser = new System.Windows.Forms.Button();
             this.pdfAnexoAdjunto = new AxAcroPDFLib.AxAcroPDF();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.grdDiagnosticos = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.grdPlanTerapeutico = new Infragistics.Win.UltraWinGrid.UltraGrid();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabAtencionMedica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPlanTerapeutico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDiagnosticos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdExamenesAuxiliares)).BeginInit();
             this.tabAnexo.SuspendLayout();
             this.panelMensaje.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdfAnexoAdjunto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDiagnosticos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPlanTerapeutico)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVerServicioAnterior
@@ -411,6 +411,159 @@
             this.tabAtencionMedica.Text = "ATENCION MEDICA";
             this.tabAtencionMedica.UseVisualStyleBackColor = true;
             // 
+            // grdPlanTerapeutico
+            // 
+            this.grdPlanTerapeutico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdPlanTerapeutico.CausesValidation = false;
+            appearance8.BackColor = System.Drawing.Color.White;
+            appearance8.BackColor2 = System.Drawing.Color.Silver;
+            appearance8.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            this.grdPlanTerapeutico.DisplayLayout.Appearance = appearance8;
+            ultraGridColumn37.Header.VisiblePosition = 0;
+            ultraGridColumn37.Width = 265;
+            ultraGridColumn1.Header.VisiblePosition = 1;
+            ultraGridColumn39.Header.VisiblePosition = 2;
+            ultraGridColumn39.Width = 255;
+            ultraGridColumn40.Header.VisiblePosition = 3;
+            ultraGridColumn40.Width = 250;
+            ultraGridBand2.Columns.AddRange(new object[] {
+            ultraGridColumn37,
+            ultraGridColumn1,
+            ultraGridColumn39,
+            ultraGridColumn40});
+            this.grdPlanTerapeutico.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
+            this.grdPlanTerapeutico.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            this.grdPlanTerapeutico.DisplayLayout.InterBandSpacing = 10;
+            this.grdPlanTerapeutico.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdPlanTerapeutico.DisplayLayout.MaxRowScrollRegions = 1;
+            this.grdPlanTerapeutico.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.grdPlanTerapeutico.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.grdPlanTerapeutico.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.grdPlanTerapeutico.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            this.grdPlanTerapeutico.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
+            this.grdPlanTerapeutico.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.grdPlanTerapeutico.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance9.BackColor = System.Drawing.Color.Transparent;
+            this.grdPlanTerapeutico.DisplayLayout.Override.CardAreaAppearance = appearance9;
+            appearance10.BackColor = System.Drawing.Color.White;
+            appearance10.BackColor2 = System.Drawing.Color.White;
+            appearance10.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            this.grdPlanTerapeutico.DisplayLayout.Override.CellAppearance = appearance10;
+            this.grdPlanTerapeutico.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            appearance11.BackColor = System.Drawing.Color.White;
+            appearance11.BackColor2 = System.Drawing.Color.LightGray;
+            appearance11.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance11.BorderColor = System.Drawing.Color.DarkGray;
+            appearance11.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdPlanTerapeutico.DisplayLayout.Override.HeaderAppearance = appearance11;
+            this.grdPlanTerapeutico.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            appearance12.AlphaLevel = ((short)(187));
+            appearance12.BackColor = System.Drawing.Color.Gainsboro;
+            appearance12.BackColor2 = System.Drawing.Color.Gainsboro;
+            appearance12.ForeColor = System.Drawing.Color.Black;
+            appearance12.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdPlanTerapeutico.DisplayLayout.Override.RowAlternateAppearance = appearance12;
+            appearance13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grdPlanTerapeutico.DisplayLayout.Override.RowSelectorAppearance = appearance13;
+            this.grdPlanTerapeutico.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            appearance14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance14.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            appearance14.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance14.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance14.FontData.BoldAsString = "False";
+            appearance14.ForeColor = System.Drawing.Color.Black;
+            this.grdPlanTerapeutico.DisplayLayout.Override.SelectedRowAppearance = appearance14;
+            this.grdPlanTerapeutico.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.grdPlanTerapeutico.DisplayLayout.RowConnectorColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grdPlanTerapeutico.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.grdPlanTerapeutico.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdPlanTerapeutico.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdPlanTerapeutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdPlanTerapeutico.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.grdPlanTerapeutico.Location = new System.Drawing.Point(18, 1427);
+            this.grdPlanTerapeutico.Margin = new System.Windows.Forms.Padding(2);
+            this.grdPlanTerapeutico.Name = "grdPlanTerapeutico";
+            this.grdPlanTerapeutico.Size = new System.Drawing.Size(863, 171);
+            this.grdPlanTerapeutico.TabIndex = 267;
+            // 
+            // grdDiagnosticos
+            // 
+            this.grdDiagnosticos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdDiagnosticos.CausesValidation = false;
+            appearance15.BackColor = System.Drawing.Color.White;
+            appearance15.BackColor2 = System.Drawing.Color.Silver;
+            appearance15.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            this.grdDiagnosticos.DisplayLayout.Appearance = appearance15;
+            ultraGridColumn36.Header.VisiblePosition = 0;
+            ultraGridColumn36.Width = 553;
+            ultraGridColumn34.Header.VisiblePosition = 1;
+            ultraGridColumn34.Width = 341;
+            ultraGridColumn35.Header.VisiblePosition = 2;
+            ultraGridColumn35.Hidden = true;
+            ultraGridColumn35.Width = 293;
+            ultraGridBand3.Columns.AddRange(new object[] {
+            ultraGridColumn36,
+            ultraGridColumn34,
+            ultraGridColumn35});
+            this.grdDiagnosticos.DisplayLayout.BandsSerializer.Add(ultraGridBand3);
+            this.grdDiagnosticos.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
+            this.grdDiagnosticos.DisplayLayout.InterBandSpacing = 10;
+            this.grdDiagnosticos.DisplayLayout.MaxColScrollRegions = 1;
+            this.grdDiagnosticos.DisplayLayout.MaxRowScrollRegions = 1;
+            this.grdDiagnosticos.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
+            this.grdDiagnosticos.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
+            this.grdDiagnosticos.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
+            this.grdDiagnosticos.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
+            this.grdDiagnosticos.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
+            this.grdDiagnosticos.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
+            this.grdDiagnosticos.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
+            appearance16.BackColor = System.Drawing.Color.Transparent;
+            this.grdDiagnosticos.DisplayLayout.Override.CardAreaAppearance = appearance16;
+            appearance17.BackColor = System.Drawing.Color.White;
+            appearance17.BackColor2 = System.Drawing.Color.White;
+            appearance17.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            this.grdDiagnosticos.DisplayLayout.Override.CellAppearance = appearance17;
+            this.grdDiagnosticos.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
+            appearance18.BackColor = System.Drawing.Color.White;
+            appearance18.BackColor2 = System.Drawing.Color.LightGray;
+            appearance18.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance18.BorderColor = System.Drawing.Color.DarkGray;
+            appearance18.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
+            this.grdDiagnosticos.DisplayLayout.Override.HeaderAppearance = appearance18;
+            this.grdDiagnosticos.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
+            appearance19.AlphaLevel = ((short)(187));
+            appearance19.BackColor = System.Drawing.Color.Gainsboro;
+            appearance19.BackColor2 = System.Drawing.Color.Gainsboro;
+            appearance19.ForeColor = System.Drawing.Color.Black;
+            appearance19.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
+            this.grdDiagnosticos.DisplayLayout.Override.RowAlternateAppearance = appearance19;
+            appearance20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.grdDiagnosticos.DisplayLayout.Override.RowSelectorAppearance = appearance20;
+            this.grdDiagnosticos.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
+            appearance21.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance21.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
+            appearance21.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+            appearance21.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance21.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
+            appearance21.FontData.BoldAsString = "False";
+            appearance21.ForeColor = System.Drawing.Color.Black;
+            this.grdDiagnosticos.DisplayLayout.Override.SelectedRowAppearance = appearance21;
+            this.grdDiagnosticos.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
+            this.grdDiagnosticos.DisplayLayout.RowConnectorColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.grdDiagnosticos.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
+            this.grdDiagnosticos.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
+            this.grdDiagnosticos.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdDiagnosticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdDiagnosticos.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.grdDiagnosticos.Location = new System.Drawing.Point(18, 1065);
+            this.grdDiagnosticos.Margin = new System.Windows.Forms.Padding(2);
+            this.grdDiagnosticos.Name = "grdDiagnosticos";
+            this.grdDiagnosticos.Size = new System.Drawing.Size(860, 121);
+            this.grdDiagnosticos.TabIndex = 266;
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -423,7 +576,7 @@
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Sigesoft.Node.WinClient.UI.Resources.printer_color;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(786, 4);
+            this.button1.Location = new System.Drawing.Point(769, 4);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 28);
@@ -610,7 +763,7 @@
             this.grdExamenesAuxiliares.Location = new System.Drawing.Point(18, 1238);
             this.grdExamenesAuxiliares.Margin = new System.Windows.Forms.Padding(2);
             this.grdExamenesAuxiliares.Name = "grdExamenesAuxiliares";
-            this.grdExamenesAuxiliares.Size = new System.Drawing.Size(877, 142);
+            this.grdExamenesAuxiliares.Size = new System.Drawing.Size(860, 142);
             this.grdExamenesAuxiliares.TabIndex = 255;
             // 
             // label47
@@ -1303,7 +1456,7 @@
             this.lblMedicoTratante.AutoSize = true;
             this.lblMedicoTratante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedicoTratante.ForeColor = System.Drawing.Color.Black;
-            this.lblMedicoTratante.Location = new System.Drawing.Point(556, 40);
+            this.lblMedicoTratante.Location = new System.Drawing.Point(535, 40);
             this.lblMedicoTratante.Name = "lblMedicoTratante";
             this.lblMedicoTratante.Size = new System.Drawing.Size(58, 15);
             this.lblMedicoTratante.TabIndex = 217;
@@ -1325,7 +1478,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.Red;
-            this.lblFecha.Location = new System.Drawing.Point(722, 40);
+            this.lblFecha.Location = new System.Drawing.Point(763, 40);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(51, 15);
             this.lblFecha.TabIndex = 139;
@@ -1349,9 +1502,9 @@
             this.label34.ForeColor = System.Drawing.Color.Black;
             this.label34.Location = new System.Drawing.Point(387, 40);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(163, 15);
+            this.label34.Size = new System.Drawing.Size(138, 15);
             this.label34.TabIndex = 216;
-            this.label34.Text = "CODIGO DE ATENCION: ";
+            this.label34.Text = "MEDICO TRATANTE:";
             // 
             // shapeContainer2
             // 
@@ -1573,159 +1726,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // grdDiagnosticos
-            // 
-            this.grdDiagnosticos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdDiagnosticos.CausesValidation = false;
-            appearance15.BackColor = System.Drawing.Color.White;
-            appearance15.BackColor2 = System.Drawing.Color.Silver;
-            appearance15.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            this.grdDiagnosticos.DisplayLayout.Appearance = appearance15;
-            ultraGridColumn36.Header.VisiblePosition = 0;
-            ultraGridColumn36.Width = 553;
-            ultraGridColumn34.Header.VisiblePosition = 1;
-            ultraGridColumn34.Width = 341;
-            ultraGridColumn35.Header.VisiblePosition = 2;
-            ultraGridColumn35.Hidden = true;
-            ultraGridColumn35.Width = 293;
-            ultraGridBand3.Columns.AddRange(new object[] {
-            ultraGridColumn36,
-            ultraGridColumn34,
-            ultraGridColumn35});
-            this.grdDiagnosticos.DisplayLayout.BandsSerializer.Add(ultraGridBand3);
-            this.grdDiagnosticos.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            this.grdDiagnosticos.DisplayLayout.InterBandSpacing = 10;
-            this.grdDiagnosticos.DisplayLayout.MaxColScrollRegions = 1;
-            this.grdDiagnosticos.DisplayLayout.MaxRowScrollRegions = 1;
-            this.grdDiagnosticos.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
-            this.grdDiagnosticos.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
-            this.grdDiagnosticos.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
-            this.grdDiagnosticos.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
-            this.grdDiagnosticos.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
-            this.grdDiagnosticos.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
-            this.grdDiagnosticos.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance16.BackColor = System.Drawing.Color.Transparent;
-            this.grdDiagnosticos.DisplayLayout.Override.CardAreaAppearance = appearance16;
-            appearance17.BackColor = System.Drawing.Color.White;
-            appearance17.BackColor2 = System.Drawing.Color.White;
-            appearance17.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
-            this.grdDiagnosticos.DisplayLayout.Override.CellAppearance = appearance17;
-            this.grdDiagnosticos.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
-            appearance18.BackColor = System.Drawing.Color.White;
-            appearance18.BackColor2 = System.Drawing.Color.LightGray;
-            appearance18.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance18.BorderColor = System.Drawing.Color.DarkGray;
-            appearance18.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
-            this.grdDiagnosticos.DisplayLayout.Override.HeaderAppearance = appearance18;
-            this.grdDiagnosticos.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            appearance19.AlphaLevel = ((short)(187));
-            appearance19.BackColor = System.Drawing.Color.Gainsboro;
-            appearance19.BackColor2 = System.Drawing.Color.Gainsboro;
-            appearance19.ForeColor = System.Drawing.Color.Black;
-            appearance19.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
-            this.grdDiagnosticos.DisplayLayout.Override.RowAlternateAppearance = appearance19;
-            appearance20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grdDiagnosticos.DisplayLayout.Override.RowSelectorAppearance = appearance20;
-            this.grdDiagnosticos.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
-            appearance21.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            appearance21.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
-            appearance21.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
-            appearance21.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            appearance21.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
-            appearance21.FontData.BoldAsString = "False";
-            appearance21.ForeColor = System.Drawing.Color.Black;
-            this.grdDiagnosticos.DisplayLayout.Override.SelectedRowAppearance = appearance21;
-            this.grdDiagnosticos.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
-            this.grdDiagnosticos.DisplayLayout.RowConnectorColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grdDiagnosticos.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
-            this.grdDiagnosticos.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.grdDiagnosticos.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.grdDiagnosticos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdDiagnosticos.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.grdDiagnosticos.Location = new System.Drawing.Point(18, 1065);
-            this.grdDiagnosticos.Margin = new System.Windows.Forms.Padding(2);
-            this.grdDiagnosticos.Name = "grdDiagnosticos";
-            this.grdDiagnosticos.Size = new System.Drawing.Size(877, 121);
-            this.grdDiagnosticos.TabIndex = 266;
-            // 
-            // grdPlanTerapeutico
-            // 
-            this.grdPlanTerapeutico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdPlanTerapeutico.CausesValidation = false;
-            appearance8.BackColor = System.Drawing.Color.White;
-            appearance8.BackColor2 = System.Drawing.Color.Silver;
-            appearance8.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            this.grdPlanTerapeutico.DisplayLayout.Appearance = appearance8;
-            ultraGridColumn37.Header.VisiblePosition = 0;
-            ultraGridColumn37.Width = 265;
-            ultraGridColumn1.Header.VisiblePosition = 1;
-            ultraGridColumn39.Header.VisiblePosition = 2;
-            ultraGridColumn39.Width = 255;
-            ultraGridColumn40.Header.VisiblePosition = 3;
-            ultraGridColumn40.Width = 250;
-            ultraGridBand2.Columns.AddRange(new object[] {
-            ultraGridColumn37,
-            ultraGridColumn1,
-            ultraGridColumn39,
-            ultraGridColumn40});
-            this.grdPlanTerapeutico.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
-            this.grdPlanTerapeutico.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
-            this.grdPlanTerapeutico.DisplayLayout.InterBandSpacing = 10;
-            this.grdPlanTerapeutico.DisplayLayout.MaxColScrollRegions = 1;
-            this.grdPlanTerapeutico.DisplayLayout.MaxRowScrollRegions = 1;
-            this.grdPlanTerapeutico.DisplayLayout.NewColumnLoadStyle = Infragistics.Win.UltraWinGrid.NewColumnLoadStyle.Hide;
-            this.grdPlanTerapeutico.DisplayLayout.Override.AllowAddNew = Infragistics.Win.UltraWinGrid.AllowAddNew.No;
-            this.grdPlanTerapeutico.DisplayLayout.Override.AllowDelete = Infragistics.Win.DefaultableBoolean.False;
-            this.grdPlanTerapeutico.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.True;
-            this.grdPlanTerapeutico.DisplayLayout.Override.AllowRowSummaries = Infragistics.Win.UltraWinGrid.AllowRowSummaries.False;
-            this.grdPlanTerapeutico.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False;
-            this.grdPlanTerapeutico.DisplayLayout.Override.BorderStyleHeader = Infragistics.Win.UIElementBorderStyle.Solid;
-            appearance9.BackColor = System.Drawing.Color.Transparent;
-            this.grdPlanTerapeutico.DisplayLayout.Override.CardAreaAppearance = appearance9;
-            appearance10.BackColor = System.Drawing.Color.White;
-            appearance10.BackColor2 = System.Drawing.Color.White;
-            appearance10.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
-            this.grdPlanTerapeutico.DisplayLayout.Override.CellAppearance = appearance10;
-            this.grdPlanTerapeutico.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect;
-            appearance11.BackColor = System.Drawing.Color.White;
-            appearance11.BackColor2 = System.Drawing.Color.LightGray;
-            appearance11.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance11.BorderColor = System.Drawing.Color.DarkGray;
-            appearance11.ThemedElementAlpha = Infragistics.Win.Alpha.Transparent;
-            this.grdPlanTerapeutico.DisplayLayout.Override.HeaderAppearance = appearance11;
-            this.grdPlanTerapeutico.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti;
-            appearance12.AlphaLevel = ((short)(187));
-            appearance12.BackColor = System.Drawing.Color.Gainsboro;
-            appearance12.BackColor2 = System.Drawing.Color.Gainsboro;
-            appearance12.ForeColor = System.Drawing.Color.Black;
-            appearance12.ForegroundAlpha = Infragistics.Win.Alpha.Opaque;
-            this.grdPlanTerapeutico.DisplayLayout.Override.RowAlternateAppearance = appearance12;
-            appearance13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.grdPlanTerapeutico.DisplayLayout.Override.RowSelectorAppearance = appearance13;
-            this.grdPlanTerapeutico.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True;
-            appearance14.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            appearance14.BackColor2 = System.Drawing.SystemColors.GradientInactiveCaption;
-            appearance14.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
-            appearance14.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            appearance14.BorderColor2 = System.Drawing.SystemColors.GradientActiveCaption;
-            appearance14.FontData.BoldAsString = "False";
-            appearance14.ForeColor = System.Drawing.Color.Black;
-            this.grdPlanTerapeutico.DisplayLayout.Override.SelectedRowAppearance = appearance14;
-            this.grdPlanTerapeutico.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Single;
-            this.grdPlanTerapeutico.DisplayLayout.RowConnectorColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.grdPlanTerapeutico.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
-            this.grdPlanTerapeutico.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
-            this.grdPlanTerapeutico.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
-            this.grdPlanTerapeutico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdPlanTerapeutico.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.grdPlanTerapeutico.Location = new System.Drawing.Point(18, 1427);
-            this.grdPlanTerapeutico.Margin = new System.Windows.Forms.Padding(2);
-            this.grdPlanTerapeutico.Name = "grdPlanTerapeutico";
-            this.grdPlanTerapeutico.Size = new System.Drawing.Size(880, 171);
-            this.grdPlanTerapeutico.TabIndex = 267;
-            // 
             // frmHistorialAtenciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1742,14 +1742,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tabAtencionMedica.ResumeLayout(false);
             this.tabAtencionMedica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPlanTerapeutico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDiagnosticos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdExamenesAuxiliares)).EndInit();
             this.tabAnexo.ResumeLayout(false);
             this.tabAnexo.PerformLayout();
             this.panelMensaje.ResumeLayout(false);
             this.panelMensaje.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pdfAnexoAdjunto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDiagnosticos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPlanTerapeutico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

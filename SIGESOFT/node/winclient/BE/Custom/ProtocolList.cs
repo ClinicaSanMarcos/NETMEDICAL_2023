@@ -58,5 +58,7 @@ namespace Sigesoft.Node.WinClient.BE
         public int i_RecordStatus  { get; set; }
 
         public string v_Consultorio { get; set; }
+
+        public float Total { get; set; }
     }
 }

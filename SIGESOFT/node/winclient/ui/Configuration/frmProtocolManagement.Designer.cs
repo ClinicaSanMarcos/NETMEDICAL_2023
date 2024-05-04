@@ -45,6 +45,7 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn24 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_UpdateUser");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn25 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_UpdateDate");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Consultorio");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Total");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -114,6 +115,7 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.ultraGridExcelExporter1 = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
             this.cmProtocol.SuspendLayout();
             this.gbProtocolComponents.SuspendLayout();
@@ -146,41 +148,47 @@
             this.grd.DisplayLayout.Appearance = appearance1;
             ultraGridColumn7.Header.Caption = "ProtocolId";
             ultraGridColumn7.Header.VisiblePosition = 0;
-            ultraGridColumn7.Width = 108;
+            ultraGridColumn7.Width = 102;
             ultraGridColumn20.Header.Caption = "Protocolo";
             ultraGridColumn20.Header.VisiblePosition = 1;
-            ultraGridColumn20.Width = 304;
+            ultraGridColumn20.Width = 325;
             ultraGridColumn21.Header.Caption = "Emp. Empleadora (Contratista)";
-            ultraGridColumn21.Header.VisiblePosition = 7;
+            ultraGridColumn21.Header.VisiblePosition = 8;
             ultraGridColumn21.Width = 240;
             ultraGridColumn26.Header.Caption = "GESO";
-            ultraGridColumn26.Header.VisiblePosition = 3;
+            ultraGridColumn26.Header.VisiblePosition = 6;
+            ultraGridColumn26.Hidden = true;
             ultraGridColumn27.Header.Caption = "Servicio";
-            ultraGridColumn27.Header.VisiblePosition = 4;
+            ultraGridColumn27.Header.VisiblePosition = 2;
             ultraGridColumn13.Header.Caption = "Tipo Eso";
-            ultraGridColumn13.Header.VisiblePosition = 5;
+            ultraGridColumn13.Header.VisiblePosition = 9;
             ultraGridColumn14.Header.Caption = "Emp. de Trabajo / Sede";
-            ultraGridColumn14.Header.VisiblePosition = 6;
+            ultraGridColumn14.Header.VisiblePosition = 7;
             ultraGridColumn14.Width = 222;
             ultraGridColumn28.Header.Caption = "Emp. Cliente / Sede";
-            ultraGridColumn28.Header.VisiblePosition = 2;
+            ultraGridColumn28.Header.VisiblePosition = 5;
             ultraGridColumn28.Width = 255;
             ultraGridColumn29.Header.Caption = "Cent. Costos";
-            ultraGridColumn29.Header.VisiblePosition = 8;
+            ultraGridColumn29.Header.VisiblePosition = 10;
+            ultraGridColumn29.Hidden = true;
             ultraGridColumn22.Header.Caption = "Usuario Crea.";
-            ultraGridColumn22.Header.VisiblePosition = 9;
+            ultraGridColumn22.Header.VisiblePosition = 11;
             ultraGridColumn22.Width = 125;
             ultraGridColumn23.Format = "dd/MM/yyyy hh:mm tt";
             ultraGridColumn23.Header.Caption = "Fecha Crea.";
-            ultraGridColumn23.Header.VisiblePosition = 10;
+            ultraGridColumn23.Header.VisiblePosition = 12;
             ultraGridColumn23.Width = 150;
             ultraGridColumn24.Header.Caption = "Usuario Act.";
-            ultraGridColumn24.Header.VisiblePosition = 11;
+            ultraGridColumn24.Header.VisiblePosition = 13;
             ultraGridColumn24.Width = 125;
             ultraGridColumn25.Header.Caption = "Fecha Act.";
-            ultraGridColumn25.Header.VisiblePosition = 12;
+            ultraGridColumn25.Header.VisiblePosition = 14;
             ultraGridColumn25.Width = 150;
-            ultraGridColumn6.Header.VisiblePosition = 13;
+            ultraGridColumn6.Header.VisiblePosition = 3;
+            ultraGridColumn6.Width = 110;
+            ultraGridColumn15.Header.Caption = "Total S/.";
+            ultraGridColumn15.Header.VisiblePosition = 4;
+            ultraGridColumn15.Width = 68;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn7,
             ultraGridColumn20,
@@ -195,7 +203,8 @@
             ultraGridColumn23,
             ultraGridColumn24,
             ultraGridColumn25,
-            ultraGridColumn6});
+            ultraGridColumn6,
+            ultraGridColumn15});
             appearance2.FontData.SizeInPoints = 8F;
             ultraGridBand1.Header.Appearance = appearance2;
             this.grd.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
@@ -714,12 +723,12 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(795, 579);
+            this.label9.Location = new System.Drawing.Point(930, 585);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(196, 23);
+            this.label9.Size = new System.Drawing.Size(61, 23);
             this.label9.TabIndex = 38;
-            this.label9.Text = "Costo Total del Protocolo";
+            this.label9.Text = " Total del Protocolo";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCostoTotal
@@ -728,7 +737,7 @@
             this.lblCostoTotal.BackColor = System.Drawing.SystemColors.Info;
             this.lblCostoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCostoTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblCostoTotal.Location = new System.Drawing.Point(995, 579);
+            this.lblCostoTotal.Location = new System.Drawing.Point(995, 585);
             this.lblCostoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCostoTotal.Name = "lblCostoTotal";
             this.lblCostoTotal.Size = new System.Drawing.Size(88, 23);
@@ -866,7 +875,7 @@
             this.btnExport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExport.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_excel;
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.Location = new System.Drawing.Point(593, 579);
+            this.btnExport.Location = new System.Drawing.Point(15, 582);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(136, 30);
             this.btnExport.TabIndex = 147;
@@ -875,13 +884,32 @@
             this.btnExport.UseVisualStyleBackColor = false;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_excel;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(743, 582);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 30);
+            this.button1.TabIndex = 148;
+            this.button1.Text = "Exportar a Excel";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmProtocolManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1184, 621);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnPlanes);
             this.Controls.Add(this.btnUsuariosExternos);
@@ -956,5 +984,6 @@
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter ultraGridExcelExporter1;
+        private System.Windows.Forms.Button button1;
     }
 }

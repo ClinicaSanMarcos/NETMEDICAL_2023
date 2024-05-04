@@ -1,4 +1,5 @@
 ﻿using Sigesoft.Node.WinClient.BLL;
+using Sigesoft.Node.WinClient.UI.Operations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,81 @@ namespace Sigesoft.Node.WinClient.UI
             txtNacionalidad.Text = data.Nacionalidad;
             txtContactoEm.Text = data.ContactoEm;
             txtTelefonoEm.Text = data.TelefonoEm;
+
+            lblPersonId.Text = data.IdPersona;
+        }
+
+        private void btnAnexoHistoriaManual_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string pacientId = lblPersonId.Text;
+
+                string Person = txtPaciente.Text;
+
+
+                frmAnexoHistoriaManual frm = new frmAnexoHistoriaManual(Person, pacientId);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string pacientId = lblPersonId.Text;
+
+                frmHistorialAtenciones frm = new frmHistorialAtenciones(pacientId);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void btnAntecedentes_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string pstrPacientId = lblPersonId.Text;
+
+                frmHistory frm = new frmHistory(pstrPacientId);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string pstrPacientId = lblPersonId.Text;
+
+                frmPacient frm = new frmPacient(pstrPacientId);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
     }
