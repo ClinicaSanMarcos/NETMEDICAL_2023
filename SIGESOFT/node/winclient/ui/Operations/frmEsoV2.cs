@@ -7212,7 +7212,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         private void btnReceta_Click(object sender, EventArgs e)
         {
             //grdTotalDiagnosticos.DataSource = _tmpTotalDiagnosticByServiceIdList;
-            frmRecetaMedica frm = new frmRecetaMedica(_tmpTotalDiagnosticByServiceIdList, _serviceId, _ProtocolId);
+            frmRecetaMedica frm = new frmRecetaMedica(_tmpTotalDiagnosticByServiceIdList.FindAll(p => p.v_FinalQualificationName != "DESCARTADO"), _serviceId, _ProtocolId);
             frm.ShowDialog();
         }
 
@@ -9543,9 +9543,18 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             //    var frm = new Operations.FrmEsoV2(_serviceIdByWiewServiceHistory, null, "View", Globals.ClientSession.i_RoleId.Value, Globals.ClientSession.i_CurrentExecutionNodeId, Globals.ClientSession.i_SystemUserId, (int)MasterService.Eso);
             //    frm.ShowDialog();
             //}
-            var ServiceDate = ultraGrid1.Selected.Rows[0].Cells["v_ServiceId"].Value.ToString();
-            var frm = new Operations.frmHistoriaClinica(ServiceDate);
-            frm.ShowDialog();
+            try
+            {
+                var ServiceDate = ultraGrid1.Selected.Rows[0].Cells["v_ServiceId"].Value.ToString();
+                var frm = new Operations.frmHistoriaClinica(ServiceDate);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+                
+                //throw;
+            }
+            
         }
 
         private void ultraGrid1_ClickCell(object sender, ClickCellEventArgs e)

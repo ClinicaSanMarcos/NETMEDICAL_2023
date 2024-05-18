@@ -88,7 +88,7 @@ namespace NetPdf
             if (infoEmpresaPropietaria.b_Image != null)
             {
                 iTextSharp.text.Image imagenEmpresa = iTextSharp.text.Image.GetInstance(HandlingItextSharp.GetImage(infoEmpresaPropietaria.b_Image));
-                imagenEmpresa.ScalePercent(4);
+                imagenEmpresa.ScalePercent(50);
                 imagenEmpresa.SetAbsolutePosition(50, 775);
                 document.Add(imagenEmpresa);
             }

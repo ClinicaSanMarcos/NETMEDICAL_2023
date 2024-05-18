@@ -356,8 +356,8 @@ namespace NetPdf
 
                     new PdfPCell(new Phrase("*Dx CIE-10", fontColumnValueBold1)) { Colspan=2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda, BackgroundColor = BaseColor.GRAY },       
 
-                    new PdfPCell(new Phrase("CÓDIGO", fontColumnValueBold)) {HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda},       
-                    new PdfPCell(new Phrase("ESPECIFICACIONES", fontColumnValueBold)) {HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda},       
+                    new PdfPCell(new Phrase("CIE - 10", fontColumnValueBold)) {HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda},       
+                    new PdfPCell(new Phrase("DIAGNÓSTICO", fontColumnValueBold)) {HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, FixedHeight = tamaño_celda},       
 
                 };
             columnWidths = new float[] { 20.6f, 40.6f };
@@ -369,71 +369,59 @@ namespace NetPdf
 
             if (filterDiagnosticRepository != null && filterDiagnosticRepository.Count > 0)
             {
-                columnWidths = new float[] { 0.7f, 23.6f };
-                include = "i_Item,Valor1";
+                //columnWidths = new float[] { 0.7f, 23.6f };
+                //include = "i_Item,Valor1";
 
                 foreach (var item in filterDiagnosticRepository)
                 {
-                    if (item.v_DiseasesId == "N009-DD000000029")
-                    {
-                        cell = new PdfPCell(new Phrase("")) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE };
-                        cells.Add(cell);
-                    }
-                    else
-                    {
-                        cell = new PdfPCell(new Phrase(item.v_DiseasesName, fontColumnValue)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE };
-                        cells.Add(cell);
-                    }
+                    cells.Add(new PdfPCell(new Phrase(item.v_Dx_CIE10, fontColumnValue)));
 
-                    ListaComun oListaComun = null;
-                    List<ListaComun> Listacomun = new List<ListaComun>();
+                    cells.Add(new PdfPCell(new Phrase(item.v_DiseasesName, fontColumnValue)));
+                    columnWidths = new float[] { 20.6f, 40.6f };
 
-                    if (item.Recomendations.Count > 0)
-                    {
-                        oListaComun = new ListaComun();
-                        oListaComun.Valor1 = "RECOMENDACIONES";
-                        oListaComun.i_Item = "#";
-                        Listacomun.Add(oListaComun);
-                    }
+                    //if (item.v_DiseasesId == "N009-DD000000029")
+                    //{
+                    //    cell = new PdfPCell(new Phrase("")) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE };
+                    //    cells.Add(cell);
+                    //}
+                    //else
+                    //{
+                    //    cell = new PdfPCell(new Phrase(item.v_DiseasesName, fontColumnValue)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE };
+                    //    cells.Add(cell);
+                    //}
 
+                    //ListaComun oListaComun = null;
+                    //List<ListaComun> Listacomun = new List<ListaComun>();
 
-                    int Contador = 1;
-                    foreach (var Reco in item.Recomendations)
-                    {
-                        oListaComun = new ListaComun();
-
-                        oListaComun.Valor1 = Reco.v_RecommendationName;
-                        oListaComun.i_Item = Contador.ToString();
-                        Listacomun.Add(oListaComun);
-                        Contador++;
-                    }
-
-                    //if (item.Restrictions.Count > 0)
+                    //if (item.Recomendations.Count > 0)
                     //{
                     //    oListaComun = new ListaComun();
-                    //    oListaComun.Valor1 = "RESTRICCIONES";
+                    //    oListaComun.Valor1 = "RECOMENDACIONES";
                     //    oListaComun.i_Item = "#";
                     //    Listacomun.Add(oListaComun);
-
                     //}
-                    //int Contador1 = 1;
-                    //foreach (var Rest in item.Restrictions)
+
+
+                    //int Contador = 1;
+                    //foreach (var Reco in item.Recomendations)
                     //{
                     //    oListaComun = new ListaComun();
-                    //    oListaComun.Valor1 = Rest.v_RestrictionName;
-                    //    oListaComun.i_Item = Contador1.ToString();
+
+                    //    oListaComun.Valor1 = Reco.v_RecommendationName;
+                    //    oListaComun.i_Item = Contador.ToString();
                     //    Listacomun.Add(oListaComun);
-                    //    Contador1++;
+                    //    Contador++;
                     //}
 
-                    // Crear tabla de recomendaciones para insertarla en la celda que corresponde
-                    table = HandlingItextSharp.GenerateTableFromList(Listacomun, columnWidths, include, fontColumnValue);
-                    cell = new PdfPCell(table);
 
-                    cells.Add(cell);
+                    //// Crear tabla de recomendaciones para insertarla en la celda que corresponde
+                    //table = HandlingItextSharp.GenerateTableFromList(Listacomun, columnWidths, include, fontColumnValue);
+                    //cell = new PdfPCell(table);
+
+                    //cells.Add(cell);
                 }
 
-                columnWidths = new float[] { 20.6f, 40.6f };
+                //columnWidths = new float[] { 20.6f, 40.6f };
             }
             else
             {
@@ -634,9 +622,12 @@ namespace NetPdf
 
             cells = new List<PdfPCell>()
             {
-                new PdfPCell(new Phrase("ANOTACIONES: " + observaciones_new + "\nINDICACIÓN FINAL: " + final + "\nOBS: " + observaciones, fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 2, Rowspan = 2},
-                new PdfPCell(new Phrase("FIRMA Y SELLO DEL MÉDICO", fontColumnValueBold)) {Rowspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = tamaño_celda},    
-                new PdfPCell(cellFirma){Rowspan=2, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
+                new PdfPCell(new Phrase("ANOTACIONES: " + observaciones_new , fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
+                new PdfPCell(new Phrase("INDICACIÓN FINAL: " + final, fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
+                new PdfPCell(new Phrase("OBSERVACIONES: " + observaciones, fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
+     
+                new PdfPCell(new Phrase("FIRMA Y SELLO DEL MÉDICO", fontColumnValueBold)) { Colspan = 2, Rowspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = tamaño_celda},    
+                new PdfPCell(cellFirma){Colspan = 2, Rowspan=2, HorizontalAlignment = PdfPCell.ALIGN_CENTER},
 
                 //new PdfPCell(cellFirmaTrabajador){HorizontalAlignment = PdfPCell.ALIGN_CENTER},
                 //new PdfPCell(cellHuellaTrabajador){HorizontalAlignment = PdfPCell.ALIGN_CENTER},
