@@ -246,27 +246,29 @@ namespace Sigesoft
                 NombreMedico = usuarioGraba.Nombre == null ? "---" : usuarioGraba.Nombre;
                 CMP = usuarioGraba == null ? "---" : usuarioGraba.CMP;
 
-                //if (usuarioGraba.Firma != null)
-                //{
-                //    //cellFirma = new PdfPCell(HandlingItextSharp.GetImage(usuarioGraba.Firma, null, null, 110, 40)) { Colspan = 1, Rowspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 30f, UseVariableBorders = true, BorderColor = BaseColor.BLACK };
-                //    cellFirma = new PdfPCell(new Phrase("FIRMA", fontTitle2_)) { Colspan = 1, Rowspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f, BorderColor = BaseColor.BLACK };
+                if (usuarioGraba.Firma != null)
+                {
+                    cellFirma = new PdfPCell(HandlingItextSharp.GetImage(usuarioGraba.Firma, null, null, 110, 40)) { HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 30f, UseVariableBorders = true, BorderColor = BaseColor.BLACK };
+                    //cellFirma = new PdfPCell(new Phrase("FIRMA", fontTitle2_)) { Colspan = 1, Rowspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f, BorderColor = BaseColor.BLACK };
 
-                //}
+                }
 
             }
             else
             {
-                //cellFirma = new PdfPCell(new Phrase("FIRMA", fontTitle2_)) { Colspan = 1, Rowspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f, BorderColor = BaseColor.BLACK };
+                cellFirma = new PdfPCell(new Phrase("FIRMA", fontTitle2_)) { Colspan = 1, Rowspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f, BorderColor = BaseColor.BLACK };
             }
 
 
             cells = new List<PdfPCell>()
             {
-                new PdfPCell(new Phrase("", fontTitleTable)) {Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 60f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontTitle2)) {Colspan = 3, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 50f,BorderColor= BaseColor.WHITE},
 
 
                 new PdfPCell(new Phrase("DATOS DEL MÉDICO", fontTitle2)) {Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.BLACK},
-                new PdfPCell(new Phrase("", fontTitle2)) {Rowspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.BLACK},
+                //new PdfPCell(new Phrase("", fontTitle2)) {Rowspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.BLACK},
+                new PdfPCell(cellFirma){Rowspan = 2, MinimumHeight = 60f, HorizontalAlignment = PdfPCell.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, BorderColor= BaseColor.BLACK},
+
 
                 new PdfPCell(new Phrase("NOMBRE", fontTitle2)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.BLACK},
                 new PdfPCell(new Phrase(NombreMedico, fontTitle2)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.BLACK},

@@ -89,6 +89,8 @@ namespace Sigesoft.Node.WinClient.UI.Operations.Popups
                 ddlComponentId.SelectedIndex = 1;
                 cbAutoManual.Enabled = false;
                 cbPreCalificacion.Enabled = false;
+                cbCalificacionFinal.SelectedValue = "2";
+
 
             }
             else if (_mode == "Edit")
