@@ -52,6 +52,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DMnodeSQLServer.edmx</DependentUpon>
     </Compile>
+    <Compile Include="GeneratedAssemblers\bandejaagendaResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\devolverdatospaciente_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\additionalexamAssembler.cs" />
     <Compile Include="GeneratedAssemblers\adolescenteAssembler.cs" />
@@ -196,14 +197,12 @@
     <Compile Include="GeneratedAssemblers\obtenerpreciotarifarioResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\obtenernetoporcobrarResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\listllamadadeesperaResultAssembler.cs" />
-    <Compile Include="GeneratedAssemblers\listcalendarsambhsResultAssembler.cs" />
-    <Compile Include="GeneratedAssemblers\listcalendarhorariosambhsResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\getventasandagenda_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getservicecomponentsreportsc_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getservicecomponentsreportc_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getservicecomponentsreport_dxlist_spResultAssembler.cs" />
-    <Compile Include="GeneratedAssemblers\getpacientesResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\getpersonpersonalinformationeso_sResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getobtenerusuarioanterior_spResultAssembler.cs" />
-    <Compile Include="GeneratedAssemblers\getinformacionpacienteResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciatipopagoResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciatipoexamenResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciacreditoResultAssembler.cs" />
