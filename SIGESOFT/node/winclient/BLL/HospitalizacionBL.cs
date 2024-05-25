@@ -119,7 +119,10 @@ namespace Sigesoft.Node.WinClient.BLL
                 HospitalizacionList hospit;
                 List<HospitalizacionList> Lista = new List<HospitalizacionList>();
 
-                foreach (var item in obj)
+                var servicioMedico = obj.ToList().FindAll(p => p.v_Servicio != "EMERGENCIA").ToList();
+
+
+                foreach (var item in servicioMedico)
                 {
                     hospit = new HospitalizacionList();
 
@@ -139,63 +142,63 @@ namespace Sigesoft.Node.WinClient.BLL
                     hospit.v_MedicoTratante = item.v_MedicoTratante;
                     hospit.v_Servicio = item.v_Servicio;
 
-                    // estos son los hijos de 1 hopitalización
-                    var servicios = BuscarServiciosHospitalizacion(item.v_HopitalizacionId).ToList();
+                    //// estos son los hijos de 1 hopitalización
+                    //var servicios = BuscarServiciosHospitalizacion(item.v_HopitalizacionId).ToList();
                     
-                    List<HospitalizacionServiceList> HospitalizacionServicios = new List<HospitalizacionServiceList>();
-                    if (servicios.Count > 0)
-                    {
-                        HospitalizacionServiceList oHospitalizacionServiceList;
-                        ComponentesHospitalizacion oComponentesHospitalizacion;
-                        foreach (var servicio in servicios)
-                        {
-                            oHospitalizacionServiceList = new HospitalizacionServiceList();
-                            // acá vas poblando la entidad hijo hospitalización
-                            oHospitalizacionServiceList.v_HopitalizacionId = servicio.v_HopitalizacionId;
-                            oHospitalizacionServiceList.v_ServiceId = servicio.v_ServiceId;
-                            oHospitalizacionServiceList.v_HospitalizacionServiceId = servicio.v_HospitalizacionServiceId;
-                            oHospitalizacionServiceList.v_NroHospitalizacion = servicio.v_NroHospitalizacion;
-                            oHospitalizacionServiceList.d_ServiceDate = servicio.d_ServiceDate;
-                            oHospitalizacionServiceList.v_ProtocolName = servicio.v_ProtocolName;
-                            oHospitalizacionServiceList.v_ProtocolId = servicio.v_ProtocolId;
-                            oHospitalizacionServiceList.v_DocNumber = servicio.v_DocNumber;
-                            oHospitalizacionServiceList.d_FechaAlta = servicio.d_FechaAlta;
-                            // acá estoy agregando a las lista
-                            HospitalizacionServicios.Add(servicio);
-                        }
-                        hospit.Servicios= HospitalizacionServicios;
-                    }
+                    //List<HospitalizacionServiceList> HospitalizacionServicios = new List<HospitalizacionServiceList>();
+                    //if (servicios.Count > 0)
+                    //{
+                    //    HospitalizacionServiceList oHospitalizacionServiceList;
+                    //    ComponentesHospitalizacion oComponentesHospitalizacion;
+                    //    foreach (var servicio in servicios)
+                    //    {
+                    //        oHospitalizacionServiceList = new HospitalizacionServiceList();
+                    //        // acá vas poblando la entidad hijo hospitalización
+                    //        oHospitalizacionServiceList.v_HopitalizacionId = servicio.v_HopitalizacionId;
+                    //        oHospitalizacionServiceList.v_ServiceId = servicio.v_ServiceId;
+                    //        oHospitalizacionServiceList.v_HospitalizacionServiceId = servicio.v_HospitalizacionServiceId;
+                    //        oHospitalizacionServiceList.v_NroHospitalizacion = servicio.v_NroHospitalizacion;
+                    //        oHospitalizacionServiceList.d_ServiceDate = servicio.d_ServiceDate;
+                    //        oHospitalizacionServiceList.v_ProtocolName = servicio.v_ProtocolName;
+                    //        oHospitalizacionServiceList.v_ProtocolId = servicio.v_ProtocolId;
+                    //        oHospitalizacionServiceList.v_DocNumber = servicio.v_DocNumber;
+                    //        oHospitalizacionServiceList.d_FechaAlta = servicio.d_FechaAlta;
+                    //        // acá estoy agregando a las lista
+                    //        HospitalizacionServicios.Add(servicio);
+                    //    }
+                    //    hospit.Servicios= HospitalizacionServicios;
+                    //}
 
-                    #region Habitaciones
-                    var habitacioenes = BuscarHospitalizacionHabitaciones(item.v_HopitalizacionId).ToList();
-                    List<HospitalizacionHabitacionList> ListaHabitaciones = new List<HospitalizacionHabitacionList>();
-                    HospitalizacionHabitacionList oHospitalizacionHabitacionList;
-                    foreach (var habitacion in habitacioenes)
-                    {
-                        oHospitalizacionHabitacionList = new HospitalizacionHabitacionList();
-                        oHospitalizacionHabitacionList.v_HospitalizacionHabitacionId = habitacion.v_HospitalizacionHabitacionId;
-                        oHospitalizacionHabitacionList.v_HopitalizacionId = item.v_HopitalizacionId;
-                        oHospitalizacionHabitacionList.i_HabitacionId = habitacion.i_HabitacionId;
-                        oHospitalizacionHabitacionList.NroHabitacion = habitacion.NroHabitacion;
-                        oHospitalizacionHabitacionList.d_StartDate = habitacion.d_StartDate;
-                        oHospitalizacionHabitacionList.d_EndDate = habitacion.d_EndDate;
-                        oHospitalizacionHabitacionList.d_FechaAlta = habitacion.d_FechaAlta;
-                        if ((decimal)habitacion.d_Precio != null)
-                        {
-                            oHospitalizacionHabitacionList.d_Precio = decimal.Round((decimal)habitacion.d_Precio, 2); 
-                        }
+                    //#region Habitaciones
+                    //var habitacioenes = BuscarHospitalizacionHabitaciones(item.v_HopitalizacionId).ToList();
+                    //List<HospitalizacionHabitacionList> ListaHabitaciones = new List<HospitalizacionHabitacionList>();
+                    //HospitalizacionHabitacionList oHospitalizacionHabitacionList;
+                    //foreach (var habitacion in habitacioenes)
+                    //{
+                    //    oHospitalizacionHabitacionList = new HospitalizacionHabitacionList();
+                    //    oHospitalizacionHabitacionList.v_HospitalizacionHabitacionId = habitacion.v_HospitalizacionHabitacionId;
+                    //    oHospitalizacionHabitacionList.v_HopitalizacionId = item.v_HopitalizacionId;
+                    //    oHospitalizacionHabitacionList.i_HabitacionId = habitacion.i_HabitacionId;
+                    //    oHospitalizacionHabitacionList.NroHabitacion = habitacion.NroHabitacion;
+                    //    oHospitalizacionHabitacionList.d_StartDate = habitacion.d_StartDate;
+                    //    oHospitalizacionHabitacionList.d_EndDate = habitacion.d_EndDate;
+                    //    oHospitalizacionHabitacionList.d_FechaAlta = habitacion.d_FechaAlta;
+                    //    if ((decimal)habitacion.d_Precio != null)
+                    //    {
+                    //        oHospitalizacionHabitacionList.d_Precio = decimal.Round((decimal)habitacion.d_Precio, 2); 
+                    //    }
                         
-                        if (habitacion.d_Precio != null)
-                            oHospitalizacionHabitacionList.Total =
-                                CalcularCostoHabitacion(habitacion.d_Precio.ToString(), habitacion.d_StartDate,
-                                    habitacion.d_EndDate);
-                        else
-                            oHospitalizacionHabitacionList.Total = 0;
-                        ListaHabitaciones.Add(oHospitalizacionHabitacionList);
+                    //    if (habitacion.d_Precio != null)
+                    //        oHospitalizacionHabitacionList.Total =
+                    //            CalcularCostoHabitacion(habitacion.d_Precio.ToString(), habitacion.d_StartDate,
+                    //                habitacion.d_EndDate);
+                    //    else
+                    //        oHospitalizacionHabitacionList.Total = 0;
+                    //    ListaHabitaciones.Add(oHospitalizacionHabitacionList);
 
-                    }
-                    hospit.Habitaciones = ListaHabitaciones;
-                    #endregion
+                    //}
+                    //hospit.Habitaciones = ListaHabitaciones;
+                    //#endregion
 
                     Lista.Add(hospit);
                 }
@@ -210,6 +213,207 @@ namespace Sigesoft.Node.WinClient.BLL
                 return null;
             }
         }
+
+        public List<HospitalizacionList> GetHospitalizacionPagedAndFilteredEmrg(ref OperationResult pobjOperationResult, int? pintPageIndex, int? pintResultsPerPage, string pstrSortExpression, string pstrFilterExpression, DateTime? pdatBeginDate, DateTime? pdatEndDate)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = from A in dbContext.hospitalizacion
+                            join B in dbContext.person on A.v_PersonId equals B.v_PersonId
+                            join C in dbContext.hospitalizacionservice on A.v_HopitalizacionId equals C.v_HopitalizacionId
+                            join D in dbContext.service on C.v_ServiceId equals D.v_ServiceId
+                            join A1 in dbContext.calendar on D.v_ServiceId equals A1.v_ServiceId
+                            join P in dbContext.protocol on D.v_ProtocolId equals P.v_ProtocolId
+                            join S in dbContext.systemparameter on new { a = P.i_MasterServiceId.Value, b = 119 }
+                                equals new { a = S.i_ParameterId, b = S.i_GroupId }
+
+                            join E in dbContext.servicecomponent on D.v_ServiceId equals E.v_ServiceId
+
+                            join F in dbContext.systemuser on E.i_MedicoTratanteId equals F.i_SystemUserId into F_join
+                            from F in F_join.DefaultIfEmpty()
+
+                            join G in dbContext.person on F.v_PersonId equals G.v_PersonId into G_join
+                            from G in G_join.DefaultIfEmpty()
+
+                            join H in dbContext.professional on G.v_PersonId equals H.v_PersonId into H_join
+                            from H in H_join.DefaultIfEmpty()
+
+                            where A.i_IsDeleted == 0
+                                  && (A.d_FechaIngreso >= pdatBeginDate.Value && A.d_FechaIngreso <= pdatEndDate.Value)
+                                  && A1.i_CalendarStatusId != 4
+
+                            select new HospitalizacionList
+                            {
+                                d_FechaAlta = A.d_FechaAlta,
+                                d_FechaIngreso = A.d_FechaIngreso,
+                                v_Paciente = B.v_FirstLastName + " " + B.v_SecondLastName + ", " + B.v_FirstName,
+                                v_HopitalizacionId = A.v_HopitalizacionId,
+                                v_PersonId = A.v_PersonId,
+                                v_DocNumber = B.v_DocNumber,
+                                d_Birthdate = B.d_Birthdate.Value,
+                                i_IsDeleted = A.i_IsDeleted.Value,
+                                v_Comentario = A.v_Comentario,
+                                v_NroLiquidacion = A.v_NroLiquidacion,
+                                d_PagoMedico = A.d_PagoMedico,
+                                i_MedicoPago = A.i_MedicoPago,
+                                d_PagoPaciente = A.d_PagoPaciente,
+                                i_PacientePago = A.i_PacientePago,
+                                v_MedicoTratante = G.v_FirstLastName + " " + G.v_SecondLastName + ", " + G.v_FirstName,
+                                v_Servicio = S.v_Value1
+                            };
+
+                if (!string.IsNullOrEmpty(pstrFilterExpression))
+                {
+                    query = query.Where(pstrFilterExpression);
+                }
+                //if (pdatBeginDate.HasValue && pdatEndDate.HasValue)
+                //{
+                //    query = query.Where("d_FechaIngreso >= @0 && d_FechaIngreso <= @1", pdatBeginDate.Value, pdatEndDate.Value);
+                //}
+                if (!string.IsNullOrEmpty(pstrSortExpression))
+                {
+                    query = query.OrderBy(pstrSortExpression);
+                }
+                if (pintPageIndex.HasValue && pintResultsPerPage.HasValue)
+                {
+                    int intStartRowIndex = pintPageIndex.Value * pintResultsPerPage.Value;
+                    query = query.Skip(intStartRowIndex);
+                }
+                if (pintResultsPerPage.HasValue)
+                {
+                    query = query.Take(pintResultsPerPage.Value);
+                }
+
+                List<HospitalizacionList> objData = query.ToList();
+                // en hospitalizaciones tienes los padres
+                var hospitalizaciones = (from a in objData
+                                         select new HospitalizacionList
+                                         {
+                                             v_Paciente = a.v_Paciente,
+                                             d_FechaIngreso = a.d_FechaIngreso,
+                                             d_FechaAlta = a.d_FechaAlta,
+                                             v_HopitalizacionId = a.v_HopitalizacionId,
+                                             v_PersonId = a.v_PersonId,
+                                             v_DocNumber = a.v_DocNumber,
+                                             i_Years = GetAge(a.d_Birthdate),
+                                             v_Comentario = a.v_Comentario,
+                                             v_NroLiquidacion = a.v_NroLiquidacion,
+                                             d_PagoMedico = a.d_PagoMedico,
+                                             MedicoPago = a.i_MedicoPago == 1 ? "SI" : a.d_PagoMedico == null ? "SIN LIQUIDAR" : a.d_PagoMedico == 0 ? "---" : "NO",
+                                             d_PagoPaciente = a.d_PagoPaciente,
+                                             PacientePago = a.i_PacientePago == 1 ? "SI" : a.d_PagoPaciente == null ? "SIN LIQUIDAR" : a.d_PagoPaciente == 0 ? "---" : "NO",
+                                             v_MedicoTratante = a.v_MedicoTratante == "-1" ? " - - -" : a.v_MedicoTratante == null ? " - - - " : a.v_MedicoTratante == "SAN LORENZO, CLINICA" ? "CLINICA SAN LORENZO" : a.v_MedicoTratante,
+                                             v_Servicio = a.v_Servicio
+                                         }).ToList();
+
+                var objtData = hospitalizaciones.AsEnumerable()
+                    .Where(a => a.v_HopitalizacionId != null)
+                    .GroupBy(b => b.v_HopitalizacionId)
+                    .Select(group => group.First());
+
+                List<HospitalizacionList> obj = objtData.ToList();
+
+                HospitalizacionList hospit;
+                List<HospitalizacionList> Lista = new List<HospitalizacionList>();
+
+
+                var servicioMedico = obj.ToList().FindAll(p => p.v_Servicio == "EMERGENCIA").ToList();
+
+
+                foreach (var item in servicioMedico)
+                {
+                    hospit = new HospitalizacionList();
+
+                    hospit.v_HopitalizacionId = item.v_HopitalizacionId;
+                    hospit.v_PersonId = item.v_PersonId;
+                    hospit.v_Paciente = item.v_Paciente;
+                    hospit.v_DocNumber = item.v_DocNumber;
+                    hospit.i_Years = item.i_Years;
+                    hospit.d_FechaIngreso = item.d_FechaIngreso;
+                    hospit.d_FechaAlta = item.d_FechaAlta;
+                    hospit.v_Comentario = item.v_Comentario;
+                    hospit.v_NroLiquidacion = item.v_NroLiquidacion;
+                    hospit.d_PagoMedico = item.d_PagoMedico;
+                    hospit.MedicoPago = item.MedicoPago;
+                    hospit.d_PagoPaciente = item.d_PagoPaciente;
+                    hospit.PacientePago = item.PacientePago;
+                    hospit.v_MedicoTratante = item.v_MedicoTratante;
+                    hospit.v_Servicio = item.v_Servicio;
+
+                    //// estos son los hijos de 1 hopitalización
+                    //var servicios = BuscarServiciosHospitalizacion(item.v_HopitalizacionId).ToList();
+
+                    //List<HospitalizacionServiceList> HospitalizacionServicios = new List<HospitalizacionServiceList>();
+                    //if (servicios.Count > 0)
+                    //{
+                    //    HospitalizacionServiceList oHospitalizacionServiceList;
+                    //    ComponentesHospitalizacion oComponentesHospitalizacion;
+                    //    foreach (var servicio in servicios)
+                    //    {
+                    //        oHospitalizacionServiceList = new HospitalizacionServiceList();
+                    //        // acá vas poblando la entidad hijo hospitalización
+                    //        oHospitalizacionServiceList.v_HopitalizacionId = servicio.v_HopitalizacionId;
+                    //        oHospitalizacionServiceList.v_ServiceId = servicio.v_ServiceId;
+                    //        oHospitalizacionServiceList.v_HospitalizacionServiceId = servicio.v_HospitalizacionServiceId;
+                    //        oHospitalizacionServiceList.v_NroHospitalizacion = servicio.v_NroHospitalizacion;
+                    //        oHospitalizacionServiceList.d_ServiceDate = servicio.d_ServiceDate;
+                    //        oHospitalizacionServiceList.v_ProtocolName = servicio.v_ProtocolName;
+                    //        oHospitalizacionServiceList.v_ProtocolId = servicio.v_ProtocolId;
+                    //        oHospitalizacionServiceList.v_DocNumber = servicio.v_DocNumber;
+                    //        oHospitalizacionServiceList.d_FechaAlta = servicio.d_FechaAlta;
+                    //        // acá estoy agregando a las lista
+                    //        HospitalizacionServicios.Add(servicio);
+                    //    }
+                    //    hospit.Servicios = HospitalizacionServicios;
+                    //}
+
+                    //#region Habitaciones
+                    //var habitacioenes = BuscarHospitalizacionHabitaciones(item.v_HopitalizacionId).ToList();
+                    //List<HospitalizacionHabitacionList> ListaHabitaciones = new List<HospitalizacionHabitacionList>();
+                    //HospitalizacionHabitacionList oHospitalizacionHabitacionList;
+                    //foreach (var habitacion in habitacioenes)
+                    //{
+                    //    oHospitalizacionHabitacionList = new HospitalizacionHabitacionList();
+                    //    oHospitalizacionHabitacionList.v_HospitalizacionHabitacionId = habitacion.v_HospitalizacionHabitacionId;
+                    //    oHospitalizacionHabitacionList.v_HopitalizacionId = item.v_HopitalizacionId;
+                    //    oHospitalizacionHabitacionList.i_HabitacionId = habitacion.i_HabitacionId;
+                    //    oHospitalizacionHabitacionList.NroHabitacion = habitacion.NroHabitacion;
+                    //    oHospitalizacionHabitacionList.d_StartDate = habitacion.d_StartDate;
+                    //    oHospitalizacionHabitacionList.d_EndDate = habitacion.d_EndDate;
+                    //    oHospitalizacionHabitacionList.d_FechaAlta = habitacion.d_FechaAlta;
+                    //    if ((decimal)habitacion.d_Precio != null)
+                    //    {
+                    //        oHospitalizacionHabitacionList.d_Precio = decimal.Round((decimal)habitacion.d_Precio, 2);
+                    //    }
+
+                    //    if (habitacion.d_Precio != null)
+                    //        oHospitalizacionHabitacionList.Total =
+                    //            CalcularCostoHabitacion(habitacion.d_Precio.ToString(), habitacion.d_StartDate,
+                    //                habitacion.d_EndDate);
+                    //    else
+                    //        oHospitalizacionHabitacionList.Total = 0;
+                    //    ListaHabitaciones.Add(oHospitalizacionHabitacionList);
+
+                    //}
+                    //hospit.Habitaciones = ListaHabitaciones;
+                    //#endregion
+
+                    Lista.Add(hospit);
+                }
+                pobjOperationResult.Success = 1;
+                return Lista;
+
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
         public int GetAge(DateTime FechaNacimiento)
         {
             return int.Parse((DateTime.Today.AddTicks(-FechaNacimiento.Ticks).Year - 1).ToString());

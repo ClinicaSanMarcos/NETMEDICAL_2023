@@ -77,7 +77,19 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 strFilterExpression = strFilterExpression.Substring(0, strFilterExpression.Length - 4);
             }
 
-           this.BindGrid();
+            string tabName = tabControl1.SelectedTab.Text;
+
+            if (tabName == "HOSPITALIZADOS / SOP")
+            {
+                this.BindGrid(); 
+            }
+            else
+            {
+                this.BindGridEmergencia();
+            }
+            
+
+           
            btnTicket.Enabled = false;
            btnAgregarExamenes.Enabled = false;
            btnAsignarHabitacion.Enabled = false;
@@ -109,6 +121,25 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
 
         }
 
+        private void BindGridEmergencia()
+        {
+            var objData = GetDataEmrg(0, null, "v_HopitalizacionId ASC", strFilterExpression);
+            ultraGrid1.DataSource = objData;
+
+            label3.Text = string.Format("Se encontraron {0} registros.", objData.Count());
+            if (objData.Count() >= 1)
+            {
+                button2.Enabled = true;
+            }
+            else
+            {
+                button2.Enabled = false;
+            }
+
+            this.ultraGrid1.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+
+        }
+
         private void grdData_InitializeLayout(object sender, InitializeLayoutEventArgs e)
         {
           
@@ -122,13 +153,24 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
 
             _objData = _objHospBL.GetHospitalizacionPagedAndFiltered(ref objOperationResult, pintPageIndex, pintPageSize, pstrSortExpression, pstrFilterExpression, pdatBeginDate, pdatEndDate);
 
-            //foreach (var datos in _objData)
-            //{
-            //    if (datos.d_FechaAlta.Value.ToString() != "" || datos.d_FechaAlta.Value.ToString() != null)
-            //    {
-            //        grdData.Row[0].Band.AutoPreviewEnabled = false;
-            //    }
-            //}
+            
+            if (objOperationResult.Success != 1)
+            {
+                MessageBox.Show("Error en operación:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return _objData;
+        }
+
+        private List<HospitalizacionList> GetDataEmrg(int pintPageIndex, int? pintPageSize, string pstrSortExpression, string pstrFilterExpression)
+        {
+            OperationResult objOperationResult = new OperationResult();
+            DateTime? pdatBeginDate = dtpDateTimeStar.Value.Date;
+            DateTime? pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
+
+            _objData = _objHospBL.GetHospitalizacionPagedAndFilteredEmrg(ref objOperationResult, pintPageIndex, pintPageSize, pstrSortExpression, pstrFilterExpression, pdatBeginDate, pdatEndDate);
+
+
             if (objOperationResult.Success != 1)
             {
                 MessageBox.Show("Error en operación:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -999,6 +1041,83 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 conectasam.closesigesoft();
             }
             btnFilter_Click(sender, e);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+
+            string tabName = tabControl1.SelectedTab.Text;
+
+            if (tabName == "HOSPITALIZADOS / SOP")
+            {
+                var HospId = grdData.Selected.Rows[0].Cells["v_HopitalizacionId"].Value.ToString();
+                var Pac = grdData.Selected.Rows[0].Cells["v_Paciente"].Value.ToString();
+                var Dni = grdData.Selected.Rows[0].Cells["v_DocNumber"].Value.ToString();
+                var Edad = grdData.Selected.Rows[0].Cells["i_Years"].Value.ToString();
+                var Medico = grdData.Selected.Rows[0].Cells["v_MedicoTratante"].Value.ToString();
+                //var Cie10 = grdData.Selected.Rows[0].Cells["Cie10"].Value.ToString();
+                //var Dx = grdData.Selected.Rows[0].Cells["v_Diagnostico"].Value.ToString();
+                //var Procedencia = grdData.Selected.Rows[0].Cells["v_ProcedenciaPac"].Value.ToString();
+                //var Hosp = grdData.Selected.Rows[0].Cells["Hosp"].Value.ToString();
+                //var Sop = grdData.Selected.Rows[0].Cells["Sop"].Value.ToString();
+                var FechaAlta = grdData.Selected.Rows[0].Cells["d_FechaAlta"].Value == null ? "" : grdData.Selected.Rows[0].Cells["d_FechaAlta"].Value.ToString();
+
+                //var Comentarios = grdData.Selected.Rows[0].Cells["v_Comentario"].Value == null ? "" : grdData.Selected.Rows[0].Cells["v_Comentario"].Value.ToString();
+                //var PersonId = grdData.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
+
+
+                //var Cie10Salida = grdData.Selected.Rows[0].Cells["v_CIE10IdSalida"].Value.ToString();
+                //var DxSalida = grdData.Selected.Rows[0].Cells["v_DiseasesNameSalida"].Value.ToString();
+                //var ProcedimientoId = grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value == null ? "- - -" : grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value.ToString();
+                //var ProcedimientoDesc = grdData.Selected.Rows[0].Cells["v_ProcedimientoSOP"].Value.ToString();
+
+                frmRegistroHospSop ticket = new frmRegistroHospSop(HospId, Pac, Dni, Edad, Medico, "Cie10", "Dx", "Procedencia", "Hosp", "Sop", FechaAlta, "Comentarios", "PersonId", "Cie10Salida", "DxSalida", "ProcedimientoId", "ProcedimientoDesc");
+                ticket.ShowDialog();
+            }
+            else
+            {
+                var HospId = ultraGrid1.Selected.Rows[0].Cells["v_HopitalizacionId"].Value.ToString();
+                var Pac = ultraGrid1.Selected.Rows[0].Cells["v_Paciente"].Value.ToString();
+                var Dni = ultraGrid1.Selected.Rows[0].Cells["v_DocNumber"].Value.ToString();
+                var Edad = ultraGrid1.Selected.Rows[0].Cells["i_Years"].Value.ToString();
+                var Medico = ultraGrid1.Selected.Rows[0].Cells["v_MedicoTratante"].Value.ToString();
+                //var Cie10 = grdData.Selected.Rows[0].Cells["Cie10"].Value.ToString();
+                //var Dx = grdData.Selected.Rows[0].Cells["v_Diagnostico"].Value.ToString();
+                //var Procedencia = grdData.Selected.Rows[0].Cells["v_ProcedenciaPac"].Value.ToString();
+                //var Hosp = grdData.Selected.Rows[0].Cells["Hosp"].Value.ToString();
+                //var Sop = grdData.Selected.Rows[0].Cells["Sop"].Value.ToString();
+                var FechaAlta = ultraGrid1.Selected.Rows[0].Cells["d_FechaAlta"].Value == null ? "" : grdData.Selected.Rows[0].Cells["d_FechaAlta"].Value.ToString();
+
+                //var Comentarios = grdData.Selected.Rows[0].Cells["v_Comentario"].Value == null ? "" : grdData.Selected.Rows[0].Cells["v_Comentario"].Value.ToString();
+                //var PersonId = grdData.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
+
+
+                //var Cie10Salida = grdData.Selected.Rows[0].Cells["v_CIE10IdSalida"].Value.ToString();
+                //var DxSalida = grdData.Selected.Rows[0].Cells["v_DiseasesNameSalida"].Value.ToString();
+                //var ProcedimientoId = grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value == null ? "- - -" : grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value.ToString();
+                //var ProcedimientoDesc = grdData.Selected.Rows[0].Cells["v_ProcedimientoSOP"].Value.ToString();
+
+                frmRegistroHospSop ticket = new frmRegistroHospSop(HospId, Pac, Dni, Edad, Medico, "Cie10", "Dx", "Procedencia", "Hosp", "Sop", FechaAlta, "Comentarios", "PersonId", "Cie10Salida", "DxSalida", "ProcedimientoId", "ProcedimientoDesc");
+                ticket.ShowDialog();
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string NombreArchivo = "";
+            NombreArchivo = "Reporte Emergencias del " + dtpDateTimeStar.Text + " al " + dptDateTimeEnd.Text;
+            NombreArchivo = NombreArchivo.Replace("/", "_");
+            NombreArchivo = NombreArchivo.Replace(":", "_");
+
+            saveFileDialog1.FileName = NombreArchivo;
+            saveFileDialog1.Filter = "Files (*.xls;*.xlsx;*)|*.xls;*.xlsx;*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.ultraGridExcelExporter1.Export(this.ultraGrid1, saveFileDialog1.FileName);
+                MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }           
 
     }

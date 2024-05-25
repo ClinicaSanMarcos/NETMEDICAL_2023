@@ -108,6 +108,7 @@
     <Reference Include="Infragistics4.Documents.Excel.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
       <Private>True</Private>
     </Reference>
+    <Reference Include="Infragistics4.Documents.IO.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Documents.Reports.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb">
       <Private>True</Private>
     </Reference>
@@ -129,6 +130,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Infragistics4.Win.UltraWinExplorerBar.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinFormattedText.WordWriter.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.UltraWinGrid.DocumentExport.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -138,6 +140,7 @@
     <Reference Include="Infragistics4.Win.UltraWinGrid.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="Infragistics4.Win.UltraWinGrid.WordWriter.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinListView.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Win.UltraWinSchedule.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
     <Reference Include="Infragistics4.Win.UltraWinStatusBar.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
@@ -1568,6 +1571,12 @@
     </Compile>
     <Compile Include="Hospitalizacion\frmEditServiceComponent.Designer.cs">
       <DependentUpon>frmEditServiceComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmRegistroHospSop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmRegistroHospSop.Designer.cs">
+      <DependentUpon>frmRegistroHospSop.cs</DependentUpon>
     </Compile>
     <Compile Include="Hospitalizacion\frmTipoBuquedaProducto.cs">
       <SubType>Form</SubType>
@@ -4295,6 +4304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hospitalizacion\frmEditServiceComponent.resx">
       <DependentUpon>frmEditServiceComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmRegistroHospSop.resx">
+      <DependentUpon>frmRegistroHospSop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hospitalizacion\frmTipoBuquedaProducto.resx">
       <DependentUpon>frmTipoBuquedaProducto.cs</DependentUpon>
