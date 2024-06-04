@@ -32,25 +32,38 @@
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn50 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_HopitalizacionId", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, false);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn51 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoIngreso");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoDeIngreso");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn52 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoProcedimiento");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn53 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaIngreso");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn54 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaHoraCiugia");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaHoraCirugia");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn9 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaHoraHospPac");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn55 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaAlta");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn56 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Paciente");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn57 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoDoc");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn11 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoDocumento");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn58 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DocNumber");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn59 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_Years");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn60 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Cie10");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn12 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("HistoriaClinica");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn17 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Edad");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn18 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Cie10");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn19 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Diagnostico");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn61 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_MedicoTratante");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn62 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Especialidad");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn20 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Monto");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn63 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_PagoMedico");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn64 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("MedicoPago");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn65 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_PagoPaciente");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn66 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("PacientePago");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn21 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_CIE10IdSalida");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn22 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesNameSalida");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn23 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_ProcedimientoSOP");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn24 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ProcedimientoSOP");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn67 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Servicio");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn68 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_PrecioTotal");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn69 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Comentario");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn25 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_NroLiquidacion");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn26 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("VendedorExterno");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn27 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Comentariox");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn28 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PersonId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn29 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_IsDeleted");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn30 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Value1");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Value2");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -61,47 +74,60 @@
             Infragistics.Win.Appearance appearance8 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_HopitalizacionId", -1, null, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, false);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn32 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("HoraCita");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaIngreso");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn39 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaHoraCiugia");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn8 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaAlta");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn33 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaEgreso");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn4 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Paciente");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn47 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoDoc");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn34 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoDocumento");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DocNumber");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_Years");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn48 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Cie10");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn35 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("HistoriaClinica");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn36 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Edad");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn37 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Cie10");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn38 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Diagnostico");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_MedicoTratante");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn49 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Especialidad");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn70 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("HospitalizadoSiNo");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn71 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("ProcQxSiNo");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn40 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Hospitalizado");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn41 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Value2");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn42 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Monto");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn43 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_PagoMedico");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn44 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("MedicoPago");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_PagoPaciente");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("PacientePago");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn72 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Consultorio");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn73 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("VendedorExterno");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn45 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_CIE10IdSalida");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn46 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesNameSalida");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn74 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_ProcedimientoSOP");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn75 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_ProcedimientoSOP");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn16 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Servicio");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn10 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Comentario");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn76 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_NroLiquidacion");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn73 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("VendedorExterno");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn77 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Comentariox");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn78 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_PersonId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn79 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_IsDeleted");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn72 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Consultorio");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn80 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Value1");
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn52 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_CreationDate");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn53 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_ServiceDate");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn54 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_UpdateUser");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn55 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_UpdateDate");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn56 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_MasterServiceName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn57 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceStatusName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn58 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_OrganizationName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn59 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_LocationName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn60 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceTypeName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn61 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ProtocolName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn62 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_Pacient");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn63 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_AptitudeStatusName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn64 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_FechaEntrega");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn65 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Liq");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn66 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Moneda");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn67 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Valor");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn68 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Diagnosticos");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn1 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_CreationDate");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn2 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_ServiceDate");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn3 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_UpdateUser");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn4 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_UpdateDate");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn5 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_MasterServiceName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn6 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceStatusName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn7 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_OrganizationName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn8 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_LocationName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn9 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceTypeName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn10 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ProtocolName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn11 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_Pacient");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn12 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_AptitudeStatusName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn13 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_FechaEntrega");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn14 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Liq");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn15 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Moneda");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn16 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Valor");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn17 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Diagnosticos");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtPacient = new System.Windows.Forms.TextBox();
@@ -371,53 +397,78 @@
             ultraGridColumn50.Header.Caption = "Nro. Hospitalización";
             ultraGridColumn50.Header.VisiblePosition = 0;
             ultraGridColumn50.Width = 177;
-            ultraGridColumn51.Header.VisiblePosition = 1;
-            ultraGridColumn52.Header.VisiblePosition = 3;
+            ultraGridColumn1.Header.VisiblePosition = 1;
+            ultraGridColumn52.Header.VisiblePosition = 2;
             ultraGridColumn53.Header.Caption = "Fecha Ingreso";
-            ultraGridColumn53.Header.VisiblePosition = 8;
-            ultraGridColumn54.Header.VisiblePosition = 5;
+            ultraGridColumn53.Header.VisiblePosition = 3;
+            ultraGridColumn3.Header.VisiblePosition = 4;
+            ultraGridColumn9.Header.VisiblePosition = 5;
             ultraGridColumn55.Header.Caption = "Fecha Alta";
-            ultraGridColumn55.Header.VisiblePosition = 9;
+            ultraGridColumn55.Header.VisiblePosition = 6;
             ultraGridColumn56.Header.Caption = "Nombre de Paciente";
-            ultraGridColumn56.Header.VisiblePosition = 4;
+            ultraGridColumn56.Header.VisiblePosition = 8;
             ultraGridColumn56.Width = 117;
-            ultraGridColumn57.Header.VisiblePosition = 10;
+            ultraGridColumn11.Header.VisiblePosition = 9;
             ultraGridColumn58.Header.Caption = "N° Doc";
-            ultraGridColumn58.Header.VisiblePosition = 6;
-            ultraGridColumn59.Header.Caption = "Edad";
-            ultraGridColumn59.Header.VisiblePosition = 7;
-            ultraGridColumn60.Header.VisiblePosition = 13;
-            ultraGridColumn61.Header.VisiblePosition = 12;
+            ultraGridColumn58.Header.VisiblePosition = 10;
+            ultraGridColumn12.Header.VisiblePosition = 11;
+            ultraGridColumn17.Header.VisiblePosition = 12;
+            ultraGridColumn18.Header.VisiblePosition = 13;
+            ultraGridColumn19.Header.VisiblePosition = 14;
+            ultraGridColumn61.Header.VisiblePosition = 15;
             ultraGridColumn62.Header.VisiblePosition = 16;
-            ultraGridColumn63.Header.VisiblePosition = 15;
-            ultraGridColumn64.Header.VisiblePosition = 17;
-            ultraGridColumn65.Header.VisiblePosition = 18;
-            ultraGridColumn66.Header.VisiblePosition = 19;
-            ultraGridColumn67.Header.VisiblePosition = 2;
-            ultraGridColumn68.Header.Caption = "Precio Total";
-            ultraGridColumn68.Header.VisiblePosition = 11;
-            ultraGridColumn69.Header.VisiblePosition = 14;
+            ultraGridColumn20.Header.VisiblePosition = 17;
+            ultraGridColumn63.Header.VisiblePosition = 18;
+            ultraGridColumn64.Header.VisiblePosition = 19;
+            ultraGridColumn65.Header.VisiblePosition = 20;
+            ultraGridColumn66.Header.VisiblePosition = 21;
+            ultraGridColumn21.Header.VisiblePosition = 22;
+            ultraGridColumn22.Header.VisiblePosition = 23;
+            ultraGridColumn23.Header.VisiblePosition = 24;
+            ultraGridColumn24.Header.VisiblePosition = 25;
+            ultraGridColumn67.Header.VisiblePosition = 7;
+            ultraGridColumn25.Header.VisiblePosition = 26;
+            ultraGridColumn26.Header.VisiblePosition = 27;
+            ultraGridColumn27.Header.VisiblePosition = 28;
+            ultraGridColumn28.Header.VisiblePosition = 29;
+            ultraGridColumn29.Header.VisiblePosition = 30;
+            ultraGridColumn29.Hidden = true;
+            ultraGridColumn30.Header.VisiblePosition = 31;
+            ultraGridColumn31.Header.VisiblePosition = 32;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn50,
-            ultraGridColumn51,
+            ultraGridColumn1,
             ultraGridColumn52,
             ultraGridColumn53,
-            ultraGridColumn54,
+            ultraGridColumn3,
+            ultraGridColumn9,
             ultraGridColumn55,
             ultraGridColumn56,
-            ultraGridColumn57,
+            ultraGridColumn11,
             ultraGridColumn58,
-            ultraGridColumn59,
-            ultraGridColumn60,
+            ultraGridColumn12,
+            ultraGridColumn17,
+            ultraGridColumn18,
+            ultraGridColumn19,
             ultraGridColumn61,
             ultraGridColumn62,
+            ultraGridColumn20,
             ultraGridColumn63,
             ultraGridColumn64,
             ultraGridColumn65,
             ultraGridColumn66,
+            ultraGridColumn21,
+            ultraGridColumn22,
+            ultraGridColumn23,
+            ultraGridColumn24,
             ultraGridColumn67,
-            ultraGridColumn68,
-            ultraGridColumn69});
+            ultraGridColumn25,
+            ultraGridColumn26,
+            ultraGridColumn27,
+            ultraGridColumn28,
+            ultraGridColumn29,
+            ultraGridColumn30,
+            ultraGridColumn31});
             this.grdData.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.grdData.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
             this.grdData.DisplayLayout.InterBandSpacing = 10;
@@ -466,6 +517,7 @@
             this.grdData.DisplayLayout.RowConnectorStyle = Infragistics.Win.UltraWinGrid.RowConnectorStyle.Dashed;
             this.grdData.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill;
             this.grdData.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
+            this.grdData.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy;
             this.grdData.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdData.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.grdData.Location = new System.Drawing.Point(5, 35);
@@ -578,50 +630,76 @@
             ultraGridColumn2.Header.Caption = "Nro. Hospitalización";
             ultraGridColumn2.Header.VisiblePosition = 0;
             ultraGridColumn2.Width = 177;
+            ultraGridColumn32.Header.VisiblePosition = 1;
             ultraGridColumn7.Header.Caption = "Fecha Ingreso";
-            ultraGridColumn7.Header.VisiblePosition = 6;
-            ultraGridColumn39.Header.VisiblePosition = 3;
-            ultraGridColumn8.Header.Caption = "Fecha Alta";
-            ultraGridColumn8.Header.VisiblePosition = 7;
+            ultraGridColumn7.Header.VisiblePosition = 2;
+            ultraGridColumn33.Header.VisiblePosition = 3;
             ultraGridColumn4.Header.Caption = "Nombre de Paciente";
-            ultraGridColumn4.Header.VisiblePosition = 2;
+            ultraGridColumn4.Header.VisiblePosition = 4;
             ultraGridColumn4.Width = 117;
-            ultraGridColumn47.Header.VisiblePosition = 8;
+            ultraGridColumn34.Header.VisiblePosition = 5;
             ultraGridColumn5.Header.Caption = "N° Doc";
-            ultraGridColumn5.Header.VisiblePosition = 4;
-            ultraGridColumn6.Header.Caption = "Edad";
-            ultraGridColumn6.Header.VisiblePosition = 5;
-            ultraGridColumn48.Header.VisiblePosition = 12;
-            ultraGridColumn15.Header.VisiblePosition = 10;
-            ultraGridColumn49.Header.VisiblePosition = 15;
-            ultraGridColumn70.Header.VisiblePosition = 9;
-            ultraGridColumn71.Header.VisiblePosition = 11;
-            ultraGridColumn13.Header.VisiblePosition = 17;
-            ultraGridColumn14.Header.VisiblePosition = 18;
-            ultraGridColumn72.Header.VisiblePosition = 14;
-            ultraGridColumn73.Header.VisiblePosition = 16;
-            ultraGridColumn16.Header.VisiblePosition = 1;
-            ultraGridColumn10.Header.VisiblePosition = 13;
+            ultraGridColumn5.Header.VisiblePosition = 6;
+            ultraGridColumn35.Header.VisiblePosition = 7;
+            ultraGridColumn36.Header.VisiblePosition = 8;
+            ultraGridColumn37.Header.VisiblePosition = 9;
+            ultraGridColumn38.Header.VisiblePosition = 10;
+            ultraGridColumn15.Header.VisiblePosition = 11;
+            ultraGridColumn49.Header.VisiblePosition = 12;
+            ultraGridColumn40.Header.VisiblePosition = 13;
+            ultraGridColumn41.Header.Caption = "Procedimiento Qx";
+            ultraGridColumn41.Header.VisiblePosition = 14;
+            ultraGridColumn42.Header.VisiblePosition = 15;
+            ultraGridColumn43.Header.VisiblePosition = 16;
+            ultraGridColumn44.Header.VisiblePosition = 17;
+            ultraGridColumn13.Header.VisiblePosition = 18;
+            ultraGridColumn14.Header.VisiblePosition = 19;
+            ultraGridColumn45.Header.VisiblePosition = 20;
+            ultraGridColumn46.Header.VisiblePosition = 21;
+            ultraGridColumn74.Header.VisiblePosition = 22;
+            ultraGridColumn75.Header.VisiblePosition = 23;
+            ultraGridColumn16.Header.VisiblePosition = 24;
+            ultraGridColumn76.Header.VisiblePosition = 25;
+            ultraGridColumn73.Header.VisiblePosition = 26;
+            ultraGridColumn77.Header.VisiblePosition = 27;
+            ultraGridColumn78.Header.VisiblePosition = 28;
+            ultraGridColumn79.Header.VisiblePosition = 30;
+            ultraGridColumn79.Hidden = true;
+            ultraGridColumn72.Header.VisiblePosition = 29;
+            ultraGridColumn80.Header.VisiblePosition = 31;
             ultraGridBand2.Columns.AddRange(new object[] {
             ultraGridColumn2,
+            ultraGridColumn32,
             ultraGridColumn7,
-            ultraGridColumn39,
-            ultraGridColumn8,
+            ultraGridColumn33,
             ultraGridColumn4,
-            ultraGridColumn47,
+            ultraGridColumn34,
             ultraGridColumn5,
-            ultraGridColumn6,
-            ultraGridColumn48,
+            ultraGridColumn35,
+            ultraGridColumn36,
+            ultraGridColumn37,
+            ultraGridColumn38,
             ultraGridColumn15,
             ultraGridColumn49,
-            ultraGridColumn70,
-            ultraGridColumn71,
+            ultraGridColumn40,
+            ultraGridColumn41,
+            ultraGridColumn42,
+            ultraGridColumn43,
+            ultraGridColumn44,
             ultraGridColumn13,
             ultraGridColumn14,
-            ultraGridColumn72,
-            ultraGridColumn73,
+            ultraGridColumn45,
+            ultraGridColumn46,
+            ultraGridColumn74,
+            ultraGridColumn75,
             ultraGridColumn16,
-            ultraGridColumn10});
+            ultraGridColumn76,
+            ultraGridColumn73,
+            ultraGridColumn77,
+            ultraGridColumn78,
+            ultraGridColumn79,
+            ultraGridColumn72,
+            ultraGridColumn80});
             this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
             this.ultraGrid1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
             this.ultraGrid1.DisplayLayout.InterBandSpacing = 10;
@@ -707,23 +785,23 @@
             // ultraDataSource1
             // 
             this.ultraDataSource1.Band.Columns.AddRange(new object[] {
-            ultraDataColumn52,
-            ultraDataColumn53,
-            ultraDataColumn54,
-            ultraDataColumn55,
-            ultraDataColumn56,
-            ultraDataColumn57,
-            ultraDataColumn58,
-            ultraDataColumn59,
-            ultraDataColumn60,
-            ultraDataColumn61,
-            ultraDataColumn62,
-            ultraDataColumn63,
-            ultraDataColumn64,
-            ultraDataColumn65,
-            ultraDataColumn66,
-            ultraDataColumn67,
-            ultraDataColumn68});
+            ultraDataColumn1,
+            ultraDataColumn2,
+            ultraDataColumn3,
+            ultraDataColumn4,
+            ultraDataColumn5,
+            ultraDataColumn6,
+            ultraDataColumn7,
+            ultraDataColumn8,
+            ultraDataColumn9,
+            ultraDataColumn10,
+            ultraDataColumn11,
+            ultraDataColumn12,
+            ultraDataColumn13,
+            ultraDataColumn14,
+            ultraDataColumn15,
+            ultraDataColumn16,
+            ultraDataColumn17});
             // 
             // bntEliminarExamen
             // 

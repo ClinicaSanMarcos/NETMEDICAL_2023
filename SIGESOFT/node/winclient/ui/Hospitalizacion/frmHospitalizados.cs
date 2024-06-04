@@ -24,6 +24,9 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
     {
         string strFilterExpression;
         List<HospitalizacionList> _objData = new List<HospitalizacionList>();
+        List<HospSopList> _objData2 = new List<HospSopList>();
+        List<EmergenciapList> _objData3 = new List<EmergenciapList>();
+
         HospitalizacionBL _objHospBL = new HospitalizacionBL();
         List<string> ListaComponentes = new List<string>();
         private string _ticketId;
@@ -117,8 +120,6 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 btnExport.Enabled = false;
             }
 
-            this.grdData.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
-
         }
 
         private void BindGridEmergencia()
@@ -136,7 +137,7 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 button2.Enabled = false;
             }
 
-            this.ultraGrid1.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+            //this.ultraGrid1.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
 
         }
 
@@ -145,13 +146,13 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
           
         }
 
-        private List<HospitalizacionList> GetData(int pintPageIndex, int? pintPageSize, string pstrSortExpression, string pstrFilterExpression)
+        private List<HospSopList> GetData(int pintPageIndex, int? pintPageSize, string pstrSortExpression, string pstrFilterExpression)
         {
             OperationResult objOperationResult = new OperationResult();
             DateTime? pdatBeginDate = dtpDateTimeStar.Value.Date;
             DateTime? pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
 
-            _objData = _objHospBL.GetHospitalizacionPagedAndFiltered(ref objOperationResult, pintPageIndex, pintPageSize, pstrSortExpression, pstrFilterExpression, pdatBeginDate, pdatEndDate);
+            _objData2 = _objHospBL.GetHospitalizacionPagedAndFiltered(ref objOperationResult, pdatBeginDate, pdatEndDate);
 
             
             if (objOperationResult.Success != 1)
@@ -159,16 +160,16 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 MessageBox.Show("Error en operación:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return _objData;
+            return _objData2;
         }
 
-        private List<HospitalizacionList> GetDataEmrg(int pintPageIndex, int? pintPageSize, string pstrSortExpression, string pstrFilterExpression)
+        private List<EmergenciapList> GetDataEmrg(int pintPageIndex, int? pintPageSize, string pstrSortExpression, string pstrFilterExpression)
         {
             OperationResult objOperationResult = new OperationResult();
             DateTime? pdatBeginDate = dtpDateTimeStar.Value.Date;
             DateTime? pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
 
-            _objData = _objHospBL.GetHospitalizacionPagedAndFilteredEmrg(ref objOperationResult, pintPageIndex, pintPageSize, pstrSortExpression, pstrFilterExpression, pdatBeginDate, pdatEndDate);
+            _objData3 = _objHospBL.GetHospitalizacionPagedAndFilteredEmrg(ref objOperationResult, pdatBeginDate, pdatEndDate);
 
 
             if (objOperationResult.Success != 1)
@@ -176,7 +177,7 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 MessageBox.Show("Error en operación:" + System.Environment.NewLine + objOperationResult.ExceptionMessage, "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return _objData;
+            return _objData3;
         }
 
         private void btnTicket_Click(object sender, EventArgs e)

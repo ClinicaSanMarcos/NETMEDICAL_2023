@@ -493,6 +493,7 @@
     <Compile Include="Generated\updateservicecomponent1_spResultDto.cs" />
     <Compile Include="Generated\resumentipopagoResultDto.cs" />
     <Compile Include="Generated\resumentipoempresaResultDto.cs" />
+    <Compile Include="Generated\resumenhorariosmedicos_sResultDto.cs" />
     <Compile Include="Generated\reportegerencialResultDto.cs" />
     <Compile Include="Generated\reporteatencionmedicaResultDto.cs" />
     <Compile Include="Generated\recetatoreportResultDto.cs" />
@@ -508,6 +509,8 @@
     <Compile Include="Generated\getservicecomponentsreport_dxlist_spResultDto.cs" />
     <Compile Include="Generated\getpersonpersonalinformationeso_sResultDto.cs" />
     <Compile Include="Generated\getobtenerusuarioanterior_spResultDto.cs" />
+    <Compile Include="Generated\gethospsoplist_spResultDto.cs" />
+    <Compile Include="Generated\getemergencialist_spResultDto.cs" />
     <Compile Include="Generated\gerenciatipopagoResultDto.cs" />
     <Compile Include="Generated\gerenciatipoexamenResultDto.cs" />
     <Compile Include="Generated\gerenciacreditoResultDto.cs" />

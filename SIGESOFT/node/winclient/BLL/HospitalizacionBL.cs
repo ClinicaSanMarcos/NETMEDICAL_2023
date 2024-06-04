@@ -13,7 +13,7 @@ namespace Sigesoft.Node.WinClient.BLL
 {
     public class HospitalizacionBL
     {
-        public List<HospitalizacionList> GetHospitalizacionPagedAndFiltered(ref OperationResult pobjOperationResult, int? pintPageIndex, int? pintResultsPerPage, string pstrSortExpression, string pstrFilterExpression, DateTime? pdatBeginDate, DateTime? pdatEndDate)
+        public List<HospitalizacionList> GetHospitalizacionPagedAndFiltered_OLD(ref OperationResult pobjOperationResult, int? pintPageIndex, int? pintResultsPerPage, string pstrSortExpression, string pstrFilterExpression, DateTime? pdatBeginDate, DateTime? pdatEndDate)
         {
             try
             {
@@ -214,7 +214,69 @@ namespace Sigesoft.Node.WinClient.BLL
             }
         }
 
-        public List<HospitalizacionList> GetHospitalizacionPagedAndFilteredEmrg(ref OperationResult pobjOperationResult, int? pintPageIndex, int? pintResultsPerPage, string pstrSortExpression, string pstrFilterExpression, DateTime? pdatBeginDate, DateTime? pdatEndDate)
+        public List<HospSopList> GetHospitalizacionPagedAndFiltered(ref OperationResult pobjOperationResult, DateTime? pdatBeginDate, DateTime? pdatEndDate)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = (from a in dbContext.gethospsoplist_sp(pdatBeginDate, pdatEndDate, "")
+                                         select new HospSopList
+                                         {   
+                                             TipoDeIngreso  = a.TipoDeIngreso,
+                                             TipoProcedimiento  = a.TipoProcedimiento,
+                                             d_FechaIngreso  = a.d_FechaIngreso,
+                                             d_FechaHoraCirugia  = a.d_FechaHoraCirugia,
+                                             d_FechaHoraHospPac  = a.d_FechaHoraHospPac,
+                                             d_FechaAlta  = a.d_FechaAlta,
+                                             v_Paciente  = a.v_Paciente,
+                                             TipoDocumento  = a.TipoDocumento,
+                                             v_DocNumber  = a.v_DocNumber,
+                                             HistoriaClinica  = a.HistoriaClinica,
+                                             Edad  = a.Edad,
+                                             v_Cie10  = a.v_Cie10,
+                                             v_Diagnostico  = a.v_Diagnostico,
+                                             v_MedicoTratante  = a.v_MedicoTratante,
+                                             Especialidad  = a.Especialidad,
+                                             Monto  = a.Monto,
+                                             d_PagoMedico  = a.d_PagoMedico,
+                                             MedicoPago  = a.MedicoPago,
+                                             d_PagoPaciente  = a.d_PagoPaciente,
+                                             PacientePago  = a.PacientePago,
+                                             v_CIE10IdSalida  = a.v_CIE10IdSalida,
+                                             v_DiseasesNameSalida  = a.v_DiseasesNameSalida,
+                                             i_ProcedimientoSOP  = a.i_ProcedimientoSOP,
+                                             v_ProcedimientoSOP  = a.v_ProcedimientoSOP,
+                                             v_Servicio  = a.v_Servicio,
+                                             v_NroLiquidacion  = a.v_NroLiquidacion,
+                                             VendedorExterno  = a.VendedorExterno,
+                                             v_Comentariox  =  a.v_Comentariox,
+                                             v_HopitalizacionId  = a.v_HopitalizacionId,
+                                             v_PersonId  = a.v_PersonId,
+                                             i_IsDeleted  = a.i_IsDeleted,
+                                             Value1  = a.Value1, //v_NroHospitalizacion
+                                             Value2  = a.Value2,
+
+                                             
+                                         }).ToList();
+
+                               
+                pobjOperationResult.Success = 1;
+                return query;
+
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
+
+
+
+        public List<HospitalizacionList> GetHospitalizacionPagedAndFilteredEmrg_Old(ref OperationResult pobjOperationResult, int? pintPageIndex, int? pintResultsPerPage, string pstrSortExpression, string pstrFilterExpression, DateTime? pdatBeginDate, DateTime? pdatEndDate)
         {
             try
             {
@@ -404,6 +466,65 @@ namespace Sigesoft.Node.WinClient.BLL
                 }
                 pobjOperationResult.Success = 1;
                 return Lista;
+
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
+        public List<EmergenciapList> GetHospitalizacionPagedAndFilteredEmrg(ref OperationResult pobjOperationResult, DateTime? pdatBeginDate, DateTime? pdatEndDate)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = (from a in dbContext.getemergencialist_sp(pdatBeginDate, pdatEndDate, "")
+                             select new EmergenciapList
+                             {
+                                 TipoDeIngreso = a.TipoDeIngreso,
+                                 HoraCita = a.HoraCita,
+                                 d_FechaIngreso = a.d_FechaIngreso,
+                                 d_FechaEgreso = a.d_FechaEgreso,
+                                 v_Paciente = a.v_Paciente,
+                                 TipoDocumento = a.TipoDocumento,
+                                 v_DocNumber = a.v_DocNumber,
+                                 HistoriaClinica = a.HistoriaClinica,
+                                 Edad = a.Edad,
+                                 v_Cie10 = a.v_Cie10,
+                                 v_Diagnostico = a.v_Diagnostico,
+                                 v_MedicoTratante = a.v_MedicoTratante,
+                                 Especialidad = a.Especialidad,
+                                 Hospitalizado = a.Hospitalizado,
+                                 Value2  = a.Value2,
+                                 Monto = a.Monto,
+                                 d_PagoMedico = a.d_PagoMedico,
+                                 MedicoPago = a.MedicoPago,
+                                 d_PagoPaciente = a.d_PagoPaciente,
+                                 PacientePago = a.PacientePago,
+                                 v_CIE10IdSalida = a.v_CIE10IdSalida,
+                                 v_DiseasesNameSalida = a.v_DiseasesNameSalida,
+                                 i_ProcedimientoSOP = a.i_ProcedimientoSOP,
+                                 v_ProcedimientoSOP = a.v_ProcedimientoSOP,
+                                 v_Servicio = a.v_Servicio,
+                                 v_NroLiquidacion = a.v_NroLiquidacion,
+                                 VendedorExterno = a.VendedorExterno,
+                                 v_Comentariox = a.v_Comentariox,
+                                 v_HopitalizacionId = a.v_HopitalizacionId,
+                                 v_PersonId = a.v_PersonId,
+                                 i_IsDeleted = a.i_IsDeleted,
+                                 Consultorio = a.Consultorio,
+                                 Value1 = a.Value1, //v_NroHospitalizacion
+
+
+                             }).ToList();
+
+
+                pobjOperationResult.Success = 1;
+                return query;
 
             }
             catch (Exception ex)

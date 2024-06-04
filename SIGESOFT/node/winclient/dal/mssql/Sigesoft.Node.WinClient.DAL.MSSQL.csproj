@@ -188,6 +188,7 @@
     <Compile Include="GeneratedAssemblers\updateservicecomponent1_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\resumentipopagoResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\resumentipoempresaResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\resumenhorariosmedicos_sResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\reportegerencialResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\reporteatencionmedicaResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\recetatoreportResultAssembler.cs" />
@@ -203,6 +204,8 @@
     <Compile Include="GeneratedAssemblers\getservicecomponentsreport_dxlist_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getpersonpersonalinformationeso_sResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getobtenerusuarioanterior_spResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\gethospsoplist_spResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\getemergencialist_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciatipopagoResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciatipoexamenResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciacreditoResultAssembler.cs" />
