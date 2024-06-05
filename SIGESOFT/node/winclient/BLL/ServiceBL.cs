@@ -25,6 +25,37 @@ namespace Sigesoft.Node.WinClient.BLL
 	public class ServiceBL
 	{
 
+        public List<ServiceComponentListNew> GetServiceComponents_New(ref OperationResult pobjOperationResult, string pstrServiceId)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = (from A in dbContext.getservicecomponents_1(pstrServiceId)
+                             select new ServiceComponentListNew
+                             {
+                                 v_ServiceComponentId = A.v_ServiceComponentId,
+                                 v_ComponentId = A.v_ComponentId,
+                                 r_Price = A.r_Price,
+                                 v_ComponentName = A.v_ComponentName,
+                                 v_CategoryName = A.v_CategoryName,
+                                 i_ConCargoA = A.i_ConCargoA,
+                                 MedicoTratante = A.MedicoTratante,
+                                 d_InsertDate = A.d_InsertDate,
+                                 d_FechaAlta = A.d_FechaAlta
+                             }).ToList();
+
+                pobjOperationResult.Success = 1;
+                return query;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
 		#region Service
 
         //public List<ServiceList> GetServicesPagedAndFiltered(ref OperationResult pobjOperationResult, int? pintPageIndex, int? pintResultsPerPage, string pstrSortExpression, string pstrFilterExpression, DateTime? pdatBeginDate, DateTime? pdatEndDate, List<string> componentIds, DateTime? pFci, DateTime? pFcf)

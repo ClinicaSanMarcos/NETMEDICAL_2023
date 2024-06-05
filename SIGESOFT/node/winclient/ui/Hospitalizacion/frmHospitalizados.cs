@@ -1055,25 +1055,25 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 var HospId = grdData.Selected.Rows[0].Cells["v_HopitalizacionId"].Value.ToString();
                 var Pac = grdData.Selected.Rows[0].Cells["v_Paciente"].Value.ToString();
                 var Dni = grdData.Selected.Rows[0].Cells["v_DocNumber"].Value.ToString();
-                var Edad = grdData.Selected.Rows[0].Cells["i_Years"].Value.ToString();
+                var Edad = grdData.Selected.Rows[0].Cells["Edad"].Value.ToString();
                 var Medico = grdData.Selected.Rows[0].Cells["v_MedicoTratante"].Value.ToString();
-                //var Cie10 = grdData.Selected.Rows[0].Cells["Cie10"].Value.ToString();
-                //var Dx = grdData.Selected.Rows[0].Cells["v_Diagnostico"].Value.ToString();
-                //var Procedencia = grdData.Selected.Rows[0].Cells["v_ProcedenciaPac"].Value.ToString();
+                var Cie10 = grdData.Selected.Rows[0].Cells["v_Cie10"].Value.ToString();
+                var Dx = grdData.Selected.Rows[0].Cells["v_Diagnostico"].Value.ToString();
+                var Procedencia = grdData.Selected.Rows[0].Cells["TipoDeIngreso"].Value.ToString();
                 //var Hosp = grdData.Selected.Rows[0].Cells["Hosp"].Value.ToString();
                 //var Sop = grdData.Selected.Rows[0].Cells["Sop"].Value.ToString();
                 var FechaAlta = grdData.Selected.Rows[0].Cells["d_FechaAlta"].Value == null ? "" : grdData.Selected.Rows[0].Cells["d_FechaAlta"].Value.ToString();
 
                 //var Comentarios = grdData.Selected.Rows[0].Cells["v_Comentario"].Value == null ? "" : grdData.Selected.Rows[0].Cells["v_Comentario"].Value.ToString();
-                //var PersonId = grdData.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
+                var PersonId = grdData.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
 
 
-                //var Cie10Salida = grdData.Selected.Rows[0].Cells["v_CIE10IdSalida"].Value.ToString();
-                //var DxSalida = grdData.Selected.Rows[0].Cells["v_DiseasesNameSalida"].Value.ToString();
-                //var ProcedimientoId = grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value == null ? "- - -" : grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value.ToString();
-                //var ProcedimientoDesc = grdData.Selected.Rows[0].Cells["v_ProcedimientoSOP"].Value.ToString();
+                var Cie10Salida = grdData.Selected.Rows[0].Cells["v_CIE10IdSalida"].Value.ToString();
+                var DxSalida = grdData.Selected.Rows[0].Cells["v_DiseasesNameSalida"].Value.ToString();
+                var ProcedimientoId = grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value == null ? "- - -" : grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value.ToString();
+                var ProcedimientoDesc = grdData.Selected.Rows[0].Cells["v_ProcedimientoSOP"].Value.ToString();
 
-                frmRegistroHospSop ticket = new frmRegistroHospSop(HospId, Pac, Dni, Edad, Medico, "Cie10", "Dx", "Procedencia", "Hosp", "Sop", FechaAlta, "Comentarios", "PersonId", "Cie10Salida", "DxSalida", "ProcedimientoId", "ProcedimientoDesc");
+                frmRegistroHospSop ticket = new frmRegistroHospSop(HospId, Pac, Dni, Edad, Medico, Cie10, Dx, Procedencia, "Hosp", "Sop", FechaAlta, "Comentarios", PersonId, Cie10Salida, DxSalida, ProcedimientoId, ProcedimientoDesc);
                 ticket.ShowDialog();
             }
             else
@@ -1081,25 +1081,26 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 var HospId = ultraGrid1.Selected.Rows[0].Cells["v_HopitalizacionId"].Value.ToString();
                 var Pac = ultraGrid1.Selected.Rows[0].Cells["v_Paciente"].Value.ToString();
                 var Dni = ultraGrid1.Selected.Rows[0].Cells["v_DocNumber"].Value.ToString();
-                var Edad = ultraGrid1.Selected.Rows[0].Cells["i_Years"].Value.ToString();
+                var Edad = ultraGrid1.Selected.Rows[0].Cells["Edad"].Value.ToString();
                 var Medico = ultraGrid1.Selected.Rows[0].Cells["v_MedicoTratante"].Value.ToString();
-                //var Cie10 = grdData.Selected.Rows[0].Cells["Cie10"].Value.ToString();
-                //var Dx = grdData.Selected.Rows[0].Cells["v_Diagnostico"].Value.ToString();
-                //var Procedencia = grdData.Selected.Rows[0].Cells["v_ProcedenciaPac"].Value.ToString();
+                var Cie10 = grdData.Selected.Rows[0].Cells["v_Cie10"].Value.ToString();
+                var Dx = grdData.Selected.Rows[0].Cells["v_Diagnostico"].Value.ToString();
+                var Procedencia = ultraGrid1.Selected.Rows[0].Cells["TipoDeIngreso"].Value.ToString();
+
                 //var Hosp = grdData.Selected.Rows[0].Cells["Hosp"].Value.ToString();
                 //var Sop = grdData.Selected.Rows[0].Cells["Sop"].Value.ToString();
                 var FechaAlta = ultraGrid1.Selected.Rows[0].Cells["d_FechaAlta"].Value == null ? "" : grdData.Selected.Rows[0].Cells["d_FechaAlta"].Value.ToString();
 
                 //var Comentarios = grdData.Selected.Rows[0].Cells["v_Comentario"].Value == null ? "" : grdData.Selected.Rows[0].Cells["v_Comentario"].Value.ToString();
-                //var PersonId = grdData.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
+                var PersonId = grdData.Selected.Rows[0].Cells["v_PersonId"].Value.ToString();
 
 
-                //var Cie10Salida = grdData.Selected.Rows[0].Cells["v_CIE10IdSalida"].Value.ToString();
-                //var DxSalida = grdData.Selected.Rows[0].Cells["v_DiseasesNameSalida"].Value.ToString();
-                //var ProcedimientoId = grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value == null ? "- - -" : grdData.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value.ToString();
-                //var ProcedimientoDesc = grdData.Selected.Rows[0].Cells["v_ProcedimientoSOP"].Value.ToString();
+                var Cie10Salida = ultraGrid1.Selected.Rows[0].Cells["v_CIE10IdSalida"].Value.ToString();
+                var DxSalida = ultraGrid1.Selected.Rows[0].Cells["v_DiseasesNameSalida"].Value.ToString();
+                var ProcedimientoId = ultraGrid1.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value == null ? "- - -" : ultraGrid1.Selected.Rows[0].Cells["i_ProcedimientoSOP"].Value.ToString();
+                var ProcedimientoDesc = ultraGrid1.Selected.Rows[0].Cells["v_ProcedimientoSOP"].Value.ToString();
 
-                frmRegistroHospSop ticket = new frmRegistroHospSop(HospId, Pac, Dni, Edad, Medico, "Cie10", "Dx", "Procedencia", "Hosp", "Sop", FechaAlta, "Comentarios", "PersonId", "Cie10Salida", "DxSalida", "ProcedimientoId", "ProcedimientoDesc");
+                frmRegistroHospSop ticket = new frmRegistroHospSop(HospId, Pac, Dni, Edad, Medico, Cie10, Dx, Procedencia, "Hosp", "Sop", FechaAlta, "Comentarios", PersonId, Cie10Salida, DxSalida, ProcedimientoId, ProcedimientoDesc);
                 ticket.ShowDialog();
             }
 

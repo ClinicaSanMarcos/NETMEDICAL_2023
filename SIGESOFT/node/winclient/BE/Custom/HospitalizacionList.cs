@@ -41,9 +41,17 @@ namespace Sigesoft.Node.WinClient.BE
         public string TipoDeIngreso { get; set; }
         public string TipoProcedimiento { get; set; }
         public DateTime? d_FechaIngreso { get; set; }
+        public string d_FechaIngreso_ { get; set; }
+
         public DateTime? d_FechaHoraCirugia { get; set; }
+        public string d_FechaHoraCirugia_ { get; set; }
+
         public DateTime? d_FechaHoraHospPac { get; set; }
+        public string d_FechaHoraHospPac_ { get; set; }
+
         public DateTime? d_FechaAlta { get; set; }
+        public string d_FechaAlta_ { get; set; }
+
         public string v_Paciente { get; set; }
         public string TipoDocumento { get; set; }
         public string v_DocNumber { get; set; }
@@ -77,8 +85,14 @@ namespace Sigesoft.Node.WinClient.BE
     {
         public string TipoDeIngreso { get; set; }
         public DateTime? HoraCita { get; set; }
+        public string HoraCita_ { get; set; }
+
         public DateTime? d_FechaIngreso { get; set; }
+        public string d_FechaIngreso_ { get; set; }
+
         public DateTime? d_FechaEgreso { get; set; }
+        public string d_FechaEgreso_ { get; set; }
+
         public string v_Paciente { get; set; }
         public string TipoDocumento { get; set; }
         public string v_DocNumber { get; set; }

@@ -123,4 +123,21 @@ namespace Sigesoft.Node.WinClient.BE
         public string GrupoAtencion { get; set; }
 
     }
+
+    public class ServiceComponentListNew
+    {
+
+        public string v_ComponentName { get; set; }
+        public string v_CategoryName { get; set; }
+        public string MedicoTratante { get; set; }
+        public Single? r_Price { get; set; }
+        public DateTime? d_FechaAlta { get; set; }
+        public string v_ServiceComponentId { get; set; }
+
+        public string v_ComponentId { get; set; }
+        public int? i_ConCargoA { get; set; }
+        public DateTime? d_InsertDate { get; set; }
+
+
+    }
 }

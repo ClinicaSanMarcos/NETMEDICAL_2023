@@ -225,10 +225,10 @@ namespace Sigesoft.Node.WinClient.BLL
                                          {   
                                              TipoDeIngreso  = a.TipoDeIngreso,
                                              TipoProcedimiento  = a.TipoProcedimiento,
-                                             d_FechaIngreso  = a.d_FechaIngreso,
-                                             d_FechaHoraCirugia  = a.d_FechaHoraCirugia,
-                                             d_FechaHoraHospPac  = a.d_FechaHoraHospPac,
-                                             d_FechaAlta  = a.d_FechaAlta,
+                                             d_FechaIngreso_ = a.d_FechaIngreso.ToString(),
+                                             d_FechaHoraCirugia_ = a.d_FechaHoraCirugia.ToString(),
+                                             d_FechaHoraHospPac_ = a.d_FechaHoraHospPac.ToString(),
+                                             d_FechaAlta_ = a.d_FechaAlta.ToString(),
                                              v_Paciente  = a.v_Paciente,
                                              TipoDocumento  = a.TipoDocumento,
                                              v_DocNumber  = a.v_DocNumber,
@@ -486,9 +486,9 @@ namespace Sigesoft.Node.WinClient.BLL
                              select new EmergenciapList
                              {
                                  TipoDeIngreso = a.TipoDeIngreso,
-                                 HoraCita = a.HoraCita,
-                                 d_FechaIngreso = a.d_FechaIngreso,
-                                 d_FechaEgreso = a.d_FechaEgreso,
+                                 HoraCita_ = a.HoraCita.ToString(),
+                                 d_FechaIngreso_ = a.d_FechaIngreso.ToString(),
+                                 d_FechaEgreso_ = a.d_FechaEgreso.ToString(),
                                  v_Paciente = a.v_Paciente,
                                  TipoDocumento = a.TipoDocumento,
                                  v_DocNumber = a.v_DocNumber,
@@ -705,7 +705,7 @@ namespace Sigesoft.Node.WinClient.BLL
             return decimal.Round((decimal)precioHabitacion * (cantidadDias),2);
         }
 
-        private List<HospitalizacionHabitacionList> BuscarHospitalizacionHabitaciones(string hospitalizacionId)
+        private List<HospitalizacionHabitacionList> BuscarHospitalizacionHabitaciones_old(string hospitalizacionId)
         {
             try
             {
@@ -735,6 +735,37 @@ namespace Sigesoft.Node.WinClient.BLL
                 return null;
             }
             
+        }
+
+        public List<HospitalizacionHabitacionList> BuscarHospitalizacionHabitaciones(string hospitalizacionId)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                var habitaciones = (from A in dbContext.buscarhospitalizacionhabitaciones(hospitalizacionId)
+                                    select new HospitalizacionHabitacionList
+                                    {
+                                        v_HospitalizacionHabitacionId = A.v_HospitalizacionHabitacionId,
+                                        v_HopitalizacionId = A.v_HopitalizacionId,
+                                        i_HabitacionId = A.i_HabitacionId.Value,
+                                        NroHabitacion = A.NroHabitacion,
+                                        d_StartDate = A.d_StartDate,
+                                        d_EndDate = A.d_EndDate,
+                                        i_conCargoA = A.i_conCargoA.Value,
+                                        d_Precio = A.d_Precio.Value,
+                                        i_isdelete = A.i_isdelete,
+                                        d_FechaAlta = A.d_FechaAlta,
+                                        Total = A.d_Precio == null ? 0 : CalcularCostoHabitacion(A.d_Precio.ToString(), A.d_StartDate, A.d_EndDate)
+
+                                    }).ToList();
+
+                return habitaciones;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
 
         private List<HospitalizacionServiceList> BuscarServiciosHospitalizacion(string hospitalizacionId)
@@ -866,7 +897,7 @@ namespace Sigesoft.Node.WinClient.BLL
             
         }
 
-        public List<TicketList> BuscarTickets(string v_ServiceId)
+        public List<TicketList> BuscarTickets_old(string v_ServiceId)
         {
             //acá hace un select a la tabla hospitalizacionService y buscas todos que tengan foranea HospitalizacionId
             SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
@@ -949,6 +980,66 @@ namespace Sigesoft.Node.WinClient.BLL
                 Lista.Add(tickets);
             }
            
+            return Lista;
+        }
+
+        public List<TicketList> BuscarTickets(string v_ServiceId)
+        {
+            //acá hace un select a la tabla hospitalizacionService y buscas todos que tengan foranea HospitalizacionId
+            SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+            var queryticket = (from A in dbContext.buscartickets_1(v_ServiceId)
+                               select new TicketList
+                               {
+                                   v_ServiceId = A.v_ServiceId,
+                                   v_TicketId = A.v_TicketId,
+                                   d_Fecha = A.d_Fecha,
+                                   i_conCargoA = A.i_conCargoA,
+                                   i_tipoCuenta = A.i_tipoCuenta,
+                                   i_TicketInterno = A.i_TicketInterno,
+                                   d_FechaAlta = A.d_FechaAlta
+                               }).ToList();
+
+            TicketList tickets;
+            List<TicketList> Lista = new List<TicketList>();
+
+            foreach (var item in queryticket)
+            {
+                tickets = new TicketList();
+
+                tickets.v_TicketId = item.v_TicketId;
+                tickets.v_ServiceId = item.v_ServiceId;
+                tickets.d_Fecha = item.d_Fecha;
+                tickets.i_conCargoA = item.i_conCargoA;
+                tickets.i_tipoCuenta = item.i_tipoCuenta;
+                tickets.i_TicketInterno = item.i_TicketInterno;
+                tickets.d_FechaAlta = item.d_FechaAlta;
+                // estos son los hijos de 1 hopitalización
+                var ticketssdetalle = BuscarTicketsDetalle(item.v_TicketId).ToList();
+
+                List<TicketDetalleList> Ticketsdetalle = new List<TicketDetalleList>();
+                if (ticketssdetalle.Count > 0)
+                {
+                    TicketDetalleList ticketsdetallelist;
+                    foreach (var tickdetalle in ticketssdetalle)
+                    {
+                        ticketsdetallelist = new TicketDetalleList();
+                        // acá vas poblando la entidad hijo hospitalización
+                        ticketsdetallelist.v_TicketId = tickdetalle.v_TicketId;
+                        ticketsdetallelist.v_TicketDetalleId = tickdetalle.v_TicketDetalleId;
+                        ticketsdetallelist.v_IdProductoDetalle = tickdetalle.v_IdProductoDetalle;
+                        ticketsdetallelist.v_Descripcion = tickdetalle.v_Descripcion;
+                        ticketsdetallelist.EsDespachado = tickdetalle.EsDespachado;
+                        ticketsdetallelist.d_Cantidad = decimal.Round(tickdetalle.d_Cantidad, 0);
+                        ticketsdetallelist.d_PrecioVenta = decimal.Round(tickdetalle.d_PrecioVenta, 2);
+                        ticketsdetallelist.Total = decimal.Round(tickdetalle.d_Cantidad * tickdetalle.d_PrecioVenta, 2);
+                        // acá estoy agregando a las lista
+                        Ticketsdetalle.Add(ticketsdetallelist);
+                    }
+                    tickets.Productos = Ticketsdetalle;
+                }
+                Lista.Add(tickets);
+            }
+
             return Lista;
         }
 
@@ -1077,7 +1168,7 @@ namespace Sigesoft.Node.WinClient.BLL
         }
 
 
-        public List<TicketDetalleList> BuscarTicketsDetalle(string v_TicketId)
+        public List<TicketDetalleList> BuscarTicketsDetalle_OLD(string v_TicketId)
         {
             SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
             var queryticketdetalle = from A in dbContext.hospitalizacion
@@ -1117,6 +1208,25 @@ namespace Sigesoft.Node.WinClient.BLL
                               UsuarioCrea = a.UsuarioCrea
                           }).ToList();
 
+            return ticketdetalle;
+        }
+
+        public List<TicketDetalleList> BuscarTicketsDetalle(string v_TicketId)
+        {
+            SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+            var ticketdetalle = (from A in dbContext.buscarticketsdetalle_1(v_TicketId)
+                                 select new TicketDetalleList
+                                 {
+                                     v_TicketDetalleId = A.v_TicketDetalleId,
+                                     v_TicketId = A.v_TicketId,
+                                     d_Cantidad = A.d_Cantidad.Value,
+                                     v_Descripcion = A.v_Descripcion,
+                                     v_IdProductoDetalle = A.v_IdProductoDetalle,
+                                     i_EsDespachado = A.i_EsDespachado.Value,
+                                     d_PrecioVenta = A.d_PrecioVenta.Value,
+                                     UsuarioCrea = A.UsuarioCrea,
+                                     EsDespachado = A.i_EsDespachado == 0 ? "NO" : "SI",
+                                 }).ToList();
             return ticketdetalle;
         }
 
@@ -1665,6 +1775,36 @@ namespace Sigesoft.Node.WinClient.BLL
             {
                 return dbContext.medico.FirstOrDefault(p => p.v_MedicoId == medicoId).v_ComentaryUpdate;
             }
+        }
+
+
+        public List<HospitalizacionServiceListNew> BuscarServiciosHospitalizacionNew(string hospitalizacionId)
+        {
+            try
+            {
+                //acá hace un select a la tabla hospitalizacionService y buscas todos que tengan foranea HospitalizacionId
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                List<HospitalizacionServiceListNew> queryservice = (from A in dbContext.buscarservicioshospitalizacion_1(hospitalizacionId)
+                                                                    select new HospitalizacionServiceListNew
+                                                                    {
+                                                                        v_HospitalizacionServiceId = A.v_HospitalizacionServiceId,
+                                                                        v_HopitalizacionId = A.v_HopitalizacionId,
+                                                                        v_ServiceId = A.v_ServiceId,
+                                                                        d_ServiceDate = A.d_ServiceDate.Value,
+                                                                        v_ProtocolName = A.v_ProtocolName,
+                                                                        v_ProtocolId = A.v_ProtocolId,
+                                                                        v_DocNumber = A.v_DocNumber,
+                                                                        d_FechaAlta = A.d_FechaAlta
+                                                                    }).ToList();
+
+                return queryservice;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+
         }
     }
 }

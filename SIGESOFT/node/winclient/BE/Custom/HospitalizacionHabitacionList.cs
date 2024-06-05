@@ -7,7 +7,7 @@ namespace Sigesoft.Node.WinClient.BE
 {
     public class HospitalizacionHabitacionList
     {
-        public string v_HospitalizacionHabitacionId  { get; set; }
+        public string v_HospitalizacionHabitacionId { get; set; }
         public string v_HopitalizacionId { get; set; }
         public int i_HabitacionId { get; set; }
         public string NroHabitacion { get; set; }
@@ -17,5 +17,6 @@ namespace Sigesoft.Node.WinClient.BE
         public decimal Total { get; set; }
         public DateTime? d_FechaAlta { get; set; }
         public int? i_conCargoA { get; set; }
+        public int? i_isdelete { get; set; }
     }
 }
