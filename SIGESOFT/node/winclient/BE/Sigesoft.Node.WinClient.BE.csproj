@@ -358,6 +358,10 @@
     <Compile Include="Custom\WorkstationDangersList.cs" />
     <Compile Include="Custom\XmlNatclar.cs" />
     <Compile Include="Generated\bandejaagendaResultDto.cs" />
+    <Compile Include="Generated\buscarhospitalizacionhabitacionesResultDto.cs" />
+    <Compile Include="Generated\buscarservicioshospitalizacion_1ResultDto.cs" />
+    <Compile Include="Generated\buscartickets_1ResultDto.cs" />
+    <Compile Include="Generated\buscarticketsdetalle_1ResultDto.cs" />
     <Compile Include="Generated\devolverdatospaciente_spResultDto.cs" />
     <Compile Include="Generated\additionalexamDto.cs" />
     <Compile Include="Generated\adolescenteDto.cs" />
@@ -507,6 +511,7 @@
     <Compile Include="Generated\getservicecomponentsreportsc_spResultDto.cs" />
     <Compile Include="Generated\getservicecomponentsreportc_spResultDto.cs" />
     <Compile Include="Generated\getservicecomponentsreport_dxlist_spResultDto.cs" />
+    <Compile Include="Generated\getservicecomponents_1ResultDto.cs" />
     <Compile Include="Generated\getpersonpersonalinformationeso_sResultDto.cs" />
     <Compile Include="Generated\getobtenerusuarioanterior_spResultDto.cs" />
     <Compile Include="Generated\gethospsoplist_spResultDto.cs" />

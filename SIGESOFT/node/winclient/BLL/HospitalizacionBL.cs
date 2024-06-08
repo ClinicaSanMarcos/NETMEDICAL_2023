@@ -229,6 +229,8 @@ namespace Sigesoft.Node.WinClient.BLL
                                              d_FechaHoraCirugia_ = a.d_FechaHoraCirugia.ToString(),
                                              d_FechaHoraHospPac_ = a.d_FechaHoraHospPac.ToString(),
                                              d_FechaAlta_ = a.d_FechaAlta.ToString(),
+                                             d_FechaAlta = a.d_FechaAlta,
+
                                              v_Paciente  = a.v_Paciente,
                                              TipoDocumento  = a.TipoDocumento,
                                              v_DocNumber  = a.v_DocNumber,
@@ -489,6 +491,8 @@ namespace Sigesoft.Node.WinClient.BLL
                                  HoraCita_ = a.HoraCita.ToString(),
                                  d_FechaIngreso_ = a.d_FechaIngreso.ToString(),
                                  d_FechaEgreso_ = a.d_FechaEgreso.ToString(),
+                                 d_FechaEgreso = a.d_FechaEgreso,
+
                                  v_Paciente = a.v_Paciente,
                                  TipoDocumento = a.TipoDocumento,
                                  v_DocNumber = a.v_DocNumber,
@@ -1805,6 +1809,28 @@ namespace Sigesoft.Node.WinClient.BLL
             }
 
 
+        }
+
+        public hospitalizacionDto GetHospitalizacionDx(string v_HospitalizacionId)
+        {
+             try
+            {
+                              SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                hospitalizacionDto objDtoEntity = null;
+
+                var objEntity = (from a in dbContext.hospitalizacion
+                                 where a.v_HopitalizacionId == v_HospitalizacionId
+                                 select a).FirstOrDefault();
+
+                if (objEntity != null)
+                    objDtoEntity = hospitalizacionAssembler.ToDTO(objEntity);
+
+                return objDtoEntity;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

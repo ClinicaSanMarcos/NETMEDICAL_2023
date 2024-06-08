@@ -649,7 +649,7 @@ namespace Sigesoft.Node.Contasol.Integration
 
         private void btnRegistrarMedicamento_Click(object sender, EventArgs e)
         {
-            var f = new frmSearchMedicamento();
+            var f = new frmSearchMedicamento("");
             f.ShowDialog();
 
        

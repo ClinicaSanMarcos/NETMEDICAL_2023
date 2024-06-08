@@ -27,9 +27,11 @@ namespace Sigesoft.Node.WinClient.UI.Operations.Popups
                 return (MedicamentoDto)activeRow.ListObject;
             }
         }
-
-        public frmSearchMedicamento()
+        private string mode;
+        public frmSearchMedicamento(string modo)
         {
+            mode = modo;
+
             InitializeComponent();
             _objMedicamentoBl = new MedicamentoBl();
             _opbjOperationResult = new OperationResult();
@@ -39,17 +41,39 @@ namespace Sigesoft.Node.WinClient.UI.Operations.Popups
 
         private void frmSearchMedicamento_Load(object sender, EventArgs e)
         {
+        //    _opbjOperationResult = new OperationResult();
+        //    gbBuscarMedicamento.Visible = true;
+        //    gbRegistrarMedicamento.Visible = false;
+        //    gbBuscarMedicamento.Dock = DockStyle.Fill;
+        //    MedicamentoDao.ObtenerLineasParaCombo(cboLinea);
+        //    MedicamentoDao.ObtenerUmParaCombo(cboUM);
+        //    MedicamentoDao.ObtenerMarca(cboMarca);
+        //    txtCodigo.Text = MedicamentoDao.CodigoNuevo();
+
+        //    btnRegistrarMedicamento_Click(sender,e);
+
             _opbjOperationResult = new OperationResult();
-            gbBuscarMedicamento.Visible = true;
-            gbRegistrarMedicamento.Visible = false;
-            gbBuscarMedicamento.Dock = DockStyle.Fill;
+
             MedicamentoDao.ObtenerLineasParaCombo(cboLinea);
             MedicamentoDao.ObtenerUmParaCombo(cboUM);
             MedicamentoDao.ObtenerMarca(cboMarca);
             txtCodigo.Text = MedicamentoDao.CodigoNuevo();
+            CargarData();
 
-            btnRegistrarMedicamento_Click(sender,e);
-
+            if (mode == "Registro")
+            {
+                gbBuscarMedicamento.Visible = false;
+                gbRegistrarMedicamento.Visible = true;
+                gbRegistrarMedicamento.Dock = DockStyle.Fill;
+                txtNombreMedicamento.Focus();
+                txtNombreMedicamento.Text = txtBuscarNombre.Text;
+            }
+            else
+            {
+                gbBuscarMedicamento.Visible = true;
+                gbRegistrarMedicamento.Visible = false;
+                gbBuscarMedicamento.Dock = DockStyle.Fill;
+            }
 
 
             //Utils.LoadDropDownList(cboUM, "Value1", "Id", BLL.Utils.GetDataHierarchyForCombo(ref _opbjOperationResult, 105, null));

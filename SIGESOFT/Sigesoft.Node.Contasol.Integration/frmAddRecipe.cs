@@ -185,7 +185,7 @@ namespace Sigesoft.Node.Contasol.Integration
         private void txtMedicamento_EditorButtonClick(object sender, Infragistics.Win.UltraWinEditors.EditorButtonEventArgs e)
         {
             TicketBL oTicketBL = new TicketBL();
-            var f = new frmSearchMedicamento();
+            var f = new frmSearchMedicamento("");
             var result = f.ShowDialog();
             if (result == DialogResult.OK)
             {

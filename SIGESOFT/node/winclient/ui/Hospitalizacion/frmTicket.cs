@@ -276,13 +276,31 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
         private void btnNuevo_Click(object sender, EventArgs e)
         {
 
-            frmTipoBuquedaProducto formtipo = new frmTipoBuquedaProducto();
-            formtipo.ShowDialog();
+            //frmTipoBuquedaProducto formtipo = new frmTipoBuquedaProducto();
+            //formtipo.ShowDialog();
 
-            if (formtipo.TipoBusqueda == 0)
-            {
+            //if (formtipo.TipoBusqueda == 0)
+            //{
+                //var nuevo = new frmAddProducto(string.Empty, "New", _serviceId, _protocolId, _modo);
+
+                //if (_tmpTicketDetalleList != null)
+                //{
+                //    nuevo._TempTicketDetalleList = _tmpTicketDetalleList;
+                //}
+                //nuevo.ShowDialog();
+                //this.grdTicketDetalle.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+                //if (nuevo._TempTicketDetalleList != null)
+                //{
+                //    _tmpTicketDetalleList = nuevo._TempTicketDetalleList;
+
+                //    var dataList = _tmpTicketDetalleList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+                //    grdTicketDetalle.DataSource = new TicketDetalleList();
+                //    grdTicketDetalle.DataSource = dataList;
+                //    grdTicketDetalle.Refresh();
+                //    lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+                //}
+
                 var nuevo = new frmAddProducto(string.Empty, "New", _serviceId, _protocolId, _modo);
-
                 if (_tmpTicketDetalleList != null)
                 {
                     nuevo._TempTicketDetalleList = _tmpTicketDetalleList;
@@ -298,30 +316,31 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                     grdTicketDetalle.DataSource = dataList;
                     grdTicketDetalle.Refresh();
                     lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
-                }
-            }
-            else if (formtipo.TipoBusqueda == 1)
-            {
+                }  
 
-                frmProductPackage frm = new frmProductPackage(_protocolId, _serviceId);
-                if (_tmpTicketDetalleList != null)
-                {
-                    frm._TempTicketDetalleList = _tmpTicketDetalleList;
-                }
-                frm.ShowDialog();
+            //}
+            //else if (formtipo.TipoBusqueda == 1)
+            //{
 
-                this.grdTicketDetalle.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
-                if (frm._TempTicketDetalleList != null)
-                {
-                    _tmpTicketDetalleList = frm._TempTicketDetalleList;
+            //    frmProductPackage frm = new frmProductPackage(_protocolId, _serviceId);
+            //    if (_tmpTicketDetalleList != null)
+            //    {
+            //        frm._TempTicketDetalleList = _tmpTicketDetalleList;
+            //    }
+            //    frm.ShowDialog();
 
-                    var dataList = _tmpTicketDetalleList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
-                    grdTicketDetalle.DataSource = new TicketDetalleList();
-                    grdTicketDetalle.DataSource = dataList;
-                    grdTicketDetalle.Refresh();
-                    lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
-                }
-            }
+            //    this.grdTicketDetalle.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+            //    if (frm._TempTicketDetalleList != null)
+            //    {
+            //        _tmpTicketDetalleList = frm._TempTicketDetalleList;
+
+            //        var dataList = _tmpTicketDetalleList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+            //        grdTicketDetalle.DataSource = new TicketDetalleList();
+            //        grdTicketDetalle.DataSource = dataList;
+            //        grdTicketDetalle.Refresh();
+            //        lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+            //    }
+            //}
 
 
         }
@@ -375,6 +394,75 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
             grdTicketDetalle.DataSource = listanueva;
             grdTicketDetalle.Refresh();
             lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", listanueva.Count());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmTipoBuquedaProducto formtipo = new frmTipoBuquedaProducto();
+            formtipo.ShowDialog();
+
+            if (formtipo.TipoBusqueda == 0)
+            {
+                //var nuevo = new frmAddProducto(string.Empty, "New", _serviceId, _protocolId, _modo);
+
+                //if (_tmpTicketDetalleList != null)
+                //{
+                //    nuevo._TempTicketDetalleList = _tmpTicketDetalleList;
+                //}
+                //nuevo.ShowDialog();
+                //this.grdTicketDetalle.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+                //if (nuevo._TempTicketDetalleList != null)
+                //{
+                //    _tmpTicketDetalleList = nuevo._TempTicketDetalleList;
+
+                //    var dataList = _tmpTicketDetalleList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+                //    grdTicketDetalle.DataSource = new TicketDetalleList();
+                //    grdTicketDetalle.DataSource = dataList;
+                //    grdTicketDetalle.Refresh();
+                //    lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+                //}
+
+                var nuevo = new frmAddProducto(string.Empty, "New", _serviceId, _protocolId, _modo);
+                if (_tmpTicketDetalleList != null)
+                {
+                    nuevo._TempTicketDetalleList = _tmpTicketDetalleList;
+                }
+                nuevo.ShowDialog();
+                this.grdTicketDetalle.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+                if (nuevo._TempTicketDetalleList != null)
+                {
+                    _tmpTicketDetalleList = nuevo._TempTicketDetalleList;
+
+                    var dataList = _tmpTicketDetalleList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+                    grdTicketDetalle.DataSource = new TicketDetalleList();
+                    grdTicketDetalle.DataSource = dataList;
+                    grdTicketDetalle.Refresh();
+                    lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+                }
+
+            }
+            else if (formtipo.TipoBusqueda == 1)
+            {
+
+                frmProductPackage frm = new frmProductPackage(_protocolId, _serviceId);
+                if (_tmpTicketDetalleList != null)
+                {
+                    frm._TempTicketDetalleList = _tmpTicketDetalleList;
+                }
+                frm.ShowDialog();
+
+                this.grdTicketDetalle.DisplayLayout.AutoFitStyle = AutoFitStyle.ResizeAllColumns;
+                if (frm._TempTicketDetalleList != null)
+                {
+                    _tmpTicketDetalleList = frm._TempTicketDetalleList;
+
+                    var dataList = _tmpTicketDetalleList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+                    grdTicketDetalle.DataSource = new TicketDetalleList();
+                    grdTicketDetalle.DataSource = dataList;
+                    grdTicketDetalle.Refresh();
+                    lblRecordCount2.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+                }
+            }
         }
     }
 }

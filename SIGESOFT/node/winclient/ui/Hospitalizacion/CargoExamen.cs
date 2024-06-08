@@ -120,5 +120,45 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 this.Close();
             }
         }
+
+        private void CargoExamen_Load_1(object sender, EventArgs e)
+        {
+            OperationResult objOperationResult = new OperationResult();
+
+
+            #region Conexion SAM
+            ConexionSigesoft conectasam = new ConexionSigesoft();
+            conectasam.opensigesoft();
+            #endregion
+            var cadena1 = "select sc.v_ServiceComponentId, sc.v_ComponentId, sc.i_ConCargoA, c.v_Name from [dbo].[servicecomponent] sc join [dbo].[component] c on sc.v_ComponentId = c.v_ComponentId  where sc.v_ServiceComponentId = '" + serviceComponent + "'";
+            SqlCommand comando = new SqlCommand(cadena1, connection: conectasam.conectarsigesoft);
+            SqlDataReader lector = comando.ExecuteReader();
+            string ServiceComponent = "";
+            string ComponentId = "";
+            int ConCargoA = 0;
+            string Componente = "";
+            while (lector.Read())
+            {
+                ServiceComponent = lector.GetValue(0).ToString();
+                ComponentId = lector.GetValue(1).ToString();
+                ConCargoA = int.Parse(lector.GetValue(2).ToString());
+                Componente = lector.GetValue(3).ToString();
+            }
+            lector.Close();
+            conectasam.closesigesoft();
+
+            lablExamen.Text = Componente;
+            if (ConCargoA == 1)
+            {
+                rbMedico.Checked = true;
+                rbPaciente.Checked = false;
+            }
+            else
+            {
+                //2 paciente
+                rbMedico.Checked = false;
+                rbPaciente.Checked = true;
+            }
+        }
     }
 }

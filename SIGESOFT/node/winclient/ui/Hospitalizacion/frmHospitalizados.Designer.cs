@@ -64,6 +64,7 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn29 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_IsDeleted");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn30 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Value1");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn31 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Value2");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaAlta");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -105,6 +106,7 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn79 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_IsDeleted");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn72 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Consultorio");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn80 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Value1");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaAlta");
             Infragistics.Win.Appearance appearance9 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance10 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance11 = new Infragistics.Win.Appearance();
@@ -434,6 +436,8 @@
             ultraGridColumn29.Hidden = true;
             ultraGridColumn30.Header.VisiblePosition = 31;
             ultraGridColumn31.Header.VisiblePosition = 32;
+            ultraGridColumn3.Header.VisiblePosition = 33;
+            ultraGridColumn3.Hidden = true;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn50,
             ultraGridColumn1,
@@ -467,7 +471,8 @@
             ultraGridColumn28,
             ultraGridColumn29,
             ultraGridColumn30,
-            ultraGridColumn31});
+            ultraGridColumn31,
+            ultraGridColumn3});
             this.grdData.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.grdData.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
             this.grdData.DisplayLayout.InterBandSpacing = 10;
@@ -665,6 +670,8 @@
             ultraGridColumn79.Hidden = true;
             ultraGridColumn72.Header.VisiblePosition = 29;
             ultraGridColumn80.Header.VisiblePosition = 31;
+            ultraGridColumn7.Header.VisiblePosition = 32;
+            ultraGridColumn7.Hidden = true;
             ultraGridBand2.Columns.AddRange(new object[] {
             ultraGridColumn2,
             ultraGridColumn47,
@@ -697,7 +704,8 @@
             ultraGridColumn78,
             ultraGridColumn79,
             ultraGridColumn72,
-            ultraGridColumn80});
+            ultraGridColumn80,
+            ultraGridColumn7});
             this.ultraGrid1.DisplayLayout.BandsSerializer.Add(ultraGridBand2);
             this.ultraGrid1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
             this.ultraGrid1.DisplayLayout.InterBandSpacing = 10;
@@ -1223,9 +1231,10 @@
             this.btnTipoPacClin.Name = "btnTipoPacClin";
             this.btnTipoPacClin.Size = new System.Drawing.Size(135, 32);
             this.btnTipoPacClin.TabIndex = 169;
-            this.btnTipoPacClin.Text = "Inf. Adicional ";
+            this.btnTipoPacClin.Text = "Inf. Complementaria";
             this.btnTipoPacClin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTipoPacClin.UseVisualStyleBackColor = false;
+            this.btnTipoPacClin.Click += new System.EventHandler(this.btnTipoPacClin_Click);
             // 
             // button1
             // 

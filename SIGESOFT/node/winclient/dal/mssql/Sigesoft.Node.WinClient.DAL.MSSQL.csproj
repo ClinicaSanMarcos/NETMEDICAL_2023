@@ -53,6 +53,10 @@
       <DependentUpon>DMnodeSQLServer.edmx</DependentUpon>
     </Compile>
     <Compile Include="GeneratedAssemblers\bandejaagendaResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\buscarhospitalizacionhabitacionesResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\buscarservicioshospitalizacion_1ResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\buscartickets_1ResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\buscarticketsdetalle_1ResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\devolverdatospaciente_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\additionalexamAssembler.cs" />
     <Compile Include="GeneratedAssemblers\adolescenteAssembler.cs" />
@@ -202,6 +206,7 @@
     <Compile Include="GeneratedAssemblers\getservicecomponentsreportsc_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getservicecomponentsreportc_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getservicecomponentsreport_dxlist_spResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\getservicecomponents_1ResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getpersonpersonalinformationeso_sResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getobtenerusuarioanterior_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gethospsoplist_spResultAssembler.cs" />

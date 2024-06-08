@@ -39,7 +39,7 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
         
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var f = new frmSearchMedicamento();
+            var f = new frmSearchMedicamento("");
             var result = f.ShowDialog();
             #region Conexion SIGESOFT Obtener Porcentaje de descuento EPS
             ConexionSigesoft conectasam = new ConexionSigesoft();

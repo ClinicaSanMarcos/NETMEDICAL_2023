@@ -1566,11 +1566,41 @@
     <Compile Include="Hospitalizacion\CargoExamen.Designer.cs">
       <DependentUpon>CargoExamen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hospitalizacion\frmAddEditProcedimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmAddEditProcedimientos.Designer.cs">
+      <DependentUpon>frmAddEditProcedimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmAgregarEditarDx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmAgregarEditarDx.Designer.cs">
+      <DependentUpon>frmAgregarEditarDx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmEditatarHorasSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmEditatarHorasSOP.Designer.cs">
+      <DependentUpon>frmEditatarHorasSOP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hospitalizacion\frmEditServiceComponent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Hospitalizacion\frmEditServiceComponent.Designer.cs">
       <DependentUpon>frmEditServiceComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmInformacionComplementaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmInformacionComplementaria.Designer.cs">
+      <DependentUpon>frmInformacionComplementaria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmInformacionComplementariaEmergencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmInformacionComplementariaEmergencia.Designer.cs">
+      <DependentUpon>frmInformacionComplementariaEmergencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Hospitalizacion\frmRegistroHospSop.cs">
       <SubType>Form</SubType>
@@ -1584,6 +1614,7 @@
     <Compile Include="Hospitalizacion\frmTipoBuquedaProducto.Designer.cs">
       <DependentUpon>frmTipoBuquedaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hospitalizacion\OperationResult.cs" />
     <Compile Include="Nodos\frmAddComponentNode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -4302,8 +4333,23 @@
     <EmbeddedResource Include="Hospitalizacion\CargoExamen.resx">
       <DependentUpon>CargoExamen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmAddEditProcedimientos.resx">
+      <DependentUpon>frmAddEditProcedimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmAgregarEditarDx.resx">
+      <DependentUpon>frmAgregarEditarDx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmEditatarHorasSOP.resx">
+      <DependentUpon>frmEditatarHorasSOP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hospitalizacion\frmEditServiceComponent.resx">
       <DependentUpon>frmEditServiceComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmInformacionComplementaria.resx">
+      <DependentUpon>frmInformacionComplementaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmInformacionComplementariaEmergencia.resx">
+      <DependentUpon>frmInformacionComplementariaEmergencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hospitalizacion\frmRegistroHospSop.resx">
       <DependentUpon>frmRegistroHospSop.cs</DependentUpon>

@@ -245,13 +245,14 @@ namespace Sigesoft.Node.WinClient.BLL
             using (var cnx = ConnectionHelperSige.GetConnectionSAM)
             {
                 var query = "select * from secuential where i_TableId = " + pintTableId + " and i_NodeId = " +
-                            pintNodeId + " and v_ReplicationID = N";
+                            pintNodeId + " and v_ReplicationID = 'N'";
 
                 var objSecuential = cnx.Query<SecuentialDto>(query).FirstOrDefault();
+                int secuencial = 0;
 
                 if (objSecuential != null)
                 {
-                    objSecuential.i_SecuentialId = objSecuential.i_SecuentialId + 1;
+                    secuencial = objSecuential.i_SecuentialId.Value + 1;
                 }
                 else
                 {
@@ -268,7 +269,7 @@ namespace Sigesoft.Node.WinClient.BLL
                     cnx.Execute(qCreate);
                 }
 
-                return objSecuential.i_SecuentialId.Value;
+                return secuencial;
             }
 
         }

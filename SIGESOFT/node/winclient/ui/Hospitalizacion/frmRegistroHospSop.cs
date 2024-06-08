@@ -1,7 +1,9 @@
 ﻿using Infragistics.Win.Misc;
+using NetPdf;
 using Sigesoft.Common;
 using Sigesoft.Node.WinClient.BE;
 using Sigesoft.Node.WinClient.BLL;
+using Sigesoft.Node.WinClient.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -164,15 +166,17 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
 
 
 
-            if (Sop == "SI")
-            {
+            //if (Sop == "SI")
+            //{
                 btnHorasSala.Enabled = true;
-            }
-            else
-            {
-                btnHorasSala.Enabled = false;
+            //}
+            //else
+            //{
+            //    btnHorasSala.Enabled = false;
 
-            }
+            //}
+
+            ActualizacionHospitalizacion();
         }
 
         private void ValidacionBotones()
@@ -748,7 +752,7 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
 
                     var datosP = _pacientBL.DevolverDatosPaciente(Ticket.v_ServiceId);
 
-                    string ruta = Common.Utils.GetApplicationConfigValue("rutaTicketsH").ToString();
+                    string ruta = Common.Utils.GetApplicationConfigValue("rutaTicketConsumo").ToString();
                     ServiceList personData =
                         oServiceBL.GetServicePersonData(ref _objOperationResult, hospser.v_ServiceId);
 
@@ -760,8 +764,8 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
 
                     string nombre = "Ticket N° " + ticketId + "_" + personData.v_DocNumber;
 
-                    //TicketHosp.CreateTicket(ruta + nombre + ".pdf", MedicalCenter, lista, datosP, hospitalizacion,
-                        //hospitalizacionhabitacion, medicoTratante, Ticket, prot);
+                    TicketHospitalarioCSM.CrearTicketConsumo(ruta + nombre + ".pdf", MedicalCenter, lista, datosP, hospitalizacion,
+                        hospitalizacionhabitacion, medicoTratante, Ticket, prot);
 
                     this.Enabled = true;
                 }
@@ -795,6 +799,144 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
             var ticketss = _hospitBL.BuscarTickets(ServiceId).ToList();
 
             return ticketss;
+        }
+
+        private void grdServicios_ClickCell(object sender, Infragistics.Win.UltraWinGrid.ClickCellEventArgs e)
+        {
+            ServiceId = grdServicios.Selected.Rows[0].Cells["v_ServiceId"].Value.ToString();
+
+            CargarGrillaExamenes(ServiceId);
+
+            CargarGrillaTickets(ServiceId);
+        }
+
+        private void btnDarAlta_Click(object sender, EventArgs e)
+        {
+            try
+            {   
+                if (txtCie10.Text == "- - -" || txtCie10.Text == string.Empty)
+                {
+                    MessageBox.Show("Para brindar ALTA MÉDICA, favor de completar el Dx de Ingreso del Paciente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (txtCie10_Salida.Text == "- - -" || txtCie10_Salida.Text == string.Empty)
+                {
+                    MessageBox.Show("Para brindar ALTA MÉDICA, favor de completar el Dx de Salida del Paciente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+
+
+                DateTime? fechaAlta_ = (DateTime?)(fechaAlta == "" ? (ValueType)null
+                    : DateTime.Parse(fechaAlta));
+
+                var comentario = Comentarios == null ? "" : Comentarios;
+                var frm = new frmDarAlta(HospId, "Edit", fechaAlta_, comentario);
+                frm.ShowDialog();
+
+                ActualizacionHospitalizacion();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("NO SE PUEDE DAR DE ALTA - YA ASIGNADO", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ActualizacionHospitalizacion()
+        {
+            var resultadoDx = _hospitBL.GetHospitalizacionDx(HospId);
+
+            txtCie10.Text = resultadoDx.v_CIEIdIngreso == null ? "" : resultadoDx.v_CIEIdIngreso;
+            txtDx.Text = resultadoDx.v_DxIngreso == null ? "" : resultadoDx.v_DxIngreso;
+
+            txtCie10_Salida.Text = resultadoDx.v_CIEIdSalida == null ? "" : resultadoDx.v_CIEIdSalida;
+            txtDx_Salida.Text = resultadoDx.v_DxSalida == null ? "" : resultadoDx.v_DxSalida;
+
+            txtHoraSalaInic.Text = resultadoDx.d_FechaHoraInicioSop == null ? "" : resultadoDx.d_FechaHoraInicioSop.Value.ToShortTimeString();
+            txtHoraSalaFin.Text = resultadoDx.d_FechaHoraFinSop == null ? "" : resultadoDx.d_FechaHoraFinSop.Value.ToShortTimeString();
+
+            Cie10 = txtCie10.Text;
+            Dx = txtDx.Text;
+
+            Cie10S = txtCie10_Salida.Text;
+            DxS = txtDx_Salida.Text;
+
+            fechaAlta = resultadoDx.d_FechaAlta == null ? "" : resultadoDx.d_FechaAlta.ToString();
+
+            #region Conexion SAM
+            ConexionSigesoft conectasam = new ConexionSigesoft();
+            conectasam.opensigesoft();
+            #endregion
+
+            var cadena1 = "select ISNULL(CONVERT(varchar, i_ProcedimientoSOP),'- - -'), ISNULL(v_ProcedimientoSOP,'- - -') from hospitalizacion where v_HopitalizacionId='" + HospId + "'";
+            SqlCommand comando = new SqlCommand(cadena1, connection: conectasam.conectarsigesoft);
+            SqlDataReader lector = comando.ExecuteReader();
+            while (lector.Read())
+            {
+                txtIdProcedimiento.Text = lector.GetValue(0).ToString();
+                txtProcedimiento.Text = lector.GetValue(1).ToString();
+            }
+            lector.Close();
+            conectasam.closesigesoft();
+
+
+            ValidacionBotones();
+        }
+
+        public hospitalizacionDto GetHospitalizacionDx(string v_HospitalizacionId)
+        {
+            //mon.IsActive = true;
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                hospitalizacionDto objDtoEntity = null;
+
+                var objEntity = (from a in dbContext.hospitalizacion
+                                 where a.v_HopitalizacionId == v_HospitalizacionId
+                                 select a).FirstOrDefault();
+
+                if (objEntity != null)
+                    objDtoEntity = hospitalizacionAssembler.ToDTO(objEntity);
+
+                return objDtoEntity;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        private void btnDx_Click(object sender, EventArgs e)
+        {
+            var frm = new frmAgregarEditarDx(HospId, "DxE");
+            frm.ShowDialog();
+
+            ActualizacionHospitalizacion();
+        }
+
+        private void btnDxSalida_Click(object sender, EventArgs e)
+        {
+            var frm = new frmAgregarEditarDx(HospId, "DxS");
+            frm.ShowDialog();
+
+            ActualizacionHospitalizacion();
+        }
+
+        private void btnHorasSala_Click(object sender, EventArgs e)
+        {
+            var frm = new frmEditatarHorasSOP(HospId);
+            frm.ShowDialog();
+
+            ActualizacionHospitalizacion();
+        }
+
+        private void btnProcedimientoHosp_Click(object sender, EventArgs e)
+        {
+            var frm = new frmAddEditProcedimientos(HospId, txtProcedimiento.Text, txtIdProcedimiento.Text);
+            frm.ShowDialog();
+
+            ActualizacionHospitalizacion();
         }
 
     }

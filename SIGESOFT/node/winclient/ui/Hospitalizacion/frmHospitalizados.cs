@@ -680,7 +680,7 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
 
         private void frmHospitalizados_Load(object sender, EventArgs e)
         {
-            btnExport.Enabled = false;
+            //btnExport.Enabled = false;
         }
 
         private void btnDarAlta_Click(object sender, EventArgs e)
@@ -716,9 +716,9 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 {
                     if (rowSelected.Band.Index.ToString() == "0")
                     {
-                        if (e.Row.Cells["d_FechaAlta"].Value!=null)
+                        if (e.Row.Cells["d_FechaAlta"].Value != null)
                         {
-                            
+
                             e.Row.Appearance.BackColor = Color.Yellow;
 
                             e.Row.Appearance.BackColor2 = Color.White;
@@ -727,45 +727,67 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                             btnEliminarTicket.Enabled = false;
                             btnImprimirTicket.Enabled = false;
                             btnAgregarExamenes.Enabled = false;
+                            btnEditExamen.Enabled = false;
+                            bntEliminarExamen.Enabled = false;
                             btnAsignarHabitacion.Enabled = false;
                             btnEditarHabitacion.Enabled = false;
                             btnEliminarHabitacion.Enabled = false;
                             btnDarAlta.Enabled = false;
-                            btnEditExamen.Enabled = false;
-                            bntEliminarExamen.Enabled = false;
-
+                            //btnLiberar.Enabled = false;
                             //Y doy el efecto degradado vertical
                             e.Row.Appearance.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+
+                            if (e.Row.Cells["MedicoPago"].Value.ToString() == "SR" && e.Row.Cells["PacientePago"].Value.ToString() == "SR")//MedicoPago PacientePago
+                            {
+                                e.Row.Appearance.BackColor = Color.Red;
+
+                                e.Row.Appearance.BackColor2 = Color.White;
+                                btnTicket.Enabled = false;
+                                btnEditarTicket.Enabled = false;
+                                btnEliminarTicket.Enabled = false;
+                                btnImprimirTicket.Enabled = false;
+                                btnAgregarExamenes.Enabled = false;
+                                btnEditExamen.Enabled = false;
+                                bntEliminarExamen.Enabled = false;
+                                btnAsignarHabitacion.Enabled = false;
+                                btnEditarHabitacion.Enabled = false;
+                                btnEliminarHabitacion.Enabled = false;
+                                btnDarAlta.Enabled = false;
+                                //btnLiberar.Enabled = false;
+                                //Y doy el efecto degradado vertical
+                                e.Row.Appearance.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+
+                            }
                             
-   
-                            //grdData.DisplayLayout.Bands[1].Override.SelectTypeGroupByRow = SelectType.None;
-                            //e.Row.Band.Override.ExpansionIndicator = ShowExpansionIndicator.CheckOnDisplay;
 
-                            //e.Row.Band.Override.SelectTypeGroupByRow = SelectType.None;
+                            //if (decimal.Parse(e.Row.Cells["d_MontoPagado"].Value.ToString()) != 0)
+                            //{
+                            //    e.Row.Appearance.BackColor = Color.GreenYellow;
 
-                            //rowSelected.IsActiveRow = false;
-                            //grdData.Selected.Rows[0].Band.Override.SelectTypeRow = SelectType.None;
-
+                            //    e.Row.Appearance.BackColor2 = Color.White;
+                            //    btnTicket.Enabled = false;
+                            //    btnEditarTicket.Enabled = false;
+                            //    btnEliminarTicket.Enabled = false;
+                            //    btnImprimirTicket.Enabled = false;
+                            //    btnAgregarExamenes.Enabled = false;
+                            //    btnEditExamen.Enabled = false;
+                            //    bntEliminarExamen.Enabled = false;
+                            //    btnAsignarHabitacion.Enabled = false;
+                            //    btnEditarHabitacion.Enabled = false;
+                            //    btnEliminarHabitacion.Enabled = false;
+                            //    btnDarAlta.Enabled = false;
+                            //    btnLiberar.Enabled = false;
+                            //    //Y doy el efecto degradado vertical
+                            //    e.Row.Appearance.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
+                            //}
                         }
 
 
                     }
                 }
-                if (banda == "2")
-                {
-                    if (rowSelected.Band.Index.ToString() == "0")
-                    {
-                        if (e.Row.Cells["TicketInterno"].Value == "SI")
-                        {
-                            e.Row.Appearance.BackColor = Color.LightGreen;
-                            e.Row.Appearance.BackColor2 = Color.White;
-                            //Y doy el efecto degradado vertical
-                            e.Row.Appearance.BackGradientStyle = Infragistics.Win.GradientStyle.VerticalBump;
-                        }
-                    }
-                }
+                
 
-            }
+            }           
         }
 
         private void btnEliminarTicket_Click(object sender, EventArgs e)
@@ -1120,6 +1142,30 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 this.ultraGridExcelExporter1.Export(this.ultraGrid1, saveFileDialog1.FileName);
                 MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnTipoPacClin_Click(object sender, EventArgs e)
+        {
+            string tabName = tabControl1.SelectedTab.Text;
+
+
+            if (tabName == "HOSPITALIZADOS / SOP")
+            {
+                var hospitalizacionId = grdData.Selected.Rows[0].Cells["v_HopitalizacionId"].Value.ToString();
+                frmInformacionComplementaria frm = new frmInformacionComplementaria(hospitalizacionId);
+                frm.ShowDialog();
+
+                this.BindGrid(); 
+            }
+            else
+            {
+                var hospitalizacionId = ultraGrid1.Selected.Rows[0].Cells["v_HopitalizacionId"].Value.ToString();
+                frmInformacionComplementariaEmergencia frm = new frmInformacionComplementariaEmergencia(hospitalizacionId);
+                frm.ShowDialog();
+
+                this.BindGridEmergencia(); 
+            }
+
         }           
 
     }
