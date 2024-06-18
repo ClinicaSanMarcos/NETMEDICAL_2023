@@ -113,23 +113,23 @@
             Infragistics.Win.Appearance appearance12 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance13 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance14 = new Infragistics.Win.Appearance();
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn1 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_CreationDate");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn2 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_ServiceDate");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn3 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_UpdateUser");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn4 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_UpdateDate");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn5 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_MasterServiceName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn6 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceStatusName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn7 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_OrganizationName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn8 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_LocationName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn9 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceTypeName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn10 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ProtocolName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn11 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_Pacient");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn12 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_AptitudeStatusName");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn13 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_FechaEntrega");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn14 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Liq");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn15 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Moneda");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn16 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Valor");
-            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn17 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Diagnosticos");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn18 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_CreationDate");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn19 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_ServiceDate");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn20 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_UpdateUser");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn21 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_UpdateDate");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn22 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_MasterServiceName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn23 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceStatusName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn24 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_OrganizationName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn25 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_LocationName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn26 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ServiceTypeName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn27 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_ProtocolName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn28 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_Pacient");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn29 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("v_AptitudeStatusName");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn30 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("d_FechaEntrega");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn31 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Liq");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn32 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Moneda");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn33 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Valor");
+            Infragistics.Win.UltraWinDataSource.UltraDataColumn ultraDataColumn34 = new Infragistics.Win.UltraWinDataSource.UltraDataColumn("Diagnosticos");
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtPacient = new System.Windows.Forms.TextBox();
@@ -185,6 +185,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -201,6 +202,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.btnFilter);
             this.groupBox1.Controls.Add(this.txtPacient);
             this.groupBox1.Controls.Add(this.label5);
@@ -231,7 +233,7 @@
             this.btnFilter.ForeColor = System.Drawing.Color.Black;
             this.btnFilter.Image = global::Sigesoft.Node.WinClient.UI.Resources.find;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(1062, 12);
+            this.btnFilter.Location = new System.Drawing.Point(709, 12);
             this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(75, 41);
@@ -791,23 +793,23 @@
             // ultraDataSource1
             // 
             this.ultraDataSource1.Band.Columns.AddRange(new object[] {
-            ultraDataColumn1,
-            ultraDataColumn2,
-            ultraDataColumn3,
-            ultraDataColumn4,
-            ultraDataColumn5,
-            ultraDataColumn6,
-            ultraDataColumn7,
-            ultraDataColumn8,
-            ultraDataColumn9,
-            ultraDataColumn10,
-            ultraDataColumn11,
-            ultraDataColumn12,
-            ultraDataColumn13,
-            ultraDataColumn14,
-            ultraDataColumn15,
-            ultraDataColumn16,
-            ultraDataColumn17});
+            ultraDataColumn18,
+            ultraDataColumn19,
+            ultraDataColumn20,
+            ultraDataColumn21,
+            ultraDataColumn22,
+            ultraDataColumn23,
+            ultraDataColumn24,
+            ultraDataColumn25,
+            ultraDataColumn26,
+            ultraDataColumn27,
+            ultraDataColumn28,
+            ultraDataColumn29,
+            ultraDataColumn30,
+            ultraDataColumn31,
+            ultraDataColumn32,
+            ultraDataColumn33,
+            ultraDataColumn34});
             // 
             // bntEliminarExamen
             // 
@@ -1354,6 +1356,30 @@
             this.label14.TabIndex = 172;
             this.label14.Text = "Liquidado y Pagado";
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Image = global::Sigesoft.Node.WinClient.UI.Resources.building_add;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(1025, 12);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(108, 42);
+            this.button3.TabIndex = 158;
+            this.button3.TabStop = false;
+            this.button3.Text = "HABITACIONES";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // frmHospitalizados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1448,6 +1474,7 @@
         private Infragistics.Win.UltraWinGrid.UltraGrid ultraGrid1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
 
     }
 }

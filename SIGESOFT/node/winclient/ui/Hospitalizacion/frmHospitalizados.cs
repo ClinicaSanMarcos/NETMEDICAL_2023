@@ -1166,6 +1166,12 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 this.BindGridEmergencia(); 
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var frm = new frmAdministracionCamas();
+            frm.ShowDialog();
         }           
 
     }

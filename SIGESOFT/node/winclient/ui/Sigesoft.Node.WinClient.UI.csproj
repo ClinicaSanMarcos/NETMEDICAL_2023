@@ -1560,6 +1560,12 @@
     <Compile Include="frmWorkers.Designer.cs">
       <DependentUpon>frmWorkers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hospitalizacion\AgregarEditarCama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\AgregarEditarCama.Designer.cs">
+      <DependentUpon>AgregarEditarCama.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hospitalizacion\CargoExamen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1571,6 +1577,12 @@
     </Compile>
     <Compile Include="Hospitalizacion\frmAddEditProcedimientos.Designer.cs">
       <DependentUpon>frmAddEditProcedimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmAdministracionCamas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospitalizacion\frmAdministracionCamas.Designer.cs">
+      <DependentUpon>frmAdministracionCamas.cs</DependentUpon>
     </Compile>
     <Compile Include="Hospitalizacion\frmAgregarEditarDx.cs">
       <SubType>Form</SubType>
@@ -4330,11 +4342,17 @@
     <EmbeddedResource Include="frmWorkers.resx">
       <DependentUpon>frmWorkers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\AgregarEditarCama.resx">
+      <DependentUpon>AgregarEditarCama.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hospitalizacion\CargoExamen.resx">
       <DependentUpon>CargoExamen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hospitalizacion\frmAddEditProcedimientos.resx">
       <DependentUpon>frmAddEditProcedimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hospitalizacion\frmAdministracionCamas.resx">
+      <DependentUpon>frmAdministracionCamas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Hospitalizacion\frmAgregarEditarDx.resx">
       <DependentUpon>frmAgregarEditarDx.cs</DependentUpon>

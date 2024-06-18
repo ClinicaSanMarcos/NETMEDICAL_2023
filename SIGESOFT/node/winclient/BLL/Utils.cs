@@ -1363,7 +1363,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                          }).ToList();
 
 
-                List<KeyValueDTO> objData = DataComponentList.ToList();
+                List<KeyValueDTO> objData = DataComponentList.OrderBy(p => p.Value2).ToList();
                 pobjOperationResult.Success = 1;
                 return objData;
             }

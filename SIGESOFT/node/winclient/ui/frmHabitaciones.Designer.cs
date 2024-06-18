@@ -56,7 +56,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHabitaciones));
             this.grdDataHabitaciones = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.cmEstadosHabitacion = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.itemLiberar = new System.Windows.Forms.ToolStripMenuItem();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
@@ -68,11 +67,14 @@
             this.rbMedicoTratante = new System.Windows.Forms.RadioButton();
             this.txtUnidProdId = new System.Windows.Forms.TextBox();
             this.cbLine = new Infragistics.Win.UltraWinGrid.UltraCombo();
+            this.gbForm = new System.Windows.Forms.GroupBox();
+            this.dtpFFIN = new System.Windows.Forms.DateTimePicker();
+            this.dtFin = new System.Windows.Forms.DateTimePicker();
+            this.txtValue = new System.Windows.Forms.TextBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardarTicket = new System.Windows.Forms.Button();
-            this.gbForm = new System.Windows.Forms.GroupBox();
-            this.dtFin = new System.Windows.Forms.DateTimePicker();
-            this.dtpFFIN = new System.Windows.Forms.DateTimePicker();
+            this.itemLiberar = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdDataHabitaciones)).BeginInit();
             this.cmEstadosHabitacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -151,10 +153,10 @@
             this.grdDataHabitaciones.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate;
             this.grdDataHabitaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdDataHabitaciones.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.grdDataHabitaciones.Location = new System.Drawing.Point(11, 11);
+            this.grdDataHabitaciones.Location = new System.Drawing.Point(11, 17);
             this.grdDataHabitaciones.Margin = new System.Windows.Forms.Padding(2);
             this.grdDataHabitaciones.Name = "grdDataHabitaciones";
-            this.grdDataHabitaciones.Size = new System.Drawing.Size(425, 263);
+            this.grdDataHabitaciones.Size = new System.Drawing.Size(425, 332);
             this.grdDataHabitaciones.TabIndex = 45;
             this.grdDataHabitaciones.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.grdDataHabitaciones_AfterSelectChange);
             // 
@@ -164,14 +166,6 @@
             this.itemLiberar});
             this.cmEstadosHabitacion.Name = "cmEstadosHabitacion";
             this.cmEstadosHabitacion.Size = new System.Drawing.Size(172, 26);
-            // 
-            // itemLiberar
-            // 
-            this.itemLiberar.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
-            this.itemLiberar.Name = "itemLiberar";
-            this.itemLiberar.Size = new System.Drawing.Size(171, 22);
-            this.itemLiberar.Text = "Liberar Habitacion";
-            this.itemLiberar.Click += new System.EventHandler(this.itemLiberar_Click);
             // 
             // dtpFechaInicio
             // 
@@ -329,6 +323,70 @@
             this.cbLine.Visible = false;
             this.cbLine.RowSelected += new Infragistics.Win.UltraWinGrid.RowSelectedEventHandler(this.cbLine_RowSelected);
             // 
+            // gbForm
+            // 
+            this.gbForm.Controls.Add(this.dtpFFIN);
+            this.gbForm.Controls.Add(this.dtFin);
+            this.gbForm.Controls.Add(this.label2);
+            this.gbForm.Controls.Add(this.txtUnidProdId);
+            this.gbForm.Controls.Add(this.dtpFechaInicio);
+            this.gbForm.Controls.Add(this.dtpFechaFin);
+            this.gbForm.Controls.Add(this.btnSalir);
+            this.gbForm.Controls.Add(this.btnGuardarTicket);
+            this.gbForm.Controls.Add(this.cbLine);
+            this.gbForm.Controls.Add(this.label3);
+            this.gbForm.Controls.Add(this.label4);
+            this.gbForm.Controls.Add(this.groupBox3);
+            this.gbForm.Controls.Add(this.txtPrecio);
+            this.gbForm.Location = new System.Drawing.Point(441, 11);
+            this.gbForm.Name = "gbForm";
+            this.gbForm.Size = new System.Drawing.Size(260, 209);
+            this.gbForm.TabIndex = 133;
+            this.gbForm.TabStop = false;
+            this.gbForm.Text = "Datos";
+            // 
+            // dtpFFIN
+            // 
+            this.dtpFFIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFFIN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFFIN.Location = new System.Drawing.Point(112, 95);
+            this.dtpFFIN.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFFIN.Name = "dtpFFIN";
+            this.dtpFFIN.ShowCheckBox = true;
+            this.dtpFFIN.Size = new System.Drawing.Size(122, 20);
+            this.dtpFFIN.TabIndex = 134;
+            // 
+            // dtFin
+            // 
+            this.dtFin.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFin.Location = new System.Drawing.Point(112, 6);
+            this.dtFin.Margin = new System.Windows.Forms.Padding(2);
+            this.dtFin.Name = "dtFin";
+            this.dtFin.Size = new System.Drawing.Size(122, 21);
+            this.dtFin.TabIndex = 133;
+            this.dtFin.Visible = false;
+            // 
+            // txtValue
+            // 
+            this.txtValue.Location = new System.Drawing.Point(453, 257);
+            this.txtValue.Name = "txtValue";
+            this.txtValue.Size = new System.Drawing.Size(242, 20);
+            this.txtValue.TabIndex = 134;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_search;
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrar.Location = new System.Drawing.Point(620, 283);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 135;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -364,55 +422,21 @@
             this.btnGuardarTicket.UseVisualStyleBackColor = true;
             this.btnGuardarTicket.Click += new System.EventHandler(this.btnGuardarTicket_Click);
             // 
-            // gbForm
+            // itemLiberar
             // 
-            this.gbForm.Controls.Add(this.dtpFFIN);
-            this.gbForm.Controls.Add(this.dtFin);
-            this.gbForm.Controls.Add(this.label2);
-            this.gbForm.Controls.Add(this.txtUnidProdId);
-            this.gbForm.Controls.Add(this.dtpFechaInicio);
-            this.gbForm.Controls.Add(this.dtpFechaFin);
-            this.gbForm.Controls.Add(this.btnSalir);
-            this.gbForm.Controls.Add(this.btnGuardarTicket);
-            this.gbForm.Controls.Add(this.cbLine);
-            this.gbForm.Controls.Add(this.label3);
-            this.gbForm.Controls.Add(this.label4);
-            this.gbForm.Controls.Add(this.groupBox3);
-            this.gbForm.Controls.Add(this.txtPrecio);
-            this.gbForm.Location = new System.Drawing.Point(441, 11);
-            this.gbForm.Name = "gbForm";
-            this.gbForm.Size = new System.Drawing.Size(260, 209);
-            this.gbForm.TabIndex = 133;
-            this.gbForm.TabStop = false;
-            this.gbForm.Text = "Datos";
-            // 
-            // dtFin
-            // 
-            this.dtFin.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFin.Location = new System.Drawing.Point(112, 6);
-            this.dtFin.Margin = new System.Windows.Forms.Padding(2);
-            this.dtFin.Name = "dtFin";
-            this.dtFin.Size = new System.Drawing.Size(122, 21);
-            this.dtFin.TabIndex = 133;
-            this.dtFin.Visible = false;
-            // 
-            // dtpFFIN
-            // 
-            this.dtpFFIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFFIN.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFFIN.Location = new System.Drawing.Point(112, 95);
-            this.dtpFFIN.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpFFIN.Name = "dtpFFIN";
-            this.dtpFFIN.ShowCheckBox = true;
-            this.dtpFFIN.Size = new System.Drawing.Size(122, 20);
-            this.dtpFFIN.TabIndex = 134;
+            this.itemLiberar.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
+            this.itemLiberar.Name = "itemLiberar";
+            this.itemLiberar.Size = new System.Drawing.Size(171, 22);
+            this.itemLiberar.Text = "Liberar Habitacion";
+            this.itemLiberar.Click += new System.EventHandler(this.itemLiberar_Click);
             // 
             // frmHabitaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 285);
+            this.ClientSize = new System.Drawing.Size(713, 360);
+            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.txtValue);
             this.Controls.Add(this.gbForm);
             this.Controls.Add(this.grdDataHabitaciones);
             this.Name = "frmHabitaciones";
@@ -427,6 +451,7 @@
             this.gbForm.ResumeLayout(false);
             this.gbForm.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -451,5 +476,7 @@
         private System.Windows.Forms.ToolStripMenuItem itemLiberar;
         private System.Windows.Forms.DateTimePicker dtFin;
         private System.Windows.Forms.DateTimePicker dtpFFIN;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.TextBox txtValue;
     }
 }

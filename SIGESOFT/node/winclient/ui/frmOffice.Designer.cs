@@ -517,14 +517,14 @@
             this.reImprimirExamenAdicionalToolStripMenuItem,
             this.optModificarExamenAdicional});
             this.contextMenuStrip2.Name = "contextMenuStrip1";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(245, 92);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(246, 92);
             this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // btnAgregarAdiconal
             // 
             this.btnAgregarAdiconal.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAdiconal.Image")));
             this.btnAgregarAdiconal.Name = "btnAgregarAdiconal";
-            this.btnAgregarAdiconal.Size = new System.Drawing.Size(244, 22);
+            this.btnAgregarAdiconal.Size = new System.Drawing.Size(245, 22);
             this.btnAgregarAdiconal.Text = "Agregar Adicional";
             this.btnAgregarAdiconal.Click += new System.EventHandler(this.btnAgregarAdiconal_Click);
             // 
@@ -532,21 +532,21 @@
             // 
             this.btnRemoverEsamen.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoverEsamen.Image")));
             this.btnRemoverEsamen.Name = "btnRemoverEsamen";
-            this.btnRemoverEsamen.Size = new System.Drawing.Size(244, 22);
+            this.btnRemoverEsamen.Size = new System.Drawing.Size(245, 22);
             this.btnRemoverEsamen.Text = "Remover Examen";
             this.btnRemoverEsamen.Click += new System.EventHandler(this.btnRemoverEsamen_Click);
             // 
             // reImprimirExamenAdicionalToolStripMenuItem
             // 
             this.reImprimirExamenAdicionalToolStripMenuItem.Name = "reImprimirExamenAdicionalToolStripMenuItem";
-            this.reImprimirExamenAdicionalToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
+            this.reImprimirExamenAdicionalToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.reImprimirExamenAdicionalToolStripMenuItem.Text = "Re Imprimir Examen Adicional";
             this.reImprimirExamenAdicionalToolStripMenuItem.Click += new System.EventHandler(this.reImprimirExamenAdicionalToolStripMenuItem_Click);
             // 
             // optModificarExamenAdicional
             // 
             this.optModificarExamenAdicional.Name = "optModificarExamenAdicional";
-            this.optModificarExamenAdicional.Size = new System.Drawing.Size(244, 22);
+            this.optModificarExamenAdicional.Size = new System.Drawing.Size(245, 22);
             this.optModificarExamenAdicional.Text = "Modificar Exámenes Adicionales";
             this.optModificarExamenAdicional.Click += new System.EventHandler(this.optModificarExamenAdicional_Click);
             // 
@@ -1002,7 +1002,6 @@
             this.cbServiceType.Name = "cbServiceType";
             this.cbServiceType.Size = new System.Drawing.Size(145, 21);
             this.cbServiceType.TabIndex = 83;
-            this.cbServiceType.Visible = false;
             this.cbServiceType.TextChanged += new System.EventHandler(this.cbServiceType_TextChanged);
             // 
             // cbService
@@ -1016,7 +1015,6 @@
             this.cbService.Name = "cbService";
             this.cbService.Size = new System.Drawing.Size(250, 21);
             this.cbService.TabIndex = 84;
-            this.cbService.Visible = false;
             this.cbService.SelectedIndexChanged += new System.EventHandler(this.cbService_SelectedIndexChanged);
             this.cbService.SelectedValueChanged += new System.EventHandler(this.cbService_SelectedValueChanged);
             // 
@@ -1032,7 +1030,6 @@
             this.label13.TabIndex = 86;
             this.label13.Text = "Servicio";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label13.Visible = false;
             // 
             // label14
             // 
@@ -1046,7 +1043,6 @@
             this.label14.TabIndex = 85;
             this.label14.Text = "Tipo Servicio";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Visible = false;
             // 
             // frmOffice
             // 

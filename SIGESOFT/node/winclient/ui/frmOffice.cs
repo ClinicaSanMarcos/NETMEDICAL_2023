@@ -76,8 +76,8 @@ namespace Sigesoft.Node.WinClient.UI
             // combo servicio
             Utils.LoadDropDownList(cbService, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, -1, null), DropDownListAction.All);
 
-            cbServiceType.SelectedIndex = 1;
-            cbService.SelectedIndex = 1;
+            cbServiceType.SelectedValue = ((int)ServiceType.Particular).ToString();
+            cbService.SelectedValue = ((int)MasterService.AtxMedicaParticular).ToString();
           
             using (new LoadingClass.PleaseWait(this.Location, "Cargando..."))
             {
