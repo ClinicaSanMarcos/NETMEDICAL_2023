@@ -44,33 +44,62 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
 
         private void btnGuardarTicket_Click(object sender, EventArgs e)
         {
-            OperationResult objOperationResult = new OperationResult();
-
-            if (_modo == "Nuevo")
+            try
             {
-                DialogResult Result = MessageBox.Show("¿Desea Guardar Ticket?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                OperationResult objOperationResult = new OperationResult();
 
-                if (Result == System.Windows.Forms.DialogResult.Yes)
+                if (_modo == "Nuevo")
                 {
-                    systemparameterDto _spObj = new systemparameterDto();
+                    DialogResult Result = MessageBox.Show("¿Desea Guardar Cama?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-                    _spObj.v_Value1 = txtNombreHab.Text;
-                    _spObj.v_Value2 = txtPrecio.Text;
-                    _spObj.v_ComentaryUpdate = txtComentario.Text;
+                    if (Result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        systemparameterDto _spObj = new systemparameterDto();
 
-                    var ticketId = new HabitacionBL().AddCama(ref objOperationResult, _spObj, Globals.ClientSession.GetAsList());
-                    this.Close();
+                        _spObj.v_Value1 = txtNombreHab.Text;
+                        _spObj.v_Value2 = txtPrecio.Text;
+                        _spObj.v_ComentaryUpdate = txtComentario.Text;
+
+                        var ticketId = new HabitacionBL().AddCama(ref objOperationResult, _spObj, Globals.ClientSession.GetAsList());
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+
                 }
-                else
+                else if (_modo == "Editar")
                 {
-                    this.Close();
+                    DialogResult Result = MessageBox.Show("¿Desea Guardar Cama Modificada?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (Result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        systemparameterDto _spObj = new systemparameterDto();
+                        _spObj.i_ParameterId = _IdCama.Value;
+                        _spObj.v_Value1 = txtNombreHab.Text;
+                        _spObj.v_Value2 = txtPrecio.Text;
+                        _spObj.v_ComentaryUpdate = txtComentario.Text;
+
+                        new HabitacionBL().UpdateCama(ref objOperationResult, _spObj, Globals.ClientSession.GetAsList());
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
                 }
-                
+
+                MessageBox.Show("GUARDADO CORRECTAMENTE", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
-            else if (_modo == "Editar")
+            catch (Exception)
             {
-                
+
+                MessageBox.Show("VERIFICA LA INFORMACION INGRESADA, NO SE GUARDARON LOS REGISTROS", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

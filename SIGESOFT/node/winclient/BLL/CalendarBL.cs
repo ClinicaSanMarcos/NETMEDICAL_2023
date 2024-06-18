@@ -2133,6 +2133,7 @@ namespace Sigesoft.Node.WinClient.BLL
                            join I in dbContext.systemparameter on new { a = A.i_IsVipId.Value, b = 111 } equals new { a = I.i_ParameterId, b = I.i_GroupId }
 
                            join J in dbContext.protocol on C.v_ProtocolId equals J.v_ProtocolId into J_join
+
                            from J in J_join.DefaultIfEmpty()
 
                            join K in dbContext.systemparameter on new { a = J.i_EsoTypeId.Value, b = 118 }
@@ -2153,9 +2154,9 @@ namespace Sigesoft.Node.WinClient.BLL
                            join ow in dbContext.organization on J.v_WorkingOrganizationId equals ow.v_OrganizationId into ow_join
                            from ow in ow_join.DefaultIfEmpty()
 
-                           join lw in dbContext.location on new { a = J.v_WorkingOrganizationId, b = J.v_WorkingLocationId }
-                                equals new { a = lw.v_OrganizationId, b = lw.v_LocationId } into lw_join
-                           from lw in lw_join.DefaultIfEmpty()
+                           //join lw in dbContext.location on new { a = J.v_WorkingOrganizationId, b = J.v_WorkingLocationId }
+                           //     equals new { a = lw.v_OrganizationId, b = lw.v_LocationId } into lw_join
+                           //from lw in lw_join.DefaultIfEmpty()
 
                            //************************************************************************************
 
@@ -2222,7 +2223,7 @@ namespace Sigesoft.Node.WinClient.BLL
            {
                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
 
-               var query = (from A in dbContext.calendar
+               var query = from A in dbContext.calendar
                            join B in dbContext.person on A.v_PersonId equals B.v_PersonId
                            join C in dbContext.service on A.v_ServiceId equals C.v_ServiceId
                            join D in dbContext.servicecomponent on A.v_ServiceId equals D.v_ServiceId
@@ -2247,10 +2248,6 @@ namespace Sigesoft.Node.WinClient.BLL
                            join P in dbContext.systemparameter on new { a = 116, b = L.i_CategoryId.Value }
                            equals new { a = P.i_GroupId, b = P.i_ParameterId } //into P_join
 
-                           join M in dbContext.systemparameter on new { a = C.i_CodigoAtencion.Value, b = C.i_GrupoAtencion.Value }
-                               equals new { a = M.i_ParameterId, b = M.i_GroupId } into M_join
-                           from M in M_join.DefaultIfEmpty()
-
                            // Empresa / Sede Trabajo  ********************************************************
                            join ow in dbContext.organization on J.v_WorkingOrganizationId equals ow.v_OrganizationId into ow_join
                            from ow in ow_join.DefaultIfEmpty()
@@ -2264,7 +2261,7 @@ namespace Sigesoft.Node.WinClient.BLL
                            where A.i_IsDeleted == isDeleted &&
                                  A.i_LineStatusId == lineStatus &&
                                  D.i_IsRequiredId == isRequired &&
-                                 //C.i_MasterServiceId == masterServiceId &&
+                                 C.i_MasterServiceId == masterServiceId &&
                                  D.i_MedicoTratanteId == UsuerId
 
                            select new CalendarList
@@ -2291,14 +2288,12 @@ namespace Sigesoft.Node.WinClient.BLL
                                i_ServiceId = A.i_ServiceId.Value,
                                v_ComponentId = D.v_ComponentId,
                                v_WorkingOrganizationName = ow.v_Name,
-                               Piso = P.v_Value2,
-                               HorarioAtencion = M.v_Value1
-
-                           }).OrderBy(p=>p.d_ServiceDate);
+                               Piso = P.v_Value2
+                           };
 
                var query1 = query.AsEnumerable()
                    .Where(j => j.d_DateTimeCalendar.Value.Date == CurrentDate.Date)
-                   .GroupBy(x => x.v_ServiceId)
+                   .GroupBy(x => x.v_PersonId)
                    .Select(group => group.First());
 
 

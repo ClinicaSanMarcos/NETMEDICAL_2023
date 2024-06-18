@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn28 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Habitacion");
@@ -57,6 +58,9 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblRecordCountCalendar = new System.Windows.Forms.Label();
+            this.btnLimpieza = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.ultraGridExcelExporter1 = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdDataHabitaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +106,7 @@
             this.btnEliminarHabitacion.Text = "Eliminar";
             this.btnEliminarHabitacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminarHabitacion.UseVisualStyleBackColor = false;
+            this.btnEliminarHabitacion.Click += new System.EventHandler(this.btnEliminarHabitacion_Click);
             // 
             // btnAsignarHabitacion
             // 
@@ -252,6 +257,7 @@
             this.btnExport.Text = "Exportar a Excel";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // label5
             // 
@@ -278,11 +284,34 @@
             this.lblRecordCountCalendar.Text = "No se ha realizado la búsqueda aún.";
             this.lblRecordCountCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnLimpieza
+            // 
+            this.btnLimpieza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpieza.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLimpieza.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnLimpieza.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnLimpieza.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnLimpieza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpieza.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpieza.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpieza.Image = global::Sigesoft.Node.WinClient.UI.Resources.eject_green;
+            this.btnLimpieza.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpieza.Location = new System.Drawing.Point(852, 215);
+            this.btnLimpieza.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpieza.Name = "btnLimpieza";
+            this.btnLimpieza.Size = new System.Drawing.Size(97, 33);
+            this.btnLimpieza.TabIndex = 183;
+            this.btnLimpieza.Text = "LIBERAR CAMA";
+            this.btnLimpieza.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpieza.UseVisualStyleBackColor = false;
+            this.btnLimpieza.Click += new System.EventHandler(this.btnLimpieza_Click);
+            // 
             // frmAdministracionCamas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(960, 504);
+            this.Controls.Add(this.btnLimpieza);
             this.Controls.Add(this.lblRecordCountCalendar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnExport);
@@ -313,5 +342,8 @@
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblRecordCountCalendar;
+        private System.Windows.Forms.Button btnLimpieza;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter ultraGridExcelExporter1;
     }
 }

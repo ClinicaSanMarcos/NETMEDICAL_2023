@@ -376,5 +376,10 @@ namespace Sigesoft.Node.WinClient.UI
                 txtPrecio.Text = double.Parse(habHospit.v_Value2).ToString("N2");
             }
         }
+
+        private void grdDataHabitaciones_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
+        {
+
+        }
     }
 }

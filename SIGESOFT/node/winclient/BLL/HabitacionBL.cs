@@ -21,11 +21,11 @@ namespace Sigesoft.Node.WinClient.BLL
                 SigesoftEntitiesModel cnx = new SigesoftEntitiesModel();
 
                 var listHabitaciones = (from sys in cnx.systemparameter
-                    where sys.i_GroupId == 309
+                                        where sys.i_GroupId == 309 && sys.i_IsDeleted == 0
                     select sys).ToList();
 
                 var listHabitacionesHosp = (from hab in cnx.hospitalizacionhabitacion
-                                            where hab.i_EstateRoom != null && (hab.i_EstateRoom == 1 || hab.i_EstateRoom == 2)
+                                            where hab.i_EstateRoom != null && (hab.i_EstateRoom == 1 || hab.i_EstateRoom == 2) && hab.i_IsDeleted == 0
                                             select hab).ToList();
                 List<HabitacionCustom> ListHabit = new List<HabitacionCustom>();
                 foreach (var habit in listHabitaciones)
@@ -42,6 +42,9 @@ namespace Sigesoft.Node.WinClient.BLL
                                 objHabit.Estado = "OCUPADO";
                                 objHabit.i_HabitacionId = habit.i_ParameterId;
                                 objHabit.v_HospHabitacionId = objHab.v_HospitalizacionHabitacionId;
+
+                                objHabit.Comentarios = habit.v_ComentaryUpdate;
+
                             }
                             else
                             {
@@ -49,6 +52,9 @@ namespace Sigesoft.Node.WinClient.BLL
                                 objHabit.Estado = "EN LIMPIEZA";
                                 objHabit.i_HabitacionId = habit.i_ParameterId;
                                 objHabit.v_HospHabitacionId = objHab.v_HospitalizacionHabitacionId;
+
+                                objHabit.Comentarios = habit.v_ComentaryUpdate;
+
                             }
                             
                         }
@@ -57,6 +63,9 @@ namespace Sigesoft.Node.WinClient.BLL
                             objHabit.Habitacion = habit.v_Value1;
                             objHabit.Estado = "LIBRE";
                             objHabit.i_HabitacionId = habit.i_ParameterId;
+
+                            objHabit.Comentarios = habit.v_ComentaryUpdate;
+
                         }
                     }
                     else
@@ -64,6 +73,9 @@ namespace Sigesoft.Node.WinClient.BLL
                         objHabit.Habitacion = habit.v_Value1;
                         objHabit.Estado = "LIBRE";
                         objHabit.i_HabitacionId = habit.i_ParameterId;
+
+                        objHabit.Comentarios = habit.v_ComentaryUpdate;
+
                     }
                     ListHabit.Add(objHabit);
                 }
@@ -83,10 +95,15 @@ namespace Sigesoft.Node.WinClient.BLL
                 SigesoftEntitiesModel cnx = new SigesoftEntitiesModel();
 
                 var listHabitaciones = (from sys in cnx.systemparameter
-                                        join B in cnx.systemuser on sys.i_InsertUserId equals B.i_SystemUserId
-                                        join C in cnx.systemuser on sys.i_UpdateUserId equals C.i_SystemUserId
+                                        join B in cnx.systemuser on new { a = sys.i_InsertUserId.Value }
+                                                                    equals new { a = B.i_SystemUserId } into B_join
+                                        from B in B_join.DefaultIfEmpty()
 
-                                        where sys.i_GroupId == 309
+                                        join C in cnx.systemuser on new { a = sys.i_UpdateUserId.Value }
+                                                                    equals new { a = C.i_SystemUserId } into C_join
+                                        from C in C_join.DefaultIfEmpty()
+                                                                        
+                                        where sys.i_GroupId == 309 && sys.i_IsDeleted == 0
                                         select new HabitacionCustom 
                                         {
                                             Habitacion = sys.v_Value1,
@@ -96,14 +113,14 @@ namespace Sigesoft.Node.WinClient.BLL
                                             UsuarioCreaId = sys.i_InsertUserId,
                                             FechaCrea = sys.d_InsertDate.Value,
                                             UsuarioActualizaId = sys.i_InsertUserId,
-                                            FechaActualiza = sys.d_InsertDate.Value,
-                                            UsuarioCrea = B.v_UserName,
-                                            UsuarioActualiza = C.v_UserName,
-                                            Comentarios = sys.v_ComentaryUpdate
+                                            FechaActualiza = sys.d_UpdateDate.Value,
+                                            UsuarioCrea = B.v_UserName == null ? "- - -" : B.v_UserName,
+                                            UsuarioActualiza = C.v_UserName == null ? "- - -" : C.v_UserName,
+                                            Comentarios = sys.v_ComentaryUpdate == null ? "- - -" : sys.v_ComentaryUpdate
                                         }).ToList();
 
                 var listHabitacionesHosp = (from hab in cnx.hospitalizacionhabitacion
-                                            where hab.i_EstateRoom != null && (hab.i_EstateRoom == 1 || hab.i_EstateRoom == 2)
+                                            where hab.i_EstateRoom != null && (hab.i_EstateRoom == 1 || hab.i_EstateRoom == 2) && hab.i_IsDeleted == 0
                                             select hab).ToList();
                 List<HabitacionCustom> ListHabit = new List<HabitacionCustom>();
                 foreach (var habit in listHabitaciones)
@@ -330,6 +347,99 @@ namespace Sigesoft.Node.WinClient.BLL
                 LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.CREACION, "SP_309", "i_ParameterId=" + NewId0.ToString(), Success.Failed, objOperationResult.ExceptionMessage);
             }
             return NewId0;
+        }
+
+
+        public void UpdateCama(ref OperationResult objOperationResult, systemparameterDto _systemparameter, List<string> ClientSession)
+        {
+            try
+            {
+                
+
+                using (var cnxs = Sigesoft.Node.WinClient.UI.ConnectionHelperSige.GetConnection)
+                {
+
+                    var queryDetails = @"update systemparameter set v_Value1 = '" + _systemparameter.v_Value1 + @"',
+				                    v_Value2 = '" + _systemparameter.v_Value2 + @"',
+				                    v_ComentaryUpdate = '" + _systemparameter.v_ComentaryUpdate + @"',
+				                    i_UpdateUserId = " + ClientSession[2] + @" ,
+				                    d_UpdateDate = GETDATE()
+				                     where i_GroupId = 309 and i_ParameterId = " + _systemparameter.i_ParameterId;
+
+                    cnxs.Execute(queryDetails);
+                }
+
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "SP_309 / UPDATE", "v_TicketId=" + _systemparameter.i_ParameterId, Success.Ok, null);
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                objOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "SP_309 / UPDATE", "i_ParameterId=" + _systemparameter.i_ParameterId, Success.Failed, objOperationResult.ExceptionMessage);
+            
+            }
+            return;
+        }
+
+        public void DeleteCama(ref OperationResult objOperationResult, int parametroCuarto, List<string> ClientSession)
+        {
+            try
+            {
+
+
+                using (var cnxs = Sigesoft.Node.WinClient.UI.ConnectionHelperSige.GetConnection)
+                {
+
+                    var queryDetails = @"update systemparameter set i_IsDeleted = 1 , 
+				                    i_UpdateUserId = " + ClientSession[2] + @" ,
+				                    d_UpdateDate = GETDATE()
+				                     where i_GroupId = 309 and i_ParameterId = " + parametroCuarto;
+
+                    cnxs.Execute(queryDetails);
+                }
+
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "SP_309 / ELIMINADO", "i_ParameterId=" + parametroCuarto, Success.Ok, null);
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                objOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "SP_309 / ELIMINADO", "i_ParameterId=" + parametroCuarto, Success.Failed, objOperationResult.ExceptionMessage);
+
+            }
+            return;
+        }
+
+        public void LiberarCama(ref OperationResult objOperationResult, int parametroCuarto, List<string> ClientSession)
+        {
+            try
+            {
+
+
+                using (var cnxs = Sigesoft.Node.WinClient.UI.ConnectionHelperSige.GetConnection)
+                {
+
+                    var queryDetails = @"update hospitalizacionhabitacion set i_EstateRoom = 3, v_ComentaryUpdate = convert(varchar(100),GETDATE()) + 'ACTUALIZADO POR NO LIBERAR CORRECTAMENTE LAS HABITACIONES' where i_HabitacionId = " + parametroCuarto + " AND i_EstateRoom != 3";
+
+                    cnxs.Execute(queryDetails);
+                }
+
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "HOSPITALIZACION_HABITACIONlIBERACION / LIBERADO", "i_ParameterId=" + parametroCuarto + DateTime.Now.ToString(), Success.Ok, null);
+            }
+            catch (Exception ex)
+            {
+                objOperationResult.Success = 0;
+                objOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "HOSPITALIZACION_HABITACIONlIBERACION / LIBERADO", "i_ParameterId=" + parametroCuarto + DateTime.Now.ToString(), Success.Failed, objOperationResult.ExceptionMessage);
+
+            }
+            return;
         }
 
     }

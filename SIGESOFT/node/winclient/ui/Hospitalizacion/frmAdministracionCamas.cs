@@ -1,5 +1,7 @@
-﻿using Sigesoft.Node.WinClient.BE.Custom;
+﻿using Sigesoft.Common;
+using Sigesoft.Node.WinClient.BE.Custom;
 using Sigesoft.Node.WinClient.BLL;
+using Sigesoft.Server.WebClientAdmin.BE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,14 +97,91 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
                 var comentarios = grdDataHabitaciones.Selected.Rows[0].Cells["Comentarios"].Value.ToString();
                 var id = int.Parse(grdDataHabitaciones.Selected.Rows[0].Cells["i_HabitacionId"].Value.ToString());
 
-                var frm = new AgregarEditarCama("Nuevo", cama, precio, comentarios, id);
+                var frm = new AgregarEditarCama("Editar", cama, precio, comentarios, id);
                 frm.ShowDialog();
+
+                BindingGrid();
+
             }
             catch (Exception)
             {
-                MessageBox.Show("Seleccione una Camna parae Editar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Seleccione una Cama para Editar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
+        }
+
+        private void btnEliminarHabitacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = int.Parse(grdDataHabitaciones.Selected.Rows[0].Cells["i_HabitacionId"].Value.ToString());
+
+                 DialogResult Result = MessageBox.Show("¿Desea Eliminar Cama?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (Result == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        OperationResult objOperationResult = new OperationResult();
+
+                        new HabitacionBL().DeleteCama(ref objOperationResult, id, Globals.ClientSession.GetAsList());
+                        MessageBox.Show("GUARDADO CORRECTAMENTE", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        BindingGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione una Cama para Eliminar Correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una Cama para Eliminar Correctamente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnLimpieza_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = int.Parse(grdDataHabitaciones.Selected.Rows[0].Cells["i_HabitacionId"].Value.ToString());
+
+                DialogResult Result = MessageBox.Show("¿Desea LIBERAR CAMA?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (Result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    OperationResult objOperationResult = new OperationResult();
+
+                    new HabitacionBL().LiberarCama(ref objOperationResult, id, Globals.ClientSession.GetAsList());
+
+                    MessageBox.Show("GUARDADO CORRECTAMENTE", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    BindingGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una Cama para LIBERARLA CORRECTAMENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una Cama para LIBERARLA CORRECTAMENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            string NombreArchivo = "";
+            NombreArchivo = "Reporte de Camas";
+            NombreArchivo = NombreArchivo.Replace("/", "_");
+            NombreArchivo = NombreArchivo.Replace(":", "_");
+
+            saveFileDialog1.FileName = NombreArchivo;
+            saveFileDialog1.Filter = "Files (*.xls;*.xlsx;*)|*.xls;*.xlsx;*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.ultraGridExcelExporter1.Export(this.grdDataHabitaciones, saveFileDialog1.FileName);
+                MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

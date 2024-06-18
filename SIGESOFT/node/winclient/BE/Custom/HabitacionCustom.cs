@@ -15,11 +15,11 @@ namespace Sigesoft.Node.WinClient.BE.Custom
         public string Precio { get; set; }
         public string UsuarioCrea { get; set; }
         public int? UsuarioCreaId { get; set; }
-        public DateTime FechaCrea { get; set; }
+        public DateTime? FechaCrea { get; set; }
 
         public string UsuarioActualiza { get; set; }
         public int? UsuarioActualizaId { get; set; }
-        public DateTime FechaActualiza { get; set; }
+        public DateTime? FechaActualiza { get; set; }
 
         public string Comentarios { get; set; }
 

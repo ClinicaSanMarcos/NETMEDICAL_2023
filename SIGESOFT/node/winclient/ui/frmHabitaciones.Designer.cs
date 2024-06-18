@@ -35,6 +35,7 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn29 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Estado");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn1 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("i_HabitacionId");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_HospHabitacionId");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Comentarios");
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance3 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance4 = new Infragistics.Win.Appearance();
@@ -56,6 +57,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHabitaciones));
             this.grdDataHabitaciones = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.cmEstadosHabitacion = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.itemLiberar = new System.Windows.Forms.ToolStripMenuItem();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
@@ -70,11 +72,10 @@
             this.gbForm = new System.Windows.Forms.GroupBox();
             this.dtpFFIN = new System.Windows.Forms.DateTimePicker();
             this.dtFin = new System.Windows.Forms.DateTimePicker();
-            this.txtValue = new System.Windows.Forms.TextBox();
-            this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardarTicket = new System.Windows.Forms.Button();
-            this.itemLiberar = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtValue = new System.Windows.Forms.TextBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdDataHabitaciones)).BeginInit();
             this.cmEstadosHabitacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -91,18 +92,21 @@
             appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             this.grdDataHabitaciones.DisplayLayout.Appearance = appearance1;
             ultraGridColumn28.Header.VisiblePosition = 0;
-            ultraGridColumn28.Width = 140;
+            ultraGridColumn28.Width = 96;
             ultraGridColumn29.Header.VisiblePosition = 1;
-            ultraGridColumn29.Width = 238;
+            ultraGridColumn29.Width = 88;
             ultraGridColumn1.Header.VisiblePosition = 2;
             ultraGridColumn1.Hidden = true;
             ultraGridColumn2.Header.VisiblePosition = 3;
             ultraGridColumn2.Hidden = true;
+            ultraGridColumn3.Header.VisiblePosition = 4;
+            ultraGridColumn3.Width = 214;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn28,
             ultraGridColumn29,
             ultraGridColumn1,
-            ultraGridColumn2});
+            ultraGridColumn2,
+            ultraGridColumn3});
             this.grdDataHabitaciones.DisplayLayout.BandsSerializer.Add(ultraGridBand1);
             this.grdDataHabitaciones.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
             this.grdDataHabitaciones.DisplayLayout.InterBandSpacing = 10;
@@ -158,6 +162,7 @@
             this.grdDataHabitaciones.Name = "grdDataHabitaciones";
             this.grdDataHabitaciones.Size = new System.Drawing.Size(425, 332);
             this.grdDataHabitaciones.TabIndex = 45;
+            this.grdDataHabitaciones.InitializeLayout += new Infragistics.Win.UltraWinGrid.InitializeLayoutEventHandler(this.grdDataHabitaciones_InitializeLayout);
             this.grdDataHabitaciones.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.grdDataHabitaciones_AfterSelectChange);
             // 
             // cmEstadosHabitacion
@@ -166,6 +171,14 @@
             this.itemLiberar});
             this.cmEstadosHabitacion.Name = "cmEstadosHabitacion";
             this.cmEstadosHabitacion.Size = new System.Drawing.Size(172, 26);
+            // 
+            // itemLiberar
+            // 
+            this.itemLiberar.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
+            this.itemLiberar.Name = "itemLiberar";
+            this.itemLiberar.Size = new System.Drawing.Size(171, 22);
+            this.itemLiberar.Text = "Liberar Habitacion";
+            this.itemLiberar.Click += new System.EventHandler(this.itemLiberar_Click);
             // 
             // dtpFechaInicio
             // 
@@ -367,26 +380,6 @@
             this.dtFin.TabIndex = 133;
             this.dtFin.Visible = false;
             // 
-            // txtValue
-            // 
-            this.txtValue.Location = new System.Drawing.Point(453, 257);
-            this.txtValue.Name = "txtValue";
-            this.txtValue.Size = new System.Drawing.Size(242, 20);
-            this.txtValue.TabIndex = 134;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_search;
-            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltrar.Location = new System.Drawing.Point(620, 283);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
-            this.btnFiltrar.TabIndex = 135;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            // 
             // btnSalir
             // 
             this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -422,13 +415,25 @@
             this.btnGuardarTicket.UseVisualStyleBackColor = true;
             this.btnGuardarTicket.Click += new System.EventHandler(this.btnGuardarTicket_Click);
             // 
-            // itemLiberar
+            // txtValue
             // 
-            this.itemLiberar.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
-            this.itemLiberar.Name = "itemLiberar";
-            this.itemLiberar.Size = new System.Drawing.Size(171, 22);
-            this.itemLiberar.Text = "Liberar Habitacion";
-            this.itemLiberar.Click += new System.EventHandler(this.itemLiberar_Click);
+            this.txtValue.Location = new System.Drawing.Point(453, 257);
+            this.txtValue.Name = "txtValue";
+            this.txtValue.Size = new System.Drawing.Size(242, 20);
+            this.txtValue.TabIndex = 134;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.Image = global::Sigesoft.Node.WinClient.UI.Resources.system_search;
+            this.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrar.Location = new System.Drawing.Point(620, 283);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 135;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
             // frmHabitaciones
             // 
