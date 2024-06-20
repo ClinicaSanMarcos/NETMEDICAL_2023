@@ -109,7 +109,7 @@ namespace Sigesoft.Node.WinClient.UI
                 string NewId = "(No generado)";
                 try
                 {
-                    using (var cnx = ConnectionHelperSige.GetConnection)
+                    using (var cnx = ConnectionHelperSige.GetConnectionSAM)
                     {
                         List<string> _ClientSession = Globals.ClientSession.GetAsList();
                         int intNodeId = int.Parse(_ClientSession[0]);
@@ -193,7 +193,7 @@ namespace Sigesoft.Node.WinClient.UI
                 try
                 {
                     
-                    using (var cnx = ConnectionHelperSige.GetConnection)
+                    using (var cnx = ConnectionHelperSige.GetConnectionSAM)
                     {
                         if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
 
