@@ -58,6 +58,9 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
         private ticketDto Ticket = new ticketDto();
         private protocolDto prot = new protocolDto();
         private serviceDto serv = new serviceDto();
+
+        List<HospSopList> _HospSopList = new List<HospSopList>();
+        List<EmergenciapList> _EmergenciapList = new List<EmergenciapList>();
         public frmHospitalizados()
         {
             InitializeComponent();
@@ -108,6 +111,7 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
         private void BindGrid()
         {
             var objData = GetData(0, null, "v_HopitalizacionId ASC", strFilterExpression);
+            _HospSopList = objData;
             grdData.DataSource = objData;
             
             lblRecordCount.Text = string.Format("Se encontraron {0} registros.", objData.Count());
@@ -125,6 +129,7 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
         private void BindGridEmergencia()
         {
             var objData = GetDataEmrg(0, null, "v_HopitalizacionId ASC", strFilterExpression);
+            _EmergenciapList = objData;
             ultraGrid1.DataSource = objData;
 
             label3.Text = string.Format("Se encontraron {0} registros.", objData.Count());
@@ -1172,6 +1177,123 @@ namespace Sigesoft.Node.WinClient.UI.Hospitalizacion
         {
             var frm = new frmAdministracionCamas();
             frm.ShowDialog();
+        }
+
+        private void txtPacient_KeyUp(object sender, KeyEventArgs e)
+        {
+            string tabName = tabControl1.SelectedTab.Text;
+
+            if (tabName == "HOSPITALIZADOS / SOP")
+            {
+                if (txtPacient.Text != string.Empty)
+                {
+                    List<HospSopList> listnew = new List<HospSopList>();
+
+                    listnew = new List<HospSopList>(_HospSopList.Where(p => p.v_Paciente.Contains(txtPacient.Text.ToUpper()) || p.v_DocNumber.Contains(txtPacient.Text.ToUpper())));
+
+                    var listBinding = new BindingList<HospSopList>(listnew);
+
+                    grdData.DataSource = listBinding;
+
+                    if (listBinding != null)
+                    {
+                        lblRecordCount.Text = string.Format("Se encontraron {0} registros.", listBinding.Count());
+
+                    }
+
+                }
+                else
+                {
+                    grdData.DataSource = _HospSopList;
+                    if (grdData != null)
+                    {
+                        lblRecordCount.Text = string.Format("Se encontraron {0} registros.", _HospSopList.Count());
+
+                    }
+                }
+            }
+            else
+            {
+                if (txtPacient.Text != string.Empty)
+                {
+                    List<EmergenciapList> listnew = new List<EmergenciapList>();
+
+                    listnew = new List<EmergenciapList>(_EmergenciapList.Where(p => p.v_Paciente.Contains(txtPacient.Text.ToUpper()) || p.v_DocNumber.Contains(txtPacient.Text.ToUpper())));
+
+                    var listBinding = new BindingList<EmergenciapList>(listnew);
+
+                    ultraGrid1.DataSource = listBinding;
+
+                    if (listBinding != null)
+                    {
+                        label3.Text = string.Format("Se encontraron {0} registros.", listBinding.Count());
+
+                    }
+
+                }
+                else
+                {
+                    ultraGrid1.DataSource = _EmergenciapList;
+                    if (ultraGrid1 != null)
+                    {
+                        label3.Text = string.Format("Se encontraron {0} registros.", _EmergenciapList.Count());
+
+                    }
+                }
+            }
+            
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTodos.Checked == true)
+            {
+                grdData.DataSource = _HospSopList;
+                if (grdData != null)
+                    {
+                        lblRecordCount.Text = string.Format("Se encontraron {0} registros.", _HospSopList.Count());
+                    }
+            }
+        }
+
+        private void rbHosp_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbHosp.Checked == true)
+            {
+                List<HospSopList> listnew = new List<HospSopList>();
+
+                listnew = new List<HospSopList>(_HospSopList.Where(p => p.v_Servicio == "HOSPITALIZACIÓN"));
+
+                var listBinding = new BindingList<HospSopList>(listnew);
+
+                grdData.DataSource = listBinding;
+
+                if (listBinding != null)
+                {
+                    lblRecordCount.Text = string.Format("Se encontraron {0} registros.", listBinding.Count());
+
+                }
+            }
+        }
+
+        private void rbSop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbSop.Checked == true)
+            {
+                List<HospSopList> listnew = new List<HospSopList>();
+
+                listnew = new List<HospSopList>(_HospSopList.Where(p => p.v_Servicio != "HOSPITALIZACIÓN"));
+
+                var listBinding = new BindingList<HospSopList>(listnew);
+
+                grdData.DataSource = listBinding;
+
+                if (listBinding != null)
+                {
+                    lblRecordCount.Text = string.Format("Se encontraron {0} registros.", listBinding.Count());
+
+                }
+            }
         }           
 
     }
