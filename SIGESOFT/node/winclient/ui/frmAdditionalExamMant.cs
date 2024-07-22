@@ -136,7 +136,7 @@ namespace Sigesoft.Node.WinClient.UI
                     var datosGrabo = new ServiceBL().DevolverDatosUsuarioFirma(Globals.ClientSession.i_SystemUserId);
                     CMP = datosGrabo.CMP;
                     pathFile = string.Format("{0}.pdf",
-                        Path.Combine(ruta, _serviceId + "-" + "ORDEN-EX-MED-ADICI-" + datosGrabo.CMP));
+                        Path.Combine(ruta, _serviceId + "-" + N_Orden + "-" + "ORDEN-EX-MED-ADICI-" + datosGrabo.CMP));
 
 
                     List<Categoria> AdditionalExam = new List<Categoria>();
@@ -191,7 +191,7 @@ namespace Sigesoft.Node.WinClient.UI
             List<string> pdfList = new List<string>();
             pdfList.Add(pathFile);
             _mergeExPDF.FilesName = pdfList;
-            _mergeExPDF.DestinationFile = string.Format("{0}.pdf", Path.Combine(rutaBasura, _serviceId + "-" + "ORDEN-EX-MED-ADICI-" + CMP));
+            _mergeExPDF.DestinationFile = string.Format("{0}.pdf", Path.Combine(rutaBasura, _serviceId + "-" + N_Orden + "-" + "ORDEN-EX-MED-ADICI-" + CMP));
             _mergeExPDF.Execute();
             _mergeExPDF.RunFile();
         }

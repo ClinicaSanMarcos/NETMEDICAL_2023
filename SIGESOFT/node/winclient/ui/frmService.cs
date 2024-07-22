@@ -98,7 +98,7 @@ namespace Sigesoft.Node.WinClient.UI
                 OperationResult objOperationResult = new OperationResult();
 
                 Utils.LoadDropDownList(ddlServiceTypeId, "Value1", "Id", BLL.Utils.GetSystemParameterByParentIdForCombo(ref objOperationResult, 119, -1, null), DropDownListAction.Select);
-                ddlServiceTypeId.SelectedIndex = 1;
+                ddlServiceTypeId.SelectedIndex = 2;
                 Utils.LoadDropDownList(ddlMasterServiceId, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, -1, null), DropDownListAction.Select);
                 ddlMasterServiceId.SelectedIndex = 0;
                 ////Llenado de los tipos de servicios [Emp/Part]
@@ -180,7 +180,7 @@ namespace Sigesoft.Node.WinClient.UI
                 OperationResult objOperationResult = new OperationResult();
 
                 Utils.LoadDropDownList(ddlServiceTypeId, "Value1", "Id", BLL.Utils.GetSystemParameterByParentIdForCombo(ref objOperationResult, 119, -1, null), DropDownListAction.Select);
-                ddlServiceTypeId.SelectedIndex = 1;
+                ddlServiceTypeId.SelectedIndex = 2;
                 Utils.LoadDropDownList(ddlMasterServiceId, "Value1", "Id", BLL.Utils.GetSystemParameterForCombo(ref objOperationResult, -1, null), DropDownListAction.Select);
                 ddlMasterServiceId.SelectedIndex = 0;////Llenado de los tipos de servicios [Emp/Part]
                 //Utils.LoadDropDownList(ddlServiceTypeId, "Value1", "Id", BLL.Utils.GetSystemParameterByParentIdForCombo(ref objOperationResult, 119, -1, null), DropDownListAction.Select);

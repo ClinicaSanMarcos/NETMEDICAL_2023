@@ -215,6 +215,8 @@ namespace Sigesoft.Node.WinClient.UI
                 string pathFile = "";
                 string CMP = "";
                 var openFile = false;
+                string idAdicional = "";
+
                 using (new LoadingClass.PleaseWait(this.Location, "Cargando..."))
                 {
                     OperationResult objOperationResult = new OperationResult();
@@ -251,12 +253,12 @@ namespace Sigesoft.Node.WinClient.UI
                         if (datosGrabo.CMP != null)
                         {
                             CMP = datosGrabo.CMP;
-                            pathFile = string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + "ORDEN-EX-MED-ADICI-" + datosGrabo.CMP));
+                            pathFile = string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + idAdicional + "-" + "ORDEN-EX-MED-ADICI-" + datosGrabo.CMP));
                         }
 
                     }
 
-                    string idAdicional = "";
+                    
                     using (var ts = new TransactionScope())
                     {
                         idAdicional = _additionalExamBl.AddAdditionalExam(ListAdditionalExam, Globals.ClientSession.GetAsList());
@@ -310,7 +312,7 @@ namespace Sigesoft.Node.WinClient.UI
                 List<string> pdfList = new List<string>();
                 pdfList.Add(pathFile);
                 _mergeExPDF.FilesName = pdfList;
-                _mergeExPDF.DestinationFile = string.Format("{0}.pdf", Path.Combine(rutaBasura, _serviceId + "-" + "ORDEN-EX-MED-ADICI-" + CMP));
+                _mergeExPDF.DestinationFile = string.Format("{0}.pdf", Path.Combine(rutaBasura, _serviceId + "-"+ idAdicional + "-" + "ORDEN-EX-MED-ADICI-" + CMP));
                 _mergeExPDF.Execute();
                 _mergeExPDF.RunFile();
 
