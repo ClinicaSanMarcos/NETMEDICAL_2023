@@ -245,18 +245,7 @@ namespace Sigesoft.Node.WinClient.UI
                     }
 
 
-                    var datosGrabo = objServiceBL.DevolverDatosUsuarioFirma(Globals.ClientSession.i_SystemUserId);
-
-
-                    if (datosGrabo != null)
-                    {
-                        if (datosGrabo.CMP != null)
-                        {
-                            CMP = datosGrabo.CMP;
-                            pathFile = string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + idAdicional + "-" + "ORDEN-EX-MED-ADICI-" + datosGrabo.CMP));
-                        }
-
-                    }
+                    
 
                     
                     using (var ts = new TransactionScope())
@@ -270,6 +259,20 @@ namespace Sigesoft.Node.WinClient.UI
 
                         ts.Complete();
                     }
+
+                    var datosGrabo = objServiceBL.DevolverDatosUsuarioFirma(Globals.ClientSession.i_SystemUserId);
+
+
+                    if (datosGrabo != null)
+                    {
+                        if (datosGrabo.CMP != null)
+                        {
+                            CMP = datosGrabo.CMP;
+                            pathFile = string.Format("{0}.pdf", Path.Combine(ruta, _serviceId + "-" + idAdicional + "-" + "ORDEN-EX-MED-ADICI-" + datosGrabo.CMP));
+                        }
+
+                    }
+
                     List<Categoria> AdditionalExam = new List<Categoria>();
                     List<Categoria> DataSource = new List<Categoria>();
                     List<string> ComponentList = new List<string>();

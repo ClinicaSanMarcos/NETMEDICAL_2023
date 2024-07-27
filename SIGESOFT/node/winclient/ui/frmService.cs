@@ -4283,7 +4283,7 @@ namespace Sigesoft.Node.WinClient.UI
             
             DirectoryInfo DirInfo = new DirectoryInfo(ruta);
             var files = from f in DirInfo.EnumerateFiles()
-                where f.Name.Contains(ServiceId + "-ORDEN-EX-MED-ADICI-")
+                where f.Name.Contains(ServiceId)
                 select f;
             foreach (var file in files)
             {
