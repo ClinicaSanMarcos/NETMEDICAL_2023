@@ -264,6 +264,7 @@ namespace Sigesoft.Node.WinClient.UI
                 return;
 
             BindingGrid();
+
         }
 
         private void grdDataAdditionalExam_AfterSelectChange(object sender, Infragistics.Win.UltraWinGrid.AfterSelectChangeEventArgs e)

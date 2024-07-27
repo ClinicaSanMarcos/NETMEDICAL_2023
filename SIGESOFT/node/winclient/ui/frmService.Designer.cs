@@ -608,7 +608,7 @@
             this.btnCompaginaSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCompaginaSelected.Image = global::Sigesoft.Node.WinClient.UI.Resources.color_swatch;
             this.btnCompaginaSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompaginaSelected.Location = new System.Drawing.Point(1105, 449);
+            this.btnCompaginaSelected.Location = new System.Drawing.Point(1100, 546);
             this.btnCompaginaSelected.Margin = new System.Windows.Forms.Padding(2);
             this.btnCompaginaSelected.Name = "btnCompaginaSelected";
             this.btnCompaginaSelected.Size = new System.Drawing.Size(129, 26);
@@ -676,12 +676,11 @@
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.ImageKey = "(none)";
-            this.label15.Location = new System.Drawing.Point(555, 552);
+            this.label15.Location = new System.Drawing.Point(502, 553);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(104, 15);
+            this.label15.Size = new System.Drawing.Size(105, 15);
             this.label15.TabIndex = 142;
-            this.label15.Text = "Servicio por Evaluar";
-            this.label15.Visible = false;
+            this.label15.Text = "Servicio por Atender";
             // 
             // label14
             // 
@@ -691,12 +690,11 @@
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.ImageKey = "(none)";
-            this.label14.Location = new System.Drawing.Point(819, 551);
+            this.label14.Location = new System.Drawing.Point(783, 553);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(107, 15);
+            this.label14.Size = new System.Drawing.Size(150, 15);
             this.label14.TabIndex = 141;
-            this.label14.Text = "Evaluado y Auditado";
-            this.label14.Visible = false;
+            this.label14.Text = "Servicio Atendido y Generado";
             // 
             // label13
             // 
@@ -705,17 +703,26 @@
             this.label13.BackColor = System.Drawing.Color.Gold;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.ImageKey = "(none)";
-            this.label13.Location = new System.Drawing.Point(665, 552);
+            this.label13.Location = new System.Drawing.Point(621, 553);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(147, 15);
+            this.label13.Size = new System.Drawing.Size(144, 15);
             this.label13.TabIndex = 140;
-            this.label13.Text = "Servicio Evaluado sin Aptitud";
-            this.label13.Visible = false;
+            this.label13.Text = "Servicio Atendido sin Aptitud";
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.btnInformeRadiologicoOIT);
+            this.groupBox2.Controls.Add(this.btnAdjuntarArchivo);
+            this.groupBox2.Controls.Add(this.btnEstudioEKG);
+            this.groupBox2.Controls.Add(this.btnDermatologico);
+            this.groupBox2.Controls.Add(this.btnInformeOftalmo);
+            this.groupBox2.Controls.Add(this.btnHistoriaClinica);
+            this.groupBox2.Controls.Add(this.btnHis);
+            this.groupBox2.Controls.Add(this.btnGenerarLiquidacion);
+            this.groupBox2.Controls.Add(this.btnInforme312);
+            this.groupBox2.Controls.Add(this.btnBotonOculto);
             this.groupBox2.Controls.Add(this.cboHistoriaGenerada);
             this.groupBox2.Controls.Add(this.ddlEsoType);
             this.groupBox2.Controls.Add(this.label9);
@@ -789,12 +796,11 @@
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.ForeColor = System.Drawing.Color.Black;
             this.label20.ImageKey = "(none)";
-            this.label20.Location = new System.Drawing.Point(930, 551);
+            this.label20.Location = new System.Drawing.Point(948, 553);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(102, 15);
+            this.label20.Size = new System.Drawing.Size(147, 15);
             this.label20.TabIndex = 163;
-            this.label20.Text = "Servicio Observado";
-            this.label20.Visible = false;
+            this.label20.Text = "Servicio Atendido Observado";
             // 
             // btnVeer
             // 
@@ -808,7 +814,7 @@
             this.btnVeer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnVeer.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_edit;
             this.btnVeer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVeer.Location = new System.Drawing.Point(1151, 495);
+            this.btnVeer.Location = new System.Drawing.Point(4, 547);
             this.btnVeer.Margin = new System.Windows.Forms.Padding(2);
             this.btnVeer.Name = "btnVeer";
             this.btnVeer.Size = new System.Drawing.Size(77, 23);
@@ -828,7 +834,7 @@
             this.btnImprimirAdicionales.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnImprimirAdicionales.Image = global::Sigesoft.Node.WinClient.UI.Resources.printer_go;
             this.btnImprimirAdicionales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirAdicionales.Location = new System.Drawing.Point(1100, 155);
+            this.btnImprimirAdicionales.Location = new System.Drawing.Point(1100, 143);
             this.btnImprimirAdicionales.Name = "btnImprimirAdicionales";
             this.btnImprimirAdicionales.Size = new System.Drawing.Size(129, 44);
             this.btnImprimirAdicionales.TabIndex = 160;
@@ -841,7 +847,7 @@
             // 
             this.btnMigrarEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMigrarEmpresa.ForeColor = System.Drawing.Color.Black;
-            this.btnMigrarEmpresa.Location = new System.Drawing.Point(21, 502);
+            this.btnMigrarEmpresa.Location = new System.Drawing.Point(567, 508);
             this.btnMigrarEmpresa.Margin = new System.Windows.Forms.Padding(2);
             this.btnMigrarEmpresa.Name = "btnMigrarEmpresa";
             this.btnMigrarEmpresa.Size = new System.Drawing.Size(103, 24);
@@ -863,7 +869,7 @@
             this.btnSubirInterconsulta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSubirInterconsulta.Image = global::Sigesoft.Node.WinClient.UI.Resources.email_transfer;
             this.btnSubirInterconsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirInterconsulta.Location = new System.Drawing.Point(1100, 259);
+            this.btnSubirInterconsulta.Location = new System.Drawing.Point(1100, 244);
             this.btnSubirInterconsulta.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubirInterconsulta.Name = "btnSubirInterconsulta";
             this.btnSubirInterconsulta.Size = new System.Drawing.Size(129, 26);
@@ -1100,9 +1106,9 @@
             this.btnHistoriaCl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHistoriaCl.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistoriaCl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnHistoriaCl.Image = global::Sigesoft.Node.WinClient.UI.Resources.historiaclinica;
+            this.btnHistoriaCl.Image = global::Sigesoft.Node.WinClient.UI.Resources.group_delete;
             this.btnHistoriaCl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistoriaCl.Location = new System.Drawing.Point(1105, 449);
+            this.btnHistoriaCl.Location = new System.Drawing.Point(1100, 329);
             this.btnHistoriaCl.Margin = new System.Windows.Forms.Padding(2);
             this.btnHistoriaCl.Name = "btnHistoriaCl";
             this.btnHistoriaCl.Size = new System.Drawing.Size(129, 26);
@@ -1110,7 +1116,6 @@
             this.btnHistoriaCl.Text = "Historia Clinica";
             this.btnHistoriaCl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHistoriaCl.UseVisualStyleBackColor = false;
-            this.btnHistoriaCl.Visible = false;
             this.btnHistoriaCl.Click += new System.EventHandler(this.btnHistoriaCl_Click);
             // 
             // btnPErson
@@ -1140,7 +1145,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_edit;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1105, 449);
+            this.button1.Location = new System.Drawing.Point(1102, 449);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 26);
@@ -1186,7 +1191,7 @@
             this.btnCargoHistorias.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCargoHistorias.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_excel;
             this.btnCargoHistorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargoHistorias.Location = new System.Drawing.Point(1105, 449);
+            this.btnCargoHistorias.Location = new System.Drawing.Point(1100, 374);
             this.btnCargoHistorias.Margin = new System.Windows.Forms.Padding(2);
             this.btnCargoHistorias.Name = "btnCargoHistorias";
             this.btnCargoHistorias.Size = new System.Drawing.Size(129, 26);
@@ -1194,7 +1199,6 @@
             this.btnCargoHistorias.Text = "Cargo Historias";
             this.btnCargoHistorias.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargoHistorias.UseVisualStyleBackColor = false;
-            this.btnCargoHistorias.Visible = false;
             this.btnCargoHistorias.Click += new System.EventHandler(this.btnCargoHistorias_Click);
             // 
             // btnGenerarIds
@@ -1209,7 +1213,7 @@
             this.btnGenerarIds.ForeColor = System.Drawing.Color.Black;
             this.btnGenerarIds.Image = global::Sigesoft.Node.WinClient.UI.Resources.cog;
             this.btnGenerarIds.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarIds.Location = new System.Drawing.Point(1099, 485);
+            this.btnGenerarIds.Location = new System.Drawing.Point(1102, 508);
             this.btnGenerarIds.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarIds.Name = "btnGenerarIds";
             this.btnGenerarIds.Size = new System.Drawing.Size(48, 36);
@@ -1229,7 +1233,7 @@
             this.btnExport.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExport.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_excel;
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.Location = new System.Drawing.Point(1100, 216);
+            this.btnExport.Location = new System.Drawing.Point(1099, 203);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(129, 26);
             this.btnExport.TabIndex = 145;
@@ -1250,7 +1254,7 @@
             this.btnQuitarChek.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnQuitarChek.Image = global::Sigesoft.Node.WinClient.UI.Resources.note_delete;
             this.btnQuitarChek.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuitarChek.Location = new System.Drawing.Point(1105, 449);
+            this.btnQuitarChek.Location = new System.Drawing.Point(1100, 287);
             this.btnQuitarChek.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuitarChek.Name = "btnQuitarChek";
             this.btnQuitarChek.Size = new System.Drawing.Size(129, 26);
@@ -1258,7 +1262,6 @@
             this.btnQuitarChek.Text = "Quitar check verde";
             this.btnQuitarChek.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnQuitarChek.UseVisualStyleBackColor = false;
-            this.btnQuitarChek.Visible = false;
             this.btnQuitarChek.Click += new System.EventHandler(this.btnQuitarChek_Click);
             // 
             // btnActualizarCulminado
@@ -1495,7 +1498,7 @@
             this.btnInterconsulta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnInterconsulta.Image = global::Sigesoft.Node.WinClient.UI.Resources.note_add;
             this.btnInterconsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInterconsulta.Location = new System.Drawing.Point(1100, 302);
+            this.btnInterconsulta.Location = new System.Drawing.Point(1099, 483);
             this.btnInterconsulta.Margin = new System.Windows.Forms.Padding(2);
             this.btnInterconsulta.Name = "btnInterconsulta";
             this.btnInterconsulta.Size = new System.Drawing.Size(129, 26);
@@ -1728,7 +1731,7 @@
             this.btnBotonOculto.ForeColor = System.Drawing.Color.Black;
             this.btnBotonOculto.Image = ((System.Drawing.Image)(resources.GetObject("btnBotonOculto.Image")));
             this.btnBotonOculto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBotonOculto.Location = new System.Drawing.Point(504, 625);
+            this.btnBotonOculto.Location = new System.Drawing.Point(92, 537);
             this.btnBotonOculto.Margin = new System.Windows.Forms.Padding(2);
             this.btnBotonOculto.Name = "btnBotonOculto";
             this.btnBotonOculto.Size = new System.Drawing.Size(85, 36);
@@ -1752,7 +1755,7 @@
             this.btnInforme312.ForeColor = System.Drawing.Color.Black;
             this.btnInforme312.Image = ((System.Drawing.Image)(resources.GetObject("btnInforme312.Image")));
             this.btnInforme312.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInforme312.Location = new System.Drawing.Point(355, 620);
+            this.btnInforme312.Location = new System.Drawing.Point(201, 525);
             this.btnInforme312.Margin = new System.Windows.Forms.Padding(2);
             this.btnInforme312.Name = "btnInforme312";
             this.btnInforme312.Size = new System.Drawing.Size(85, 38);
@@ -1776,7 +1779,7 @@
             this.btnGenerarLiquidacion.ForeColor = System.Drawing.Color.Black;
             this.btnGenerarLiquidacion.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
             this.btnGenerarLiquidacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarLiquidacion.Location = new System.Drawing.Point(421, 620);
+            this.btnGenerarLiquidacion.Location = new System.Drawing.Point(347, 521);
             this.btnGenerarLiquidacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarLiquidacion.Name = "btnGenerarLiquidacion";
             this.btnGenerarLiquidacion.Size = new System.Drawing.Size(85, 38);
@@ -1800,7 +1803,7 @@
             this.btnInformeOftalmo.ForeColor = System.Drawing.Color.Black;
             this.btnInformeOftalmo.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeOftalmo.Image")));
             this.btnInformeOftalmo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeOftalmo.Location = new System.Drawing.Point(252, 611);
+            this.btnInformeOftalmo.Location = new System.Drawing.Point(788, 488);
             this.btnInformeOftalmo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInformeOftalmo.Name = "btnInformeOftalmo";
             this.btnInformeOftalmo.Size = new System.Drawing.Size(85, 38);
@@ -1823,7 +1826,7 @@
             this.btnHis.ForeColor = System.Drawing.Color.Black;
             this.btnHis.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
             this.btnHis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHis.Location = new System.Drawing.Point(421, 613);
+            this.btnHis.Location = new System.Drawing.Point(354, 509);
             this.btnHis.Margin = new System.Windows.Forms.Padding(2);
             this.btnHis.Name = "btnHis";
             this.btnHis.Size = new System.Drawing.Size(85, 38);
@@ -1846,7 +1849,7 @@
             this.btnHistoriaClinica.ForeColor = System.Drawing.Color.Black;
             this.btnHistoriaClinica.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
             this.btnHistoriaClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistoriaClinica.Location = new System.Drawing.Point(462, 620);
+            this.btnHistoriaClinica.Location = new System.Drawing.Point(412, 537);
             this.btnHistoriaClinica.Margin = new System.Windows.Forms.Padding(2);
             this.btnHistoriaClinica.Name = "btnHistoriaClinica";
             this.btnHistoriaClinica.Size = new System.Drawing.Size(85, 38);
@@ -1870,7 +1873,7 @@
             this.btnDermatologico.ForeColor = System.Drawing.Color.Black;
             this.btnDermatologico.Image = ((System.Drawing.Image)(resources.GetObject("btnDermatologico.Image")));
             this.btnDermatologico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDermatologico.Location = new System.Drawing.Point(235, 611);
+            this.btnDermatologico.Location = new System.Drawing.Point(818, 490);
             this.btnDermatologico.Margin = new System.Windows.Forms.Padding(2);
             this.btnDermatologico.Name = "btnDermatologico";
             this.btnDermatologico.Size = new System.Drawing.Size(102, 38);
@@ -1894,7 +1897,7 @@
             this.btnEstudioEKG.ForeColor = System.Drawing.Color.Black;
             this.btnEstudioEKG.Image = ((System.Drawing.Image)(resources.GetObject("btnEstudioEKG.Image")));
             this.btnEstudioEKG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstudioEKG.Location = new System.Drawing.Point(315, 619);
+            this.btnEstudioEKG.Location = new System.Drawing.Point(853, 494);
             this.btnEstudioEKG.Margin = new System.Windows.Forms.Padding(2);
             this.btnEstudioEKG.Name = "btnEstudioEKG";
             this.btnEstudioEKG.Size = new System.Drawing.Size(102, 38);
@@ -1917,15 +1920,14 @@
             this.btnAdjuntarArchivo.ForeColor = System.Drawing.Color.Black;
             this.btnAdjuntarArchivo.Image = global::Sigesoft.Node.WinClient.UI.Resources.attach;
             this.btnAdjuntarArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdjuntarArchivo.Location = new System.Drawing.Point(252, 612);
+            this.btnAdjuntarArchivo.Location = new System.Drawing.Point(1099, 409);
             this.btnAdjuntarArchivo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdjuntarArchivo.Name = "btnAdjuntarArchivo";
-            this.btnAdjuntarArchivo.Size = new System.Drawing.Size(85, 36);
+            this.btnAdjuntarArchivo.Size = new System.Drawing.Size(130, 36);
             this.btnAdjuntarArchivo.TabIndex = 135;
             this.btnAdjuntarArchivo.Text = "&Adjuntar Archivo";
             this.btnAdjuntarArchivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdjuntarArchivo.UseVisualStyleBackColor = false;
-            this.btnAdjuntarArchivo.Visible = false;
             this.btnAdjuntarArchivo.Click += new System.EventHandler(this.btnAdjuntarArchivo_Click);
             // 
             // btnInformeRadiologicoOIT
@@ -1941,7 +1943,7 @@
             this.btnInformeRadiologicoOIT.ForeColor = System.Drawing.Color.Black;
             this.btnInformeRadiologicoOIT.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeRadiologicoOIT.Image")));
             this.btnInformeRadiologicoOIT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeRadiologicoOIT.Location = new System.Drawing.Point(245, 616);
+            this.btnInformeRadiologicoOIT.Location = new System.Drawing.Point(300, 540);
             this.btnInformeRadiologicoOIT.Margin = new System.Windows.Forms.Padding(2);
             this.btnInformeRadiologicoOIT.Name = "btnInformeRadiologicoOIT";
             this.btnInformeRadiologicoOIT.Size = new System.Drawing.Size(102, 38);
@@ -2151,22 +2153,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1242, 670);
-            this.Controls.Add(this.btnBotonOculto);
             this.Controls.Add(this.chkFC);
-            this.Controls.Add(this.btnInforme312);
             this.Controls.Add(this.FechaControlFin);
             this.Controls.Add(this.FechaControlIni);
-            this.Controls.Add(this.btnGenerarLiquidacion);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.btnInformeOftalmo);
-            this.Controls.Add(this.btnHis);
-            this.Controls.Add(this.btnHistoriaClinica);
-            this.Controls.Add(this.btnDermatologico);
-            this.Controls.Add(this.btnEstudioEKG);
-            this.Controls.Add(this.btnAdjuntarArchivo);
-            this.Controls.Add(this.btnInformeRadiologicoOIT);
             this.Controls.Add(this.btnPruebaEsfuerzo);
             this.Controls.Add(this.btnOsteomuscular);
             this.Controls.Add(this.btnRadiologico);
