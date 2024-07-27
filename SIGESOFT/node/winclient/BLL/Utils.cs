@@ -2238,7 +2238,7 @@ namespace Sigesoft.Node.WinClient.BLL
                             {
                                 Id = x.IdI.ToString(),
                                 Value1 = x.Value1
-                            }).ToList();
+                            }).OrderBy(P => P.Value1).ToList();
 
                 pobjOperationResult.Success = 1;
                 return query2;
