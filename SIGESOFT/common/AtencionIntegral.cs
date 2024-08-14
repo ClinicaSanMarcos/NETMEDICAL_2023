@@ -326,7 +326,7 @@ namespace NetPdf
             
             cellsTit = new List<PdfPCell>()
                 { 
-                    new PdfPCell(new Phrase("EXAMEN FISICO: ", fontColumnValueBold1)) {Colspan = 20, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, BackgroundColor=BaseColor.GRAY, MinimumHeight=15F },
+                    new PdfPCell(new Phrase("EXAMEN FISICO DIRIGIDO: ", fontColumnValueBold1)) {Colspan = 20, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, BackgroundColor=BaseColor.GRAY, MinimumHeight=15F },
                     
                     new PdfPCell(new Phrase("", fontColumnValueBold)) {Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight=tamaño_celda  },
                     new PdfPCell(new Phrase(piel_faneras, fontColumnValue)) {Colspan=18, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight=35f  },
@@ -602,12 +602,16 @@ namespace NetPdf
             string final = "";
             string observaciones = "";
 
+            string especialidadInterconsulta = "";
+
             if (atenInte != null)
             {
                 var fechaControl = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_PROX_CITA) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_PROX_CITA).v_Value1;
+                var finalId = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_RESULTADO) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_RESULTADO).v_Value1;
 
                 final = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_RESULTADO) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_RESULTADO).v_Value1Name;
                 observaciones = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_OBSERVACIONES) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_OBSERVACIONES).v_Value1;
+                especialidadInterconsulta = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_RESULTADO_INTERCONSULTA) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_RESULTADO_INTERCONSULTA).v_Value1Name;
 
                 if (fechaControl == servicio[0])
                 {
@@ -615,15 +619,23 @@ namespace NetPdf
                 }
                 else
                 {
-                    observaciones_new = " FC: " + fechaControl;
+                    observaciones_new = fechaControl;
                 }
 
+                if (finalId == "6" || finalId == "9" || finalId == "10")
+                {
+                    especialidadInterconsulta = " - " + especialidadInterconsulta;
+                }
+                else
+                {
+                    especialidadInterconsulta = "";
+                }
             }
 
             cells = new List<PdfPCell>()
             {
-                new PdfPCell(new Phrase("ANOTACIONES: " + observaciones_new , fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
-                new PdfPCell(new Phrase("INDICACIÓN FINAL: " + final, fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
+                new PdfPCell(new Phrase("FECHA PROXIMA CITA: " + observaciones_new , fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
+                new PdfPCell(new Phrase("INDICACIÓN: " + final + especialidadInterconsulta, fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
                 new PdfPCell(new Phrase("OBSERVACIONES: " + observaciones, fontColumnValueBold)){HorizontalAlignment = PdfPCell.ALIGN_LEFT,  VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE,  Colspan = 4, Rowspan = 2},
      
                 new PdfPCell(new Phrase("FIRMA Y SELLO DEL MÉDICO", fontColumnValueBold)) { Colspan = 2, Rowspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_CENTER, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = tamaño_celda},    

@@ -3333,6 +3333,26 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
 
             }
+            //else if (tagCtrl.v_ComponentId == "N009-ME000000062")
+            //{
+            //  //VER PARA OCULTAR
+
+            //    GroupBox gb6 = null;
+            //    gb6 = (GroupBox)FindControlInCurrentTab("gb_C 6. MARQUE  la respuesta adecuada; si marca \"od\", escriba a continuación un COMENTARIO")[0];
+
+            //    if (tagCtrl.v_ComponentFieldsId == "N009-MF000003195")
+            //    {
+            //        gb6.Enabled = true;
+            //        gb6.Enabled = true;
+
+            //    }
+            //    else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000760")
+            //    {
+            //        gb6.Enabled = false;
+            //        gb6.Enabled = false;
+            //    }
+            //}
+
 
         }
 

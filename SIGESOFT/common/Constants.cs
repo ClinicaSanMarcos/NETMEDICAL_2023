@@ -3792,6 +3792,8 @@ namespace Sigesoft.Common
 
 
         public const string ATENCION_INTEGRAL_RESULTADO = "N009-MF000005212";
+        public const string ATENCION_INTEGRAL_RESULTADO_INTERCONSULTA = "N009-MF000005213";
+
 
         public const string ATENCION_INTEGRAL_OBSERVACIONES = "N009-MF000003237";
 
