@@ -2066,6 +2066,18 @@
     <Compile Include="Operations\Popups\PrimeraAptitud.Designer.cs">
       <DependentUpon>PrimeraAptitud.cs</DependentUpon>
     </Compile>
+    <Compile Include="PAGOS MEDICOS\frmConfiguracionPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAGOS MEDICOS\frmConfiguracionPagos.Designer.cs">
+      <DependentUpon>frmConfiguracionPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAGOS MEDICOS\frmPagoMedicosAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAGOS MEDICOS\frmPagoMedicosAddEdit.Designer.cs">
+      <DependentUpon>frmPagoMedicosAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonFinger.cs" />
     <Compile Include="ReporteDeclaracionDrogas.cs">
       <SubType>Form</SubType>
@@ -4592,6 +4604,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Operations\Popups\PrimeraAptitud.resx">
       <DependentUpon>PrimeraAptitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAGOS MEDICOS\frmConfiguracionPagos.resx">
+      <DependentUpon>frmConfiguracionPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAGOS MEDICOS\frmPagoMedicosAddEdit.resx">
+      <DependentUpon>frmPagoMedicosAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteDeclaracionDrogas.resx">
       <DependentUpon>ReporteDeclaracionDrogas.cs</DependentUpon>

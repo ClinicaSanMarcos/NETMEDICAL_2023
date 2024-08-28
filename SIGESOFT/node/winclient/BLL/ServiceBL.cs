@@ -3183,6 +3183,71 @@ namespace Sigesoft.Node.WinClient.BLL
 			}
 		}
 
+        public List<ServiceComponentList> GetServiceComponentsConfig(ref OperationResult pobjOperationResult)
+        {
+            //, string pstrServiceId
+
+            int isDeleted = (int)SiNo.NO;
+            int isRequired = (int)SiNo.SI;
+
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = (from A in dbContext.servicecomponent
+                             join B in dbContext.systemparameter on new { a = A.i_ServiceComponentStatusId.Value, b = 127 }
+                                      equals new { a = B.i_ParameterId, b = B.i_GroupId }
+                             join C in dbContext.component on A.v_ComponentId equals C.v_ComponentId
+                             join D in dbContext.systemparameter on new { a = A.i_QueueStatusId.Value, b = 128 }
+                                      equals new { a = D.i_ParameterId, b = D.i_GroupId }
+                             join E in dbContext.service on A.v_ServiceId equals E.v_ServiceId
+                             join F in dbContext.systemparameter on new { a = C.i_CategoryId.Value, b = 116 }
+                                      equals new { a = F.i_ParameterId, b = F.i_GroupId } into F_join
+                             from F in F_join.DefaultIfEmpty()
+
+                             where 
+                             //A.v_ServiceId == pstrServiceId &&
+                                   A.i_IsDeleted == isDeleted &&
+                                   A.i_IsRequiredId == isRequired
+
+                             select new ServiceComponentList
+                             {
+                                 v_ComponentId = A.v_ComponentId,
+                                 v_ComponentName = C.v_Name,
+                                 i_ServiceComponentStatusId = A.i_ServiceComponentStatusId.Value,
+                                 v_ServiceComponentStatusName = B.v_Value1,
+                                 d_StartDate = A.d_StartDate.Value,
+                                 d_EndDate = A.d_EndDate.Value,
+                                 i_QueueStatusId = A.i_QueueStatusId.Value,
+                                 v_QueueStatusName = D.v_Value1,
+                                 ServiceStatusId = E.i_ServiceStatusId.Value,
+                                 v_Motive = E.v_Motive,
+                                 i_CategoryId = C.i_CategoryId.Value,
+                                 v_CategoryName = C.i_CategoryId.Value == -1 ? C.v_Name : F.v_Value1,
+                                 v_ServiceId = E.v_ServiceId,
+                                 v_ServiceComponentId = A.v_ServiceComponentId,
+                             });
+
+                var objData = query.AsEnumerable()
+                             .Where(s => s.i_CategoryId != -1)
+                             .GroupBy(x => x.i_CategoryId)
+                             .Select(group => group.First());
+
+                List<ServiceComponentList> obj = objData.ToList();
+
+                obj.AddRange(query.Where(p => p.i_CategoryId == -1));
+
+                pobjOperationResult.Success = 1;
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
 		public List<ServiceComponentList> GetServiceComponents_(ref OperationResult pobjOperationResult, string pstrServiceId)
 		{
 

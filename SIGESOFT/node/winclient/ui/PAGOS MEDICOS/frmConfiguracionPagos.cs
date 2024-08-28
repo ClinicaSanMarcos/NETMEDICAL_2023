@@ -1,0 +1,168 @@
+﻿using Sigesoft.Common;
+using Sigesoft.Node.WinClient.BLL;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
+{
+    public partial class frmConfiguracionPagos : Form
+    {
+        ServiceBL objServiceBL = new ServiceBL();
+
+        private string MedicalExamId { get; set; }
+        private string MedicalExamName { get; set; }
+        private string CategoryName { get; set; }
+
+        List<string> _ListaComponentes = null;
+
+        public frmConfiguracionPagos(List<string> ListaComponentes)
+        {
+            _ListaComponentes = ListaComponentes;
+
+            InitializeComponent();
+        }
+
+        private void rbMedSolicitante_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmConfiguracionPagos_Load(object sender, EventArgs e)
+        {
+            OperationResult objOperationResult1 = new OperationResult();
+
+            Utils.LoadDropDownList(ddlUsuario, "Value1", "Id", BLL.Utils.GetProfessional(ref objOperationResult1, ""), DropDownListAction.Select);
+
+            var ListServiceComponent = objServiceBL.GetAllComponentsNew(ref objOperationResult1, null, "");
+            gdDataExamsNew.DataSource = ListServiceComponent;
+
+            rbXTurno_CheckedChanged(sender, e);
+
+
+
+        }
+
+        private void rbXTurno_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbXTurno.Checked == true)
+            {
+                groupTurno.Enabled = true;
+                groupHora.Enabled = false;
+                groupExamen.Enabled = false;
+            }
+        }
+
+        private void rbXHora_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbXHora.Checked == true)
+            {
+                groupTurno.Enabled = false;
+                groupHora.Enabled = true;
+                groupExamen.Enabled = false;
+            }
+        }
+
+        private void rbXExamen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbXExamen.Checked == true)
+            {
+                groupTurno.Enabled = false;
+                groupHora.Enabled = false;
+                groupExamen.Enabled = true;
+            }
+        }
+
+        private void btnAgregarExamenAuxiliar_Click(object sender, EventArgs e)
+        {
+            AddAuxiliaryExam(); 
+        }
+
+        private void AddAuxiliaryExam()
+        {
+            var findResult = lvExamenesSeleccionados.FindItemWithText(MedicalExamId);
+            string IsProcessed = "0";
+            string IsNewService = "0";
+            // El examen ya esta agregado
+            if (findResult != null)
+            {
+                MessageBox.Show("Por favor seleccione otro examen.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //var res = _ListaComponentes.Find(p => p == MedicalExamId);
+            //if (res != null)
+            //{
+            //    var DialogResult = MessageBox.Show("Este examen ya se encuentra agregado, ¿Desea crear nuevo servicio?", "Error de validación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            //    if (DialogResult == System.Windows.Forms.DialogResult.Yes)
+            //    {
+            //        IsNewService = "1";
+            //    }
+            //    else
+            //    {
+            //        return;
+            //    }
+
+            //}
+
+
+            var row = new ListViewItem(new[] { MedicalExamName, MedicalExamId, IsProcessed, IsNewService });
+
+            lvExamenesSeleccionados.Items.Add(row);
+
+            gbExamenesSeleccionados.Text = string.Format("Examenes Seleccionados {0}", lvExamenesSeleccionados.Items.Count);
+        }
+
+        private void btnRemoverExamenAuxiliar_Click(object sender, EventArgs e)
+        {
+            var selectedItem = lvExamenesSeleccionados.SelectedItems[0];
+            var medicalExamId = selectedItem.SubItems[1].Text;
+
+            // Eliminacion fisica
+            lvExamenesSeleccionados.Items.Remove(selectedItem);
+            gbExamenesSeleccionados.Text = string.Format("Examenes Seleccionados {0}", lvExamenesSeleccionados.Items.Count);
+        }
+
+        private void gdDataExamsNew_AfterSelectChange(object sender, Infragistics.Win.UltraWinGrid.AfterSelectChangeEventArgs e)
+        {
+            bool row = gdDataExamsNew.Selected.Rows.Count > 0;
+            if (!row)
+            {
+                return;
+            }
+            if (gdDataExamsNew.Selected.Rows[0].Cells["v_ComponentId"].Value == null)
+            {
+                btnAgregarExamenAuxiliar.Enabled = false;
+
+                return;
+            }
+            else
+            {
+                btnAgregarExamenAuxiliar.Enabled = true;
+            }
+
+            lvExamenesSeleccionados.SelectedItems.Clear();
+
+            if (gdDataExamsNew.Selected.Rows.Count == 0)
+                return;
+
+            MedicalExamId = gdDataExamsNew.Selected.Rows[0].Cells["v_ComponentId"].Value.ToString();
+            MedicalExamName = gdDataExamsNew.Selected.Rows[0].Cells["v_ComponentName"].Value.ToString();
+
+            if (gdDataExamsNew.Selected.Rows[0].Cells["v_ComponentId"].Value != null)
+            {
+                MedicalExamName = gdDataExamsNew.Selected.Rows[0].Cells["v_ComponentName"].Value.ToString();
+            }
+            else
+            {
+                MedicalExamName = string.Empty;
+            }
+        }
+
+    }
+}

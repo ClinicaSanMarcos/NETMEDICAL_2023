@@ -47,7 +47,7 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn21 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn22 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_MedicoTratante");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn13 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("detalle");
-            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("detalle", 0);
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand2 = new Infragistics.Win.UltraWinGrid.UltraGridBand("detalle", -1);
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn14 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_DiseasesName");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn15 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_ExpirationDateDiagnostic");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn16 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_RecomendationsName");
@@ -67,7 +67,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtDiagnostico = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnFilter = new System.Windows.Forms.Button();
             this.ddlServiceTypeId = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ddServiceStatusId = new System.Windows.Forms.ComboBox();
@@ -92,7 +91,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.ddlEsoType = new System.Windows.Forms.ComboBox();
-            this.btnCompaginaSelected = new System.Windows.Forms.Button();
             this.chkFC = new System.Windows.Forms.CheckBox();
             this.FechaControlFin = new System.Windows.Forms.DateTimePicker();
             this.FechaControlIni = new System.Windows.Forms.DateTimePicker();
@@ -102,27 +100,53 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.btnVeer = new System.Windows.Forms.Button();
-            this.btnImprimirAdicionales = new System.Windows.Forms.Button();
             this.btnMigrarEmpresa = new System.Windows.Forms.Button();
-            this.btnSubirInterconsulta = new System.Windows.Forms.Button();
             this.grdDataService = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.cmGridService = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.itemDetalles = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnReportAsync = new System.Windows.Forms.Button();
             this.btnServicios = new System.Windows.Forms.Button();
-            this.btnHistoriaCl = new System.Windows.Forms.Button();
             this.btnPErson = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnCargoFactura = new System.Windows.Forms.Button();
+            this.lblRecordCountCalendar = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.cmService = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ultraGridExcelExporter1 = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.btnPruebaEsfuerzo = new System.Windows.Forms.Button();
+            this.btnOsteomuscular = new System.Windows.Forms.Button();
+            this.btnRadiologico = new System.Windows.Forms.Button();
+            this.btn7D = new System.Windows.Forms.Button();
+            this.btnInformeMedicoTrabajador = new System.Windows.Forms.Button();
+            this.btnInformeAlturaEstructural = new System.Windows.Forms.Button();
+            this.btnImprimirInformeMedicoEPS = new System.Windows.Forms.Button();
+            this.btnImprimirCertificadoAptitud = new System.Windows.Forms.Button();
+            this.btnPagoMed = new System.Windows.Forms.Button();
+            this.btnInformeRadiologicoOIT = new System.Windows.Forms.Button();
+            this.btnAdjuntarArchivo = new System.Windows.Forms.Button();
+            this.btnEstudioEKG = new System.Windows.Forms.Button();
+            this.btnDermatologico = new System.Windows.Forms.Button();
+            this.btnInformeOftalmo = new System.Windows.Forms.Button();
+            this.btnHistoriaClinica = new System.Windows.Forms.Button();
+            this.btnHis = new System.Windows.Forms.Button();
+            this.btnGenerarLiquidacion = new System.Windows.Forms.Button();
+            this.btnInforme312 = new System.Windows.Forms.Button();
+            this.btnBotonOculto = new System.Windows.Forms.Button();
+            this.btnVeer = new System.Windows.Forms.Button();
+            this.btnImprimirAdicionales = new System.Windows.Forms.Button();
+            this.btnCompaginaSelected = new System.Windows.Forms.Button();
+            this.btnSubirInterconsulta = new System.Windows.Forms.Button();
+            this.itemDetalles = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnReportAsync = new System.Windows.Forms.Button();
+            this.btnHistoriaCl = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnCargoHistorias = new System.Windows.Forms.Button();
             this.btnGenerarIds = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnQuitarChek = new System.Windows.Forms.Button();
             this.btnActualizarCulminado = new System.Windows.Forms.Button();
             this.btnActualizarPerson = new System.Windows.Forms.Button();
-            this.lblRecordCountCalendar = new System.Windows.Forms.Label();
             this.btnActualizarAptitud = new System.Windows.Forms.Button();
             this.btnGeneracionMasivaReportes = new System.Windows.Forms.Button();
             this.btnImprimirExamenes = new System.Windows.Forms.Button();
@@ -137,33 +161,10 @@
             this.btnHistoriaOcupacional = new System.Windows.Forms.Button();
             this.btnOdontograma = new System.Windows.Forms.Button();
             this.btnInformePsicologico = new System.Windows.Forms.Button();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.cmService = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CertificadoAptitud = new System.Windows.Forms.ToolStripMenuItem();
             this.verEditarServicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Examenes = new System.Windows.Forms.ToolStripMenuItem();
             this.vistaPreviaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.ultraGridExcelExporter1 = new Infragistics.Win.UltraWinGrid.ExcelExport.UltraGridExcelExporter(this.components);
-            this.btnBotonOculto = new System.Windows.Forms.Button();
-            this.btnInforme312 = new System.Windows.Forms.Button();
-            this.btnGenerarLiquidacion = new System.Windows.Forms.Button();
-            this.btnInformeOftalmo = new System.Windows.Forms.Button();
-            this.btnHis = new System.Windows.Forms.Button();
-            this.btnHistoriaClinica = new System.Windows.Forms.Button();
-            this.btnDermatologico = new System.Windows.Forms.Button();
-            this.btnEstudioEKG = new System.Windows.Forms.Button();
-            this.btnAdjuntarArchivo = new System.Windows.Forms.Button();
-            this.btnInformeRadiologicoOIT = new System.Windows.Forms.Button();
-            this.btnPruebaEsfuerzo = new System.Windows.Forms.Button();
-            this.btnOsteomuscular = new System.Windows.Forms.Button();
-            this.btnRadiologico = new System.Windows.Forms.Button();
-            this.btn7D = new System.Windows.Forms.Button();
-            this.btnInformeMedicoTrabajador = new System.Windows.Forms.Button();
-            this.btnInformeAlturaEstructural = new System.Windows.Forms.Button();
-            this.btnImprimirInformeMedicoEPS = new System.Windows.Forms.Button();
-            this.btnImprimirCertificadoAptitud = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDataService)).BeginInit();
@@ -267,26 +268,6 @@
             this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 137;
             this.label16.Text = "Diagnóstico";
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.BackColor = System.Drawing.SystemColors.Control;
-            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.ForeColor = System.Drawing.Color.Black;
-            this.btnFilter.Image = global::Sigesoft.Node.WinClient.UI.Resources.find;
-            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(1008, 55);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(208, 24);
-            this.btnFilter.TabIndex = 106;
-            this.btnFilter.Text = "               Filtrar";
-            this.btnFilter.UseVisualStyleBackColor = false;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // ddlServiceTypeId
             // 
@@ -595,30 +576,6 @@
             this.ddlEsoType.Visible = false;
             this.ddlEsoType.SelectedIndexChanged += new System.EventHandler(this.ddlEsoType_SelectedIndexChanged);
             // 
-            // btnCompaginaSelected
-            // 
-            this.btnCompaginaSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCompaginaSelected.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCompaginaSelected.Enabled = false;
-            this.btnCompaginaSelected.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCompaginaSelected.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnCompaginaSelected.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnCompaginaSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCompaginaSelected.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompaginaSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCompaginaSelected.Image = global::Sigesoft.Node.WinClient.UI.Resources.color_swatch;
-            this.btnCompaginaSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompaginaSelected.Location = new System.Drawing.Point(1100, 546);
-            this.btnCompaginaSelected.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCompaginaSelected.Name = "btnCompaginaSelected";
-            this.btnCompaginaSelected.Size = new System.Drawing.Size(129, 26);
-            this.btnCompaginaSelected.TabIndex = 145;
-            this.btnCompaginaSelected.Text = "Generacion grupal";
-            this.btnCompaginaSelected.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnCompaginaSelected.UseVisualStyleBackColor = false;
-            this.btnCompaginaSelected.Visible = false;
-            this.btnCompaginaSelected.Click += new System.EventHandler(this.btnCompaginaSelected_Click);
-            // 
             // chkFC
             // 
             this.chkFC.AutoSize = true;
@@ -713,6 +670,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.btnPagoMed);
             this.groupBox2.Controls.Add(this.btnInformeRadiologicoOIT);
             this.groupBox2.Controls.Add(this.btnAdjuntarArchivo);
             this.groupBox2.Controls.Add(this.btnEstudioEKG);
@@ -782,7 +740,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(1234, 568);
+            this.groupBox2.Size = new System.Drawing.Size(1234, 584);
             this.groupBox2.TabIndex = 48;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Servicios";
@@ -802,52 +760,11 @@
             this.label20.TabIndex = 163;
             this.label20.Text = "Servicio Atendido Observado";
             // 
-            // btnVeer
-            // 
-            this.btnVeer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVeer.BackColor = System.Drawing.SystemColors.Control;
-            this.btnVeer.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnVeer.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnVeer.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnVeer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVeer.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVeer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVeer.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_edit;
-            this.btnVeer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVeer.Location = new System.Drawing.Point(4, 547);
-            this.btnVeer.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVeer.Name = "btnVeer";
-            this.btnVeer.Size = new System.Drawing.Size(77, 23);
-            this.btnVeer.TabIndex = 161;
-            this.btnVeer.Text = "Service";
-            this.btnVeer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVeer.UseVisualStyleBackColor = false;
-            this.btnVeer.Click += new System.EventHandler(this.btnVeer_Click);
-            // 
-            // btnImprimirAdicionales
-            // 
-            this.btnImprimirAdicionales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimirAdicionales.BackColor = System.Drawing.SystemColors.Control;
-            this.btnImprimirAdicionales.Enabled = false;
-            this.btnImprimirAdicionales.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnImprimirAdicionales.Font = new System.Drawing.Font("Calibri", 8.25F);
-            this.btnImprimirAdicionales.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnImprimirAdicionales.Image = global::Sigesoft.Node.WinClient.UI.Resources.printer_go;
-            this.btnImprimirAdicionales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirAdicionales.Location = new System.Drawing.Point(1100, 143);
-            this.btnImprimirAdicionales.Name = "btnImprimirAdicionales";
-            this.btnImprimirAdicionales.Size = new System.Drawing.Size(129, 44);
-            this.btnImprimirAdicionales.TabIndex = 160;
-            this.btnImprimirAdicionales.Text = "          Imprimir Exámenes Adicionales";
-            this.btnImprimirAdicionales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimirAdicionales.UseVisualStyleBackColor = false;
-            this.btnImprimirAdicionales.Click += new System.EventHandler(this.btnImprimirAdicionales_Click);
-            // 
             // btnMigrarEmpresa
             // 
             this.btnMigrarEmpresa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMigrarEmpresa.ForeColor = System.Drawing.Color.Black;
-            this.btnMigrarEmpresa.Location = new System.Drawing.Point(567, 508);
+            this.btnMigrarEmpresa.Location = new System.Drawing.Point(588, 523);
             this.btnMigrarEmpresa.Margin = new System.Windows.Forms.Padding(2);
             this.btnMigrarEmpresa.Name = "btnMigrarEmpresa";
             this.btnMigrarEmpresa.Size = new System.Drawing.Size(103, 24);
@@ -856,28 +773,6 @@
             this.btnMigrarEmpresa.UseVisualStyleBackColor = true;
             this.btnMigrarEmpresa.Visible = false;
             this.btnMigrarEmpresa.Click += new System.EventHandler(this.btnMigrarEmpresa_Click);
-            // 
-            // btnSubirInterconsulta
-            // 
-            this.btnSubirInterconsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubirInterconsulta.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSubirInterconsulta.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnSubirInterconsulta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSubirInterconsulta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSubirInterconsulta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSubirInterconsulta.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubirInterconsulta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSubirInterconsulta.Image = global::Sigesoft.Node.WinClient.UI.Resources.email_transfer;
-            this.btnSubirInterconsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirInterconsulta.Location = new System.Drawing.Point(1100, 244);
-            this.btnSubirInterconsulta.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSubirInterconsulta.Name = "btnSubirInterconsulta";
-            this.btnSubirInterconsulta.Size = new System.Drawing.Size(129, 26);
-            this.btnSubirInterconsulta.TabIndex = 159;
-            this.btnSubirInterconsulta.Text = "Subir Anexos";
-            this.btnSubirInterconsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSubirInterconsulta.UseVisualStyleBackColor = false;
-            this.btnSubirInterconsulta.Click += new System.EventHandler(this.btnSubirInterconsulta_Click);
             // 
             // grdDataService
             // 
@@ -1039,14 +934,6 @@
             this.cmGridService.Name = "cmGridService";
             this.cmGridService.Size = new System.Drawing.Size(135, 26);
             // 
-            // itemDetalles
-            // 
-            this.itemDetalles.Image = global::Sigesoft.Node.WinClient.UI.Resources.find;
-            this.itemDetalles.Name = "itemDetalles";
-            this.itemDetalles.Size = new System.Drawing.Size(134, 22);
-            this.itemDetalles.Text = "Ver Detalles";
-            this.itemDetalles.Click += new System.EventHandler(this.itemDetalles_Click);
-            // 
             // button2
             // 
             this.button2.Enabled = false;
@@ -1058,6 +945,668 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // btnServicios
+            // 
+            this.btnServicios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnServicios.ForeColor = System.Drawing.Color.Black;
+            this.btnServicios.Location = new System.Drawing.Point(830, 452);
+            this.btnServicios.Margin = new System.Windows.Forms.Padding(2);
+            this.btnServicios.Name = "btnServicios";
+            this.btnServicios.Size = new System.Drawing.Size(103, 24);
+            this.btnServicios.TabIndex = 152;
+            this.btnServicios.Text = "Migrar Servicios ";
+            this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnServicios.Visible = false;
+            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
+            // 
+            // btnPErson
+            // 
+            this.btnPErson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPErson.ForeColor = System.Drawing.Color.Black;
+            this.btnPErson.Location = new System.Drawing.Point(711, 451);
+            this.btnPErson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPErson.Name = "btnPErson";
+            this.btnPErson.Size = new System.Drawing.Size(103, 24);
+            this.btnPErson.TabIndex = 151;
+            this.btnPErson.Text = "Migrar Pacientes";
+            this.btnPErson.UseVisualStyleBackColor = true;
+            this.btnPErson.Visible = false;
+            this.btnPErson.Click += new System.EventHandler(this.btnPErson_Click);
+            // 
+            // btnCargoFactura
+            // 
+            this.btnCargoFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCargoFactura.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCargoFactura.Enabled = false;
+            this.btnCargoFactura.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCargoFactura.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCargoFactura.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCargoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargoFactura.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargoFactura.ForeColor = System.Drawing.Color.Black;
+            this.btnCargoFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargoFactura.Location = new System.Drawing.Point(959, 465);
+            this.btnCargoFactura.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCargoFactura.Name = "btnCargoFactura";
+            this.btnCargoFactura.Size = new System.Drawing.Size(85, 36);
+            this.btnCargoFactura.TabIndex = 148;
+            this.btnCargoFactura.Text = "Cargo Factura";
+            this.btnCargoFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCargoFactura.UseVisualStyleBackColor = false;
+            this.btnCargoFactura.Visible = false;
+            this.btnCargoFactura.Click += new System.EventHandler(this.btnCargoFactura_Click);
+            // 
+            // lblRecordCountCalendar
+            // 
+            this.lblRecordCountCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRecordCountCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordCountCalendar.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblRecordCountCalendar.Location = new System.Drawing.Point(992, 8);
+            this.lblRecordCountCalendar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecordCountCalendar.Name = "lblRecordCountCalendar";
+            this.lblRecordCountCalendar.Size = new System.Drawing.Size(231, 19);
+            this.lblRecordCountCalendar.TabIndex = 52;
+            this.lblRecordCountCalendar.Text = "No se ha realizado la búsqueda aún.";
+            this.lblRecordCountCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(2, 15);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape3});
+            this.shapeContainer1.Size = new System.Drawing.Size(1230, 567);
+            this.shapeContainer1.TabIndex = 162;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 1100;
+            this.lineShape3.X2 = 1225;
+            this.lineShape3.Y1 = 71;
+            this.lineShape3.Y2 = 71;
+            // 
+            // cmService
+            // 
+            this.cmService.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CertificadoAptitud,
+            this.verEditarServicioToolStripMenuItem,
+            this.Examenes,
+            this.vistaPreviaToolStripMenuItem});
+            this.cmService.Name = "contextMenuStrip1";
+            this.cmService.Size = new System.Drawing.Size(354, 92);
+            this.cmService.Text = "a";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.BackColor = System.Drawing.SystemColors.Control;
+            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnFilter.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.Color.Black;
+            this.btnFilter.Image = global::Sigesoft.Node.WinClient.UI.Resources.find;
+            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFilter.Location = new System.Drawing.Point(1008, 55);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(208, 24);
+            this.btnFilter.TabIndex = 106;
+            this.btnFilter.Text = "               Filtrar";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            // 
+            // btnPruebaEsfuerzo
+            // 
+            this.btnPruebaEsfuerzo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPruebaEsfuerzo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPruebaEsfuerzo.Enabled = false;
+            this.btnPruebaEsfuerzo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnPruebaEsfuerzo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnPruebaEsfuerzo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPruebaEsfuerzo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPruebaEsfuerzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPruebaEsfuerzo.ForeColor = System.Drawing.Color.Black;
+            this.btnPruebaEsfuerzo.Image = ((System.Drawing.Image)(resources.GetObject("btnPruebaEsfuerzo.Image")));
+            this.btnPruebaEsfuerzo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPruebaEsfuerzo.Location = new System.Drawing.Point(276, 608);
+            this.btnPruebaEsfuerzo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPruebaEsfuerzo.Name = "btnPruebaEsfuerzo";
+            this.btnPruebaEsfuerzo.Size = new System.Drawing.Size(102, 38);
+            this.btnPruebaEsfuerzo.TabIndex = 125;
+            this.btnPruebaEsfuerzo.Text = "Prueba Esfuerzo";
+            this.btnPruebaEsfuerzo.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnPruebaEsfuerzo.UseVisualStyleBackColor = false;
+            this.btnPruebaEsfuerzo.Visible = false;
+            this.btnPruebaEsfuerzo.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnOsteomuscular
+            // 
+            this.btnOsteomuscular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOsteomuscular.BackColor = System.Drawing.SystemColors.Control;
+            this.btnOsteomuscular.Enabled = false;
+            this.btnOsteomuscular.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnOsteomuscular.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnOsteomuscular.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnOsteomuscular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOsteomuscular.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOsteomuscular.ForeColor = System.Drawing.Color.Black;
+            this.btnOsteomuscular.Image = ((System.Drawing.Image)(resources.GetObject("btnOsteomuscular.Image")));
+            this.btnOsteomuscular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOsteomuscular.Location = new System.Drawing.Point(248, 612);
+            this.btnOsteomuscular.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOsteomuscular.Name = "btnOsteomuscular";
+            this.btnOsteomuscular.Size = new System.Drawing.Size(102, 38);
+            this.btnOsteomuscular.TabIndex = 124;
+            this.btnOsteomuscular.Text = "OsteMuscular";
+            this.btnOsteomuscular.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnOsteomuscular.UseVisualStyleBackColor = false;
+            this.btnOsteomuscular.Visible = false;
+            this.btnOsteomuscular.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnRadiologico
+            // 
+            this.btnRadiologico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRadiologico.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRadiologico.Enabled = false;
+            this.btnRadiologico.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnRadiologico.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnRadiologico.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnRadiologico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRadiologico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRadiologico.ForeColor = System.Drawing.Color.Black;
+            this.btnRadiologico.Image = ((System.Drawing.Image)(resources.GetObject("btnRadiologico.Image")));
+            this.btnRadiologico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRadiologico.Location = new System.Drawing.Point(205, 612);
+            this.btnRadiologico.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRadiologico.Name = "btnRadiologico";
+            this.btnRadiologico.Size = new System.Drawing.Size(102, 38);
+            this.btnRadiologico.TabIndex = 123;
+            this.btnRadiologico.Text = "Radiologico";
+            this.btnRadiologico.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnRadiologico.UseVisualStyleBackColor = false;
+            this.btnRadiologico.Visible = false;
+            this.btnRadiologico.Click += new System.EventHandler(this.btnRadiologico_Click);
+            // 
+            // btn7D
+            // 
+            this.btn7D.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn7D.BackColor = System.Drawing.SystemColors.Control;
+            this.btn7D.Enabled = false;
+            this.btn7D.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn7D.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn7D.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn7D.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn7D.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn7D.ForeColor = System.Drawing.Color.Black;
+            this.btn7D.Image = ((System.Drawing.Image)(resources.GetObject("btn7D.Image")));
+            this.btn7D.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn7D.Location = new System.Drawing.Point(-96, 612);
+            this.btn7D.Margin = new System.Windows.Forms.Padding(2);
+            this.btn7D.Name = "btn7D";
+            this.btn7D.Size = new System.Drawing.Size(85, 38);
+            this.btn7D.TabIndex = 114;
+            this.btn7D.Text = "7D";
+            this.btn7D.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btn7D.UseVisualStyleBackColor = false;
+            this.btn7D.Visible = false;
+            this.btn7D.Click += new System.EventHandler(this.btn7D_Click);
+            // 
+            // btnInformeMedicoTrabajador
+            // 
+            this.btnInformeMedicoTrabajador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInformeMedicoTrabajador.BackColor = System.Drawing.SystemColors.Control;
+            this.btnInformeMedicoTrabajador.Enabled = false;
+            this.btnInformeMedicoTrabajador.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnInformeMedicoTrabajador.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnInformeMedicoTrabajador.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnInformeMedicoTrabajador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeMedicoTrabajador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeMedicoTrabajador.ForeColor = System.Drawing.Color.Black;
+            this.btnInformeMedicoTrabajador.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeMedicoTrabajador.Image")));
+            this.btnInformeMedicoTrabajador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeMedicoTrabajador.Location = new System.Drawing.Point(187, 602);
+            this.btnInformeMedicoTrabajador.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInformeMedicoTrabajador.Name = "btnInformeMedicoTrabajador";
+            this.btnInformeMedicoTrabajador.Size = new System.Drawing.Size(85, 52);
+            this.btnInformeMedicoTrabajador.TabIndex = 113;
+            this.btnInformeMedicoTrabajador.Text = "Informe Médico Trabajador";
+            this.btnInformeMedicoTrabajador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInformeMedicoTrabajador.UseVisualStyleBackColor = false;
+            this.btnInformeMedicoTrabajador.Visible = false;
+            this.btnInformeMedicoTrabajador.Click += new System.EventHandler(this.btnInformeMedicoTrabajador_Click);
+            // 
+            // btnInformeAlturaEstructural
+            // 
+            this.btnInformeAlturaEstructural.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInformeAlturaEstructural.BackColor = System.Drawing.SystemColors.Control;
+            this.btnInformeAlturaEstructural.Enabled = false;
+            this.btnInformeAlturaEstructural.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnInformeAlturaEstructural.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnInformeAlturaEstructural.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnInformeAlturaEstructural.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeAlturaEstructural.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeAlturaEstructural.ForeColor = System.Drawing.Color.Black;
+            this.btnInformeAlturaEstructural.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeAlturaEstructural.Image")));
+            this.btnInformeAlturaEstructural.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeAlturaEstructural.Location = new System.Drawing.Point(177, 603);
+            this.btnInformeAlturaEstructural.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInformeAlturaEstructural.Name = "btnInformeAlturaEstructural";
+            this.btnInformeAlturaEstructural.Size = new System.Drawing.Size(85, 55);
+            this.btnInformeAlturaEstructural.TabIndex = 111;
+            this.btnInformeAlturaEstructural.Text = "Informe    Altura     Estructural";
+            this.btnInformeAlturaEstructural.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnInformeAlturaEstructural.UseVisualStyleBackColor = false;
+            this.btnInformeAlturaEstructural.Visible = false;
+            this.btnInformeAlturaEstructural.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnImprimirInformeMedicoEPS
+            // 
+            this.btnImprimirInformeMedicoEPS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirInformeMedicoEPS.BackColor = System.Drawing.SystemColors.Control;
+            this.btnImprimirInformeMedicoEPS.Enabled = false;
+            this.btnImprimirInformeMedicoEPS.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnImprimirInformeMedicoEPS.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnImprimirInformeMedicoEPS.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnImprimirInformeMedicoEPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirInformeMedicoEPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirInformeMedicoEPS.ForeColor = System.Drawing.Color.Black;
+            this.btnImprimirInformeMedicoEPS.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirInformeMedicoEPS.Image")));
+            this.btnImprimirInformeMedicoEPS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirInformeMedicoEPS.Location = new System.Drawing.Point(241, 612);
+            this.btnImprimirInformeMedicoEPS.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImprimirInformeMedicoEPS.Name = "btnImprimirInformeMedicoEPS";
+            this.btnImprimirInformeMedicoEPS.Size = new System.Drawing.Size(85, 36);
+            this.btnImprimirInformeMedicoEPS.TabIndex = 107;
+            this.btnImprimirInformeMedicoEPS.Text = "Informe             Médico   EPS";
+            this.btnImprimirInformeMedicoEPS.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnImprimirInformeMedicoEPS.UseVisualStyleBackColor = false;
+            this.btnImprimirInformeMedicoEPS.Visible = false;
+            this.btnImprimirInformeMedicoEPS.Click += new System.EventHandler(this.btnImprimirInformeMedicoEPS_Click);
+            // 
+            // btnImprimirCertificadoAptitud
+            // 
+            this.btnImprimirCertificadoAptitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirCertificadoAptitud.BackColor = System.Drawing.SystemColors.Control;
+            this.btnImprimirCertificadoAptitud.Enabled = false;
+            this.btnImprimirCertificadoAptitud.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnImprimirCertificadoAptitud.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnImprimirCertificadoAptitud.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnImprimirCertificadoAptitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirCertificadoAptitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirCertificadoAptitud.ForeColor = System.Drawing.Color.Black;
+            this.btnImprimirCertificadoAptitud.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirCertificadoAptitud.Image")));
+            this.btnImprimirCertificadoAptitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirCertificadoAptitud.Location = new System.Drawing.Point(214, 614);
+            this.btnImprimirCertificadoAptitud.Margin = new System.Windows.Forms.Padding(2);
+            this.btnImprimirCertificadoAptitud.Name = "btnImprimirCertificadoAptitud";
+            this.btnImprimirCertificadoAptitud.Size = new System.Drawing.Size(85, 36);
+            this.btnImprimirCertificadoAptitud.TabIndex = 104;
+            this.btnImprimirCertificadoAptitud.Text = "Cerificado Aptitud";
+            this.btnImprimirCertificadoAptitud.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnImprimirCertificadoAptitud.UseVisualStyleBackColor = false;
+            this.btnImprimirCertificadoAptitud.Visible = false;
+            this.btnImprimirCertificadoAptitud.Click += new System.EventHandler(this.btnImprimirCertificadoAptitud_Click);
+            // 
+            // btnPagoMed
+            // 
+            this.btnPagoMed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPagoMed.BackColor = System.Drawing.SystemColors.Control;
+            this.btnPagoMed.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnPagoMed.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnPagoMed.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnPagoMed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPagoMed.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagoMed.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPagoMed.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_edit;
+            this.btnPagoMed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPagoMed.Location = new System.Drawing.Point(364, 551);
+            this.btnPagoMed.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPagoMed.Name = "btnPagoMed";
+            this.btnPagoMed.Size = new System.Drawing.Size(129, 21);
+            this.btnPagoMed.TabIndex = 164;
+            this.btnPagoMed.Text = "Ver / Editar PagoMed";
+            this.btnPagoMed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPagoMed.UseVisualStyleBackColor = false;
+            this.btnPagoMed.Click += new System.EventHandler(this.btnPagoMed_Click);
+            // 
+            // btnInformeRadiologicoOIT
+            // 
+            this.btnInformeRadiologicoOIT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInformeRadiologicoOIT.BackColor = System.Drawing.SystemColors.Control;
+            this.btnInformeRadiologicoOIT.Enabled = false;
+            this.btnInformeRadiologicoOIT.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnInformeRadiologicoOIT.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnInformeRadiologicoOIT.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnInformeRadiologicoOIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeRadiologicoOIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeRadiologicoOIT.ForeColor = System.Drawing.Color.Black;
+            this.btnInformeRadiologicoOIT.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeRadiologicoOIT.Image")));
+            this.btnInformeRadiologicoOIT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeRadiologicoOIT.Location = new System.Drawing.Point(300, 540);
+            this.btnInformeRadiologicoOIT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInformeRadiologicoOIT.Name = "btnInformeRadiologicoOIT";
+            this.btnInformeRadiologicoOIT.Size = new System.Drawing.Size(102, 38);
+            this.btnInformeRadiologicoOIT.TabIndex = 126;
+            this.btnInformeRadiologicoOIT.Text = "Informe Radiografico OIT";
+            this.btnInformeRadiologicoOIT.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnInformeRadiologicoOIT.UseVisualStyleBackColor = false;
+            this.btnInformeRadiologicoOIT.Visible = false;
+            this.btnInformeRadiologicoOIT.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // btnAdjuntarArchivo
+            // 
+            this.btnAdjuntarArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAdjuntarArchivo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdjuntarArchivo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAdjuntarArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAdjuntarArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnAdjuntarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdjuntarArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdjuntarArchivo.ForeColor = System.Drawing.Color.Black;
+            this.btnAdjuntarArchivo.Image = global::Sigesoft.Node.WinClient.UI.Resources.attach;
+            this.btnAdjuntarArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdjuntarArchivo.Location = new System.Drawing.Point(1099, 409);
+            this.btnAdjuntarArchivo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdjuntarArchivo.Name = "btnAdjuntarArchivo";
+            this.btnAdjuntarArchivo.Size = new System.Drawing.Size(130, 36);
+            this.btnAdjuntarArchivo.TabIndex = 135;
+            this.btnAdjuntarArchivo.Text = "&Adjuntar Archivo";
+            this.btnAdjuntarArchivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdjuntarArchivo.UseVisualStyleBackColor = false;
+            this.btnAdjuntarArchivo.Click += new System.EventHandler(this.btnAdjuntarArchivo_Click);
+            // 
+            // btnEstudioEKG
+            // 
+            this.btnEstudioEKG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEstudioEKG.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEstudioEKG.Enabled = false;
+            this.btnEstudioEKG.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEstudioEKG.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEstudioEKG.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEstudioEKG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstudioEKG.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstudioEKG.ForeColor = System.Drawing.Color.Black;
+            this.btnEstudioEKG.Image = ((System.Drawing.Image)(resources.GetObject("btnEstudioEKG.Image")));
+            this.btnEstudioEKG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstudioEKG.Location = new System.Drawing.Point(853, 494);
+            this.btnEstudioEKG.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEstudioEKG.Name = "btnEstudioEKG";
+            this.btnEstudioEKG.Size = new System.Drawing.Size(102, 38);
+            this.btnEstudioEKG.TabIndex = 127;
+            this.btnEstudioEKG.Text = "Estudio Elecgtrocardiografico";
+            this.btnEstudioEKG.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnEstudioEKG.UseVisualStyleBackColor = false;
+            this.btnEstudioEKG.Visible = false;
+            this.btnEstudioEKG.Click += new System.EventHandler(this.button9_Click_1);
+            // 
+            // btnDermatologico
+            // 
+            this.btnDermatologico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDermatologico.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDermatologico.Enabled = false;
+            this.btnDermatologico.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnDermatologico.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDermatologico.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnDermatologico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDermatologico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDermatologico.ForeColor = System.Drawing.Color.Black;
+            this.btnDermatologico.Image = ((System.Drawing.Image)(resources.GetObject("btnDermatologico.Image")));
+            this.btnDermatologico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDermatologico.Location = new System.Drawing.Point(818, 490);
+            this.btnDermatologico.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDermatologico.Name = "btnDermatologico";
+            this.btnDermatologico.Size = new System.Drawing.Size(102, 38);
+            this.btnDermatologico.TabIndex = 129;
+            this.btnDermatologico.Text = "&Dermatologico";
+            this.btnDermatologico.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnDermatologico.UseVisualStyleBackColor = false;
+            this.btnDermatologico.Visible = false;
+            this.btnDermatologico.Click += new System.EventHandler(this.btnDermatologico_Click);
+            // 
+            // btnInformeOftalmo
+            // 
+            this.btnInformeOftalmo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInformeOftalmo.BackColor = System.Drawing.SystemColors.Control;
+            this.btnInformeOftalmo.Enabled = false;
+            this.btnInformeOftalmo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnInformeOftalmo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnInformeOftalmo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnInformeOftalmo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInformeOftalmo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeOftalmo.ForeColor = System.Drawing.Color.Black;
+            this.btnInformeOftalmo.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeOftalmo.Image")));
+            this.btnInformeOftalmo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInformeOftalmo.Location = new System.Drawing.Point(788, 488);
+            this.btnInformeOftalmo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInformeOftalmo.Name = "btnInformeOftalmo";
+            this.btnInformeOftalmo.Size = new System.Drawing.Size(85, 38);
+            this.btnInformeOftalmo.TabIndex = 112;
+            this.btnInformeOftalmo.Text = "Informe Oftalmo.";
+            this.btnInformeOftalmo.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnInformeOftalmo.UseVisualStyleBackColor = false;
+            this.btnInformeOftalmo.Visible = false;
+            this.btnInformeOftalmo.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnHistoriaClinica
+            // 
+            this.btnHistoriaClinica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHistoriaClinica.BackColor = System.Drawing.SystemColors.Control;
+            this.btnHistoriaClinica.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnHistoriaClinica.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHistoriaClinica.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnHistoriaClinica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistoriaClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistoriaClinica.ForeColor = System.Drawing.Color.Black;
+            this.btnHistoriaClinica.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
+            this.btnHistoriaClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistoriaClinica.Location = new System.Drawing.Point(443, 521);
+            this.btnHistoriaClinica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHistoriaClinica.Name = "btnHistoriaClinica";
+            this.btnHistoriaClinica.Size = new System.Drawing.Size(85, 38);
+            this.btnHistoriaClinica.TabIndex = 137;
+            this.btnHistoriaClinica.Text = "&Historia Cínica";
+            this.btnHistoriaClinica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHistoriaClinica.UseVisualStyleBackColor = false;
+            this.btnHistoriaClinica.Visible = false;
+            this.btnHistoriaClinica.Click += new System.EventHandler(this.btnHistoriaClinica_Click);
+            // 
+            // btnHis
+            // 
+            this.btnHis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHis.BackColor = System.Drawing.SystemColors.Control;
+            this.btnHis.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnHis.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnHis.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnHis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHis.ForeColor = System.Drawing.Color.Black;
+            this.btnHis.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
+            this.btnHis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHis.Location = new System.Drawing.Point(354, 509);
+            this.btnHis.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHis.Name = "btnHis";
+            this.btnHis.Size = new System.Drawing.Size(85, 38);
+            this.btnHis.TabIndex = 138;
+            this.btnHis.Text = "H.I.S";
+            this.btnHis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHis.UseVisualStyleBackColor = false;
+            this.btnHis.Visible = false;
+            this.btnHis.Click += new System.EventHandler(this.btnHis_Click);
+            // 
+            // btnGenerarLiquidacion
+            // 
+            this.btnGenerarLiquidacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerarLiquidacion.BackColor = System.Drawing.SystemColors.Control;
+            this.btnGenerarLiquidacion.Enabled = false;
+            this.btnGenerarLiquidacion.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnGenerarLiquidacion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnGenerarLiquidacion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnGenerarLiquidacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarLiquidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarLiquidacion.ForeColor = System.Drawing.Color.Black;
+            this.btnGenerarLiquidacion.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
+            this.btnGenerarLiquidacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerarLiquidacion.Location = new System.Drawing.Point(347, 521);
+            this.btnGenerarLiquidacion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGenerarLiquidacion.Name = "btnGenerarLiquidacion";
+            this.btnGenerarLiquidacion.Size = new System.Drawing.Size(85, 38);
+            this.btnGenerarLiquidacion.TabIndex = 130;
+            this.btnGenerarLiquidacion.Text = "&Marcar Generado";
+            this.btnGenerarLiquidacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenerarLiquidacion.UseVisualStyleBackColor = false;
+            this.btnGenerarLiquidacion.Visible = false;
+            this.btnGenerarLiquidacion.Click += new System.EventHandler(this.btnGenerarLiquidacion_Click);
+            // 
+            // btnInforme312
+            // 
+            this.btnInforme312.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInforme312.BackColor = System.Drawing.SystemColors.Control;
+            this.btnInforme312.Enabled = false;
+            this.btnInforme312.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnInforme312.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnInforme312.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnInforme312.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInforme312.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInforme312.ForeColor = System.Drawing.Color.Black;
+            this.btnInforme312.Image = ((System.Drawing.Image)(resources.GetObject("btnInforme312.Image")));
+            this.btnInforme312.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInforme312.Location = new System.Drawing.Point(201, 525);
+            this.btnInforme312.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInforme312.Name = "btnInforme312";
+            this.btnInforme312.Size = new System.Drawing.Size(85, 38);
+            this.btnInforme312.TabIndex = 109;
+            this.btnInforme312.Text = "Informe       312";
+            this.btnInforme312.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnInforme312.UseVisualStyleBackColor = false;
+            this.btnInforme312.Visible = false;
+            this.btnInforme312.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnBotonOculto
+            // 
+            this.btnBotonOculto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBotonOculto.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBotonOculto.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnBotonOculto.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBotonOculto.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnBotonOculto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBotonOculto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBotonOculto.ForeColor = System.Drawing.Color.Black;
+            this.btnBotonOculto.Image = ((System.Drawing.Image)(resources.GetObject("btnBotonOculto.Image")));
+            this.btnBotonOculto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBotonOculto.Location = new System.Drawing.Point(92, 537);
+            this.btnBotonOculto.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBotonOculto.Name = "btnBotonOculto";
+            this.btnBotonOculto.Size = new System.Drawing.Size(85, 36);
+            this.btnBotonOculto.TabIndex = 146;
+            this.btnBotonOculto.Text = "botón Oculto";
+            this.btnBotonOculto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBotonOculto.UseVisualStyleBackColor = false;
+            this.btnBotonOculto.Visible = false;
+            this.btnBotonOculto.Click += new System.EventHandler(this.btnBotonOculto_Click);
+            // 
+            // btnVeer
+            // 
+            this.btnVeer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVeer.BackColor = System.Drawing.SystemColors.Control;
+            this.btnVeer.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnVeer.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnVeer.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnVeer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVeer.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVeer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVeer.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_edit;
+            this.btnVeer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVeer.Location = new System.Drawing.Point(4, 547);
+            this.btnVeer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVeer.Name = "btnVeer";
+            this.btnVeer.Size = new System.Drawing.Size(77, 23);
+            this.btnVeer.TabIndex = 161;
+            this.btnVeer.Text = "Service";
+            this.btnVeer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVeer.UseVisualStyleBackColor = false;
+            this.btnVeer.Click += new System.EventHandler(this.btnVeer_Click);
+            // 
+            // btnImprimirAdicionales
+            // 
+            this.btnImprimirAdicionales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirAdicionales.BackColor = System.Drawing.SystemColors.Control;
+            this.btnImprimirAdicionales.Enabled = false;
+            this.btnImprimirAdicionales.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimirAdicionales.Font = new System.Drawing.Font("Calibri", 8.25F);
+            this.btnImprimirAdicionales.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnImprimirAdicionales.Image = global::Sigesoft.Node.WinClient.UI.Resources.printer_go;
+            this.btnImprimirAdicionales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirAdicionales.Location = new System.Drawing.Point(1100, 143);
+            this.btnImprimirAdicionales.Name = "btnImprimirAdicionales";
+            this.btnImprimirAdicionales.Size = new System.Drawing.Size(129, 44);
+            this.btnImprimirAdicionales.TabIndex = 160;
+            this.btnImprimirAdicionales.Text = "          Imprimir Exámenes Adicionales";
+            this.btnImprimirAdicionales.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimirAdicionales.UseVisualStyleBackColor = false;
+            this.btnImprimirAdicionales.Click += new System.EventHandler(this.btnImprimirAdicionales_Click);
+            // 
+            // btnCompaginaSelected
+            // 
+            this.btnCompaginaSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCompaginaSelected.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCompaginaSelected.Enabled = false;
+            this.btnCompaginaSelected.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCompaginaSelected.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCompaginaSelected.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnCompaginaSelected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCompaginaSelected.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompaginaSelected.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCompaginaSelected.Image = global::Sigesoft.Node.WinClient.UI.Resources.color_swatch;
+            this.btnCompaginaSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompaginaSelected.Location = new System.Drawing.Point(1100, 546);
+            this.btnCompaginaSelected.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCompaginaSelected.Name = "btnCompaginaSelected";
+            this.btnCompaginaSelected.Size = new System.Drawing.Size(129, 26);
+            this.btnCompaginaSelected.TabIndex = 145;
+            this.btnCompaginaSelected.Text = "Generacion grupal";
+            this.btnCompaginaSelected.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.btnCompaginaSelected.UseVisualStyleBackColor = false;
+            this.btnCompaginaSelected.Visible = false;
+            this.btnCompaginaSelected.Click += new System.EventHandler(this.btnCompaginaSelected_Click);
+            // 
+            // btnSubirInterconsulta
+            // 
+            this.btnSubirInterconsulta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSubirInterconsulta.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSubirInterconsulta.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSubirInterconsulta.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSubirInterconsulta.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSubirInterconsulta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSubirInterconsulta.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubirInterconsulta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSubirInterconsulta.Image = global::Sigesoft.Node.WinClient.UI.Resources.email_transfer;
+            this.btnSubirInterconsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSubirInterconsulta.Location = new System.Drawing.Point(1100, 244);
+            this.btnSubirInterconsulta.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubirInterconsulta.Name = "btnSubirInterconsulta";
+            this.btnSubirInterconsulta.Size = new System.Drawing.Size(129, 26);
+            this.btnSubirInterconsulta.TabIndex = 159;
+            this.btnSubirInterconsulta.Text = "Subir Anexos";
+            this.btnSubirInterconsulta.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSubirInterconsulta.UseVisualStyleBackColor = false;
+            this.btnSubirInterconsulta.Click += new System.EventHandler(this.btnSubirInterconsulta_Click);
+            // 
+            // itemDetalles
+            // 
+            this.itemDetalles.Image = global::Sigesoft.Node.WinClient.UI.Resources.find;
+            this.itemDetalles.Name = "itemDetalles";
+            this.itemDetalles.Size = new System.Drawing.Size(134, 22);
+            this.itemDetalles.Text = "Ver Detalles";
+            this.itemDetalles.Click += new System.EventHandler(this.itemDetalles_Click);
             // 
             // btnReportAsync
             // 
@@ -1082,20 +1631,6 @@
             this.btnReportAsync.UseVisualStyleBackColor = false;
             this.btnReportAsync.Click += new System.EventHandler(this.btnReportAsync_Click);
             // 
-            // btnServicios
-            // 
-            this.btnServicios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnServicios.ForeColor = System.Drawing.Color.Black;
-            this.btnServicios.Location = new System.Drawing.Point(830, 452);
-            this.btnServicios.Margin = new System.Windows.Forms.Padding(2);
-            this.btnServicios.Name = "btnServicios";
-            this.btnServicios.Size = new System.Drawing.Size(103, 24);
-            this.btnServicios.TabIndex = 152;
-            this.btnServicios.Text = "Migrar Servicios ";
-            this.btnServicios.UseVisualStyleBackColor = true;
-            this.btnServicios.Visible = false;
-            this.btnServicios.Click += new System.EventHandler(this.btnServicios_Click);
-            // 
             // btnHistoriaCl
             // 
             this.btnHistoriaCl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1117,20 +1652,6 @@
             this.btnHistoriaCl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHistoriaCl.UseVisualStyleBackColor = false;
             this.btnHistoriaCl.Click += new System.EventHandler(this.btnHistoriaCl_Click);
-            // 
-            // btnPErson
-            // 
-            this.btnPErson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPErson.ForeColor = System.Drawing.Color.Black;
-            this.btnPErson.Location = new System.Drawing.Point(711, 451);
-            this.btnPErson.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPErson.Name = "btnPErson";
-            this.btnPErson.Size = new System.Drawing.Size(103, 24);
-            this.btnPErson.TabIndex = 151;
-            this.btnPErson.Text = "Migrar Pacientes";
-            this.btnPErson.UseVisualStyleBackColor = true;
-            this.btnPErson.Visible = false;
-            this.btnPErson.Click += new System.EventHandler(this.btnPErson_Click);
             // 
             // button1
             // 
@@ -1155,29 +1676,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnCargoFactura
-            // 
-            this.btnCargoFactura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCargoFactura.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCargoFactura.Enabled = false;
-            this.btnCargoFactura.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCargoFactura.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnCargoFactura.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnCargoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargoFactura.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargoFactura.ForeColor = System.Drawing.Color.Black;
-            this.btnCargoFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargoFactura.Location = new System.Drawing.Point(959, 465);
-            this.btnCargoFactura.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCargoFactura.Name = "btnCargoFactura";
-            this.btnCargoFactura.Size = new System.Drawing.Size(85, 36);
-            this.btnCargoFactura.TabIndex = 148;
-            this.btnCargoFactura.Text = "Cargo Factura";
-            this.btnCargoFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCargoFactura.UseVisualStyleBackColor = false;
-            this.btnCargoFactura.Visible = false;
-            this.btnCargoFactura.Click += new System.EventHandler(this.btnCargoFactura_Click);
             // 
             // btnCargoHistorias
             // 
@@ -1309,19 +1807,6 @@
             this.btnActualizarPerson.UseVisualStyleBackColor = false;
             this.btnActualizarPerson.Visible = false;
             this.btnActualizarPerson.Click += new System.EventHandler(this.btnActualizarPerson_Click);
-            // 
-            // lblRecordCountCalendar
-            // 
-            this.lblRecordCountCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRecordCountCalendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordCountCalendar.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lblRecordCountCalendar.Location = new System.Drawing.Point(992, 8);
-            this.lblRecordCountCalendar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRecordCountCalendar.Name = "lblRecordCountCalendar";
-            this.lblRecordCountCalendar.Size = new System.Drawing.Size(231, 19);
-            this.lblRecordCountCalendar.TabIndex = 52;
-            this.lblRecordCountCalendar.Text = "No se ha realizado la búsqueda aún.";
-            this.lblRecordCountCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnActualizarAptitud
             // 
@@ -1650,36 +2135,6 @@
             this.btnInformePsicologico.Visible = false;
             this.btnInformePsicologico.Click += new System.EventHandler(this.button1_Click);
             // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(2, 15);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape3});
-            this.shapeContainer1.Size = new System.Drawing.Size(1230, 551);
-            this.shapeContainer1.TabIndex = 162;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 1100;
-            this.lineShape3.X2 = 1225;
-            this.lineShape3.Y1 = 71;
-            this.lineShape3.Y2 = 71;
-            // 
-            // cmService
-            // 
-            this.cmService.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CertificadoAptitud,
-            this.verEditarServicioToolStripMenuItem,
-            this.Examenes,
-            this.vistaPreviaToolStripMenuItem});
-            this.cmService.Name = "contextMenuStrip1";
-            this.cmService.Size = new System.Drawing.Size(354, 92);
-            this.cmService.Text = "a";
-            // 
             // CertificadoAptitud
             // 
             this.CertificadoAptitud.Image = global::Sigesoft.Node.WinClient.UI.Resources.application;
@@ -1714,437 +2169,6 @@
             this.vistaPreviaToolStripMenuItem.Text = "Vista Previa";
             this.vistaPreviaToolStripMenuItem.Visible = false;
             this.vistaPreviaToolStripMenuItem.Click += new System.EventHandler(this.vistaPreviaToolStripMenuItem_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnBotonOculto
-            // 
-            this.btnBotonOculto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBotonOculto.BackColor = System.Drawing.SystemColors.Control;
-            this.btnBotonOculto.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnBotonOculto.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBotonOculto.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnBotonOculto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBotonOculto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBotonOculto.ForeColor = System.Drawing.Color.Black;
-            this.btnBotonOculto.Image = ((System.Drawing.Image)(resources.GetObject("btnBotonOculto.Image")));
-            this.btnBotonOculto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBotonOculto.Location = new System.Drawing.Point(92, 537);
-            this.btnBotonOculto.Margin = new System.Windows.Forms.Padding(2);
-            this.btnBotonOculto.Name = "btnBotonOculto";
-            this.btnBotonOculto.Size = new System.Drawing.Size(85, 36);
-            this.btnBotonOculto.TabIndex = 146;
-            this.btnBotonOculto.Text = "botón Oculto";
-            this.btnBotonOculto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBotonOculto.UseVisualStyleBackColor = false;
-            this.btnBotonOculto.Visible = false;
-            this.btnBotonOculto.Click += new System.EventHandler(this.btnBotonOculto_Click);
-            // 
-            // btnInforme312
-            // 
-            this.btnInforme312.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInforme312.BackColor = System.Drawing.SystemColors.Control;
-            this.btnInforme312.Enabled = false;
-            this.btnInforme312.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnInforme312.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnInforme312.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnInforme312.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInforme312.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInforme312.ForeColor = System.Drawing.Color.Black;
-            this.btnInforme312.Image = ((System.Drawing.Image)(resources.GetObject("btnInforme312.Image")));
-            this.btnInforme312.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInforme312.Location = new System.Drawing.Point(201, 525);
-            this.btnInforme312.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInforme312.Name = "btnInforme312";
-            this.btnInforme312.Size = new System.Drawing.Size(85, 38);
-            this.btnInforme312.TabIndex = 109;
-            this.btnInforme312.Text = "Informe       312";
-            this.btnInforme312.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnInforme312.UseVisualStyleBackColor = false;
-            this.btnInforme312.Visible = false;
-            this.btnInforme312.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnGenerarLiquidacion
-            // 
-            this.btnGenerarLiquidacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerarLiquidacion.BackColor = System.Drawing.SystemColors.Control;
-            this.btnGenerarLiquidacion.Enabled = false;
-            this.btnGenerarLiquidacion.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnGenerarLiquidacion.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnGenerarLiquidacion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnGenerarLiquidacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarLiquidacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerarLiquidacion.ForeColor = System.Drawing.Color.Black;
-            this.btnGenerarLiquidacion.Image = global::Sigesoft.Node.WinClient.UI.Resources.accept;
-            this.btnGenerarLiquidacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGenerarLiquidacion.Location = new System.Drawing.Point(347, 521);
-            this.btnGenerarLiquidacion.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGenerarLiquidacion.Name = "btnGenerarLiquidacion";
-            this.btnGenerarLiquidacion.Size = new System.Drawing.Size(85, 38);
-            this.btnGenerarLiquidacion.TabIndex = 130;
-            this.btnGenerarLiquidacion.Text = "&Marcar Generado";
-            this.btnGenerarLiquidacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenerarLiquidacion.UseVisualStyleBackColor = false;
-            this.btnGenerarLiquidacion.Visible = false;
-            this.btnGenerarLiquidacion.Click += new System.EventHandler(this.btnGenerarLiquidacion_Click);
-            // 
-            // btnInformeOftalmo
-            // 
-            this.btnInformeOftalmo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInformeOftalmo.BackColor = System.Drawing.SystemColors.Control;
-            this.btnInformeOftalmo.Enabled = false;
-            this.btnInformeOftalmo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnInformeOftalmo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnInformeOftalmo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnInformeOftalmo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformeOftalmo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeOftalmo.ForeColor = System.Drawing.Color.Black;
-            this.btnInformeOftalmo.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeOftalmo.Image")));
-            this.btnInformeOftalmo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeOftalmo.Location = new System.Drawing.Point(788, 488);
-            this.btnInformeOftalmo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInformeOftalmo.Name = "btnInformeOftalmo";
-            this.btnInformeOftalmo.Size = new System.Drawing.Size(85, 38);
-            this.btnInformeOftalmo.TabIndex = 112;
-            this.btnInformeOftalmo.Text = "Informe Oftalmo.";
-            this.btnInformeOftalmo.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnInformeOftalmo.UseVisualStyleBackColor = false;
-            this.btnInformeOftalmo.Visible = false;
-            this.btnInformeOftalmo.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btnHis
-            // 
-            this.btnHis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHis.BackColor = System.Drawing.SystemColors.Control;
-            this.btnHis.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnHis.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnHis.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnHis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHis.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHis.ForeColor = System.Drawing.Color.Black;
-            this.btnHis.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
-            this.btnHis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHis.Location = new System.Drawing.Point(354, 509);
-            this.btnHis.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHis.Name = "btnHis";
-            this.btnHis.Size = new System.Drawing.Size(85, 38);
-            this.btnHis.TabIndex = 138;
-            this.btnHis.Text = "H.I.S";
-            this.btnHis.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHis.UseVisualStyleBackColor = false;
-            this.btnHis.Visible = false;
-            this.btnHis.Click += new System.EventHandler(this.btnHis_Click);
-            // 
-            // btnHistoriaClinica
-            // 
-            this.btnHistoriaClinica.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHistoriaClinica.BackColor = System.Drawing.SystemColors.Control;
-            this.btnHistoriaClinica.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnHistoriaClinica.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnHistoriaClinica.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnHistoriaClinica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistoriaClinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistoriaClinica.ForeColor = System.Drawing.Color.Black;
-            this.btnHistoriaClinica.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
-            this.btnHistoriaClinica.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistoriaClinica.Location = new System.Drawing.Point(412, 537);
-            this.btnHistoriaClinica.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHistoriaClinica.Name = "btnHistoriaClinica";
-            this.btnHistoriaClinica.Size = new System.Drawing.Size(85, 38);
-            this.btnHistoriaClinica.TabIndex = 137;
-            this.btnHistoriaClinica.Text = "&Historia Cínica";
-            this.btnHistoriaClinica.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHistoriaClinica.UseVisualStyleBackColor = false;
-            this.btnHistoriaClinica.Visible = false;
-            this.btnHistoriaClinica.Click += new System.EventHandler(this.btnHistoriaClinica_Click);
-            // 
-            // btnDermatologico
-            // 
-            this.btnDermatologico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDermatologico.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDermatologico.Enabled = false;
-            this.btnDermatologico.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnDermatologico.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnDermatologico.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnDermatologico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDermatologico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDermatologico.ForeColor = System.Drawing.Color.Black;
-            this.btnDermatologico.Image = ((System.Drawing.Image)(resources.GetObject("btnDermatologico.Image")));
-            this.btnDermatologico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDermatologico.Location = new System.Drawing.Point(818, 490);
-            this.btnDermatologico.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDermatologico.Name = "btnDermatologico";
-            this.btnDermatologico.Size = new System.Drawing.Size(102, 38);
-            this.btnDermatologico.TabIndex = 129;
-            this.btnDermatologico.Text = "&Dermatologico";
-            this.btnDermatologico.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnDermatologico.UseVisualStyleBackColor = false;
-            this.btnDermatologico.Visible = false;
-            this.btnDermatologico.Click += new System.EventHandler(this.btnDermatologico_Click);
-            // 
-            // btnEstudioEKG
-            // 
-            this.btnEstudioEKG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEstudioEKG.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEstudioEKG.Enabled = false;
-            this.btnEstudioEKG.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnEstudioEKG.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEstudioEKG.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnEstudioEKG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstudioEKG.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstudioEKG.ForeColor = System.Drawing.Color.Black;
-            this.btnEstudioEKG.Image = ((System.Drawing.Image)(resources.GetObject("btnEstudioEKG.Image")));
-            this.btnEstudioEKG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstudioEKG.Location = new System.Drawing.Point(853, 494);
-            this.btnEstudioEKG.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEstudioEKG.Name = "btnEstudioEKG";
-            this.btnEstudioEKG.Size = new System.Drawing.Size(102, 38);
-            this.btnEstudioEKG.TabIndex = 127;
-            this.btnEstudioEKG.Text = "Estudio Elecgtrocardiografico";
-            this.btnEstudioEKG.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnEstudioEKG.UseVisualStyleBackColor = false;
-            this.btnEstudioEKG.Visible = false;
-            this.btnEstudioEKG.Click += new System.EventHandler(this.button9_Click_1);
-            // 
-            // btnAdjuntarArchivo
-            // 
-            this.btnAdjuntarArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAdjuntarArchivo.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAdjuntarArchivo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAdjuntarArchivo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAdjuntarArchivo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnAdjuntarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdjuntarArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdjuntarArchivo.ForeColor = System.Drawing.Color.Black;
-            this.btnAdjuntarArchivo.Image = global::Sigesoft.Node.WinClient.UI.Resources.attach;
-            this.btnAdjuntarArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdjuntarArchivo.Location = new System.Drawing.Point(1099, 409);
-            this.btnAdjuntarArchivo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdjuntarArchivo.Name = "btnAdjuntarArchivo";
-            this.btnAdjuntarArchivo.Size = new System.Drawing.Size(130, 36);
-            this.btnAdjuntarArchivo.TabIndex = 135;
-            this.btnAdjuntarArchivo.Text = "&Adjuntar Archivo";
-            this.btnAdjuntarArchivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdjuntarArchivo.UseVisualStyleBackColor = false;
-            this.btnAdjuntarArchivo.Click += new System.EventHandler(this.btnAdjuntarArchivo_Click);
-            // 
-            // btnInformeRadiologicoOIT
-            // 
-            this.btnInformeRadiologicoOIT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInformeRadiologicoOIT.BackColor = System.Drawing.SystemColors.Control;
-            this.btnInformeRadiologicoOIT.Enabled = false;
-            this.btnInformeRadiologicoOIT.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnInformeRadiologicoOIT.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnInformeRadiologicoOIT.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnInformeRadiologicoOIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformeRadiologicoOIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeRadiologicoOIT.ForeColor = System.Drawing.Color.Black;
-            this.btnInformeRadiologicoOIT.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeRadiologicoOIT.Image")));
-            this.btnInformeRadiologicoOIT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeRadiologicoOIT.Location = new System.Drawing.Point(300, 540);
-            this.btnInformeRadiologicoOIT.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInformeRadiologicoOIT.Name = "btnInformeRadiologicoOIT";
-            this.btnInformeRadiologicoOIT.Size = new System.Drawing.Size(102, 38);
-            this.btnInformeRadiologicoOIT.TabIndex = 126;
-            this.btnInformeRadiologicoOIT.Text = "Informe Radiografico OIT";
-            this.btnInformeRadiologicoOIT.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnInformeRadiologicoOIT.UseVisualStyleBackColor = false;
-            this.btnInformeRadiologicoOIT.Visible = false;
-            this.btnInformeRadiologicoOIT.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // btnPruebaEsfuerzo
-            // 
-            this.btnPruebaEsfuerzo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPruebaEsfuerzo.BackColor = System.Drawing.SystemColors.Control;
-            this.btnPruebaEsfuerzo.Enabled = false;
-            this.btnPruebaEsfuerzo.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnPruebaEsfuerzo.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnPruebaEsfuerzo.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnPruebaEsfuerzo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPruebaEsfuerzo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPruebaEsfuerzo.ForeColor = System.Drawing.Color.Black;
-            this.btnPruebaEsfuerzo.Image = ((System.Drawing.Image)(resources.GetObject("btnPruebaEsfuerzo.Image")));
-            this.btnPruebaEsfuerzo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPruebaEsfuerzo.Location = new System.Drawing.Point(280, 608);
-            this.btnPruebaEsfuerzo.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPruebaEsfuerzo.Name = "btnPruebaEsfuerzo";
-            this.btnPruebaEsfuerzo.Size = new System.Drawing.Size(102, 38);
-            this.btnPruebaEsfuerzo.TabIndex = 125;
-            this.btnPruebaEsfuerzo.Text = "Prueba Esfuerzo";
-            this.btnPruebaEsfuerzo.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnPruebaEsfuerzo.UseVisualStyleBackColor = false;
-            this.btnPruebaEsfuerzo.Visible = false;
-            this.btnPruebaEsfuerzo.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnOsteomuscular
-            // 
-            this.btnOsteomuscular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOsteomuscular.BackColor = System.Drawing.SystemColors.Control;
-            this.btnOsteomuscular.Enabled = false;
-            this.btnOsteomuscular.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnOsteomuscular.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnOsteomuscular.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnOsteomuscular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOsteomuscular.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOsteomuscular.ForeColor = System.Drawing.Color.Black;
-            this.btnOsteomuscular.Image = ((System.Drawing.Image)(resources.GetObject("btnOsteomuscular.Image")));
-            this.btnOsteomuscular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOsteomuscular.Location = new System.Drawing.Point(252, 612);
-            this.btnOsteomuscular.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOsteomuscular.Name = "btnOsteomuscular";
-            this.btnOsteomuscular.Size = new System.Drawing.Size(102, 38);
-            this.btnOsteomuscular.TabIndex = 124;
-            this.btnOsteomuscular.Text = "OsteMuscular";
-            this.btnOsteomuscular.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnOsteomuscular.UseVisualStyleBackColor = false;
-            this.btnOsteomuscular.Visible = false;
-            this.btnOsteomuscular.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btnRadiologico
-            // 
-            this.btnRadiologico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRadiologico.BackColor = System.Drawing.SystemColors.Control;
-            this.btnRadiologico.Enabled = false;
-            this.btnRadiologico.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnRadiologico.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnRadiologico.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnRadiologico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRadiologico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRadiologico.ForeColor = System.Drawing.Color.Black;
-            this.btnRadiologico.Image = ((System.Drawing.Image)(resources.GetObject("btnRadiologico.Image")));
-            this.btnRadiologico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRadiologico.Location = new System.Drawing.Point(209, 612);
-            this.btnRadiologico.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRadiologico.Name = "btnRadiologico";
-            this.btnRadiologico.Size = new System.Drawing.Size(102, 38);
-            this.btnRadiologico.TabIndex = 123;
-            this.btnRadiologico.Text = "Radiologico";
-            this.btnRadiologico.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnRadiologico.UseVisualStyleBackColor = false;
-            this.btnRadiologico.Visible = false;
-            this.btnRadiologico.Click += new System.EventHandler(this.btnRadiologico_Click);
-            // 
-            // btn7D
-            // 
-            this.btn7D.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn7D.BackColor = System.Drawing.SystemColors.Control;
-            this.btn7D.Enabled = false;
-            this.btn7D.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btn7D.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn7D.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn7D.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn7D.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn7D.ForeColor = System.Drawing.Color.Black;
-            this.btn7D.Image = ((System.Drawing.Image)(resources.GetObject("btn7D.Image")));
-            this.btn7D.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn7D.Location = new System.Drawing.Point(-92, 612);
-            this.btn7D.Margin = new System.Windows.Forms.Padding(2);
-            this.btn7D.Name = "btn7D";
-            this.btn7D.Size = new System.Drawing.Size(85, 38);
-            this.btn7D.TabIndex = 114;
-            this.btn7D.Text = "7D";
-            this.btn7D.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btn7D.UseVisualStyleBackColor = false;
-            this.btn7D.Visible = false;
-            this.btn7D.Click += new System.EventHandler(this.btn7D_Click);
-            // 
-            // btnInformeMedicoTrabajador
-            // 
-            this.btnInformeMedicoTrabajador.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInformeMedicoTrabajador.BackColor = System.Drawing.SystemColors.Control;
-            this.btnInformeMedicoTrabajador.Enabled = false;
-            this.btnInformeMedicoTrabajador.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnInformeMedicoTrabajador.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnInformeMedicoTrabajador.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnInformeMedicoTrabajador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformeMedicoTrabajador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeMedicoTrabajador.ForeColor = System.Drawing.Color.Black;
-            this.btnInformeMedicoTrabajador.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeMedicoTrabajador.Image")));
-            this.btnInformeMedicoTrabajador.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeMedicoTrabajador.Location = new System.Drawing.Point(191, 602);
-            this.btnInformeMedicoTrabajador.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInformeMedicoTrabajador.Name = "btnInformeMedicoTrabajador";
-            this.btnInformeMedicoTrabajador.Size = new System.Drawing.Size(85, 52);
-            this.btnInformeMedicoTrabajador.TabIndex = 113;
-            this.btnInformeMedicoTrabajador.Text = "Informe Médico Trabajador";
-            this.btnInformeMedicoTrabajador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInformeMedicoTrabajador.UseVisualStyleBackColor = false;
-            this.btnInformeMedicoTrabajador.Visible = false;
-            this.btnInformeMedicoTrabajador.Click += new System.EventHandler(this.btnInformeMedicoTrabajador_Click);
-            // 
-            // btnInformeAlturaEstructural
-            // 
-            this.btnInformeAlturaEstructural.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInformeAlturaEstructural.BackColor = System.Drawing.SystemColors.Control;
-            this.btnInformeAlturaEstructural.Enabled = false;
-            this.btnInformeAlturaEstructural.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnInformeAlturaEstructural.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnInformeAlturaEstructural.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnInformeAlturaEstructural.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInformeAlturaEstructural.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInformeAlturaEstructural.ForeColor = System.Drawing.Color.Black;
-            this.btnInformeAlturaEstructural.Image = ((System.Drawing.Image)(resources.GetObject("btnInformeAlturaEstructural.Image")));
-            this.btnInformeAlturaEstructural.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInformeAlturaEstructural.Location = new System.Drawing.Point(181, 603);
-            this.btnInformeAlturaEstructural.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInformeAlturaEstructural.Name = "btnInformeAlturaEstructural";
-            this.btnInformeAlturaEstructural.Size = new System.Drawing.Size(85, 55);
-            this.btnInformeAlturaEstructural.TabIndex = 111;
-            this.btnInformeAlturaEstructural.Text = "Informe    Altura     Estructural";
-            this.btnInformeAlturaEstructural.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnInformeAlturaEstructural.UseVisualStyleBackColor = false;
-            this.btnInformeAlturaEstructural.Visible = false;
-            this.btnInformeAlturaEstructural.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnImprimirInformeMedicoEPS
-            // 
-            this.btnImprimirInformeMedicoEPS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimirInformeMedicoEPS.BackColor = System.Drawing.SystemColors.Control;
-            this.btnImprimirInformeMedicoEPS.Enabled = false;
-            this.btnImprimirInformeMedicoEPS.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnImprimirInformeMedicoEPS.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnImprimirInformeMedicoEPS.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnImprimirInformeMedicoEPS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirInformeMedicoEPS.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirInformeMedicoEPS.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimirInformeMedicoEPS.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirInformeMedicoEPS.Image")));
-            this.btnImprimirInformeMedicoEPS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirInformeMedicoEPS.Location = new System.Drawing.Point(245, 612);
-            this.btnImprimirInformeMedicoEPS.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimirInformeMedicoEPS.Name = "btnImprimirInformeMedicoEPS";
-            this.btnImprimirInformeMedicoEPS.Size = new System.Drawing.Size(85, 36);
-            this.btnImprimirInformeMedicoEPS.TabIndex = 107;
-            this.btnImprimirInformeMedicoEPS.Text = "Informe             Médico   EPS";
-            this.btnImprimirInformeMedicoEPS.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnImprimirInformeMedicoEPS.UseVisualStyleBackColor = false;
-            this.btnImprimirInformeMedicoEPS.Visible = false;
-            this.btnImprimirInformeMedicoEPS.Click += new System.EventHandler(this.btnImprimirInformeMedicoEPS_Click);
-            // 
-            // btnImprimirCertificadoAptitud
-            // 
-            this.btnImprimirCertificadoAptitud.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimirCertificadoAptitud.BackColor = System.Drawing.SystemColors.Control;
-            this.btnImprimirCertificadoAptitud.Enabled = false;
-            this.btnImprimirCertificadoAptitud.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnImprimirCertificadoAptitud.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnImprimirCertificadoAptitud.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnImprimirCertificadoAptitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirCertificadoAptitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirCertificadoAptitud.ForeColor = System.Drawing.Color.Black;
-            this.btnImprimirCertificadoAptitud.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirCertificadoAptitud.Image")));
-            this.btnImprimirCertificadoAptitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirCertificadoAptitud.Location = new System.Drawing.Point(218, 614);
-            this.btnImprimirCertificadoAptitud.Margin = new System.Windows.Forms.Padding(2);
-            this.btnImprimirCertificadoAptitud.Name = "btnImprimirCertificadoAptitud";
-            this.btnImprimirCertificadoAptitud.Size = new System.Drawing.Size(85, 36);
-            this.btnImprimirCertificadoAptitud.TabIndex = 104;
-            this.btnImprimirCertificadoAptitud.Text = "Cerificado Aptitud";
-            this.btnImprimirCertificadoAptitud.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnImprimirCertificadoAptitud.UseVisualStyleBackColor = false;
-            this.btnImprimirCertificadoAptitud.Visible = false;
-            this.btnImprimirCertificadoAptitud.Click += new System.EventHandler(this.btnImprimirCertificadoAptitud_Click);
             // 
             // frmService
             // 
@@ -2296,5 +2320,6 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnPagoMed;
     }
 }

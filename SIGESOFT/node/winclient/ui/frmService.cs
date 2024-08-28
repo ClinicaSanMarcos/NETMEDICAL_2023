@@ -19,6 +19,7 @@ using System.Windows.Shell;
 using Infragistics.Win.UltraWinDataSource;
 using Sigesoft.Node.WinClient.UI.Reports;
 using System.Data.SqlClient;
+using Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS;
 
 //using iTextSharp.text;
 //using iTextSharp.text.pdf;
@@ -4399,6 +4400,12 @@ namespace Sigesoft.Node.WinClient.UI
         private void cboUserMed_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPagoMed_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPagoMedicosAddEdit();
+            frm.ShowDialog();
         }
 
     }
