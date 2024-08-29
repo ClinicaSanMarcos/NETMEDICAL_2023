@@ -81,6 +81,8 @@
     <Compile Include="GeneratedAssemblers\componentfieldvaluesrecommendationAssembler.cs" />
     <Compile Include="GeneratedAssemblers\componentfieldvaluesrestrictionAssembler.cs" />
     <Compile Include="GeneratedAssemblers\configdxAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\configuracionexamenpagoAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\configuracionpagoAssembler.cs" />
     <Compile Include="GeneratedAssemblers\cotizacionAssembler.cs" />
     <Compile Include="GeneratedAssemblers\cuidadopreventivoAssembler.cs" />
     <Compile Include="GeneratedAssemblers\cuidadopreventivocomentarioAssembler.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="GeneratedAssemblers\obtenerproductoResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\obtenerpreciotarifarioResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\obtenernetoporcobrarResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\obtenercamashopsResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\listllamadadeesperaResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getventasandagenda_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getservicecomponentsreportsc_spResultAssembler.cs" />
@@ -210,6 +213,7 @@
     <Compile Include="GeneratedAssemblers\getpersonpersonalinformationeso_sResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getobtenerusuarioanterior_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gethospsoplist_spResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\getexamenesadicionales_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getemergencialist_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciatipopagoResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gerenciatipoexamenResultAssembler.cs" />

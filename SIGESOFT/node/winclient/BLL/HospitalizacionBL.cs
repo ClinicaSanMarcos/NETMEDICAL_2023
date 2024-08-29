@@ -8,6 +8,7 @@ using Sigesoft.Node.WinClient.DAL;
 using Sigesoft.Common;
 using System.Data.Objects;
 using ConnectionState = System.Data.ConnectionState;
+using Sigesoft.Node.WinClient.BE.Custom;
 
 namespace Sigesoft.Node.WinClient.BLL
 {
@@ -1273,6 +1274,115 @@ namespace Sigesoft.Node.WinClient.BLL
             }
         }
 
+        public List<MedicoConfList> GetMedicosConfiguracionPago(string pstrFilterExpression)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = from  A in dbContext.configuracionpago
+                            join B in dbContext.systemuser on A.i_SystemUserId equals B.i_SystemUserId
+                            join C in dbContext.person on B.v_PersonId equals C.v_PersonId
+
+                            join F in dbContext.systemuser on A.i_InsertUserId equals F.i_SystemUserId into F_join
+                            from F in F_join.DefaultIfEmpty()
+
+                            //join G in dbContext.person on F.v_PersonId equals G.v_PersonId
+
+                            join H in dbContext.systemuser on A.i_UpdateUserId equals H.i_SystemUserId into H_join
+                            from H in H_join.DefaultIfEmpty()
+
+                            //join I in dbContext.person on F.v_PersonId equals I.v_PersonId
+
+
+                            where A.i_IsDeleted == 0
+                            select new MedicoConfList
+                            {
+                                v_IdConfPago = A.v_IdConfPago,
+                                Usuario = B.v_UserName,
+                                Medico = C.v_FirstName + " " + C.v_FirstLastName + " " + C.v_SecondLastName,
+                                i_SystemUserId = B.i_SystemUserId,
+                                i_TipoPago = A.i_TipoPago.Value,
+                                v_TipoPago = A.i_TipoPago == 1 ? "X. TURNO" : A.i_TipoPago == 2 ? "X. HORA " : "X. EXAMEN",
+                                d_MontoxTurno = A.d_MontoxTurno.Value,
+                                d_MonoxHora = A.d_MonoxHora.Value,
+                                i_OrdenExam = A.i_OrdenExam.Value,
+                                v_OrdenExam = A.i_OrdenExam == 1 ? "M. Tratante" : A.i_OrdenExam == 2 ? "M. Solicitante" : "",
+                                d_PorcClinicaExam = A.d_PorcClinicaExam.Value,
+                                d_PorcMedicoExam = A.d_PorcMedicoExam.Value,
+                                i_DescontarBoletaExam = A.i_DescontarBoletaExam.Value,
+                                v_DescontarBoletaExam = A.i_DescontarBoletaExam == 1 ? "X" : "",
+                                i_DescontarFactExam = A.i_DescontarFactExam.Value,
+                                v_DescontarFactExam = A.i_DescontarFactExam == 1 ? "X" : "",
+                                i_DescontarRecbExam = A.i_DescontarRecbExam.Value,
+                                v_DescontarRecbExam = A.i_DescontarRecbExam == 1 ? "X" : "",
+                                Observaciones = A.v_Observaciones,
+                                v_ObservacionesCambios = A.v_ObservacionesCambios,
+                                i_IsDeleted = A.i_IsDeleted,
+                                i_InsertUserId = A.i_InsertUserId,
+                                v_InsertUserId = F.v_UserName,
+                                d_InsertDate = A.d_InsertDate.Value,
+                                i_UpdateUserId = A.i_UpdateUserId,
+                                v_UpdateUserId = H.v_UserName,
+                                d_UpdateDate = A.d_UpdateDate.Value
+                            };
+
+                if (!string.IsNullOrEmpty(pstrFilterExpression))
+                {
+                    query = query.Where(pstrFilterExpression);
+                }
+
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public List<MedicoConfExamenList> GetMedicosConfiguracionExamenesPago(string v_IdConfPago)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = from A in dbContext.configuracionexamenpago
+                            join B in dbContext.component on A.v_ComponentId equals B.v_ComponentId
+
+                            join F in dbContext.systemuser on A.i_InsertUserId equals F.i_SystemUserId into F_join
+                            from F in F_join.DefaultIfEmpty()
+
+                            join H in dbContext.systemuser on A.i_UpdateUserId equals H.i_SystemUserId into H_join
+                            from H in H_join.DefaultIfEmpty()
+
+
+                            where A.i_IsDeleted == 0 && A.v_IdConfPago == v_IdConfPago
+                            select new MedicoConfExamenList
+                            {
+                                v_idPagoExam = A.v_idPagoExam,
+                                v_IdConfPago = A.v_IdConfPago,
+                                v_ComponentId = A.v_ComponentId,
+                                Examen = B.v_Name,
+                                
+                                v_Observaciones = A.v_Observaciones,
+                                v_ObservacionesCambios = A.v_ObservacionesCambios,
+                                i_IsDeleted = A.i_IsDeleted,
+                                i_InsertUserId = A.i_InsertUserId,
+                                v_InsertUserId = F.v_UserName,
+                                d_InsertDate = A.d_InsertDate.Value,
+                                i_UpdateUserId = A.i_UpdateUserId,
+                                v_UpdateUserId = H.v_UserName,
+                                d_UpdateDate = A.d_UpdateDate.Value
+                            };
+
+                return query.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public medicoDto GetMedico(ref OperationResult pobjOperationResult, string v_MedicoId)
         {
             //mon.IsActive = true;
@@ -1830,6 +1940,194 @@ namespace Sigesoft.Node.WinClient.BLL
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+        public configuracionpagoDto GetConfPago(ref OperationResult pobjOperationResult, string v_IdConfPago)
+        {
+            //mon.IsActive = true;
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                configuracionpagoDto objDtoEntity = null;
+
+                var objEntity = (from a in dbContext.configuracionpago
+                                 where a.v_IdConfPago == v_IdConfPago
+                                 select a).FirstOrDefault();
+
+                if (objEntity != null)
+                    objDtoEntity = configuracionpagoAssembler.ToDTO(objEntity);
+
+                pobjOperationResult.Success = 1;
+                return objDtoEntity;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
+
+        public string  AddConfiguracionPago(ref OperationResult pobjOperationResult, configuracionpagoDto pobjDtoEntity, List<string> ClientSession, List<AdditionalExamCustom> componentes)
+        {
+            //mon.IsActive = true;
+            string NewId = "(No generado)";
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                configuracionpago objEntity = configuracionpagoAssembler.ToEntity(pobjDtoEntity);
+
+                objEntity.d_InsertDate = DateTime.Now;
+                objEntity.i_InsertUserId = Int32.Parse(ClientSession[2]);
+                objEntity.i_IsDeleted = 0;
+
+                // Autogeneramos el Pk de la tabla                 
+                int intNodeId = int.Parse(ClientSession[0]);
+                NewId = Common.Utils.GetNewId(intNodeId, Utils.GetNextSecuentialId(intNodeId, 451), "CP"); ;
+                objEntity.v_IdConfPago = NewId;
+
+                dbContext.AddToconfiguracionpago(objEntity);
+                dbContext.SaveChanges();
+
+                foreach (var item in componentes)
+                {
+                    configuracionexamenpagoDto _configuracionexamenpagoDto = new configuracionexamenpagoDto();
+                    _configuracionexamenpagoDto.v_IdConfPago = NewId;
+                    _configuracionexamenpagoDto.v_ComponentId = item.ComponentId;
+                    AddConfiguracionPagoeXAMEN(ref pobjOperationResult, _configuracionexamenpagoDto, ClientSession);
+                }
+                pobjOperationResult.Success = 1;
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.CREACION, "CONFIGURACION_PAGO", "v_IdConfPago=" + NewId.ToString(), Success.Ok, null);
+                return NewId;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.CREACION, "CONFIGURACION_PAGO", "v_IdConfPago=" + NewId.ToString(), Success.Failed, pobjOperationResult.ExceptionMessage);
+                return NewId;
+            }
+        }
+
+        public void UpdateConfiguracionPago(ref OperationResult pobjOperationResult, configuracionpagoDto pobjDtoEntity, List<string> ClientSession, List<AdditionalExamCustom> componentes)
+        {
+            //mon.IsActive = true;
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                // Obtener la entidad fuente
+                var objEntitySource = (from a in dbContext.configuracionpago
+                                       where a.v_IdConfPago == pobjDtoEntity.v_IdConfPago
+                                       select a).FirstOrDefault();
+
+                // Crear la entidad con los datos actualizados
+                pobjDtoEntity.d_UpdateDate = DateTime.Now;
+                pobjDtoEntity.i_IsDeleted = 0;
+                pobjDtoEntity.i_UpdateUserId = Int32.Parse(ClientSession[2]);
+
+                configuracionpago objEntity = configuracionpagoAssembler.ToEntity(pobjDtoEntity);
+
+                // Copiar los valores desde la entidad actualizada a la Entidad Fuente
+                dbContext.configuracionpago.ApplyCurrentValues(objEntity);
+
+                // Guardar los cambios
+                dbContext.SaveChanges();
+
+                foreach (var item in componentes)
+                {
+                    configuracionexamenpagoDto _configuracionexamenpagoDto = new configuracionexamenpagoDto();
+                    _configuracionexamenpagoDto.v_IdConfPago = pobjDtoEntity.v_IdConfPago;
+                    _configuracionexamenpagoDto.v_ComponentId = item.ComponentId;
+                    AddConfiguracionPagoeXAMEN(ref pobjOperationResult, _configuracionexamenpagoDto, ClientSession);
+                }
+
+                pobjOperationResult.Success = 1;
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "CONFIGURACION_PAGO", "v_IdConfPago=" + objEntity.v_IdConfPago.ToString(), Success.Ok, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ACTUALIZACION, "CONFIGURACION_PAGO", "v_IdConfPago=" + pobjDtoEntity.v_IdConfPago.ToString(), Success.Failed, pobjOperationResult.ExceptionMessage);
+                return;
+            }
+        }
+
+        public void AddConfiguracionPagoeXAMEN(ref OperationResult pobjOperationResult, configuracionexamenpagoDto pobjDtoEntity, List<string> ClientSession)
+        {
+            //mon.IsActive = true;
+            string NewId = "(No generado)";
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                configuracionexamenpago objEntity = configuracionexamenpagoAssembler.ToEntity(pobjDtoEntity);
+
+                objEntity.d_InsertDate = DateTime.Now;
+                objEntity.i_InsertUserId = Int32.Parse(ClientSession[2]);
+                objEntity.i_IsDeleted = 0;
+
+                // Autogeneramos el Pk de la tabla                 
+                int intNodeId = int.Parse(ClientSession[0]);
+                NewId = Common.Utils.GetNewId(intNodeId, Utils.GetNextSecuentialId(intNodeId, 452), "PE"); ;
+                objEntity.v_idPagoExam = NewId;
+
+                dbContext.AddToconfiguracionexamenpago(objEntity);
+                dbContext.SaveChanges();
+
+                pobjOperationResult.Success = 1;
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.CREACION, "CONFIGURACION_PAGO_EXAMEN", "v_idPagoExam=" + NewId.ToString(), Success.Ok, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.CREACION, "CONFIGURACION_PAGO_EXAMEN", "v_idPagoExam=" + NewId.ToString(), Success.Failed, pobjOperationResult.ExceptionMessage);
+                return;
+            }
+        }
+
+        public void DeleteExamenConf(ref OperationResult pobjOperationResult, string v_idPagoExam, List<string> ClientSession)
+        {
+            //mon.IsActive = true;
+
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                // Obtener la entidad fuente
+                var objEntitySource = (from a in dbContext.configuracionexamenpago
+                                       where a.v_idPagoExam == v_idPagoExam
+                                       select a).FirstOrDefault();
+
+                // Crear la entidad con los datos actualizados
+                objEntitySource.d_UpdateDate = DateTime.Now;
+                objEntitySource.i_UpdateUserId = Int32.Parse(ClientSession[2]);
+                objEntitySource.i_IsDeleted = 1;
+
+                // Guardar los cambios
+                dbContext.SaveChanges();
+
+                pobjOperationResult.Success = 1;
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ELIMINACION, "CONFIGURACION_PAGO_EXAMEN", "v_idPagoExam=" + v_idPagoExam, Success.Ok, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ELIMINACION, "CONFIGURACION_PAGO_EXAMEN", "v_idPagoExam=" + v_idPagoExam, Success.Failed, pobjOperationResult.ExceptionMessage);
+                return;
             }
         }
     }

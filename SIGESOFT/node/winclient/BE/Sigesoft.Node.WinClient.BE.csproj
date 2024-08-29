@@ -386,6 +386,8 @@
     <Compile Include="Generated\componentfieldvaluesrecommendationDto.cs" />
     <Compile Include="Generated\componentfieldvaluesrestrictionDto.cs" />
     <Compile Include="Generated\configdxDto.cs" />
+    <Compile Include="Generated\configuracionexamenpagoDto.cs" />
+    <Compile Include="Generated\configuracionpagoDto.cs" />
     <Compile Include="Generated\cotizacionDto.cs" />
     <Compile Include="Generated\cuidadopreventivoDto.cs" />
     <Compile Include="Generated\cuidadopreventivocomentarioDto.cs" />
@@ -506,6 +508,7 @@
     <Compile Include="Generated\obtenerproductoResultDto.cs" />
     <Compile Include="Generated\obtenerpreciotarifarioResultDto.cs" />
     <Compile Include="Generated\obtenernetoporcobrarResultDto.cs" />
+    <Compile Include="Generated\obtenercamashopsResultDto.cs" />
     <Compile Include="Generated\listllamadadeesperaResultDto.cs" />
     <Compile Include="Generated\getventasandagenda_spResultDto.cs" />
     <Compile Include="Generated\getservicecomponentsreportsc_spResultDto.cs" />
@@ -515,6 +518,7 @@
     <Compile Include="Generated\getpersonpersonalinformationeso_sResultDto.cs" />
     <Compile Include="Generated\getobtenerusuarioanterior_spResultDto.cs" />
     <Compile Include="Generated\gethospsoplist_spResultDto.cs" />
+    <Compile Include="Generated\getexamenesadicionales_spResultDto.cs" />
     <Compile Include="Generated\getemergencialist_spResultDto.cs" />
     <Compile Include="Generated\gerenciatipopagoResultDto.cs" />
     <Compile Include="Generated\gerenciatipoexamenResultDto.cs" />
