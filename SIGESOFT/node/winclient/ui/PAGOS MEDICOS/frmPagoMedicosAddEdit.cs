@@ -19,6 +19,9 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
         OperationResult objOperationResult = new OperationResult();
         HospitalizacionBL oHospitalizacionBL = new HospitalizacionBL();
         private string _IdConfPago;
+
+        List<LiquidacionMedicoListPay> _LiquidacionMedicoListPay = new List<LiquidacionMedicoListPay>();
+
         public frmPagoMedicosAddEdit()
         {
             InitializeComponent();
@@ -112,19 +115,6 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            List<string> Filters = new List<string>();
-            if (ddlUsuario.SelectedValue.ToString() != "-1") Filters.Add("MedicoTratanteId==" + ddlUsuario.SelectedValue);
-
-            strFilterExpression = null;
-            if (Filters.Count > 0)
-            {
-                foreach (string item in Filters)
-                {
-                    strFilterExpression = strFilterExpression + item + " && ";
-                }
-                strFilterExpression = strFilterExpression.Substring(0, strFilterExpression.Length - 4);
-            }
-
             using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
             {
                 this.BindGridConfMed();
@@ -132,13 +122,21 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
         }
         private void BindGridConfMed()
         {
-            OperationResult objOperationResult = new OperationResult();
-            DateTime? pdatBeginDate = dtpDateTimeStar.Value.Date;
-            DateTime? pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
+            DateTime pdatBeginDate = dtpDateTimeStar.Value.Date;
+            DateTime pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
 
             HospitalizacionBL o = new HospitalizacionBL();
-            var data = o.LiquidacionMedicos(strFilterExpression, pdatBeginDate, pdatEndDate, chkPagados.Checked == true ? 1 : 0);
-            grdData.DataSource = data;
+            if (ddlUsuario.SelectedValue.ToString() == "-1")
+            {
+                MessageBox.Show("Debe elegir un Medico para filtrar.", "VALIDACIÓN", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            _LiquidacionMedicoListPay = o.GetListServicesPay_SP(pdatBeginDate, pdatEndDate, int.Parse(ddlUsuario.SelectedValue.ToString()), 0);
+            grdData.DataSource = _LiquidacionMedicoListPay;
+
+            var listaPagoTurno = o.ObtenerConfPagoTurno(int.Parse(ddlUsuario.SelectedValue.ToString()), 1);
+
 
         }
     }

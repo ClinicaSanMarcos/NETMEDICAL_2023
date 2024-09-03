@@ -2130,5 +2130,108 @@ namespace Sigesoft.Node.WinClient.BLL
                 return;
             }
         }
+
+        public List<LiquidacionMedicoListPay> GetListServicesPay_SP(DateTime pdatBeginDate, DateTime pdatEndDate, int Medico, int TipoServicio)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = (from A in dbContext.getlistservicespay_sp(pdatBeginDate, pdatEndDate, Medico, 0)
+
+                             select new LiquidacionMedicoListPay
+                             {
+                                 i_MasterServiceId = A.i_MasterServiceId,
+                                 i_MasterServiceTypeId = A.i_MasterServiceTypeId,
+                                 MedicoTratanteId = A.MedicoTratanteId  ,
+                                 MedicoTratante = A.MedicoTratante,
+                                 Direccion = A.Direccion,
+                                 Telefono = A.Telefono,
+                                 CMP = A.CMP,
+                                 Paciente = A.Paciente,
+                                 d_ServiceDate = A.d_ServiceDate,
+                                 v_ServiceId = A.v_ServiceId,
+                                 Tipo = A.Tipo,
+                                 v_ServiceComponentId = A.v_ServiceComponentId,
+                                 r_CostoComponente = A.r_CostoComponente.Value,
+                                 Componente = A.Componente,
+                                 TipoProtocolo = A.TipoProtocolo,
+                                 TipoComprobante = A.TipoComprobante,
+                                 Comprobante = A.Comprobante,
+                                 d_Total = A.d_Total.Value,
+                                 GrupoId = A.GrupoId,
+                                 Turno = A.Turno,
+                                 CodigoId = A.CodigoId,
+                                 Grupo = A.Grupo
+                             }).ToList();
+
+
+
+                return query;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public List<MedicoConfListExamen> ObtenerConfPagoTurno(int medicoTratanteId, int i_TipoPago)
+        {
+            SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+            var query = (from A in dbContext.configuracionpago
+                        join B in dbContext.systemuser on A.i_SystemUserId equals B.i_SystemUserId
+                        join C in dbContext.person on B.v_PersonId equals C.v_PersonId
+
+                        join F in dbContext.systemuser on A.i_InsertUserId equals F.i_SystemUserId into F_join
+                        from F in F_join.DefaultIfEmpty()
+
+                        join H in dbContext.systemuser on A.i_UpdateUserId equals H.i_SystemUserId into H_join
+                        from H in H_join.DefaultIfEmpty()
+
+                        join I in dbContext.configuracionexamenpago on A.v_IdConfPago equals I.v_IdConfPago
+                        join J in dbContext.component on I.v_ComponentId equals J.v_ComponentId
+
+
+                        where A.i_IsDeleted == 0 && A.i_TipoPago == i_TipoPago && A.i_SystemUserId == medicoTratanteId
+                         select new MedicoConfListExamen
+                        {
+                            v_IdConfPago = A.v_IdConfPago,
+                            Usuario = B.v_UserName,
+                            Medico = C.v_FirstName + " " + C.v_FirstLastName + " " + C.v_SecondLastName,
+                            i_SystemUserId = B.i_SystemUserId,
+                            i_TipoPago = A.i_TipoPago.Value,
+                            v_TipoPago = A.i_TipoPago == 1 ? "X. TURNO" : A.i_TipoPago == 2 ? "X. HORA " : "X. EXAMEN",
+                            d_MontoxTurno = A.d_MontoxTurno.Value,
+                            d_MonoxHora = A.d_MonoxHora.Value,
+                            i_OrdenExam = A.i_OrdenExam.Value,
+                            v_OrdenExam = A.i_OrdenExam == 1 ? "M. Tratante" : A.i_OrdenExam == 2 ? "M. Solicitante" : "",
+                            d_PorcClinicaExam = A.d_PorcClinicaExam.Value,
+                            d_PorcMedicoExam = A.d_PorcMedicoExam.Value,
+                            i_DescontarBoletaExam = A.i_DescontarBoletaExam.Value,
+                            v_DescontarBoletaExam = A.i_DescontarBoletaExam == 1 ? "X" : "",
+                            i_DescontarFactExam = A.i_DescontarFactExam.Value,
+                            v_DescontarFactExam = A.i_DescontarFactExam == 1 ? "X" : "",
+                            i_DescontarRecbExam = A.i_DescontarRecbExam.Value,
+                            v_DescontarRecbExam = A.i_DescontarRecbExam == 1 ? "X" : "",
+                            Observaciones = A.v_Observaciones,
+                            v_ObservacionesCambios = A.v_ObservacionesCambios,
+                            i_IsDeleted = A.i_IsDeleted,
+                            i_InsertUserId = A.i_InsertUserId,
+                            v_InsertUserId = F.v_UserName,
+                            d_InsertDate = A.d_InsertDate.Value,
+                            i_UpdateUserId = A.i_UpdateUserId,
+                            v_UpdateUserId = H.v_UserName,
+                            d_UpdateDate = A.d_UpdateDate.Value,
+                            v_ComponentId = I.v_ComponentId,
+                            Examen = J.v_Name
+                        }).ToList();
+
+
+            return query;
+        }
+
+
     }
 }

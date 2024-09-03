@@ -212,6 +212,7 @@
     <Compile Include="GeneratedAssemblers\getservicecomponents_1ResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getpersonpersonalinformationeso_sResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getobtenerusuarioanterior_spResultAssembler.cs" />
+    <Compile Include="GeneratedAssemblers\getlistservicespay_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\gethospsoplist_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getexamenesadicionales_spResultAssembler.cs" />
     <Compile Include="GeneratedAssemblers\getemergencialist_spResultAssembler.cs" />

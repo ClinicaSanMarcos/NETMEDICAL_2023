@@ -517,6 +517,7 @@
     <Compile Include="Generated\getservicecomponents_1ResultDto.cs" />
     <Compile Include="Generated\getpersonpersonalinformationeso_sResultDto.cs" />
     <Compile Include="Generated\getobtenerusuarioanterior_spResultDto.cs" />
+    <Compile Include="Generated\getlistservicespay_spResultDto.cs" />
     <Compile Include="Generated\gethospsoplist_spResultDto.cs" />
     <Compile Include="Generated\getexamenesadicionales_spResultDto.cs" />
     <Compile Include="Generated\getemergencialist_spResultDto.cs" />
