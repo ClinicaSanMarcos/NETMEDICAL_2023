@@ -109,5 +109,37 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                 MessageBox.Show("Seleccione una fila.", "VALIDACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            List<string> Filters = new List<string>();
+            if (ddlUsuario.SelectedValue.ToString() != "-1") Filters.Add("MedicoTratanteId==" + ddlUsuario.SelectedValue);
+
+            strFilterExpression = null;
+            if (Filters.Count > 0)
+            {
+                foreach (string item in Filters)
+                {
+                    strFilterExpression = strFilterExpression + item + " && ";
+                }
+                strFilterExpression = strFilterExpression.Substring(0, strFilterExpression.Length - 4);
+            }
+
+            using (new LoadingClass.PleaseWait(this.Location, "Generando..."))
+            {
+                this.BindGridConfMed();
+            };
+        }
+        private void BindGridConfMed()
+        {
+            OperationResult objOperationResult = new OperationResult();
+            DateTime? pdatBeginDate = dtpDateTimeStar.Value.Date;
+            DateTime? pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
+
+            HospitalizacionBL o = new HospitalizacionBL();
+            var data = o.LiquidacionMedicos(strFilterExpression, pdatBeginDate, pdatEndDate, chkPagados.Checked == true ? 1 : 0);
+            grdData.DataSource = data;
+
+        }
     }
 }

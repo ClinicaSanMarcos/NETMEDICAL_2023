@@ -354,7 +354,7 @@
             this.ultraGrid2.Location = new System.Drawing.Point(7, 725);
             this.ultraGrid2.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid2.Name = "ultraGrid2";
-            this.ultraGrid2.Size = new System.Drawing.Size(1080, 235);
+            this.ultraGrid2.Size = new System.Drawing.Size(1063, 235);
             this.ultraGrid2.TabIndex = 152;
             // 
             // label8
@@ -487,7 +487,7 @@
             this.ultraGrid1.Location = new System.Drawing.Point(7, 427);
             this.ultraGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid1.Name = "ultraGrid1";
-            this.ultraGrid1.Size = new System.Drawing.Size(1080, 235);
+            this.ultraGrid1.Size = new System.Drawing.Size(1063, 235);
             this.ultraGrid1.TabIndex = 147;
             // 
             // txtServicioId
@@ -527,7 +527,7 @@
             this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnImprimir.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_white_acrobat;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnImprimir.Location = new System.Drawing.Point(1103, 231);
+            this.btnImprimir.Location = new System.Drawing.Point(1086, 231);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 39);
             this.btnImprimir.TabIndex = 121;
@@ -540,7 +540,7 @@
             this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExport.Image = global::Sigesoft.Node.WinClient.UI.Resources.page_excel;
             this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExport.Location = new System.Drawing.Point(1103, 153);
+            this.btnExport.Location = new System.Drawing.Point(1086, 153);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 49);
             this.btnExport.TabIndex = 120;
@@ -635,7 +635,7 @@
             this.grdData.Location = new System.Drawing.Point(7, 108);
             this.grdData.Margin = new System.Windows.Forms.Padding(2);
             this.grdData.Name = "grdData";
-            this.grdData.Size = new System.Drawing.Size(1080, 264);
+            this.grdData.Size = new System.Drawing.Size(1063, 264);
             this.grdData.TabIndex = 119;
             // 
             // btnPagar
@@ -649,7 +649,7 @@
             this.btnPagar.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagar.Location = new System.Drawing.Point(1103, 108);
+            this.btnPagar.Location = new System.Drawing.Point(1086, 108);
             this.btnPagar.Margin = new System.Windows.Forms.Padding(2);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(75, 31);
@@ -735,6 +735,7 @@
             this.btnFilter.TabIndex = 106;
             this.btnFilter.Text = "               Filtrar";
             this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // ddlServiceTypeId
             // 
