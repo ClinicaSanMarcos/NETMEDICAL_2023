@@ -56,6 +56,43 @@ namespace Sigesoft.Node.WinClient.BE
         public int? CodigoId { get; set; }
         public string Grupo { get; set; }
 
+        public double horas { get; set; }
         //public List<LiquidacionMedicoListPay> Servicios { get; set; }
+    }
+
+    public class DetallePagoTurno
+    {
+        public DateTime Fecha { get; set; }
+        public string Grupo { get; set; }
+        public decimal Monto { get; set; }
+
+        public double horas { get; set; }
+        public decimal Total { get; set; }
+
+    }
+
+    public class SystemParameterTurno
+    {
+        public int GrupoId { get; set; }
+        public int ParameterId { get; set; }
+
+        public string Value1 { get; set; }
+
+    }
+
+    public class DetallePagoeEXAMEN
+    {
+        public DateTime Fecha { get; set; }
+        public string Examen { get; set; }
+        public string TipoComprobante { get; set; }
+        public string Comprobante { get; set; }
+        public decimal Monto { get; set; }
+        public decimal PorcMed { get; set; }
+        public decimal PorcClinica { get; set; }
+        public string DescIgv_Bol { get; set; }
+        public string DescIgv_Fac { get; set; }
+        public string DescIgv_Rec { get; set; }
+
+        public decimal PagMed { get; set; }
     }
 }

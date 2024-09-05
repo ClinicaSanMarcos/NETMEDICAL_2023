@@ -104,6 +104,7 @@
             this.txtNode.Size = new System.Drawing.Size(174, 20);
             this.txtNode.TabIndex = 16;
             this.txtNode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNode.Visible = false;
             // 
             // label3
             // 

@@ -135,8 +135,214 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
             _LiquidacionMedicoListPay = o.GetListServicesPay_SP(pdatBeginDate, pdatEndDate, int.Parse(ddlUsuario.SelectedValue.ToString()), 0);
             grdData.DataSource = _LiquidacionMedicoListPay;
 
+            //////////// turno
             var listaPagoTurno = o.ObtenerConfPagoTurno(int.Parse(ddlUsuario.SelectedValue.ToString()), 1);
 
+            if (listaPagoTurno.Count != 0)
+            {
+                var _LiquidacionMedicoListPayTurno = _LiquidacionMedicoListPay.FindAll(p => p.GrupoId != 0);
+
+                var _LiquidacionMedicoListPayTurnoList = _LiquidacionMedicoListPayTurno.AsEnumerable()
+                        .Where(a => a.v_ServiceId != null)
+                        .GroupBy(b => b.d_ServiceDate.Value.ToShortDateString())
+                        .Select(group => group.First());
+
+                 List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayTurnoN = new List<LiquidacionMedicoListPay>(); 
+
+                foreach (var item in _LiquidacionMedicoListPayTurnoList)
+                {
+                    var _ObjList = _LiquidacionMedicoListPay.AsEnumerable()
+                        .Where(a => a.v_ServiceId  == item.v_ServiceId)
+                        .GroupBy(b => b.v_ServiceId)
+                        .Select(group => group.First());
+
+                    foreach (var item2 in _ObjList)
+                    {
+                        _LiquidacionMedicoListPayTurnoN.Add(item2);
+                    }
+                }
+                List<DetallePagoTurno> DetallePagoTurnoLit = new List<DetallePagoTurno>();
+                foreach (var item in _LiquidacionMedicoListPayTurnoN)
+                {
+                    DetallePagoTurno DetallePagoTurnoObj = new DetallePagoTurno();
+                    DetallePagoTurnoObj.Fecha = item.d_ServiceDate.Value;
+                    DetallePagoTurnoObj.Grupo = item.Grupo;
+                    foreach (var item2 in listaPagoTurno)
+                    {
+                        DetallePagoTurnoObj.Monto = decimal.Parse(item2.d_MontoxTurno.ToString());
+                    }
+                    DetallePagoTurnoLit.Add(DetallePagoTurnoObj);
+
+                }
+                grdPagosTurno.DataSource = DetallePagoTurnoLit;
+            }
+
+            //////////// HORA
+            var listaPagoHORA = o.ObtenerConfPagoTurno(int.Parse(ddlUsuario.SelectedValue.ToString()), 2);
+
+            if (listaPagoHORA.Count != 0)
+            {
+                var listaPagoHORAObj = listaPagoHORA[0];
+
+
+                var _LiquidacionMedicoListPayHORA = _LiquidacionMedicoListPay.FindAll(p => p.GrupoId != 0);
+
+                var _LiquidacionMedicoListPayHORAList = _LiquidacionMedicoListPayHORA.AsEnumerable()
+                       .Where(a => a.v_ServiceId != null)
+                       .GroupBy(b => b.d_ServiceDate.Value.ToShortDateString())
+                       .Select(group => group.First());
+
+                List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayHORAN = new List<LiquidacionMedicoListPay>();
+
+                foreach (var item in _LiquidacionMedicoListPayHORAList)
+                {
+                    var objSp = o.ObtenerSpTurno(item.GrupoId.Value);
+
+                    var hora1 = DateTime.Parse(objSp.First().Value1.Split('-')[0].Trim());
+
+                    var hora2 = DateTime.Parse(objSp.OrderByDescending(x => x.ParameterId).First().Value1.Split('-')[1].Trim());
+
+                    //double horas = Math.Round(hora2.Subtract(hora1).TotalMinutes, 1);
+
+                    TimeSpan horas = hora2.Subtract(hora1);
+
+                    var _ObjList = _LiquidacionMedicoListPay.AsEnumerable()
+                        .Where(a => a.v_ServiceId == item.v_ServiceId)
+                        .GroupBy(b => b.v_ServiceId)
+                        .Select(group => group.First());
+
+                    foreach (var item2 in _ObjList)
+                    {
+                        item2.horas = double.Parse(horas.Hours.ToString());
+                        _LiquidacionMedicoListPayHORAN.Add(item2);
+                    }
+                }
+                List<DetallePagoTurno> DetallePagoHoraLit = new List<DetallePagoTurno>();
+                foreach (var item in _LiquidacionMedicoListPayHORAN)
+                {
+                    DetallePagoTurno DetallePagoTurnoObj = new DetallePagoTurno();
+                    DetallePagoTurnoObj.Fecha = item.d_ServiceDate.Value;
+                    DetallePagoTurnoObj.Grupo = item.Grupo;
+                    DetallePagoTurnoObj.horas = item.horas;
+                    DetallePagoTurnoObj.Monto = decimal.Parse(listaPagoHORAObj.d_MonoxHora.ToString());
+                    DetallePagoTurnoObj.Total = decimal.Parse(listaPagoHORAObj.d_MonoxHora.ToString()) * decimal.Parse(item.horas.ToString());
+
+                    DetallePagoHoraLit.Add(DetallePagoTurnoObj);
+
+                }
+                grdPagosHora.DataSource = DetallePagoHoraLit; 
+            }
+            
+
+
+            //////////// EXAMEN
+            var listaPagoEXAMEN = o.ObtenerConfPagoTurno(int.Parse(ddlUsuario.SelectedValue.ToString()), 3);
+            if (listaPagoEXAMEN.Count != 0)
+            {
+                var listaPagoEXAMENObj = listaPagoEXAMEN[0];
+
+
+                var _LiquidacionMedicoListPayEXAMEN = _LiquidacionMedicoListPay.FindAll(p => p.GrupoId == 0);
+
+                List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayEXAMENN = new List<LiquidacionMedicoListPay>();
+
+
+                foreach (var item in listaPagoEXAMEN)
+                {
+                    var obj = _LiquidacionMedicoListPay.FindAll(p => p.Componente == item.Examen);
+
+                    foreach (var item2 in obj)
+                    {
+                        var _ObjList = _LiquidacionMedicoListPay.AsEnumerable()
+                        .Where(a => a.v_ServiceId == item2.v_ServiceId)
+                        .GroupBy(b => b.v_ServiceId)
+                        .Select(group => group.First());
+
+                        foreach (var item3 in _ObjList)
+                        {
+                            _LiquidacionMedicoListPayEXAMENN.Add(item3);
+                        }
+                    }
+                }
+
+
+
+                List<DetallePagoeEXAMEN> DetallePagoEXAMENLit = new List<DetallePagoeEXAMEN>();
+                foreach (var item in _LiquidacionMedicoListPayEXAMENN)
+                {
+                    DetallePagoeEXAMEN DetallePagoTurnoObj = new DetallePagoeEXAMEN();
+                    DetallePagoTurnoObj.Fecha = item.d_ServiceDate.Value;
+                    DetallePagoTurnoObj.Examen = item.Componente;
+                    DetallePagoTurnoObj.TipoComprobante = item.TipoComprobante;
+                    DetallePagoTurnoObj.Comprobante = item.Comprobante;
+                    DetallePagoTurnoObj.Monto = item.d_Total.Value;
+
+                    DetallePagoTurnoObj.DescIgv_Bol = listaPagoEXAMENObj.i_DescontarBoletaExam == 1 ? "X" : "";
+                    DetallePagoTurnoObj.DescIgv_Fac = listaPagoEXAMENObj.i_DescontarFactExam == 1 ? "X" : "";
+                    DetallePagoTurnoObj.DescIgv_Rec = listaPagoEXAMENObj.i_DescontarRecbExam == 1 ? "X" : "";
+
+                    if (item.TipoComprobante == "BOLETA")
+                    {
+                        if (listaPagoEXAMENObj.i_DescontarBoletaExam == 1)
+                        {
+                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+
+                        }
+                        else
+                        {
+                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+
+                        }
+
+
+                    }
+                    else if (item.TipoComprobante == "FACTURA")
+                    {
+                        if (listaPagoEXAMENObj.i_DescontarFactExam == 1)
+                        {
+                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+
+                        }
+                        else
+                        {
+                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+
+                        }
+                    }
+
+                    else if (item.TipoComprobante == "RECIBO")
+                    {
+                        if (listaPagoEXAMENObj.i_DescontarRecbExam == 1)
+                        {
+                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+
+                        }
+                        else
+                        {
+                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+
+                        }
+                    }
+
+                    DetallePagoEXAMENLit.Add(DetallePagoTurnoObj);
+
+                }
+                grdPagosExamen.DataSource = DetallePagoEXAMENLit;
+            }
+            
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            OperationResult objOperationResult1 = new OperationResult();
+            _IdConfPago = ultraGrid3.Selected.Rows[0].Cells["v_IdConfPago"].Value.ToString();
+
+            oHospitalizacionBL.DeleteConfHorario(ref objOperationResult1, _IdConfPago, Globals.ClientSession.GetAsList());
+
+            MessageBox.Show("Se eliminó correctamente", "INFORMACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            BindGrid("");
 
         }
     }

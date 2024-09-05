@@ -2059,6 +2059,42 @@ namespace Sigesoft.Node.WinClient.BLL
             }
         }
 
+        public void DeleteConfHorario(ref OperationResult pobjOperationResult, string _IdConfPago, List<string> ClientSession)
+        {
+            //mon.IsActive = true;
+
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                // Obtener la entidad fuente
+                var objEntitySource = (from a in dbContext.configuracionpago
+                                       where a.v_IdConfPago == _IdConfPago
+                                       select a).FirstOrDefault();
+
+                // Crear la entidad con los datos actualizados
+                objEntitySource.d_UpdateDate = DateTime.Now;
+                objEntitySource.i_UpdateUserId = Int32.Parse(ClientSession[2]);
+                objEntitySource.i_IsDeleted = 1;
+
+                // Guardar los cambios
+                dbContext.SaveChanges();
+
+                pobjOperationResult.Success = 1;
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ELIMINACION, "CONFIGURACION_PAGO", "v_IdConfPago=" + _IdConfPago, Success.Ok, null);
+                return;
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                // Llenar entidad Log
+                LogBL.SaveLog(ClientSession[0], ClientSession[1], ClientSession[2], LogEventType.ELIMINACION, "CONFIGURACION_PAGO", "v_IdConfPago=" + _IdConfPago, Success.Failed, pobjOperationResult.ExceptionMessage);
+                return;
+            }
+        }
+
         public void AddConfiguracionPagoeXAMEN(ref OperationResult pobjOperationResult, configuracionexamenpagoDto pobjDtoEntity, List<string> ClientSession)
         {
             //mon.IsActive = true;
@@ -2231,6 +2267,25 @@ namespace Sigesoft.Node.WinClient.BLL
 
             return query;
         }
+        public List<SystemParameterTurno> ObtenerSpTurno(int grupo)
+        {
+            SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+            var query = (from A in dbContext.systemparameter
+
+                         where A.i_IsDeleted == 0 && A.i_GroupId == grupo && A.i_ParentParameterId != -1
+                         select new SystemParameterTurno
+                         {
+                             GrupoId = A.i_GroupId,
+                             ParameterId = A.i_ParameterId,
+                             Value1 = A.v_Value1
+                         }).ToList();
+
+
+            return query;
+        }
+
+        
 
 
     }
