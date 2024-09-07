@@ -10615,6 +10615,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                  v_CodigoSegus = C.v_CodigoSegus,
                                  i_CategoryId = C.i_CategoryId,
                                  v_CategoryName = C.i_CategoryId.Value == -1 ? C.v_Name : F.v_Value1,
+                                 i_GroupId = C.i_GroupId
 
                              });
 
@@ -10636,6 +10637,7 @@ namespace Sigesoft.Node.WinClient.BLL
                                  v_CodigoSegus = C.v_CodigoSegus,
                                  i_CategoryId = C.i_CategoryId,
                                  v_CategoryName = C.i_CategoryId.Value == -1 ? C.v_Name : F.v_Value1,
+                                 i_GroupId = C.i_GroupId
 
                              });
                     var query2 = query
@@ -10664,11 +10666,14 @@ namespace Sigesoft.Node.WinClient.BLL
                                  v_CodigoSegus = C.v_CodigoSegus,
                                  i_CategoryId = C.i_CategoryId,
                                  v_CategoryName = C.i_CategoryId.Value == -1 ? C.v_Name : F.v_Value1,
+                                 i_GroupId = C.i_GroupId
 
                              });
                     var query2 = query
-                        .GroupBy(x => new { x.v_CodigoSegus, x.v_ComponentName, x.v_ComponentId, x.i_CategoryId, x.v_CategoryName })
+                        .GroupBy(x => new {x.v_CodigoSegus, x.v_ComponentName, x.v_ComponentId, x.i_CategoryId, x.v_CategoryName })
                         .Select(g => new { g.Key.v_CodigoSegus, g.Key.v_ComponentName, g.Key.v_ComponentId, g.Key.i_CategoryId, g.Key.v_CategoryName });
+
+
 
                 }
 
@@ -10721,7 +10726,7 @@ namespace Sigesoft.Node.WinClient.BLL
 
 
                 pobjOperationResult.Success = 1;
-                return query.ToList();
+                return query.ToList().GroupBy(g => g.v_ComponentId).Select(s => s.First()).ToList();
             }
             catch (Exception ex)
             {

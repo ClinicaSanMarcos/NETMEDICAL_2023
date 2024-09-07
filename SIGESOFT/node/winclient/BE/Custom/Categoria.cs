@@ -21,6 +21,7 @@ namespace Sigesoft.Node.WinClient.BE
         public int i_ApprovedInsertUserId { get; set; }
         public string Segus { get; set; }
         public float r_Price { get; set; }
+        public int? i_GroupId { get; set; }
 
         public string ApprovedUpdateUser { get; set; }
         public List<ComponentDetailList> Componentes { get; set; }

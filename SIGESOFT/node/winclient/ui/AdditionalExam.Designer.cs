@@ -239,6 +239,7 @@
             this.txtFiltro.Size = new System.Drawing.Size(256, 20);
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiltro_KeyPress);
+            this.txtFiltro.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFiltro_KeyUp);
             // 
             // rbNombreSubCategoria
             // 

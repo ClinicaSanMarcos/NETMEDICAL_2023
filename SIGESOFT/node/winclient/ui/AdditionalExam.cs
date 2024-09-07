@@ -31,6 +31,10 @@ namespace Sigesoft.Node.WinClient.UI
         List<string> _ListaComponentes = null;
         public List<ServiceComponentList> _auxiliaryExams = null;
         private MergeExPDF _mergeExPDF = new MergeExPDF();
+
+        List<Categoria> ListServiceComponent = new List<Categoria>();
+        List<Categoria> ListServiceComponentTemp = new List<Categoria>();
+
         #region Properties
 
         private string MedicalExamId { get; set; }
@@ -55,10 +59,9 @@ namespace Sigesoft.Node.WinClient.UI
         {
             OperationResult objOperationResult = new OperationResult();
 
-            var ListServiceComponent = objServiceBL.GetAllComponentsNew(ref objOperationResult, null, "");
+            ListServiceComponent = objServiceBL.GetAllComponentsNew(ref objOperationResult, null, "");
             //grdDataServiceComponent.DataSource = ListServiceComponent;
             gdDataExamsNew.DataSource = ListServiceComponent;
-            //lblRecordCountCalendar.Text = string.Format("Se encontraron {0} registros.", ListServiceComponent.Count());
             #region Conexion SIGESOFT Obtener nombre del protocolo
 
             ConexionSigesoft conectasam = new ConexionSigesoft();
@@ -172,28 +175,38 @@ namespace Sigesoft.Node.WinClient.UI
 
         private void FilterComponents()
         {
-            OperationResult objOperationResult = new OperationResult();
-            int? busqueda = null;
-            if (rbNombreCategoria.Checked)
+            try
             {
-                busqueda = (int)TipoBusqueda.NombreCategoria;
-            }
-            else if (rbNombreSubCategoria.Checked)
-            {
-                busqueda = (int)TipoBusqueda.NombreSubCategoria;
-            }
-            else if (rbNombreComponente.Checked)
-            {
-                busqueda = (int)TipoBusqueda.NombreComponent;
-            }
-            else if (rbPorCodigoSegus.Checked)
-            {
-                busqueda = (int)TipoBusqueda.CodigoSegus;
-            }
+                OperationResult objOperationResult = new OperationResult();
+                int? busqueda = null;
+                if (rbNombreCategoria.Checked)
+                {
+                    busqueda = (int)TipoBusqueda.NombreCategoria;
+                }
+                else if (rbNombreSubCategoria.Checked)
+                {
+                    busqueda = (int)TipoBusqueda.NombreSubCategoria;
+                }
+                else if (rbNombreComponente.Checked)
+                {
+                    busqueda = (int)TipoBusqueda.NombreComponent;
+                }
+                else if (rbPorCodigoSegus.Checked)
+                {
+                    busqueda = (int)TipoBusqueda.CodigoSegus;
+                }
+               
 
-            var ListServiceComponent = objServiceBL.GetAllComponentsNew(ref objOperationResult, busqueda, txtFiltro.Text);
+                ListServiceComponent = objServiceBL.GetAllComponentsNew(ref objOperationResult, busqueda, txtFiltro.Text);
 
-            gdDataExamsNew.DataSource = ListServiceComponent;
+                gdDataExamsNew.DataSource = ListServiceComponent;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         private void txtFiltro_KeyPress(object sender, KeyPressEventArgs e)
@@ -500,6 +513,35 @@ namespace Sigesoft.Node.WinClient.UI
             gbExamenesSeleccionados.Text = string.Format("Examenes Seleccionados {0}", lvExamenesSeleccionados.Items.Count);
 
 
+        }
+
+        private void txtFiltro_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txtFiltro.Text != string.Empty)
+            {
+                ListServiceComponentTemp = new List<Categoria>(ListServiceComponent.Where(p => p.v_ComponentName.Contains(txtFiltro.Text.ToUpper())));
+
+                gdDataExamsNew.DataSource = ListServiceComponentTemp;
+
+                //if (ListServiceComponentTemp != null)
+                //{
+                //    lblRecordCountCalendar.Text = string.Format("Se encontraron {0} registros.", ListServiceComponentTemp.Count());
+
+                //    //grdData.Rows[0].Selected = true;
+                //}
+
+            }
+            else
+            {
+                gdDataExamsNew.DataSource = ListServiceComponent;
+
+                //if (ListServiceComponent != null)
+                //{
+                //    lblRecordCountCalendar.Text = string.Format("Se encontraron {0} registros.", ListServiceComponent.Count());
+
+                //    //grdData.Rows[0].Selected = true;
+                //}
+            }
         }
     }
 }
