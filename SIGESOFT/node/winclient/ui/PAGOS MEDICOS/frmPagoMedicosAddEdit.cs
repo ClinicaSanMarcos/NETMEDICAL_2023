@@ -137,6 +137,7 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
 
             //////////// turno
             var listaPagoTurno = o.ObtenerConfPagoTurno(int.Parse(ddlUsuario.SelectedValue.ToString()), 1);
+            List<DetallePagoTurno> DetallePagoTurnoLit = new List<DetallePagoTurno>();
 
             if (listaPagoTurno.Count != 0)
             {
@@ -161,7 +162,6 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                         _LiquidacionMedicoListPayTurnoN.Add(item2);
                     }
                 }
-                List<DetallePagoTurno> DetallePagoTurnoLit = new List<DetallePagoTurno>();
                 foreach (var item in _LiquidacionMedicoListPayTurnoN)
                 {
                     DetallePagoTurno DetallePagoTurnoObj = new DetallePagoTurno();
@@ -175,10 +175,13 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
 
                 }
                 grdPagosTurno.DataSource = DetallePagoTurnoLit;
+
+                txtTotalTurno.Text = DetallePagoTurnoLit.Sum(p => p.Monto).ToString("N2");
             }
 
             //////////// HORA
             var listaPagoHORA = o.ObtenerConfPagoTurno(int.Parse(ddlUsuario.SelectedValue.ToString()), 2);
+            List<DetallePagoTurno> DetallePagoHoraLit = new List<DetallePagoTurno>();
 
             if (listaPagoHORA.Count != 0)
             {
@@ -232,7 +235,6 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                         _LiquidacionMedicoListPayHORAN.Add(item2);
                     }
                 }
-                List<DetallePagoTurno> DetallePagoHoraLit = new List<DetallePagoTurno>();
                 foreach (var item in _LiquidacionMedicoListPayHORAN)
                 {
                     DetallePagoTurno DetallePagoTurnoObj = new DetallePagoTurno();
@@ -253,23 +255,29 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                     DetallePagoHoraLit.Add(DetallePagoTurnoObj);
 
                 }
-                grdPagosHora.DataSource = DetallePagoHoraLit; 
+                grdPagosHora.DataSource = DetallePagoHoraLit;
+
+                txtTotalHora.Text = DetallePagoHoraLit.Sum(p => p.Total).ToString("N2");
+
             }
             
 
 
             //////////// EXAMEN
+            List<DetallePagoeEXAMEN> DetallePagoEXAMENLit = new List<DetallePagoeEXAMEN>();
+
             var listaPagoEXAMEN = o.ObtenerConfPagoTurno(int.Parse(ddlUsuario.SelectedValue.ToString()), 3);
             if (listaPagoEXAMEN.Count != 0)
             {
-                var listaPagoEXAMENObj = listaPagoEXAMEN[0];
+                var listaPagoEXAMENObj = listaPagoEXAMEN.FindAll(p => p.v_OrdenExam == "M. Tratante")[0];
 
-
-                var _LiquidacionMedicoListPayEXAMEN = _LiquidacionMedicoListPay.FindAll(p => p.GrupoId == 0);
+                if (listaPagoEXAMENObj != null)
+                {
+                    var _LiquidacionMedicoListPayEXAMEN = _LiquidacionMedicoListPay.FindAll(p => p.GrupoId == 0);
 
                 List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayEXAMENN = new List<LiquidacionMedicoListPay>();
 
-                foreach (var item in listaPagoEXAMEN)
+                foreach (var item in listaPagoEXAMEN.FindAll(p=>p.v_OrdenExam == "M. Tratante"))
                 {
                     var obj = _LiquidacionMedicoListPay.FindAll(p => p.Componente == item.Examen);
 
@@ -286,10 +294,7 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                         }
                     }
                 }
-
-
-
-                List<DetallePagoeEXAMEN> DetallePagoEXAMENLit = new List<DetallePagoeEXAMEN>();
+                                
                 foreach (var item in _LiquidacionMedicoListPayEXAMENN)
                 {
                     DetallePagoeEXAMEN DetallePagoTurnoObj = new DetallePagoeEXAMEN();
@@ -299,8 +304,9 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                     DetallePagoTurnoObj.Comprobante = item.Comprobante;
                     DetallePagoTurnoObj.Monto = item.d_Total.Value;
                     DetallePagoTurnoObj.TipoMed = "TRATANTE";
-
-
+                    DetallePagoTurnoObj.PorcMed = (decimal)listaPagoEXAMENObj.d_PorcMedicoExam.Value;
+                    DetallePagoTurnoObj.PorcClinica = (decimal)listaPagoEXAMENObj.d_PorcClinicaExam.Value;
+                    
                     DetallePagoTurnoObj.DescIgv_Bol = listaPagoEXAMENObj.i_DescontarBoletaExam == 1 ? "X" : "";
                     DetallePagoTurnoObj.DescIgv_Fac = listaPagoEXAMENObj.i_DescontarFactExam == 1 ? "X" : "";
                     DetallePagoTurnoObj.DescIgv_Rec = listaPagoEXAMENObj.i_DescontarRecbExam == 1 ? "X" : "";
@@ -310,50 +316,129 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                         if (listaPagoEXAMENObj.i_DescontarBoletaExam == 1)
                         {
                             DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-
                         }
                         else
                         {
                             DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-
                         }
-
-
                     }
                     else if (item.TipoComprobante == "FACTURA")
                     {
                         if (listaPagoEXAMENObj.i_DescontarFactExam == 1)
                         {
                             DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-
                         }
                         else
                         {
                             DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-
                         }
                     }
-
                     else if (item.TipoComprobante == "RECIBO")
                     {
                         if (listaPagoEXAMENObj.i_DescontarRecbExam == 1)
                         {
                             DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-
                         }
                         else
                         {
                             DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                        }
+                    }
+                    DetallePagoEXAMENLit.Add(DetallePagoTurnoObj);
+                }
+                }
 
+                //solicitante
+
+                var listaPagoEXAMENObj2 = listaPagoEXAMEN.FindAll(p => p.v_OrdenExam == "M. Solicitante")[0];
+
+                if (listaPagoEXAMENObj2 != null)
+                {
+                    var _LiquidacionMedicoListPaySolicitante = o.GetListServicesPaySolicitante_SP(pdatBeginDate, pdatEndDate, int.Parse(ddlUsuario.SelectedValue.ToString()), 0);
+
+                    var _LiquidacionMedicoListPayEXAMENSolicitante = _LiquidacionMedicoListPaySolicitante;
+
+                    List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayEXAMENSolicitanteN = new List<LiquidacionMedicoListPay>();
+
+                    foreach (var item in listaPagoEXAMEN.FindAll(p => p.v_OrdenExam == "M. Solicitante"))
+                    {
+                        var obj = _LiquidacionMedicoListPaySolicitante.FindAll(p => p.Componente == item.Examen);
+
+                        foreach (var item2 in obj)
+                        {
+                            var _ObjList = _LiquidacionMedicoListPaySolicitante.AsEnumerable()
+                            .Where(a => a.v_ServiceId == item2.v_ServiceId)
+                            .GroupBy(b => b.v_ServiceId)
+                            .Select(group => group.First());
+
+                            foreach (var item3 in _ObjList)
+                            {
+                                _LiquidacionMedicoListPayEXAMENSolicitanteN.Add(item3);
+                            }
                         }
                     }
 
-                    DetallePagoEXAMENLit.Add(DetallePagoTurnoObj);
+                    foreach (var item in _LiquidacionMedicoListPayEXAMENSolicitanteN)
+                    {
+                        DetallePagoeEXAMEN DetallePagoTurnoObj = new DetallePagoeEXAMEN();
+                        DetallePagoTurnoObj.Fecha = item.d_ServiceDate.Value;
+                        DetallePagoTurnoObj.Examen = item.Componente;
+                        DetallePagoTurnoObj.TipoComprobante = item.TipoComprobante;
+                        DetallePagoTurnoObj.Comprobante = item.Comprobante;
+                        DetallePagoTurnoObj.Monto = item.d_Total.Value;
+                        DetallePagoTurnoObj.TipoMed = "SOLICITANTE";
+                        DetallePagoTurnoObj.PorcMed = (decimal)listaPagoEXAMENObj2.d_PorcMedicoExam.Value;
+                        DetallePagoTurnoObj.PorcClinica = (decimal)listaPagoEXAMENObj2.d_PorcClinicaExam.Value;
 
-                }
+                        DetallePagoTurnoObj.DescIgv_Bol = listaPagoEXAMENObj2.i_DescontarBoletaExam == 1 ? "X" : "";
+                        DetallePagoTurnoObj.DescIgv_Fac = listaPagoEXAMENObj2.i_DescontarFactExam == 1 ? "X" : "";
+                        DetallePagoTurnoObj.DescIgv_Rec = listaPagoEXAMENObj2.i_DescontarRecbExam == 1 ? "X" : "";
+
+                        if (item.TipoComprobante == "BOLETA")
+                        {
+                            if (listaPagoEXAMENObj2.i_DescontarBoletaExam == 1)
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj2.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                            else
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj2.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                        }
+                        else if (item.TipoComprobante == "FACTURA")
+                        {
+                            if (listaPagoEXAMENObj2.i_DescontarFactExam == 1)
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj2.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                            else
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj2.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                        }
+                        else if (item.TipoComprobante == "RECIBO")
+                        {
+                            if (listaPagoEXAMENObj2.i_DescontarRecbExam == 1)
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj2.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                            else
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj2.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                        }
+                        DetallePagoEXAMENLit.Add(DetallePagoTurnoObj);
+                    }
+                }             
+
+
                 grdPagosExamen.DataSource = DetallePagoEXAMENLit;
+
+                txtTotalExamen.Text = DetallePagoEXAMENLit.Sum(p => p.PagMed).ToString("N2");
+
             }
-            
+
+            txtTotal.Text = (DetallePagoTurnoLit.Sum(p => p.Monto) + DetallePagoHoraLit.Sum(p => p.Total) + DetallePagoEXAMENLit.Sum(p => p.PagMed)).ToString("N2");
 
         }
 
@@ -368,6 +453,54 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
 
             BindGrid("");
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string NombreArchivo = "";
+            NombreArchivo = "Registro x Turno del " + dtpDateTimeStar.Text + " al " + dptDateTimeEnd.Text + " - Med. " + ddlUsuario.Text;
+            NombreArchivo = NombreArchivo.Replace("/", "_");
+            NombreArchivo = NombreArchivo.Replace(":", "_");
+
+            saveFileDialog1.FileName = NombreArchivo;
+            saveFileDialog1.Filter = "Files (*.xls;*.xlsx;*)|*.xls;*.xlsx;*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.ultraGridExcelExporter1.Export(this.grdPagosTurno, saveFileDialog1.FileName);
+                MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string NombreArchivo = "";
+            NombreArchivo = "Registro x Hora del " + dtpDateTimeStar.Text + " al " + dptDateTimeEnd.Text + " - Med. " + ddlUsuario.Text;
+            NombreArchivo = NombreArchivo.Replace("/", "_");
+            NombreArchivo = NombreArchivo.Replace(":", "_");
+
+            saveFileDialog1.FileName = NombreArchivo;
+            saveFileDialog1.Filter = "Files (*.xls;*.xlsx;*)|*.xls;*.xlsx;*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.ultraGridExcelExporter1.Export(this.grdPagosHora, saveFileDialog1.FileName);
+                MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string NombreArchivo = "";
+            NombreArchivo = "Registro x Examen del " + dtpDateTimeStar.Text + " al " + dptDateTimeEnd.Text + " - Med. " + ddlUsuario.Text;
+            NombreArchivo = NombreArchivo.Replace("/", "_");
+            NombreArchivo = NombreArchivo.Replace(":", "_");
+
+            saveFileDialog1.FileName = NombreArchivo;
+            saveFileDialog1.Filter = "Files (*.xls;*.xlsx;*)|*.xls;*.xlsx;*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.ultraGridExcelExporter1.Export(this.grdPagosExamen, saveFileDialog1.FileName);
+                MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -2202,7 +2202,54 @@ namespace Sigesoft.Node.WinClient.BLL
                                  GrupoId = A.GrupoId,
                                  Turno = A.Turno,
                                  CodigoId = A.CodigoId,
-                                 Grupo = A.Grupo
+                                 Grupo = A.Grupo,
+                                 TipoMed = A.TipoMed
+                             }).ToList();
+
+
+
+                return query;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public List<LiquidacionMedicoListPay> GetListServicesPaySolicitante_SP(DateTime pdatBeginDate, DateTime pdatEndDate, int Medico, int TipoServicio)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                var query = (from A in dbContext.getlistservicespaysolicitante_sp(pdatBeginDate, pdatEndDate, Medico, 0)
+
+                             select new LiquidacionMedicoListPay
+                             {
+                                 i_MasterServiceId = A.i_MasterServiceId,
+                                 i_MasterServiceTypeId = A.i_MasterServiceTypeId,
+                                 MedicoTratanteId = A.MedicoTratanteId,
+                                 MedicoTratante = A.MedicoTratante,
+                                 Direccion = A.Direccion,
+                                 Telefono = A.Telefono,
+                                 CMP = A.CMP,
+                                 Paciente = A.Paciente,
+                                 d_ServiceDate = A.d_ServiceDate,
+                                 v_ServiceId = A.v_ServiceId,
+                                 Tipo = A.Tipo,
+                                 v_ServiceComponentId = A.v_ServiceComponentId,
+                                 r_CostoComponente = A.r_CostoComponente.Value,
+                                 Componente = A.Componente,
+                                 TipoProtocolo = A.TipoProtocolo,
+                                 TipoComprobante = A.TipoComprobante,
+                                 Comprobante = A.Comprobante,
+                                 d_Total = A.d_Total.Value,
+                                 GrupoId = A.GrupoId,
+                                 Turno = A.Turno,
+                                 CodigoId = A.CodigoId,
+                                 Grupo = A.Grupo,
+                                 TipoMed = A.TipoMed
                              }).ToList();
 
 

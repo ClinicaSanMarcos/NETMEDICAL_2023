@@ -60,6 +60,7 @@ namespace Sigesoft.Node.WinClient.BE
         public double minutos { get; set; }
 
         public double montoo { get; set; }
+        public string TipoMed { get; set; }
 
         //public List<LiquidacionMedicoListPay> Servicios { get; set; }
     }
