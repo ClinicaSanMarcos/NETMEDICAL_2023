@@ -109,8 +109,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.grdExamenes = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.grdExamenes = new Infragistics.Win.UltraWinGrid.UltraGrid();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbHoras = new System.Windows.Forms.RadioButton();
+            this.rbMinutos = new System.Windows.Forms.RadioButton();
+            this.txtTiempoDesc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gdDataExamsNew)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -124,6 +128,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdExamenes)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gdDataExamsNew
@@ -485,7 +490,7 @@
             // 
             this.rbXTurno.AutoSize = true;
             this.rbXTurno.Checked = true;
-            this.rbXTurno.Location = new System.Drawing.Point(17, 61);
+            this.rbXTurno.Location = new System.Drawing.Point(14, 37);
             this.rbXTurno.Name = "rbXTurno";
             this.rbXTurno.Size = new System.Drawing.Size(91, 17);
             this.rbXTurno.TabIndex = 157;
@@ -499,7 +504,7 @@
             this.groupTurno.BackColor = System.Drawing.Color.Azure;
             this.groupTurno.Controls.Add(this.txtMontoTurno);
             this.groupTurno.Controls.Add(this.label5);
-            this.groupTurno.Location = new System.Drawing.Point(114, 60);
+            this.groupTurno.Location = new System.Drawing.Point(114, 37);
             this.groupTurno.Name = "groupTurno";
             this.groupTurno.Size = new System.Drawing.Size(316, 66);
             this.groupTurno.TabIndex = 158;
@@ -528,7 +533,7 @@
             // rbXHora
             // 
             this.rbXHora.AutoSize = true;
-            this.rbXHora.Location = new System.Drawing.Point(17, 162);
+            this.rbXHora.Location = new System.Drawing.Point(8, 136);
             this.rbXHora.Name = "rbXHora";
             this.rbXHora.Size = new System.Drawing.Size(86, 17);
             this.rbXHora.TabIndex = 159;
@@ -550,20 +555,21 @@
             // groupHora
             // 
             this.groupHora.BackColor = System.Drawing.Color.Azure;
+            this.groupHora.Controls.Add(this.groupBox3);
             this.groupHora.Controls.Add(this.txtMontoHora);
             this.groupHora.Controls.Add(this.label1);
-            this.groupHora.Location = new System.Drawing.Point(114, 149);
+            this.groupHora.Location = new System.Drawing.Point(114, 109);
             this.groupHora.Name = "groupHora";
-            this.groupHora.Size = new System.Drawing.Size(316, 69);
+            this.groupHora.Size = new System.Drawing.Size(316, 109);
             this.groupHora.TabIndex = 159;
             this.groupHora.TabStop = false;
             this.groupHora.Text = "CONFIGURACION POR HORA";
             // 
             // txtMontoHora
             // 
-            this.txtMontoHora.Location = new System.Drawing.Point(85, 31);
+            this.txtMontoHora.Location = new System.Drawing.Point(85, 21);
             this.txtMontoHora.Name = "txtMontoHora";
-            this.txtMontoHora.Size = new System.Drawing.Size(225, 20);
+            this.txtMontoHora.Size = new System.Drawing.Size(226, 20);
             this.txtMontoHora.TabIndex = 39;
             // 
             // label1
@@ -571,7 +577,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(5, 34);
+            this.label1.Location = new System.Drawing.Point(8, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
@@ -678,6 +684,29 @@
             this.tabPage2.Text = "Lista de Examenes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminar.Image = global::Sigesoft.Node.WinClient.UI.Resources.bullet_cross;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(770, 5);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(76, 28);
+            this.btnEliminar.TabIndex = 109;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // grdExamenes
             // 
             this.grdExamenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -781,28 +810,48 @@
             this.grdExamenes.TabIndex = 106;
             this.grdExamenes.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.grdExamenes_AfterSelectChange);
             // 
-            // btnEliminar
+            // groupBox3
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Image = global::Sigesoft.Node.WinClient.UI.Resources.bullet_cross;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(770, 5);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(76, 28);
-            this.btnEliminar.TabIndex = 109;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.groupBox3.BackColor = System.Drawing.Color.Azure;
+            this.groupBox3.Controls.Add(this.txtTiempoDesc);
+            this.groupBox3.Controls.Add(this.rbHoras);
+            this.groupBox3.Controls.Add(this.rbMinutos);
+            this.groupBox3.Location = new System.Drawing.Point(10, 52);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(300, 49);
+            this.groupBox3.TabIndex = 151;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DESCUENTO EN";
+            // 
+            // rbHoras
+            // 
+            this.rbHoras.AutoSize = true;
+            this.rbHoras.Location = new System.Drawing.Point(11, 19);
+            this.rbHoras.Name = "rbHoras";
+            this.rbHoras.Size = new System.Drawing.Size(53, 17);
+            this.rbHoras.TabIndex = 148;
+            this.rbHoras.TabStop = true;
+            this.rbHoras.Text = "Horas";
+            this.rbHoras.UseVisualStyleBackColor = true;
+            // 
+            // rbMinutos
+            // 
+            this.rbMinutos.AutoSize = true;
+            this.rbMinutos.Location = new System.Drawing.Point(74, 19);
+            this.rbMinutos.Name = "rbMinutos";
+            this.rbMinutos.Size = new System.Drawing.Size(62, 17);
+            this.rbMinutos.TabIndex = 149;
+            this.rbMinutos.TabStop = true;
+            this.rbMinutos.Text = "Minutos";
+            this.rbMinutos.UseVisualStyleBackColor = true;
+            // 
+            // txtTiempoDesc
+            // 
+            this.txtTiempoDesc.Location = new System.Drawing.Point(142, 18);
+            this.txtTiempoDesc.Name = "txtTiempoDesc";
+            this.txtTiempoDesc.Size = new System.Drawing.Size(152, 20);
+            this.txtTiempoDesc.TabIndex = 150;
+            this.txtTiempoDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // frmConfiguracionPagos
             // 
@@ -846,6 +895,8 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdExamenes)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -895,5 +946,9 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Infragistics.Win.UltraWinGrid.UltraGrid grdExamenes;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtTiempoDesc;
+        private System.Windows.Forms.RadioButton rbHoras;
+        private System.Windows.Forms.RadioButton rbMinutos;
     }
 }

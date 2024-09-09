@@ -1324,7 +1324,11 @@ namespace Sigesoft.Node.WinClient.BLL
                                 d_InsertDate = A.d_InsertDate.Value,
                                 i_UpdateUserId = A.i_UpdateUserId,
                                 v_UpdateUserId = H.v_UserName,
-                                d_UpdateDate = A.d_UpdateDate.Value
+                                d_UpdateDate = A.d_UpdateDate.Value,
+                                i_TipoDescuentoHoraMin = A.i_TipoDescuentoHoraMin.Value,
+                                v_TipoDescuentoHoraMin = A.i_TipoDescuentoHoraMin == 1 ? "HORAS" : A.i_TipoDescuentoHoraMin == 2 ? "MINUTOS" : "",
+                                i_DesucuentodeHorario = A.i_DesucuentodeHorario.Value,
+
                             };
 
                 if (!string.IsNullOrEmpty(pstrFilterExpression))
@@ -2261,7 +2265,10 @@ namespace Sigesoft.Node.WinClient.BLL
                             v_UpdateUserId = H.v_UserName,
                             d_UpdateDate = A.d_UpdateDate.Value,
                             v_ComponentId = I.v_ComponentId,
-                            Examen = J.v_Name
+                            Examen = J.v_Name,
+                            i_TipoDescuentoHoraMin = A.i_TipoDescuentoHoraMin.Value,
+                            v_TipoDescuentoHoraMin = A.i_TipoDescuentoHoraMin.Value == 1 ? "HORAS" : A.i_TipoDescuentoHoraMin == 2 ? "MINUTOS" : "",
+                            i_DesucuentodeHorario = A.i_DesucuentodeHorario.Value,
                         }).ToList();
 
 

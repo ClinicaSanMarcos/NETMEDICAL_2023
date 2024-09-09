@@ -54,6 +54,10 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_UpdateUserId { get; set; }
         public DateTime? d_UpdateDate { get; set; }
 
+        public int? i_DesucuentodeHorario { get; set; }
+        public int? i_TipoDescuentoHoraMin { get; set; }
+        public string v_TipoDescuentoHoraMin { get; set; }
+
     }
 
     public class MedicoConfExamenList
@@ -115,5 +119,9 @@ namespace Sigesoft.Node.WinClient.BE
         public string v_ComponentId { get; set; }
         public string Examen { get; set; }
 
+
+        public int? i_DesucuentodeHorario { get; set; }
+        public int? i_TipoDescuentoHoraMin { get; set; }
+        public string v_TipoDescuentoHoraMin { get; set; }
     }
 }

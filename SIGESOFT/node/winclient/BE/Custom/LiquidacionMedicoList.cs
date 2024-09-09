@@ -57,6 +57,10 @@ namespace Sigesoft.Node.WinClient.BE
         public string Grupo { get; set; }
 
         public double horas { get; set; }
+        public double minutos { get; set; }
+
+        public double montoo { get; set; }
+
         //public List<LiquidacionMedicoListPay> Servicios { get; set; }
     }
 
@@ -68,6 +72,9 @@ namespace Sigesoft.Node.WinClient.BE
 
         public double horas { get; set; }
         public decimal Total { get; set; }
+        public double minutos { get; set; }
+
+        public string Tiempo { get; set; }
 
     }
 

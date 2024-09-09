@@ -69,7 +69,13 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                 else if (_objEdit.i_TipoPago == 2)
                 {
                     rbXHora.Checked = true;
-                    txtMontoHora.Text = _objEdit.d_MonoxHora.ToString(); 
+                    txtMontoHora.Text = _objEdit.d_MonoxHora.ToString();
+
+                    rbHoras.Checked = _objEdit.i_TipoDescuentoHoraMin == 1 ? true : false;
+                    rbMinutos.Checked = _objEdit.i_TipoDescuentoHoraMin == 2 ? true : false;
+
+                    txtTiempoDesc.Text = _objEdit.i_DesucuentodeHorario.ToString(); 
+
                 }
                 else if (_objEdit.i_TipoPago == 3)
                 {
@@ -250,6 +256,8 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
 
                 //
                 confPagoDto.d_MonoxHora = null;
+                confPagoDto.i_DesucuentodeHorario = null;
+                confPagoDto.i_TipoDescuentoHoraMin = null;
 
                 confPagoDto.i_OrdenExam = null;
                 confPagoDto.d_PorcClinicaExam = null;
@@ -262,6 +270,8 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
             {
                 confPagoDto.i_TipoPago = 2;
                 confPagoDto.d_MonoxHora = float.Parse(txtMontoHora.Text);
+                confPagoDto.i_DesucuentodeHorario = int.Parse(txtTiempoDesc.Text);
+                confPagoDto.i_TipoDescuentoHoraMin = rbHoras.Checked == true ? 1 : 2;
 
                 //
                 confPagoDto.d_MontoxTurno = null;
@@ -299,6 +309,8 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                 //
                 confPagoDto.d_MontoxTurno = null;
                 confPagoDto.d_MonoxHora = null;
+                confPagoDto.i_DesucuentodeHorario = null;
+                confPagoDto.i_TipoDescuentoHoraMin = null;
             }
 
             List<AdditionalExamCustom> ListAdditionalExam = new List<AdditionalExamCustom>();

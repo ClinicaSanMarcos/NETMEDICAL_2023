@@ -205,6 +205,25 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                     //double horas = Math.Round(hora2.Subtract(hora1).TotalMinutes, 1);
 
                     TimeSpan horas = hora2.Subtract(hora1);
+                    if (hora1.Hour <= 10 && hora2.Hour >= 14)
+                    {
+                        if (listaPagoHORAObj.i_TipoDescuentoHoraMin == 1)
+                        {
+                            TimeSpan _horas = TimeSpan.FromHours(-listaPagoHORAObj.i_DesucuentodeHorario.Value);
+                            horas = horas.Add(_horas);
+                        }
+                        else
+                        {
+                            TimeSpan _minutos = TimeSpan.FromMinutes(-listaPagoHORAObj.i_DesucuentodeHorario.Value);
+                            horas = horas.Add(_minutos);
+                        }
+                    }
+                    //else
+                    //{
+                        
+                    //}
+                    
+                    
 
                     var _ObjList = _LiquidacionMedicoListPay.AsEnumerable()
                         .Where(a => a.v_ServiceId == item.v_ServiceId)
@@ -214,6 +233,8 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                     foreach (var item2 in _ObjList)
                     {
                         item2.horas = double.Parse(horas.Hours.ToString());
+                        item2.minutos = double.Parse(horas.Minutes.ToString());
+
                         _LiquidacionMedicoListPayHORAN.Add(item2);
                     }
                 }
@@ -224,8 +245,16 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                     DetallePagoTurnoObj.Fecha = item.d_ServiceDate.Value;
                     DetallePagoTurnoObj.Grupo = item.Grupo;
                     DetallePagoTurnoObj.horas = item.horas;
+                    DetallePagoTurnoObj.minutos = item.minutos;
+
+                    DetallePagoTurnoObj.Tiempo = "H: " + item.horas.ToString() + " - M:" + item.minutos.ToString();
+                    decimal montMin = 0;
+
+                    var costMin = decimal.Parse(listaPagoHORAObj.d_MonoxHora.ToString()) / 60;
+
+                    montMin = costMin * (decimal)item.minutos;
                     DetallePagoTurnoObj.Monto = decimal.Parse(listaPagoHORAObj.d_MonoxHora.ToString());
-                    DetallePagoTurnoObj.Total = decimal.Parse(listaPagoHORAObj.d_MonoxHora.ToString()) * decimal.Parse(item.horas.ToString());
+                    DetallePagoTurnoObj.Total = (decimal.Parse(listaPagoHORAObj.d_MonoxHora.ToString()) * (decimal)item.horas) + montMin;
 
                     DetallePagoHoraLit.Add(DetallePagoTurnoObj);
 
