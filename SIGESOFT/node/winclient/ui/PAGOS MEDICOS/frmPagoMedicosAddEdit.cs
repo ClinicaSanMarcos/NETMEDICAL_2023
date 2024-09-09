@@ -218,13 +218,7 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                             horas = horas.Add(_minutos);
                         }
                     }
-                    //else
-                    //{
-                        
-                    //}
-                    
-                    
-
+     
                     var _ObjList = _LiquidacionMedicoListPay.AsEnumerable()
                         .Where(a => a.v_ServiceId == item.v_ServiceId)
                         .GroupBy(b => b.v_ServiceId)
@@ -275,7 +269,6 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
 
                 List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayEXAMENN = new List<LiquidacionMedicoListPay>();
 
-
                 foreach (var item in listaPagoEXAMEN)
                 {
                     var obj = _LiquidacionMedicoListPay.FindAll(p => p.Componente == item.Examen);
@@ -305,6 +298,8 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                     DetallePagoTurnoObj.TipoComprobante = item.TipoComprobante;
                     DetallePagoTurnoObj.Comprobante = item.Comprobante;
                     DetallePagoTurnoObj.Monto = item.d_Total.Value;
+                    DetallePagoTurnoObj.TipoMed = "TRATANTE";
+
 
                     DetallePagoTurnoObj.DescIgv_Bol = listaPagoEXAMENObj.i_DescontarBoletaExam == 1 ? "X" : "";
                     DetallePagoTurnoObj.DescIgv_Fac = listaPagoEXAMENObj.i_DescontarFactExam == 1 ? "X" : "";

@@ -66,6 +66,7 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn44 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("DescIgv_Fac");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn45 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("DescIgv_Rec");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn50 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("PagMed");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn21 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoMed");
             Infragistics.Win.Appearance appearance16 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance17 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance18 = new Infragistics.Win.Appearance();
@@ -503,6 +504,7 @@
             ultraGridColumn44.Header.VisiblePosition = 8;
             ultraGridColumn45.Header.VisiblePosition = 9;
             ultraGridColumn50.Header.VisiblePosition = 10;
+            ultraGridColumn21.Header.VisiblePosition = 11;
             ultraGridBand3.Columns.AddRange(new object[] {
             ultraGridColumn36,
             ultraGridColumn37,
@@ -514,7 +516,8 @@
             ultraGridColumn43,
             ultraGridColumn44,
             ultraGridColumn45,
-            ultraGridColumn50});
+            ultraGridColumn50,
+            ultraGridColumn21});
             this.grdPagosExamen.DisplayLayout.BandsSerializer.Add(ultraGridBand3);
             this.grdPagosExamen.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.False;
             this.grdPagosExamen.DisplayLayout.InterBandSpacing = 10;

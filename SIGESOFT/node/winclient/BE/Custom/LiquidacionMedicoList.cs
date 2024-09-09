@@ -101,5 +101,7 @@ namespace Sigesoft.Node.WinClient.BE
         public string DescIgv_Rec { get; set; }
 
         public decimal PagMed { get; set; }
+
+        public string TipoMed { get; set; }
     }
 }
