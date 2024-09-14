@@ -2085,6 +2085,12 @@
     <Compile Include="ReporteDeclaracionDrogas.Designer.cs">
       <DependentUpon>ReporteDeclaracionDrogas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportesCSM\frmReportesAtenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesCSM\frmReportesAtenciones.Designer.cs">
+      <DependentUpon>frmReportesAtenciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\crOccupationalMedicalAptitudeCertificateRetiros.cs">
       <DependentUpon>crOccupationalMedicalAptitudeCertificateRetiros.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -4613,6 +4619,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteDeclaracionDrogas.resx">
       <DependentUpon>ReporteDeclaracionDrogas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesCSM\frmReportesAtenciones.resx">
+      <DependentUpon>frmReportesAtenciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\crOccupationalMedicalAptitudeCertificateRetiros.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
