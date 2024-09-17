@@ -7,8 +7,14 @@ using Sigesoft.Node.WinClient.BE;
 using Sigesoft.Node.WinClient.DAL;
 using Sigesoft.Common;
 using System.Data.Objects;
-using ConnectionState = System.Data.ConnectionState;
+
+using System.Data.SqlClient;
+using System.Data;
+using System.Transactions;
+using Dapper;
+//using ConnectionState = System.Data.ConnectionState;
 using Sigesoft.Node.WinClient.BE.Custom;
+using Sigesoft.Node.WinClient.UI;
 
 namespace Sigesoft.Node.WinClient.BLL
 {
@@ -539,6 +545,8 @@ namespace Sigesoft.Node.WinClient.BLL
                 return null;
             }
         }
+
+        
 
         public int GetAge(DateTime FechaNacimiento)
         {

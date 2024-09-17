@@ -9,6 +9,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Dapper;
+
+//using System.Linq.Expressions;
 
 namespace Sigesoft.Node.WinClient.UI.ReportesCSM
 {
@@ -17,10 +20,13 @@ namespace Sigesoft.Node.WinClient.UI.ReportesCSM
         string strFilterExpression;
         List<HospSopList> _objData2 = new List<HospSopList>();
         List<EmergenciapList> _objData3 = new List<EmergenciapList>();
+        List<AmbulatorioList> _objData4 = new List<AmbulatorioList>();
 
         List<HospSopList> _HospSopList = new List<HospSopList>();
         List<EmergenciapList> _EmergenciapList = new List<EmergenciapList>();
+        List<AmbulatorioList> _AmbulatorioList = new List<AmbulatorioList>();
 
+        
         HospitalizacionBL _objHospBL = new HospitalizacionBL();
 
         public frmReportesAtenciones()
@@ -51,9 +57,13 @@ namespace Sigesoft.Node.WinClient.UI.ReportesCSM
             {
                 this.BindGrid();
             }
-            else
+            else if (tabName == "EMERGENCIA")
             {
                 this.BindGridEmergencia();
+            }
+            else if (tabName == "AMBULATORIO")
+            {
+                this.BindGridAmbulatorio();
             }
         }
         private void BindGrid()
@@ -62,13 +72,14 @@ namespace Sigesoft.Node.WinClient.UI.ReportesCSM
             _HospSopList = objData;
             grdData.DataSource = objData;
 
-            lblRecordCount.Text = string.Format("Se encontraron {0} registros.", objData.Count());
             if (objData.Count() >= 1)
             {
+                lblRecordCount.Text = string.Format("Se encontraron {0} registros.", objData.Count());
                 btnExport.Enabled = true;
             }
             else
             {
+                lblRecordCount.Text = string.Format("Se encontraron 0 registros.");
                 btnExport.Enabled = false;
             }
         }
@@ -79,14 +90,35 @@ namespace Sigesoft.Node.WinClient.UI.ReportesCSM
             _EmergenciapList = objData;
             ultraGrid1.DataSource = objData;
 
-            label3.Text = string.Format("Se encontraron {0} registros.", objData.Count());
             if (objData.Count() >= 1)
             {
+                label3.Text = string.Format("Se encontraron {0} registros.", objData.Count());
+
                 button2.Enabled = true;
             }
             else
             {
+                label3.Text = string.Format("Se encontraron 0 registros.");
                 button2.Enabled = false;
+            }
+        }
+
+        private void BindGridAmbulatorio()
+        {
+            var objData = GetDataAmb(0, null, "v_ServiceId ASC", strFilterExpression);
+            
+            _AmbulatorioList = objData;
+            ultraGrid2.DataSource = objData;
+
+            if (objData.Count() >= 1)
+            {
+                label6.Text = string.Format("Se encontraron {0} registros.", objData.Count());
+                button1.Enabled = true;
+            }
+            else
+            {
+                label6.Text = string.Format("Se encontraron 0 registros.");
+                button1.Enabled = false;
             }
         }
 
@@ -122,6 +154,18 @@ namespace Sigesoft.Node.WinClient.UI.ReportesCSM
             }
 
             return _objData3;
+        }
+
+        private List<AmbulatorioList> GetDataAmb(int pintPageIndex, int? pintPageSize, string pstrSortExpression, string pstrFilterExpression)
+        {
+            OperationResult objOperationResult = new OperationResult();
+            DateTime? pdatBeginDate = dtpDateTimeStar.Value.Date;
+            DateTime? pdatEndDate = dptDateTimeEnd.Value.Date.AddDays(1);
+
+            _objData4 = new ProductPackageBL().GetAmbulatorioPagedAndFiltered2(pdatBeginDate, pdatEndDate);
+
+           
+            return _objData4;
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -277,6 +321,22 @@ namespace Sigesoft.Node.WinClient.UI.ReportesCSM
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnFilter_Click(null, null);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string NombreArchivo = "";
+            NombreArchivo = "Reporte Consultas Ambulatorias del " + dtpDateTimeStar.Text + " al " + dptDateTimeEnd.Text;
+            NombreArchivo = NombreArchivo.Replace("/", "_");
+            NombreArchivo = NombreArchivo.Replace(":", "_");
+
+            saveFileDialog1.FileName = NombreArchivo;
+            saveFileDialog1.Filter = "Files (*.xls;*.xlsx;*)|*.xls;*.xlsx;*";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.ultraGridExcelExporter1.Export(this.ultraGrid2, saveFileDialog1.FileName);
+                MessageBox.Show("Se exportaron correctamente los datos.", " ¡ INFORMACIÓN !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -273,5 +273,24 @@ namespace Sigesoft.Node.WinClient.BLL
             }
 
         }
+
+        public List<AmbulatorioList> GetAmbulatorioPagedAndFiltered2(DateTime? pdatBeginDate, DateTime? pdatEndDate)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelperSige.GetConnectionSAM)
+                {
+                    var query = @"exec Prueba_3005.dbo.GetConsultasAmbulatoriasList2_SP '" + pdatBeginDate + "' , '" + pdatEndDate + "' , ''";
+                    var list = cnx.Query<AmbulatorioList>(query).ToList();
+
+                    return list;
+
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

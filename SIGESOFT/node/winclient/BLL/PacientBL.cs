@@ -11061,6 +11061,43 @@ namespace Sigesoft.Node.WinClient.BLL
                 return null;
             }
         }
+
+       
+        public List<AmbulatorioList> GetAmbulatorioPagedAndFiltered(ref OperationResult pobjOperationResult, DateTime? pdatBeginDate, DateTime? pdatEndDate)
+        {
+            try
+            {
+                using (var cnx = ConnectionHelperSige.GetConnectionSAM)
+                {
+                    var query = @"exec GetConsultasAmbulatoriasList2_SP '" + pdatBeginDate + "' , '" + pdatEndDate + "' , ''";
+                    var list = cnx.Query<AmbulatorioList>(query).ToList();
+
+                    return list;
+                }
+
+                //using (var cnx = ConnectionHelperSige.GetConnection)
+                //{
+
+                //    if (cnx.State != System.Data.ConnectionState.Open) cnx.Open();
+
+                //    var query = @"exec GetConsultasAmbulatoriasList2_SP '" + pdatBeginDate + "' , '" + pdatEndDate + "' , ''";
+
+                //    var data = cnx.Query<AmbulatorioList>(query).ToList();
+
+                //    pobjOperationResult.Success = 1;
+
+                //    return data;
+                //}
+
+
+            }
+            catch (Exception ex)
+            {
+                pobjOperationResult.Success = 0;
+                pobjOperationResult.ExceptionMessage = Common.Utils.ExceptionFormatter(ex);
+                return null;
+            }
+        }
         
     }
 }

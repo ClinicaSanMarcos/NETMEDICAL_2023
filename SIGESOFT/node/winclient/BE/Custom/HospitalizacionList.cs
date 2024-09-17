@@ -125,4 +125,39 @@ namespace Sigesoft.Node.WinClient.BE
 
     }
 
+    public class AmbulatorioList
+    {
+        public string TipoDeIngreso { get; set; }
+        public DateTime? FechayHoraCita { get; set; }
+        //public string FechayHoraCita_ { get; set; }
+
+        public DateTime? FechayHoraIngresoPac { get; set; }
+        //public string FechayHoraIngresoPac_ { get; set; }
+
+        public string v_Paciente { get; set; }
+        public string TipoDocumento { get; set; }
+        public string v_DocNumber { get; set; }
+        public int? HistoriaClinica { get; set; }
+        public int? Edad { get; set; }
+        public string v_Cie10 { get; set; }
+        public string v_Diagnostico { get; set; }
+        public string v_MedicoTratante { get; set; }
+        public string Especialidad { get; set; }
+        public string Hospitalizado { get; set; }
+        public string ProcQx { get; set; }
+        public string ProcedQx { get; set; }
+        public decimal? Monto { get; set; }
+        public string Comprobante { get; set; }
+        public string Consultorio { get; set; }
+        public string VendedorExterno { get; set; }
+        public string v_Servicio { get; set; }
+        public string v_ServiceId { get; set; }
+        public string v_PersonId { get; set; }
+        public int? i_IsDeleted { get; set; }
+        public string Value1 { get; set; }
+        public string Value2 { get; set; }
+
+
+    }
+
 }

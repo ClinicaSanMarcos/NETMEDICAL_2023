@@ -102,6 +102,7 @@
     <Compile Include="CERTIFICADO_SUFICIENCIA_MEDICA_TC.cs" />
     <Compile Include="Certificado_Suficiencia_Medica_Trabajo_Altura_V4.cs" />
     <Compile Include="ConexionSigesoft.cs" />
+    <Compile Include="ConnectionHelper2.cs" />
     <Compile Include="Consentimiento_Informado_Ex_Med.cs" />
     <Compile Include="ConstantsNatclar.cs" />
     <Compile Include="ConsultaMedica.cs" />
@@ -216,6 +217,10 @@
     <ProjectReference Include="..\node\winclient\BE\Sigesoft.Node.WinClient.BE.csproj">
       <Project>{ff8e51f3-510e-4e90-9627-0ad3e9cb8f5c}</Project>
       <Name>Sigesoft.Node.WinClient.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Node\WinClient\DAL\MSSQL\Sigesoft.Node.WinClient.DAL.MSSQL.csproj">
+      <Project>{0b732067-fec9-4da2-afd9-6da773094e3e}</Project>
+      <Name>Sigesoft.Node.WinClient.DAL.MSSQL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
