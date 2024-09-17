@@ -104,7 +104,6 @@
             this.txtNode.Size = new System.Drawing.Size(174, 20);
             this.txtNode.TabIndex = 16;
             this.txtNode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtNode.Visible = false;
             // 
             // label3
             // 
@@ -241,7 +240,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sigesoft.Node.WinClient.UI.Resources.logo_ware;
+            this.pictureBox1.Image = global::Sigesoft.Node.WinClient.UI.Resources.logo2;
             this.pictureBox1.Location = new System.Drawing.Point(2, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(210, 199);
