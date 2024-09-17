@@ -3760,6 +3760,8 @@ namespace Sigesoft.Common
         #region ATENCIÓN  INTEGRAL
         public const string ATENCION_INTEGRAL_ID = "N009-ME000000405";
 
+        public const string ATENCION_INTEGRAL_MOTIVO_CONSULTA = "N009-MF000005214";
+
         public const string ATENCION_INTEGRAL_SIGNOS_SINTOMAS = "N009-MF000002938";
         public const string ATENCION_INTEGRAL_ENFERMEDAD_ACTUAL = "N009-MF000003421";
         public const string ATENCION_INTEGRAL_TIEMPO_EMF = "N009-MF000002939";

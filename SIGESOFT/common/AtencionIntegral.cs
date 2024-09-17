@@ -256,6 +256,8 @@ namespace NetPdf
             #endregion
 
             #region MOTIVO DE CONSULTA
+            var ATENCION_INTEGRAL_MOTIVO_CONSULTA = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_MOTIVO_CONSULTA) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_MOTIVO_CONSULTA).v_Value1;
+
             var signos_sintomas = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_SIGNOS_SINTOMAS) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_SIGNOS_SINTOMAS).v_Value1;
             var tiempoEnf = atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_TIEMPO_EMF) == null ? "" : atenInte.ServiceComponentFields.Find(p => p.v_ComponentFieldsId == Sigesoft.Common.Constants.ATENCION_INTEGRAL_TIEMPO_EMF).v_Value1;
           
@@ -263,6 +265,9 @@ namespace NetPdf
                 { 
                     new PdfPCell(new Phrase("MOTIVO DE CONSULTA", fontColumnValueBold1)) {Colspan = 20, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, BackgroundColor=BaseColor.GRAY, MinimumHeight=15F },
                     
+                    new PdfPCell(new Phrase("", fontColumnValueBold)) {Colspan = 4, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight=tamaño_celda  },
+                    new PdfPCell(new Phrase(ATENCION_INTEGRAL_MOTIVO_CONSULTA, fontColumnValue)) {Colspan=16, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight=tamaño_celda  },
+
                     new PdfPCell(new Phrase("SIGNOS Y SÍNTOMAS :", fontColumnValueBold)) {Colspan = 4, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight=tamaño_celda  },
                     new PdfPCell(new Phrase(signos_sintomas, fontColumnValue)) {Colspan=16, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight=tamaño_celda  },
                     new PdfPCell(new Phrase("Tiempo de enfermedad :", fontColumnValueBold)) {Colspan=4, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT,VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight=tamaño_celda },
