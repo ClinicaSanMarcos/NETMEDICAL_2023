@@ -2190,11 +2190,12 @@ namespace Sigesoft.Node.WinClient.BLL
                                v_ComponentId = D.v_ComponentId,
                                v_WorkingOrganizationName = ow.v_Name,
                                Piso = P.v_Value2,
-                               HorarioAtencion = M.v_Value1
+                               HorarioAtencion = M.v_Value1,
+                               Comprobante = C.v_ComprobantePago
                            }).OrderBy(p => p.d_ServiceDate);
 
                var query1 = query.AsEnumerable()
-                   .Where(j => j.d_DateTimeCalendar.Value.Date == CurrentDate.Date)
+                   .Where(j => j.d_DateTimeCalendar.Value.Date == CurrentDate.Date && j.Comprobante != null)
                    .GroupBy(x => x.v_ServiceId)
                    .Select(group => group.First());
            
@@ -2288,11 +2289,12 @@ namespace Sigesoft.Node.WinClient.BLL
                                i_ServiceId = A.i_ServiceId.Value,
                                v_ComponentId = D.v_ComponentId,
                                v_WorkingOrganizationName = ow.v_Name,
-                               Piso = P.v_Value2
+                               Piso = P.v_Value2,
+                               Comprobante = C.v_ComprobantePago
                            };
 
                var query1 = query.AsEnumerable()
-                   .Where(j => j.d_DateTimeCalendar.Value.Date == CurrentDate.Date)
+                   .Where(j => j.d_DateTimeCalendar.Value.Date == CurrentDate.Date && j.Comprobante != null)
                    .GroupBy(x => x.v_PersonId)
                    .Select(group => group.First());
 

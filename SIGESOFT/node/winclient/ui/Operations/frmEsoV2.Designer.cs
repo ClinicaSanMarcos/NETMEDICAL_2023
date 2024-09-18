@@ -9188,7 +9188,8 @@
             this.Name = "FrmEsoV2";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EXAMENES MÉDICOS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEsoV2_FormClosing);
             this.Load += new System.EventHandler(this.FrmEsoV2_Load);

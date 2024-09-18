@@ -1501,6 +1501,11 @@ namespace Sigesoft.Node.WinClient.UI.Operations.Popups
 
         }
 
+        private void grdDataG_DoubleClick(object sender, EventArgs e)
+        {
+            btnUpdateandSelect_Click(sender, e);
+        }
+
        
     }
 }

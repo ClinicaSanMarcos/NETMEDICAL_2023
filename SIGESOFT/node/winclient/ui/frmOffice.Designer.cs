@@ -815,6 +815,7 @@
             // 
             // btnServices
             // 
+            this.btnServices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnServices.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnServices.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -859,7 +860,8 @@
             // 
             // btnLiberarFinalizarCircuito
             // 
-            this.btnLiberarFinalizarCircuito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLiberarFinalizarCircuito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLiberarFinalizarCircuito.BackColor = System.Drawing.SystemColors.Control;
             this.btnLiberarFinalizarCircuito.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnLiberarFinalizarCircuito.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -881,7 +883,7 @@
             // 
             // btnRellamar
             // 
-            this.btnRellamar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRellamar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnRellamar.BackColor = System.Drawing.SystemColors.Control;
             this.btnRellamar.Enabled = false;
             this.btnRellamar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;

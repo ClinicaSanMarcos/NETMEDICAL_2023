@@ -126,6 +126,8 @@ namespace Sigesoft.Node.WinClient.BE
         public string Empresa { get; set; }
 
         public string HorarioAtencion { get; set; }
+
+        public string Comprobante { get; set; }
     }
 
   public class CalendarListEmail
