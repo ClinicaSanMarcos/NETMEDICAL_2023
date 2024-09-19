@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Infragistics.Win.Appearance appearance117 = new Infragistics.Win.Appearance();
+            Infragistics.Win.Appearance appearance1 = new Infragistics.Win.Appearance();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEsoV2));
             Infragistics.Win.Appearance appearance2 = new Infragistics.Win.Appearance();
             Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand1 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1);
@@ -1015,14 +1015,14 @@
             // 
             // uvExamen
             // 
-            appearance117.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            appearance117.BackColor2 = System.Drawing.Color.Transparent;
-            appearance117.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
-            appearance117.BorderAlpha = Infragistics.Win.Alpha.Opaque;
-            appearance117.BorderColor = System.Drawing.Color.Red;
-            appearance117.BorderColor2 = System.Drawing.Color.Red;
-            appearance117.BorderColor3DBase = System.Drawing.Color.Red;
-            this.uvExamen.ErrorAppearance = appearance117;
+            appearance1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            appearance1.BackColor2 = System.Drawing.Color.Transparent;
+            appearance1.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
+            appearance1.BorderAlpha = Infragistics.Win.Alpha.Opaque;
+            appearance1.BorderColor = System.Drawing.Color.Red;
+            appearance1.BorderColor2 = System.Drawing.Color.Red;
+            appearance1.BorderColor3DBase = System.Drawing.Color.Red;
+            this.uvExamen.ErrorAppearance = appearance1;
             this.uvExamen.ErrorImageAlignment = System.Windows.Forms.ErrorIconAlignment.TopLeft;
             this.uvExamen.ErrorImageTransparentColor = System.Drawing.Color.Transparent;
             this.uvExamen.MessageBoxIcon = System.Windows.Forms.MessageBoxIcon.None;
@@ -3198,6 +3198,7 @@
             this.btnVisorReporteExamen.TabIndex = 101;
             this.btnVisorReporteExamen.Text = "Ver Reporte de";
             this.btnVisorReporteExamen.UseVisualStyleBackColor = false;
+            this.btnVisorReporteExamen.Visible = false;
             this.btnVisorReporteExamen.Click += new System.EventHandler(this.btnVisorReporteExamen_Click);
             // 
             // btnReceta

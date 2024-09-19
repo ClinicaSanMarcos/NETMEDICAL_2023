@@ -3440,7 +3440,7 @@ namespace Sigesoft.Node.WinClient.UI
                     Form frm = new Operations.FrmEsoV2(_serviceId, "TRIAJE", "Service", Globals.ClientSession.i_RoleId.Value, Globals.ClientSession.i_CurrentExecutionNodeId, Globals.ClientSession.i_SystemUserId, TserviceId);
                     frm.StartPosition = FormStartPosition.CenterParent;
                     //permitir mostrar siempre
-                    frm.TopMost = true;
+                    //frm.TopMost = true;
                     frm.ShowDialog();
                     #endregion
                 }

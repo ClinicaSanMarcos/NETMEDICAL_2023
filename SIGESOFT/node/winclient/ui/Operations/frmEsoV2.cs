@@ -152,35 +152,40 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         }
         private void FrmEsoV2_Load(object sender, EventArgs e)
         {
-            InitializeForm();
-            ViewMode(_action);
-            _profesionId = int.Parse(Globals.ClientSession.i_ProfesionId.ToString());
-            OperationResult objOperationResult = new OperationResult();
-            ServiceList personData = new ServiceBL().GetServicePersonData(ref objOperationResult, _serviceId);
-
-            //// Lista de Componentes / Campos / Values
-            //_tmpServiceComponentsForBuildMenuList = new ServiceBL().GetServiceComponentsForBuildMenu(ref objOperationResult, _serviceId);
-
-            ////AMC: Obtener los componentes con permiso de lectura
-
-            //var ComponentesPermisoLectura = new ServiceBL().GetRoleNodeComponentProfileByRoleNodeId(int.Parse(Globals.ClientSession.i_CurrentExecutionNodeId.ToString()), int.Parse(Globals.ClientSession.i_RoleId.ToString())).FindAll(p => p.i_Read == 1);
-
-
-
-            if (personData.v_CustomerOrganizationId == "N009-OO000000587" || personData.v_EmployerOrganizationId == "N009-OO000000587" || personData.v_WorkingOrganizationId == "N009-OO000000587")
+            using (new LoadingClass.PleaseWait(this.Location, "Cargando Sistema..."))
             {
-                checkFirmaYanacocha.Visible = true;
-                checkFirmaYanacocha.Enabled = true;
-            }
-            else
-            {
-                checkFirmaYanacocha.Visible = false;
-                checkFirmaYanacocha.Enabled = false;
-            }
-            splitContainer2.SplitterDistance = splitContainer2.Height - 125;
-            LoadDatosPaciente();
+                //FrmEsoV2.TopMost = false;
+                this.Show();
+                InitializeForm();
+                ViewMode(_action);
+                _profesionId = int.Parse(Globals.ClientSession.i_ProfesionId.ToString());
+                OperationResult objOperationResult = new OperationResult();
+                ServiceList personData = new ServiceBL().GetServicePersonData(ref objOperationResult, _serviceId);
 
-            DatosTriaje(_serviceId);
+                //// Lista de Componentes / Campos / Values
+                //_tmpServiceComponentsForBuildMenuList = new ServiceBL().GetServiceComponentsForBuildMenu(ref objOperationResult, _serviceId);
+
+                ////AMC: Obtener los componentes con permiso de lectura
+
+                //var ComponentesPermisoLectura = new ServiceBL().GetRoleNodeComponentProfileByRoleNodeId(int.Parse(Globals.ClientSession.i_CurrentExecutionNodeId.ToString()), int.Parse(Globals.ClientSession.i_RoleId.ToString())).FindAll(p => p.i_Read == 1);
+
+
+
+                if (personData.v_CustomerOrganizationId == "N009-OO000000587" || personData.v_EmployerOrganizationId == "N009-OO000000587" || personData.v_WorkingOrganizationId == "N009-OO000000587")
+                {
+                    checkFirmaYanacocha.Visible = true;
+                    checkFirmaYanacocha.Enabled = true;
+                }
+                else
+                {
+                    checkFirmaYanacocha.Visible = false;
+                    checkFirmaYanacocha.Enabled = false;
+                }
+                splitContainer2.SplitterDistance = splitContainer2.Height - 125;
+                LoadDatosPaciente();
+
+                DatosTriaje(_serviceId);
+            }
         }
 
         private void DatosTriaje(string servicio)
