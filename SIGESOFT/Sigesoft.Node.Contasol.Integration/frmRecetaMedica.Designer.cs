@@ -113,6 +113,7 @@
             this.grdTotalDiagnosticos = new Infragistics.Win.UltraWinGrid.UltraGrid();
             this.ultraGroupBox1 = new Infragistics.Win.Misc.UltraGroupBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.chkConsolidado = new System.Windows.Forms.CheckBox();
             this.ultraButton2 = new Infragistics.Win.Misc.UltraButton();
             this.ultraButton1 = new Infragistics.Win.Misc.UltraButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -160,7 +161,6 @@
             this._frmRecetaMedica_UltraFormManager_Dock_Area_Right = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
             this._frmRecetaMedica_UltraFormManager_Dock_Area_Top = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
             this._frmRecetaMedica_UltraFormManager_Dock_Area_Bottom = new Infragistics.Win.UltraWinForm.UltraFormDockArea();
-            this.chkConsolidado = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdTotalDiagnosticos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGroupBox1)).BeginInit();
             this.ultraGroupBox1.SuspendLayout();
@@ -445,6 +445,20 @@
             this.splitContainer3.SplitterDistance = 1173;
             this.splitContainer3.TabIndex = 56;
             // 
+            // chkConsolidado
+            // 
+            this.chkConsolidado.AutoSize = true;
+            this.chkConsolidado.Checked = true;
+            this.chkConsolidado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkConsolidado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkConsolidado.ForeColor = System.Drawing.Color.Blue;
+            this.chkConsolidado.Location = new System.Drawing.Point(7, 20);
+            this.chkConsolidado.Name = "chkConsolidado";
+            this.chkConsolidado.Size = new System.Drawing.Size(140, 17);
+            this.chkConsolidado.TabIndex = 55;
+            this.chkConsolidado.Text = "Receta Consolidada";
+            this.chkConsolidado.UseVisualStyleBackColor = true;
+            // 
             // ultraButton2
             // 
             this.ultraButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -563,11 +577,11 @@
             // ultraButton4
             // 
             this.ultraButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ultraButton4.Location = new System.Drawing.Point(631, 17);
+            this.ultraButton4.Location = new System.Drawing.Point(135, 272);
             this.ultraButton4.Name = "ultraButton4";
-            this.ultraButton4.Size = new System.Drawing.Size(75, 23);
+            this.ultraButton4.Size = new System.Drawing.Size(23, 23);
             this.ultraButton4.TabIndex = 2;
-            this.ultraButton4.Text = "Buscar";
+            this.ultraButton4.Text = "-";
             this.ultraButton4.Click += new System.EventHandler(this.ultraButton4_Click);
             // 
             // txtBuscarAccionF
@@ -1105,20 +1119,6 @@
             this._frmRecetaMedica_UltraFormManager_Dock_Area_Bottom.Location = new System.Drawing.Point(0, 731);
             this._frmRecetaMedica_UltraFormManager_Dock_Area_Bottom.Name = "_frmRecetaMedica_UltraFormManager_Dock_Area_Bottom";
             this._frmRecetaMedica_UltraFormManager_Dock_Area_Bottom.Size = new System.Drawing.Size(1355, 4);
-            // 
-            // chkConsolidado
-            // 
-            this.chkConsolidado.AutoSize = true;
-            this.chkConsolidado.Checked = true;
-            this.chkConsolidado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkConsolidado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkConsolidado.ForeColor = System.Drawing.Color.Blue;
-            this.chkConsolidado.Location = new System.Drawing.Point(7, 20);
-            this.chkConsolidado.Name = "chkConsolidado";
-            this.chkConsolidado.Size = new System.Drawing.Size(140, 17);
-            this.chkConsolidado.TabIndex = 55;
-            this.chkConsolidado.Text = "Receta Consolidada";
-            this.chkConsolidado.UseVisualStyleBackColor = true;
             // 
             // frmRecetaMedica
             // 
