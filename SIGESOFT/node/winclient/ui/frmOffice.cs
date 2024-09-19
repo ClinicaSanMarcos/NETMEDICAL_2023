@@ -511,6 +511,8 @@ namespace Sigesoft.Node.WinClient.UI
                     #endregion
                     #region ESO V2 (Asíncrono)
                     frm = new Operations.FrmEsoV2(_serviceId, "TRIAJE", "Service", Globals.ClientSession.i_RoleId.Value, Globals.ClientSession.i_CurrentExecutionNodeId, Globals.ClientSession.i_SystemUserId, (int)MasterService.Eso);
+                    //permitir mostrar siempre
+                    frm.TopMost = true;
                     frm.ShowDialog();
                     Liberar();
 
@@ -530,6 +532,8 @@ namespace Sigesoft.Node.WinClient.UI
                     #endregion
                     #region ESO V2 (Asíncrono)
                     frm = new Operations.FrmEsoV2(_serviceId, "TRIAJE", "Service", Globals.ClientSession.i_RoleId.Value, Globals.ClientSession.i_CurrentExecutionNodeId, Globals.ClientSession.i_SystemUserId, (int)MasterService.Eso);
+                    //permitir mostrar siempre
+                    frm.TopMost = true;
                     frm.ShowDialog();
                     #endregion
 
