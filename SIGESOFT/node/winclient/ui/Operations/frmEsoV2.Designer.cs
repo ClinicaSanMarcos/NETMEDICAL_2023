@@ -853,6 +853,12 @@
             this.btnViewWorker = new System.Windows.Forms.Button();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.btnMostrarOcultar = new System.Windows.Forms.Button();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.rbHospSi = new System.Windows.Forms.RadioButton();
+            this.rbHospNo = new System.Windows.Forms.RadioButton();
+            this.rbProcQxNo = new System.Windows.Forms.RadioButton();
+            this.rbProcQxSi = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.uvExamen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvAnamnesis)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -1011,6 +1017,8 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.groupBox18.SuspendLayout();
             this.SuspendLayout();
             // 
             // uvExamen
@@ -2747,6 +2755,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.BackColor = System.Drawing.Color.LightBlue;
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox18);
+            this.splitContainer3.Panel2.Controls.Add(this.groupBox17);
             this.splitContainer3.Panel2.Controls.Add(this.btnAnexoHistoriaManual);
             this.splitContainer3.Panel2.Controls.Add(this.button3);
             this.splitContainer3.Panel2.Controls.Add(this.txtAntFamiliares);
@@ -2757,7 +2767,7 @@
             this.splitContainer3.Panel2.Controls.Add(this.label157);
             this.splitContainer3.Panel2.Controls.Add(this.ultraGrid2);
             this.splitContainer3.Size = new System.Drawing.Size(1102, 371);
-            this.splitContainer3.SplitterDistance = 903;
+            this.splitContainer3.SplitterDistance = 887;
             this.splitContainer3.TabIndex = 0;
             // 
             // tcExamList
@@ -2769,7 +2779,7 @@
             this.tcExamList.Location = new System.Drawing.Point(0, 0);
             this.tcExamList.Name = "tcExamList";
             this.tcExamList.SharedControlsPage = this.ultraTabSharedControlsPage1;
-            this.tcExamList.Size = new System.Drawing.Size(903, 371);
+            this.tcExamList.Size = new System.Drawing.Size(887, 371);
             this.tcExamList.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.VisualStudio;
             this.tcExamList.TabIndex = 1;
             this.tcExamList.TabOrientation = Infragistics.Win.UltraWinTabs.TabOrientation.TopLeft;
@@ -2783,7 +2793,7 @@
             this.ultraTabSharedControlsPage1.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ultraTabSharedControlsPage1.Location = new System.Drawing.Point(1, 20);
             this.ultraTabSharedControlsPage1.Name = "ultraTabSharedControlsPage1";
-            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(901, 350);
+            this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(885, 350);
             this.ultraTabSharedControlsPage1.MouseLeave += new System.EventHandler(this.ultraTabSharedControlsPage1_MouseLeave);
             // 
             // btnAnexoHistoriaManual
@@ -2798,7 +2808,7 @@
             this.btnAnexoHistoriaManual.ForeColor = System.Drawing.Color.Black;
             this.btnAnexoHistoriaManual.Image = global::Sigesoft.Node.WinClient.UI.Resources.report;
             this.btnAnexoHistoriaManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(7, 3);
+            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(23, 3);
             this.btnAnexoHistoriaManual.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnexoHistoriaManual.Name = "btnAnexoHistoriaManual";
             this.btnAnexoHistoriaManual.Size = new System.Drawing.Size(183, 24);
@@ -2819,7 +2829,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = global::Sigesoft.Node.WinClient.UI.Properties.Resources.pencil;
-            this.button3.Location = new System.Drawing.Point(158, 31);
+            this.button3.Location = new System.Drawing.Point(174, 31);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(32, 24);
@@ -2832,11 +2842,11 @@
             this.txtAntFamiliares.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAntFamiliares.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntFamiliares.Location = new System.Drawing.Point(5, 160);
+            this.txtAntFamiliares.Location = new System.Drawing.Point(5, 152);
             this.txtAntFamiliares.Multiline = true;
             this.txtAntFamiliares.Name = "txtAntFamiliares";
             this.txtAntFamiliares.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAntFamiliares.Size = new System.Drawing.Size(185, 72);
+            this.txtAntFamiliares.Size = new System.Drawing.Size(201, 64);
             this.txtAntFamiliares.TabIndex = 208;
             this.txtAntFamiliares.Text = "NO REFIERE ANTECEDENTES";
             // 
@@ -2846,7 +2856,7 @@
             this.label170.BackColor = System.Drawing.Color.Linen;
             this.label170.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label170.ForeColor = System.Drawing.Color.Navy;
-            this.label170.Location = new System.Drawing.Point(4, 144);
+            this.label170.Location = new System.Drawing.Point(4, 136);
             this.label170.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label170.Name = "label170";
             this.label170.Size = new System.Drawing.Size(65, 13);
@@ -2878,7 +2888,7 @@
             this.txtAntPersonales.Multiline = true;
             this.txtAntPersonales.Name = "txtAntPersonales";
             this.txtAntPersonales.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAntPersonales.Size = new System.Drawing.Size(185, 72);
+            this.txtAntPersonales.Size = new System.Drawing.Size(201, 64);
             this.txtAntPersonales.TabIndex = 104;
             this.txtAntPersonales.Text = "NO REFIERE ANTECEDENTES";
             // 
@@ -2893,7 +2903,7 @@
             this.btnVerEditarAntecedentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerEditarAntecedentes.ForeColor = System.Drawing.Color.Black;
             this.btnVerEditarAntecedentes.Image = global::Sigesoft.Node.WinClient.UI.Resources.application_form_edit;
-            this.btnVerEditarAntecedentes.Location = new System.Drawing.Point(129, 338);
+            this.btnVerEditarAntecedentes.Location = new System.Drawing.Point(145, 338);
             this.btnVerEditarAntecedentes.Margin = new System.Windows.Forms.Padding(2);
             this.btnVerEditarAntecedentes.Name = "btnVerEditarAntecedentes";
             this.btnVerEditarAntecedentes.Size = new System.Drawing.Size(63, 24);
@@ -2992,7 +3002,7 @@
             this.ultraGrid2.Location = new System.Drawing.Point(6, 366);
             this.ultraGrid2.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid2.Name = "ultraGrid2";
-            this.ultraGrid2.Size = new System.Drawing.Size(186, 2);
+            this.ultraGrid2.Size = new System.Drawing.Size(202, 2);
             this.ultraGrid2.TabIndex = 96;
             this.ultraGrid2.Visible = false;
             // 
@@ -9175,6 +9185,70 @@
             this.btnMostrarOcultar.UseVisualStyleBackColor = false;
             this.btnMostrarOcultar.Click += new System.EventHandler(this.btnMostrarOcultar_Click);
             // 
+            // groupBox17
+            // 
+            this.groupBox17.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox17.Controls.Add(this.rbHospNo);
+            this.groupBox17.Controls.Add(this.rbHospSi);
+            this.groupBox17.Location = new System.Drawing.Point(5, 222);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(200, 47);
+            this.groupBox17.TabIndex = 211;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "¿HOSPITALIZADO?";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox18.Controls.Add(this.rbProcQxNo);
+            this.groupBox18.Controls.Add(this.rbProcQxSi);
+            this.groupBox18.Location = new System.Drawing.Point(7, 275);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(200, 47);
+            this.groupBox18.TabIndex = 212;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "¿PROC QUIRURGICO?";
+            // 
+            // rbHospSi
+            // 
+            this.rbHospSi.AutoSize = true;
+            this.rbHospSi.Location = new System.Drawing.Point(60, 20);
+            this.rbHospSi.Name = "rbHospSi";
+            this.rbHospSi.Size = new System.Drawing.Size(33, 17);
+            this.rbHospSi.TabIndex = 107;
+            this.rbHospSi.Text = "Si";
+            this.rbHospSi.UseVisualStyleBackColor = true;
+            // 
+            // rbHospNo
+            // 
+            this.rbHospNo.AutoSize = true;
+            this.rbHospNo.Location = new System.Drawing.Point(124, 20);
+            this.rbHospNo.Name = "rbHospNo";
+            this.rbHospNo.Size = new System.Drawing.Size(38, 17);
+            this.rbHospNo.TabIndex = 108;
+            this.rbHospNo.Text = "No";
+            this.rbHospNo.UseVisualStyleBackColor = true;
+            // 
+            // rbProcQxNo
+            // 
+            this.rbProcQxNo.AutoSize = true;
+            this.rbProcQxNo.Location = new System.Drawing.Point(122, 15);
+            this.rbProcQxNo.Name = "rbProcQxNo";
+            this.rbProcQxNo.Size = new System.Drawing.Size(38, 17);
+            this.rbProcQxNo.TabIndex = 110;
+            this.rbProcQxNo.Text = "No";
+            this.rbProcQxNo.UseVisualStyleBackColor = true;
+            // 
+            // rbProcQxSi
+            // 
+            this.rbProcQxSi.AutoSize = true;
+            this.rbProcQxSi.Location = new System.Drawing.Point(58, 15);
+            this.rbProcQxSi.Name = "rbProcQxSi";
+            this.rbProcQxSi.Size = new System.Drawing.Size(33, 17);
+            this.rbProcQxSi.TabIndex = 109;
+            this.rbProcQxSi.Text = "Si";
+            this.rbProcQxSi.UseVisualStyleBackColor = true;
+            // 
             // FrmEsoV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -9398,6 +9472,10 @@
             this.splitContainer5.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -9978,5 +10056,11 @@
         private System.Windows.Forms.Button btnAnexoHistoriaManual;
         private System.Windows.Forms.Label lblPersonId;
         private System.Windows.Forms.Button btnReportAsync;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.RadioButton rbProcQxNo;
+        private System.Windows.Forms.RadioButton rbProcQxSi;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.RadioButton rbHospNo;
+        private System.Windows.Forms.RadioButton rbHospSi;
     }
 }

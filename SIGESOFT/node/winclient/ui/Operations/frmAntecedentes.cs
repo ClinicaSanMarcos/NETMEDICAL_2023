@@ -40,7 +40,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
         private void btnOK_Click(object sender, EventArgs e)
         {
 
-            var verificacion = new ServiceBL().UpdatePersonAntecedentes(personId, txtAntPersonales.Text, txtAntFamiliares.Text, Globals.ClientSession.GetAsList());
+           var verificacion = new ServiceBL().UpdatePersonAntecedentes(personId, txtAntPersonales.Text, txtAntFamiliares.Text, Globals.ClientSession.GetAsList());
            if (verificacion == 1 )
            {
                MessageBox.Show("GUARDADO CORRECTAMENTE", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);

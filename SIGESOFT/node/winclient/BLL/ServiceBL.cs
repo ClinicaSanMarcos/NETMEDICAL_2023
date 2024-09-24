@@ -4899,6 +4899,7 @@ namespace Sigesoft.Node.WinClient.BLL
             }
         }
 
+        
 		#endregion
 
 		#region Diagnosticos del examen / componente
@@ -36268,7 +36269,9 @@ namespace Sigesoft.Node.WinClient.BLL
                                   Nacionalidad=B.v_BirthPlace,
                                   NroHijos=B.i_NumberLivingChildren,
                                   AntPersonales = B.v_Procedencia,
-                                  AntFamiliares = B.v_CentroEducativo
+                                  AntFamiliares = B.v_CentroEducativo,
+                                  i_Hospitalizado = A.i_Hospitalizado.Value,
+                                  i_ProcedimientoQx = A.i_ProcedimientoQx.Value  
 
                               }).FirstOrDefault();
                 return result;
@@ -38309,6 +38312,53 @@ namespace Sigesoft.Node.WinClient.BLL
 	        catch (Exception ex)
             {
                 return null;
+            }
+        }
+
+        public int UpdateServicioDestino(string serviceId, int hosp, int procx, List<string> ClientSession)
+        {
+            //mon.IsActive = true;
+
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+
+                // Obtener la entidad fuente
+                var objEntitySource = (from a in dbContext.service
+                                       where a.v_ServiceId == serviceId
+                                       select a).FirstOrDefault();
+
+                // Crear la entidad con los datos actualizados
+                if (hosp == 1)
+                {
+                    objEntitySource.i_Hospitalizado = 1;
+                }
+                else
+                {
+                    objEntitySource.i_Hospitalizado = 0;
+                }
+
+                if (procx == 1)
+                {
+                    objEntitySource.i_ProcedimientoQx = 1;
+                }
+                else
+                {
+                    objEntitySource.i_ProcedimientoQx = 0;
+                }
+
+          
+                objEntitySource.d_UpdateDate = DateTime.Now;
+                objEntitySource.i_UpdateUserId = Int32.Parse(ClientSession[2]);
+
+                // Guardar los cambios
+                dbContext.SaveChanges();
+
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                return 0;
             }
         }
 

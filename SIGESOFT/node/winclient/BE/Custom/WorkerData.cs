@@ -27,5 +27,8 @@ namespace Sigesoft.Node.WinClient.BE
         public string AntPersonales { get; set; }
         public string AntFamiliares { get; set; }
 
+        public int? i_Hospitalizado { get; set; }
+        public int? i_ProcedimientoQx { get; set; }
+
     }
 }

@@ -372,6 +372,13 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                 pbEmployee.Image = Common.Utils.byteArrayToImage(datos.PersonImage);
             txtAntPersonales.Text = datos.AntPersonales == null ? "NO REFIERE ANTECEDENTES" : datos.AntPersonales;
             txtAntFamiliares.Text = datos.AntFamiliares == null ? "NO REFIERE ANTECEDENTES" : datos.AntFamiliares;
+
+            rbHospSi.Checked = datos.i_Hospitalizado == null ? false : datos.i_Hospitalizado == 1 ? true : false;
+            rbHospNo.Checked = datos.i_Hospitalizado == null ? false : datos.i_Hospitalizado == 0 ? true : false;
+
+            rbProcQxSi.Checked = datos.i_ProcedimientoQx == null ? false : datos.i_ProcedimientoQx == 1 ? true : false;
+            rbProcQxNo.Checked = datos.i_ProcedimientoQx == null ? false : datos.i_ProcedimientoQx == 0 ? true : false;
+
         }
 
         private void InitializeForm()
@@ -3814,7 +3821,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     )
                 {
                     btnVisorReporteExamen.Text = string.Format("&Ver Reporte de ({0})", _examName);
-                    btnVisorReporteExamen.Visible = true;
+                    btnVisorReporteExamen.Visible = false;
                 }
                 else
                 {
@@ -4353,7 +4360,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             //else
             //{
                 btnGuardarExamen.Enabled = true;
-                btnVisorReporteExamen.Enabled = true;
+                btnVisorReporteExamen.Enabled = false;
             //}
 
 
@@ -4429,7 +4436,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                     )
                 {
                     btnVisorReporteExamen.Text = string.Format("&Ver Reporte de ({0})", _examName);
-                    btnVisorReporteExamen.Visible = true;
+                    btnVisorReporteExamen.Visible = false;
                 }
                 else
                 {
@@ -5506,6 +5513,49 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void btnGuardarExamen_Click(object sender, EventArgs e)
         {
+            int hosp = 0;
+            if (rbHospSi.Checked == true)
+            {
+                hosp = 1;
+            }
+            else if (rbHospNo.Checked == true)
+            {
+                hosp = 2;
+            }
+
+            if (hosp == 0)
+            {
+                MessageBox.Show("Antes de guardar, selecciona correctamenta Sí el paciente será Hospitalizado o No", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int qx = 0;
+            if (rbProcQxSi.Checked == true)
+            {
+                qx = 1;
+            }
+            else if (rbProcQxNo.Checked == true)
+            {
+                qx = 2;
+            }
+
+            if (qx == 0)
+            {
+                MessageBox.Show("Antes de guardar, selecciona correctamenta Sí el paciente se realizará procedimiento Qx o No", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+
+            var verificacion = new ServiceBL().UpdateServicioDestino(_serviceId, hosp, qx, Globals.ClientSession.GetAsList());
+            //if (verificacion == 1)
+            //{
+            //    MessageBox.Show("GUARDADO CORRECTAMENTE", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.Close();
+            //}
+            //else
+            //    MessageBox.Show("NO SE PUDO GUARDAR LA INFORMACIÓN, VERIFIQUE QUE HAYA LLENADO CORRECTAMENTE", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //this.Close();
 
             GrabarAsync();
             GrabarDiagnosticos();
@@ -8477,7 +8527,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             else
             {
                 btnGuardarExamen.Enabled = true;
-                btnVisorReporteExamen.Enabled = true;
+                btnVisorReporteExamen.Enabled = false;
             }
         }
 
