@@ -314,6 +314,7 @@
             this.lvExamenesSeleccionados.UseCompatibleStateImageBehavior = false;
             this.lvExamenesSeleccionados.View = System.Windows.Forms.View.Details;
             this.lvExamenesSeleccionados.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvExamenesSeleccionados_ItemSelectionChanged);
+            this.lvExamenesSeleccionados.DoubleClick += new System.EventHandler(this.lvExamenesSeleccionados_DoubleClick);
             // 
             // chExamen
             // 
@@ -518,6 +519,7 @@
             this.gdDataExamsNew.TabIndex = 141;
             this.gdDataExamsNew.Text = "ultraGrid1";
             this.gdDataExamsNew.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.gdDataExams_AfterSelectChange);
+            this.gdDataExamsNew.DoubleClickRow += new Infragistics.Win.UltraWinGrid.DoubleClickRowEventHandler(this.gdDataExamsNew_DoubleClickRow);
             // 
             // AdditionalExam
             // 

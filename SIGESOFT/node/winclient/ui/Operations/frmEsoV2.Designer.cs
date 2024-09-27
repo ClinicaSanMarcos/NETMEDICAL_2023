@@ -359,6 +359,12 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.tcExamList = new Infragistics.Win.UltraWinTabControl.UltraTabControl();
             this.ultraTabSharedControlsPage1 = new Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.rbProcQxNo = new System.Windows.Forms.RadioButton();
+            this.rbProcQxSi = new System.Windows.Forms.RadioButton();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.rbHospNo = new System.Windows.Forms.RadioButton();
+            this.rbHospSi = new System.Windows.Forms.RadioButton();
             this.btnAnexoHistoriaManual = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.txtAntFamiliares = new System.Windows.Forms.TextBox();
@@ -853,12 +859,8 @@
             this.btnViewWorker = new System.Windows.Forms.Button();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.btnMostrarOcultar = new System.Windows.Forms.Button();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.rbHospSi = new System.Windows.Forms.RadioButton();
-            this.rbHospNo = new System.Windows.Forms.RadioButton();
-            this.rbProcQxNo = new System.Windows.Forms.RadioButton();
-            this.rbProcQxSi = new System.Windows.Forms.RadioButton();
+            this.panelAntecedentes = new System.Windows.Forms.Panel();
+            this.chkGrabForzado = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.uvExamen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvAnamnesis)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -894,6 +896,8 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tcExamList)).BeginInit();
             this.tcExamList.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid2)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.gbDiagnosticoExamen.SuspendLayout();
@@ -1017,8 +1021,7 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
-            this.groupBox17.SuspendLayout();
-            this.groupBox18.SuspendLayout();
+            this.panelAntecedentes.SuspendLayout();
             this.SuspendLayout();
             // 
             // uvExamen
@@ -2738,7 +2741,7 @@
             this.ultraGrid1.Location = new System.Drawing.Point(2, 29);
             this.ultraGrid1.Margin = new System.Windows.Forms.Padding(2);
             this.ultraGrid1.Name = "ultraGrid1";
-            this.ultraGrid1.Size = new System.Drawing.Size(195, 342);
+            this.ultraGrid1.Size = new System.Drawing.Size(195, 339);
             this.ultraGrid1.TabIndex = 95;
             this.ultraGrid1.ClickCell += new Infragistics.Win.UltraWinGrid.ClickCellEventHandler(this.ultraGrid1_ClickCell);
             // 
@@ -2755,16 +2758,9 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.BackColor = System.Drawing.Color.LightBlue;
-            this.splitContainer3.Panel2.Controls.Add(this.groupBox18);
-            this.splitContainer3.Panel2.Controls.Add(this.groupBox17);
+            this.splitContainer3.Panel2.Controls.Add(this.panelAntecedentes);
             this.splitContainer3.Panel2.Controls.Add(this.btnAnexoHistoriaManual);
-            this.splitContainer3.Panel2.Controls.Add(this.button3);
-            this.splitContainer3.Panel2.Controls.Add(this.txtAntFamiliares);
-            this.splitContainer3.Panel2.Controls.Add(this.label170);
-            this.splitContainer3.Panel2.Controls.Add(this.label169);
-            this.splitContainer3.Panel2.Controls.Add(this.txtAntPersonales);
             this.splitContainer3.Panel2.Controls.Add(this.btnVerEditarAntecedentes);
-            this.splitContainer3.Panel2.Controls.Add(this.label157);
             this.splitContainer3.Panel2.Controls.Add(this.ultraGrid2);
             this.splitContainer3.Size = new System.Drawing.Size(1102, 371);
             this.splitContainer3.SplitterDistance = 887;
@@ -2796,6 +2792,70 @@
             this.ultraTabSharedControlsPage1.Size = new System.Drawing.Size(885, 350);
             this.ultraTabSharedControlsPage1.MouseLeave += new System.EventHandler(this.ultraTabSharedControlsPage1_MouseLeave);
             // 
+            // groupBox18
+            // 
+            this.groupBox18.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox18.Controls.Add(this.rbProcQxNo);
+            this.groupBox18.Controls.Add(this.rbProcQxSi);
+            this.groupBox18.Location = new System.Drawing.Point(7, 245);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(200, 47);
+            this.groupBox18.TabIndex = 212;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "¿PROC QUIRURGICO?";
+            // 
+            // rbProcQxNo
+            // 
+            this.rbProcQxNo.AutoSize = true;
+            this.rbProcQxNo.Location = new System.Drawing.Point(122, 15);
+            this.rbProcQxNo.Name = "rbProcQxNo";
+            this.rbProcQxNo.Size = new System.Drawing.Size(38, 17);
+            this.rbProcQxNo.TabIndex = 110;
+            this.rbProcQxNo.Text = "No";
+            this.rbProcQxNo.UseVisualStyleBackColor = true;
+            // 
+            // rbProcQxSi
+            // 
+            this.rbProcQxSi.AutoSize = true;
+            this.rbProcQxSi.Location = new System.Drawing.Point(58, 15);
+            this.rbProcQxSi.Name = "rbProcQxSi";
+            this.rbProcQxSi.Size = new System.Drawing.Size(33, 17);
+            this.rbProcQxSi.TabIndex = 109;
+            this.rbProcQxSi.Text = "Si";
+            this.rbProcQxSi.UseVisualStyleBackColor = true;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox17.Controls.Add(this.rbHospNo);
+            this.groupBox17.Controls.Add(this.rbHospSi);
+            this.groupBox17.Location = new System.Drawing.Point(5, 192);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(200, 47);
+            this.groupBox17.TabIndex = 211;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "¿HOSPITALIZADO?";
+            // 
+            // rbHospNo
+            // 
+            this.rbHospNo.AutoSize = true;
+            this.rbHospNo.Location = new System.Drawing.Point(124, 20);
+            this.rbHospNo.Name = "rbHospNo";
+            this.rbHospNo.Size = new System.Drawing.Size(38, 17);
+            this.rbHospNo.TabIndex = 108;
+            this.rbHospNo.Text = "No";
+            this.rbHospNo.UseVisualStyleBackColor = true;
+            // 
+            // rbHospSi
+            // 
+            this.rbHospSi.AutoSize = true;
+            this.rbHospSi.Location = new System.Drawing.Point(60, 20);
+            this.rbHospSi.Name = "rbHospSi";
+            this.rbHospSi.Size = new System.Drawing.Size(33, 17);
+            this.rbHospSi.TabIndex = 107;
+            this.rbHospSi.Text = "Si";
+            this.rbHospSi.UseVisualStyleBackColor = true;
+            // 
             // btnAnexoHistoriaManual
             // 
             this.btnAnexoHistoriaManual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2808,10 +2868,10 @@
             this.btnAnexoHistoriaManual.ForeColor = System.Drawing.Color.Black;
             this.btnAnexoHistoriaManual.Image = global::Sigesoft.Node.WinClient.UI.Resources.report;
             this.btnAnexoHistoriaManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(23, 3);
+            this.btnAnexoHistoriaManual.Location = new System.Drawing.Point(6, 3);
             this.btnAnexoHistoriaManual.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnexoHistoriaManual.Name = "btnAnexoHistoriaManual";
-            this.btnAnexoHistoriaManual.Size = new System.Drawing.Size(183, 24);
+            this.btnAnexoHistoriaManual.Size = new System.Drawing.Size(200, 24);
             this.btnAnexoHistoriaManual.TabIndex = 210;
             this.btnAnexoHistoriaManual.Text = "ANEXO HISTORIA MANUAL";
             this.btnAnexoHistoriaManual.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2829,7 +2889,7 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
             this.button3.Image = global::Sigesoft.Node.WinClient.UI.Properties.Resources.pencil;
-            this.button3.Location = new System.Drawing.Point(174, 31);
+            this.button3.Location = new System.Drawing.Point(164, 2);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(32, 24);
@@ -2842,11 +2902,11 @@
             this.txtAntFamiliares.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAntFamiliares.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntFamiliares.Location = new System.Drawing.Point(5, 152);
+            this.txtAntFamiliares.Location = new System.Drawing.Point(5, 122);
             this.txtAntFamiliares.Multiline = true;
             this.txtAntFamiliares.Name = "txtAntFamiliares";
             this.txtAntFamiliares.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAntFamiliares.Size = new System.Drawing.Size(201, 64);
+            this.txtAntFamiliares.Size = new System.Drawing.Size(211, 64);
             this.txtAntFamiliares.TabIndex = 208;
             this.txtAntFamiliares.Text = "NO REFIERE ANTECEDENTES";
             // 
@@ -2856,7 +2916,7 @@
             this.label170.BackColor = System.Drawing.Color.Linen;
             this.label170.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label170.ForeColor = System.Drawing.Color.Navy;
-            this.label170.Location = new System.Drawing.Point(4, 136);
+            this.label170.Location = new System.Drawing.Point(4, 106);
             this.label170.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label170.Name = "label170";
             this.label170.Size = new System.Drawing.Size(65, 13);
@@ -2871,7 +2931,7 @@
             this.label169.BackColor = System.Drawing.Color.Linen;
             this.label169.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label169.ForeColor = System.Drawing.Color.Navy;
-            this.label169.Location = new System.Drawing.Point(4, 53);
+            this.label169.Location = new System.Drawing.Point(4, 23);
             this.label169.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label169.Name = "label169";
             this.label169.Size = new System.Drawing.Size(68, 13);
@@ -2884,11 +2944,11 @@
             this.txtAntPersonales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAntPersonales.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntPersonales.Location = new System.Drawing.Point(5, 69);
+            this.txtAntPersonales.Location = new System.Drawing.Point(5, 39);
             this.txtAntPersonales.Multiline = true;
             this.txtAntPersonales.Name = "txtAntPersonales";
             this.txtAntPersonales.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAntPersonales.Size = new System.Drawing.Size(201, 64);
+            this.txtAntPersonales.Size = new System.Drawing.Size(211, 64);
             this.txtAntPersonales.TabIndex = 104;
             this.txtAntPersonales.Text = "NO REFIERE ANTECEDENTES";
             // 
@@ -2917,7 +2977,7 @@
             this.label157.AutoSize = true;
             this.label157.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label157.ForeColor = System.Drawing.Color.Blue;
-            this.label157.Location = new System.Drawing.Point(3, 30);
+            this.label157.Location = new System.Drawing.Point(3, 0);
             this.label157.Name = "label157";
             this.label157.Size = new System.Drawing.Size(133, 23);
             this.label157.TabIndex = 102;
@@ -3008,6 +3068,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.chkGrabForzado);
             this.groupBox4.Controls.Add(this.btnReportAsync);
             this.groupBox4.Controls.Add(this.rbPorAprobacion);
             this.groupBox4.Controls.Add(this.rbNoRealizado);
@@ -9185,69 +9246,32 @@
             this.btnMostrarOcultar.UseVisualStyleBackColor = false;
             this.btnMostrarOcultar.Click += new System.EventHandler(this.btnMostrarOcultar_Click);
             // 
-            // groupBox17
+            // panelAntecedentes
             // 
-            this.groupBox17.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.groupBox17.Controls.Add(this.rbHospNo);
-            this.groupBox17.Controls.Add(this.rbHospSi);
-            this.groupBox17.Location = new System.Drawing.Point(5, 222);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(200, 47);
-            this.groupBox17.TabIndex = 211;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "¿HOSPITALIZADO?";
+            this.panelAntecedentes.Controls.Add(this.groupBox18);
+            this.panelAntecedentes.Controls.Add(this.label157);
+            this.panelAntecedentes.Controls.Add(this.groupBox17);
+            this.panelAntecedentes.Controls.Add(this.txtAntPersonales);
+            this.panelAntecedentes.Controls.Add(this.label169);
+            this.panelAntecedentes.Controls.Add(this.button3);
+            this.panelAntecedentes.Controls.Add(this.label170);
+            this.panelAntecedentes.Controls.Add(this.txtAntFamiliares);
+            this.panelAntecedentes.Location = new System.Drawing.Point(6, 32);
+            this.panelAntecedentes.Name = "panelAntecedentes";
+            this.panelAntecedentes.Size = new System.Drawing.Size(200, 301);
+            this.panelAntecedentes.TabIndex = 105;
             // 
-            // groupBox18
+            // chkGrabForzado
             // 
-            this.groupBox18.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.groupBox18.Controls.Add(this.rbProcQxNo);
-            this.groupBox18.Controls.Add(this.rbProcQxSi);
-            this.groupBox18.Location = new System.Drawing.Point(7, 275);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(200, 47);
-            this.groupBox18.TabIndex = 212;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "¿PROC QUIRURGICO?";
-            // 
-            // rbHospSi
-            // 
-            this.rbHospSi.AutoSize = true;
-            this.rbHospSi.Location = new System.Drawing.Point(60, 20);
-            this.rbHospSi.Name = "rbHospSi";
-            this.rbHospSi.Size = new System.Drawing.Size(33, 17);
-            this.rbHospSi.TabIndex = 107;
-            this.rbHospSi.Text = "Si";
-            this.rbHospSi.UseVisualStyleBackColor = true;
-            // 
-            // rbHospNo
-            // 
-            this.rbHospNo.AutoSize = true;
-            this.rbHospNo.Location = new System.Drawing.Point(124, 20);
-            this.rbHospNo.Name = "rbHospNo";
-            this.rbHospNo.Size = new System.Drawing.Size(38, 17);
-            this.rbHospNo.TabIndex = 108;
-            this.rbHospNo.Text = "No";
-            this.rbHospNo.UseVisualStyleBackColor = true;
-            // 
-            // rbProcQxNo
-            // 
-            this.rbProcQxNo.AutoSize = true;
-            this.rbProcQxNo.Location = new System.Drawing.Point(122, 15);
-            this.rbProcQxNo.Name = "rbProcQxNo";
-            this.rbProcQxNo.Size = new System.Drawing.Size(38, 17);
-            this.rbProcQxNo.TabIndex = 110;
-            this.rbProcQxNo.Text = "No";
-            this.rbProcQxNo.UseVisualStyleBackColor = true;
-            // 
-            // rbProcQxSi
-            // 
-            this.rbProcQxSi.AutoSize = true;
-            this.rbProcQxSi.Location = new System.Drawing.Point(58, 15);
-            this.rbProcQxSi.Name = "rbProcQxSi";
-            this.rbProcQxSi.Size = new System.Drawing.Size(33, 17);
-            this.rbProcQxSi.TabIndex = 109;
-            this.rbProcQxSi.Text = "Si";
-            this.rbProcQxSi.UseVisualStyleBackColor = true;
+            this.chkGrabForzado.AutoSize = true;
+            this.chkGrabForzado.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkGrabForzado.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.chkGrabForzado.Location = new System.Drawing.Point(9, 105);
+            this.chkGrabForzado.Name = "chkGrabForzado";
+            this.chkGrabForzado.Size = new System.Drawing.Size(65, 17);
+            this.chkGrabForzado.TabIndex = 157;
+            this.chkGrabForzado.Text = "Grab For";
+            this.chkGrabForzado.UseVisualStyleBackColor = true;
             // 
             // FrmEsoV2
             // 
@@ -9302,11 +9326,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid1)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tcExamList)).EndInit();
             this.tcExamList.ResumeLayout(false);
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ultraGrid2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -9472,10 +9499,8 @@
             this.splitContainer5.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
+            this.panelAntecedentes.ResumeLayout(false);
+            this.panelAntecedentes.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -10062,5 +10087,7 @@
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.RadioButton rbHospNo;
         private System.Windows.Forms.RadioButton rbHospSi;
+        private System.Windows.Forms.Panel panelAntecedentes;
+        private System.Windows.Forms.CheckBox chkGrabForzado;
     }
 }

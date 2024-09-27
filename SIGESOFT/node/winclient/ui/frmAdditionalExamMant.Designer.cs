@@ -72,7 +72,7 @@
             this.grdDataAdditionalExam.DisplayLayout.Appearance = appearance1;
             ultraGridColumn5.Header.Caption = "EXAMEN";
             ultraGridColumn5.Header.VisiblePosition = 1;
-            ultraGridColumn5.Width = 467;
+            ultraGridColumn5.Width = 493;
             ultraGridColumn1.Header.VisiblePosition = 2;
             ultraGridColumn1.Hidden = true;
             ultraGridColumn1.Width = 259;
@@ -87,7 +87,7 @@
             ultraGridColumn6.Hidden = true;
             ultraGridColumn7.Header.Caption = "ORDEN";
             ultraGridColumn7.Header.VisiblePosition = 0;
-            ultraGridColumn7.Width = 107;
+            ultraGridColumn7.Width = 147;
             ultraGridBand1.Columns.AddRange(new object[] {
             ultraGridColumn5,
             ultraGridColumn1,

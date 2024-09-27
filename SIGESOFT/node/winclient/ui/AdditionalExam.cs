@@ -543,5 +543,20 @@ namespace Sigesoft.Node.WinClient.UI
                 //}
             }
         }
+
+        private void gdDataExamsNew_DoubleClickRow(object sender, Infragistics.Win.UltraWinGrid.DoubleClickRowEventArgs e)
+        {
+            AddAuxiliaryExam();   
+        }
+
+        private void lvExamenesSeleccionados_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedItem = lvExamenesSeleccionados.SelectedItems[0];
+            var medicalExamId = selectedItem.SubItems[1].Text;
+
+            // Eliminacion fisica
+            lvExamenesSeleccionados.Items.Remove(selectedItem);
+            gbExamenesSeleccionados.Text = string.Format("Examenes Seleccionados {0}", lvExamenesSeleccionados.Items.Count);
+        }
     }
 }

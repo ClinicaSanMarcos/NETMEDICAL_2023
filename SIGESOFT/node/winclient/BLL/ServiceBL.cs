@@ -38137,6 +38137,28 @@ namespace Sigesoft.Node.WinClient.BLL
                 return null;
             }
         }
+
+        public systemuserrolenodeDto GetsystemuserrolenodeId(int userId)
+        {
+            try
+            {
+                SigesoftEntitiesModel dbContext = new SigesoftEntitiesModel();
+                systemuserrolenodeDto objDtoEntity = null;
+
+                var objEntity = (from a in dbContext.systemuserrolenode
+                                 where a.i_SystemUserId == userId
+                                 select a).FirstOrDefault();
+
+                if (objEntity != null)
+                    objDtoEntity = systemuserrolenodeAssembler.ToDTO(objEntity);
+
+                return objDtoEntity;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
         public personDto GetPerson(string v_personId)
         {
             try

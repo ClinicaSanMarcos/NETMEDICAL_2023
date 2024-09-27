@@ -156,6 +156,37 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             {
                 //FrmEsoV2.TopMost = false;
                 this.Show();
+
+                var usuarioActual = Globals.ClientSession.i_SystemUserId;
+
+                var usuario_data = new ServiceBL().GetSystemUserId(usuarioActual);
+
+                //var usuario_Rol = new ServiceBL().GetSystemUserId(usuarioActual);
+
+                var usuarioRol = Globals.ClientSession.i_RoleId;
+                if (usuarioRol == 11)
+                {
+                    panelAntecedentes.Visible = false;
+                    button1.Visible = false;
+                    button2.Visible = false;
+                    btnReceta.Visible = false;
+                    btnAgregarDxExamen.Visible = false;
+                    btnEditarDxExamen.Visible = false;
+                    btnRemoverDxExamen.Visible = false;
+
+                }
+                else
+                {
+                    panelAntecedentes.Visible = true;
+                    button1.Visible = true;
+                    button2.Visible = true;
+                    btnReceta.Visible = true;
+                    btnAgregarDxExamen.Visible = true;
+                    btnEditarDxExamen.Visible = true;
+                    btnRemoverDxExamen.Visible = true;
+                }
+
+                //GetsystemuserrolenodeId
                 InitializeForm();
                 ViewMode(_action);
                 _profesionId = int.Parse(Globals.ClientSession.i_ProfesionId.ToString());
@@ -5513,38 +5544,42 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void btnGuardarExamen_Click(object sender, EventArgs e)
         {
+            var usuarioRol = Globals.ClientSession.i_RoleId;
             int hosp = 0;
-            if (rbHospSi.Checked == true)
-            {
-                hosp = 1;
-            }
-            else if (rbHospNo.Checked == true)
-            {
-                hosp = 2;
-            }
-
-            if (hosp == 0)
-            {
-                MessageBox.Show("Antes de guardar, selecciona correctamenta Sí el paciente será Hospitalizado o No", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             int qx = 0;
-            if (rbProcQxSi.Checked == true)
-            {
-                qx = 1;
-            }
-            else if (rbProcQxNo.Checked == true)
-            {
-                qx = 2;
-            }
 
-            if (qx == 0)
+            if (usuarioRol != 11) 
             {
-                MessageBox.Show("Antes de guardar, selecciona correctamenta Sí el paciente se realizará procedimiento Qx o No", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                if (rbHospSi.Checked == true)
+                {
+                    hosp = 1;
+                }
+                else if (rbHospNo.Checked == true)
+                {
+                    hosp = 2;
+                }
 
+                if (hosp == 0)
+                {
+                    MessageBox.Show("Antes de guardar, selecciona correctamenta Sí el paciente será Hospitalizado o No", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (rbProcQxSi.Checked == true)
+                {
+                    qx = 1;
+                }
+                else if (rbProcQxNo.Checked == true)
+                {
+                    qx = 2;
+                }
+
+                if (qx == 0)
+                {
+                    MessageBox.Show("Antes de guardar, selecciona correctamenta Sí el paciente se realizará procedimiento Qx o No", "¡AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
 
 
             var verificacion = new ServiceBL().UpdateServicioDestino(_serviceId, hosp, qx, Globals.ClientSession.GetAsList());
@@ -5689,16 +5724,18 @@ namespace Sigesoft.Node.WinClient.UI.Operations
             serviceComponentDto.d_UpdateDate = FechaUpdate;
             #endregion
 
-            if (chkUtilizarFirma.Checked)
+            if (chkGrabForzado.Checked)
             {
-                var frm = new Popups.frmSelectSignature();
-                frm.ShowDialog();
+                //var frm = new Popups.frmSelectSignature();
+                //frm.ShowDialog();
 
-                if (frm.DialogResult != System.Windows.Forms.DialogResult.Cancel)
-                {
-                    systemUserSuplantadorId = (int)frm.i_SystemUserSuplantadorId;
-                    UpdateServiceComponent(serviceComponentDto.v_ServiceComponentId, systemUserSuplantadorId);
-                }
+                //if (frm.DialogResult != System.Windows.Forms.DialogResult.Cancel)
+                //{
+                    //systemUserSuplantadorId = (int)frm.i_SystemUserSuplantadorId;
+                var usuarioActual = Globals.ClientSession.i_SystemUserId;
+
+                UpdateServiceComponent(serviceComponentDto.v_ServiceComponentId, usuarioActual);
+                //}
                 DatosTriaje(_serviceId);
 
             }
@@ -5808,7 +5845,7 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
             DataEso oDataEso = new DataEso();
             oDataEso.categoria = ultraTabPageControl.Tab.Text;
-            if (ultraTabPageControl.Tab.Text == "CONSULTA EXTERNA")
+            if (ultraTabPageControl.Tab.Text == "CONSULTA EXTERNA Y EMERGENCIA")
             {
                 ServiceBL.SaveServiceUserId(Globals.ClientSession.i_SystemUserId,_serviceId);
             }
