@@ -422,20 +422,26 @@
             appearance13.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             appearance13.BorderColor = System.Drawing.SystemColors.InactiveCaption;
             this.gdDataExamsNew.DisplayLayout.Appearance = appearance13;
+            ultraGridColumn1.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn1.Header.Caption = "Categoría";
             ultraGridColumn1.Header.Fixed = true;
             ultraGridColumn1.Header.VisiblePosition = 2;
             ultraGridColumn1.Width = 208;
+            ultraGridColumn3.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn3.Header.Fixed = true;
             ultraGridColumn3.Header.VisiblePosition = 3;
             ultraGridColumn3.Hidden = true;
+            ultraGridColumn4.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn4.Header.Caption = "Examen";
             ultraGridColumn4.Header.Fixed = true;
             ultraGridColumn4.Header.VisiblePosition = 1;
             ultraGridColumn4.Width = 369;
+            ultraGridColumn5.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn5.Header.VisiblePosition = 4;
             ultraGridColumn5.Hidden = true;
+            ultraGridColumn7.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn7.Header.VisiblePosition = 5;
+            ultraGridColumn18.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit;
             ultraGridColumn18.Header.VisiblePosition = 0;
             ultraGridColumn18.Width = 57;
             ultraGridBand3.Columns.AddRange(new object[] {
