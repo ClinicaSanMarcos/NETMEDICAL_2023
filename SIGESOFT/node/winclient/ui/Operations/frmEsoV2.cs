@@ -6570,76 +6570,63 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void GeneratedAutoDX(string valueToAnalyze, Control senderCtrl, KeyTagControl tagCtrl)
         {
-            try
+            string componentFieldsId = tagCtrl.v_ComponentFieldsId;
+
+            // Retorna el DX (automático) generado, luego de una serie de evaluaciones.
+            var diagnosticRepository = SearchDxSugeridoOfSystem(valueToAnalyze, componentFieldsId);
+
+            DiagnosticRepositoryList findControlResult = null;
+
+            if (_tmpExamDiagnosticComponentList != null)
             {
-                string componentFieldsId = tagCtrl.v_ComponentFieldsId;
+                // Buscar control que haya generado algun DX automático
+                findControlResult = _tmpExamDiagnosticComponentList.Find(p => p.v_ComponentFieldsId == componentFieldsId && p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+            }
 
-                // Retorna el DX (automático) generado, luego de una serie de evaluaciones.
-                var diagnosticRepository = SearchDxSugeridoOfSystem(valueToAnalyze, componentFieldsId);
+            // Remover DX (automático) encontrado.
+            if (findControlResult != null)
+            {
+                if (findControlResult.i_RecordType == (int)RecordType.Temporal)
+                    _tmpExamDiagnosticComponentList.Remove(findControlResult);
+                else
+                    findControlResult.i_RecordStatus = (int)RecordStatus.EliminadoLogico;
+            }
 
-                if (diagnosticRepository == null)
+            // Si se generó un DX (automático).
+            if (diagnosticRepository != null)
+            {
+                // Setear v_ComponentFieldValuesId en mi variable de información TAG
+                tagCtrl.v_ComponentFieldValuesId = diagnosticRepository.v_ComponentFieldValuesId;
+
+                // Pintar de rojo el fondo del control que generó el DX (automático) 
+                // en caso hubiera una alteracion si es normal NO se pinta.               
+                senderCtrl.BackColor = Color.Pink;   // DX Alterado              
+
+                if (_tmpExamDiagnosticComponentList != null)
                 {
-                    DiagnosticRepositoryList findControlResult = null;
-
-                    if (_tmpExamDiagnosticComponentList != null)
-                    {
-                        // Buscar control que haya generado algun DX automático
-                        findControlResult = _tmpExamDiagnosticComponentList.Find(p => p.v_ComponentFieldsId == componentFieldsId && p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
-                    }
-
-                    // Remover DX (automático) encontrado.
-                    if (findControlResult != null)
-                    {
-                        if (findControlResult.i_RecordType == (int)RecordType.Temporal)
-                            _tmpExamDiagnosticComponentList.Remove(findControlResult);
-                        else
-                            findControlResult.i_RecordStatus = (int)RecordStatus.EliminadoLogico;
-                    }
-
-                    // Si se generó un DX (automático).
-                    if (diagnosticRepository != null)
-                    {
-                        // Setear v_ComponentFieldValuesId en mi variable de información TAG
-                        tagCtrl.v_ComponentFieldValuesId = diagnosticRepository.v_ComponentFieldValuesId;
-
-                        // Pintar de rojo el fondo del control que generó el DX (automático) 
-                        // en caso hubiera una alteracion si es normal NO se pinta.               
-                        senderCtrl.BackColor = Color.Pink;   // DX Alterado              
-
-                        if (_tmpExamDiagnosticComponentList != null)
-                        {
-                            // Se agrega el DX obtenido a la lista de DX general.
-                            _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
-                        }
-                        else
-                        {
-                            _tmpExamDiagnosticComponentList = new List<DiagnosticRepositoryList>();
-                            _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
-                        }
-                    }
-                    else        // No
-                    {
-                        senderCtrl.BackColor = Color.White;
-                    }
-
-                    if (_tmpExamDiagnosticComponentList != null)
-                    {
-                        // Filtar para Mostrar en la grilla solo registros que no están eliminados
-                        var dataList = _tmpExamDiagnosticComponentList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
-
-                        // Refrescar grilla                        
-                        grdDiagnosticoPorExamenComponente.DataSource = dataList;
-                        lblRecordCountDiagnosticoPorExamenCom.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
-                    }
+                    // Se agrega el DX obtenido a la lista de DX general.
+                    _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
+                }
+                else
+                {
+                    _tmpExamDiagnosticComponentList = new List<DiagnosticRepositoryList>();
+                    _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
                 }
             }
-            catch (Exception)
+            else        // No
             {
-                
-                //throw;
+                senderCtrl.BackColor = Color.White;
             }
-            
-            
+
+            if (_tmpExamDiagnosticComponentList != null)
+            {
+                // Filtar para Mostrar en la grilla solo registros que no están eliminados
+                var dataList = _tmpExamDiagnosticComponentList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+
+                // Refrescar grilla                        
+                grdDiagnosticoPorExamenComponente.DataSource = dataList;
+                lblRecordCountDiagnosticoPorExamenCom.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+            }
         }
 
         private string GetDataTypeControl(int ControlId)
