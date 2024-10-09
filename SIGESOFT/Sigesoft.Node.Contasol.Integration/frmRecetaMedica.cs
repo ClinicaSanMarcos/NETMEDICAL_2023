@@ -577,6 +577,8 @@ namespace Sigesoft.Node.Contasol.Integration
                         return;;
 	                }  
                 }
+
+                GetData(_listDiagnosticRepositoryLists);
                
             }
             catch (Exception ex)

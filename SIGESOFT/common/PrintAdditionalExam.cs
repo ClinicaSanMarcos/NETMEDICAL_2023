@@ -15,13 +15,13 @@ namespace Sigesoft
     {
         public void GenerateAdditionalexam(string filePDF, organizationDto MedicalCenter, PacientList DatosPaciente, UsuarioGrabo usuarioGraba, string MotivoComentario, List<Categoria> DataSource, List<AdditionalExamCustom> ListAdditional, string EdadCompleto)
         {
-            Document document = new Document(PageSize.A4, 20f, 20f, 8f, 5f);
+            Document document = new Document(PageSize.A4, 20f, 20f, 8f, 42f);
 
 
             document.SetPageSize(iTextSharp.text.PageSize.A4.Rotate());            
 
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePDF, FileMode.Create));
-            pdfPage page = new pdfPage();
+            pdfPage2 page = new pdfPage2();
             writer.PageEvent = page;
             document.Open();
 
@@ -177,6 +177,20 @@ namespace Sigesoft
                 new PdfPCell(new Phrase(DatosPaciente.FechaServicio.ToString().Split(' ')[0], fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
                 new PdfPCell(new Phrase("CELULAR:", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
                 new PdfPCell(new Phrase(Celular, fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("HISTORIA CLINICA: " + DatosPaciente.N_Informe, fontColumnValue)) {Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f, UseVariableBorders=true, BorderColorLeft=BaseColor.WHITE,  BorderColorRight=BaseColor.BLACK,  BorderColorBottom=BaseColor.WHITE, BorderColorTop=BaseColor.WHITE},
+
+                new PdfPCell(new Phrase("- ", fontColumnValue)) {HorizontalAlignment = iTextSharp.text.Element.ALIGN_RIGHT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f, UseVariableBorders=true, BorderColorLeft=BaseColor.BLACK,  BorderColorRight=BaseColor.WHITE,  BorderColorBottom=BaseColor.WHITE, BorderColorTop=BaseColor.WHITE},
+                new PdfPCell(new Phrase("HISTORIA CLINICA: " + DatosPaciente.N_Informe, fontColumnValue)) {Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 2, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
+                new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
                 new PdfPCell(new Phrase("", fontColumnValue)) {Colspan = 1, HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT, VerticalAlignment = iTextSharp.text.Element.ALIGN_MIDDLE, MinimumHeight = 20f,BorderColor= BaseColor.WHITE},
 
             };

@@ -2066,16 +2066,16 @@
     <Compile Include="Operations\Popups\PrimeraAptitud.Designer.cs">
       <DependentUpon>PrimeraAptitud.cs</DependentUpon>
     </Compile>
-    <Compile Include="PAGOS MEDICOS\frmConfiguracionPagos.cs">
+    <Compile Include="PAGOS_MEDICOS\frmConfiguracionPagos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PAGOS MEDICOS\frmConfiguracionPagos.Designer.cs">
+    <Compile Include="PAGOS_MEDICOS\frmConfiguracionPagos.Designer.cs">
       <DependentUpon>frmConfiguracionPagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="PAGOS MEDICOS\frmPagoMedicosAddEdit.cs">
+    <Compile Include="PAGOS_MEDICOS\frmPagoMedicosAddEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PAGOS MEDICOS\frmPagoMedicosAddEdit.Designer.cs">
+    <Compile Include="PAGOS_MEDICOS\frmPagoMedicosAddEdit.Designer.cs">
       <DependentUpon>frmPagoMedicosAddEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="PersonFinger.cs" />
@@ -4028,9 +4028,11 @@
     <Compile Include="Utils\Utils.cs" />
     <EmbeddedResource Include="AdditionalExam.resx">
       <DependentUpon>AdditionalExam.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuration\frmAddPlan.resx">
       <DependentUpon>frmAddPlan.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuration\frmExternalUserEditSinProtocol.resx">
       <DependentUpon>frmExternalUserEditSinProtocol.cs</DependentUpon>
@@ -4042,12 +4044,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Configuration\FrmMaintenance.resx">
       <DependentUpon>FrmMaintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuration\frmProtocolComponentEdit.resx">
       <DependentUpon>frmProtocolComponentEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuration\frmProtocolEdit.resx">
       <DependentUpon>frmProtocolEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Configuration\frmProtocolManagement.resx">
       <DependentUpon>frmProtocolManagement.cs</DependentUpon>
@@ -4611,10 +4616,10 @@
     <EmbeddedResource Include="Operations\Popups\PrimeraAptitud.resx">
       <DependentUpon>PrimeraAptitud.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PAGOS MEDICOS\frmConfiguracionPagos.resx">
+    <EmbeddedResource Include="PAGOS_MEDICOS\frmConfiguracionPagos.resx">
       <DependentUpon>frmConfiguracionPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PAGOS MEDICOS\frmPagoMedicosAddEdit.resx">
+    <EmbeddedResource Include="PAGOS_MEDICOS\frmPagoMedicosAddEdit.resx">
       <DependentUpon>frmPagoMedicosAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteDeclaracionDrogas.resx">

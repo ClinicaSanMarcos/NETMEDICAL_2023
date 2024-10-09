@@ -106,6 +106,7 @@
     <Compile Include="Consentimiento_Informado_Ex_Med.cs" />
     <Compile Include="ConstantsNatclar.cs" />
     <Compile Include="ConsultaMedica.cs" />
+    <Compile Include="pdfPage2.cs" />
     <Compile Include="Coprocultivo_PSeriado.cs" />
     <Compile Include="ConexionSambhs.cs" />
     <Compile Include="Cotizaciones\Cotizaciones.cs" />

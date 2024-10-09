@@ -3186,10 +3186,10 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                             }
                         }
 
-                    } 
+                    }
 
                     bool isFound = false;
-                    
+
                     var isContain = formu.v_Formula.Contains("/");
                     if (isContain)
                     {
@@ -3203,13 +3203,12 @@ namespace Sigesoft.Node.WinClient.UI.Operations
                         }
                     }
 
-                            if (!isFound)
+                    if (!isFound)
                     {
                         var evalExpResult = Common.Utils.EvaluateExpression(formu.v_Formula, Params);
                         evalExpResultList.Add(evalExpResult);
                         var targetFieldOfCalculate1 = FindDynamicControl(formu.v_TargetFieldOfCalculateId);
-                        targetFieldOfCalculate1[0].Text = decimal.Parse(evalExpResult.ToString()).ToString();
-                        //
+                        targetFieldOfCalculate1[0].Text = evalExpResult.ToString();
                     }
 
                 } // fin foreach Formula
@@ -3227,174 +3226,183 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void Capture_Value(object sender, EventArgs e)
         {
-            Control senderCtrl = (Control)sender;
-            // Obtener información contenida en la propiedad Tag del control invocante
-            var tagCtrl = (KeyTagControl)senderCtrl.Tag;
-            // Capturar valor inicial
-            //_oldValue = GetValueControl(tagCtrl.i_ControlId, senderCtrl);
-            if (tagCtrl.v_ComponentId == "N009-ME000000062")
+            try
             {
-                GroupBox gb = null;
-                gb = (GroupBox)FindControlInCurrentTab("gb_C 3. Forma y Tamaño: (Consulte las radiografías estandar, se requieres dos símbolos; marque un primario y un secundario)")[0];
-
-                if (tagCtrl.v_ComponentFieldsId == "N002-MF000000222")
+                Control senderCtrl = (Control)sender;
+                // Obtener información contenida en la propiedad Tag del control invocante
+                var tagCtrl = (KeyTagControl)senderCtrl.Tag;
+                // Capturar valor inicial
+                //_oldValue = GetValueControl(tagCtrl.i_ControlId, senderCtrl);
+                if (tagCtrl.v_ComponentId == "N009-ME000000062")
                 {
-                    gb.Enabled = false;
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N002-MF000000220" || tagCtrl.v_ComponentFieldsId == "N002-MF000000221" || tagCtrl.v_ComponentFieldsId == "N002-MF000000223" || tagCtrl.v_ComponentFieldsId == "N009-MF000000720"
-                    || tagCtrl.v_ComponentFieldsId == "N009-MF000000721" || tagCtrl.v_ComponentFieldsId == "N009-MF000000722" || tagCtrl.v_ComponentFieldsId == "N009-MF000000723" || tagCtrl.v_ComponentFieldsId == "N009-MF000000724"
-                    || tagCtrl.v_ComponentFieldsId == "N009-MF000000725" || tagCtrl.v_ComponentFieldsId == "N009-MF000000726"
-                    || tagCtrl.v_ComponentFieldsId == "N009-MF000000727")
-                {
-                    gb.Enabled = true;
-                }
+                    GroupBox gb = null;
+                    gb = (GroupBox)FindControlInCurrentTab("gb_C 3. Forma y Tamaño: (Consulte las radiografías estandar, se requieres dos símbolos; marque un primario y un secundario)")[0];
 
-                GroupBox gb41 = null;
-                GroupBox gb42 = null;
-                gb41 = (GroupBox)FindControlInCurrentTab("gb_C 4.1 Placa Pleurales")[0];
-                gb42 = (GroupBox)FindControlInCurrentTab("gb_C 4.2 Engrosamiento Difuso de la Pleura")[0];
-                if (tagCtrl.v_ComponentFieldsId == "N009-MF000003194")
-                {
-                    gb41.Enabled = true;
-                    gb42.Enabled = true;
-
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000761")
-                {
-                    gb41.Enabled = false;
-                    gb42.Enabled = false;
-                }
-
-                GroupBox gb6 = null;
-                gb6 = (GroupBox)FindControlInCurrentTab("gb_C 6. MARQUE  la respuesta adecuada; si marca \"od\", escriba a continuación un COMENTARIO")[0];
-
-                if (tagCtrl.v_ComponentFieldsId == "N009-MF000003195")
-                {
-                    gb6.Enabled = true;
-                    gb6.Enabled = true;
-
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000760")
-                {
-                    gb6.Enabled = false;
-                    gb6.Enabled = false;
-                }
-            }
-            else if (tagCtrl.v_ComponentId == "N009-ME000000444")
-            {
-                GroupBox gbE = null;
-                gbE = (GroupBox)FindControlInCurrentTab("gb_E. FUNCIONES COGNITIVAS")[0];
-                GroupBox gbF = null;
-                gbF = (GroupBox)FindControlInCurrentTab("gb_F. ASPECTOS INTRA E INTERPERSONALES")[0];
-                GroupBox gbG = null;
-                gbG = (GroupBox)FindControlInCurrentTab("gb_G. PERFIL DE PERSONALIDAD - TEST DE COLORES")[0];
-                GroupBox gbH = null;
-                gbH = (GroupBox)FindControlInCurrentTab("gb_H. ADAPTABILIDAD, CAPACIDAD DE AFRONTE - HOMBRE BAJO LA LLUVIA")[0];
-
-                GroupBox gbI = null;
-                gbI = (GroupBox)FindControlInCurrentTab("gb_I. FUNCIONES COGNITIVAS.")[0];
-                GroupBox gbJ = null;
-                gbJ = (GroupBox)FindControlInCurrentTab("gb_J. ASPECTOS INTRA E INTERPERSONALES")[0];
-                GroupBox gbK = null;
-                gbK = (GroupBox)FindControlInCurrentTab("gb_K. PERFIL DE PERSONALIDAD")[0];
-                GroupBox gbL = null;
-                gbL = (GroupBox)FindControlInCurrentTab("gb_L.  ADAPTABILIDAD - CLIMA SOCIAL, LABORAL")[0];
-
-                var value = GetValueControl(tagCtrl.i_ControlId, senderCtrl);
-
-
-                RadioButton valSC = (RadioButton)FindControlInCurrentTab("N009-MF000003531")[0];
-                RadioButton valSI = (RadioButton)FindControlInCurrentTab("N009-MF000003530")[0];
-                RadioButton valGA = (RadioButton)FindControlInCurrentTab("N009-MF000003532")[0];
-
-                if (tagCtrl.v_ComponentFieldsId == "N009-MF000003531")
-                {
-
-                    gbE.Enabled = true;
-                    gbF.Enabled = true;
-                    gbG.Enabled = true;
-                    gbH.Enabled = true;
-
-                    gbI.Enabled = true;
-                    gbJ.Enabled = true;
-                    gbK.Enabled = true;
-                    gbL.Enabled = true;
-
-                    if (valSC.Checked != true)
+                    if (tagCtrl.v_ComponentFieldsId == "N002-MF000000222")
                     {
-                        gbE.Enabled = false;
-                        gbF.Enabled = false;
-                        gbG.Enabled = false;
-                        gbH.Enabled = false;
-
-                        gbI.Enabled = true;
-                        gbJ.Enabled = true;
-                        gbK.Enabled = true;
-                        gbL.Enabled = true;
+                        gb.Enabled = false;
                     }
-                    //else
-                    //{
-                    //    gbE.Enabled = true;
-                    //    gbF.Enabled = true;
-                    //    gbG.Enabled = true;
-                    //    gbH.Enabled = true;
-                    //}
-
-                }
-                else if (tagCtrl.v_ComponentFieldsId == "N009-MF000003530")
-                {
-                    gbE.Enabled = true;
-                    gbF.Enabled = true;
-                    gbG.Enabled = true;
-                    gbH.Enabled = true;
-
-                    gbI.Enabled = true;
-                    gbJ.Enabled = true;
-                    gbK.Enabled = true;
-                    gbL.Enabled = true;
-
-                    if (valSI.Checked != true)
+                    else if (tagCtrl.v_ComponentFieldsId == "N002-MF000000220" || tagCtrl.v_ComponentFieldsId == "N002-MF000000221" || tagCtrl.v_ComponentFieldsId == "N002-MF000000223" || tagCtrl.v_ComponentFieldsId == "N009-MF000000720"
+                        || tagCtrl.v_ComponentFieldsId == "N009-MF000000721" || tagCtrl.v_ComponentFieldsId == "N009-MF000000722" || tagCtrl.v_ComponentFieldsId == "N009-MF000000723" || tagCtrl.v_ComponentFieldsId == "N009-MF000000724"
+                        || tagCtrl.v_ComponentFieldsId == "N009-MF000000725" || tagCtrl.v_ComponentFieldsId == "N009-MF000000726"
+                        || tagCtrl.v_ComponentFieldsId == "N009-MF000000727")
                     {
-                        gbI.Enabled = false;
-                        gbJ.Enabled = false;
-                        gbK.Enabled = false;
-                        gbL.Enabled = false;
+                        gb.Enabled = true;
+                    }
+
+                    GroupBox gb41 = null;
+                    GroupBox gb42 = null;
+                    gb41 = (GroupBox)FindControlInCurrentTab("gb_C 4.1 Placa Pleurales")[0];
+                    gb42 = (GroupBox)FindControlInCurrentTab("gb_C 4.2 Engrosamiento Difuso de la Pleura")[0];
+                    if (tagCtrl.v_ComponentFieldsId == "N009-MF000003194")
+                    {
+                        gb41.Enabled = true;
+                        gb42.Enabled = true;
+
+                    }
+                    else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000761")
+                    {
+                        gb41.Enabled = false;
+                        gb42.Enabled = false;
+                    }
+
+                    GroupBox gb6 = null;
+                    gb6 = (GroupBox)FindControlInCurrentTab("gb_C 6. MARQUE  la respuesta adecuada; si marca \"od\", escriba a continuación un COMENTARIO")[0];
+
+                    if (tagCtrl.v_ComponentFieldsId == "N009-MF000003195")
+                    {
+                        gb6.Enabled = true;
+                        gb6.Enabled = true;
+
+                    }
+                    else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000760")
+                    {
+                        gb6.Enabled = false;
+                        gb6.Enabled = false;
+                    }
+                }
+                else if (tagCtrl.v_ComponentId == "N009-ME000000444")
+                {
+                    GroupBox gbE = null;
+                    gbE = (GroupBox)FindControlInCurrentTab("gb_E. FUNCIONES COGNITIVAS")[0];
+                    GroupBox gbF = null;
+                    gbF = (GroupBox)FindControlInCurrentTab("gb_F. ASPECTOS INTRA E INTERPERSONALES")[0];
+                    GroupBox gbG = null;
+                    gbG = (GroupBox)FindControlInCurrentTab("gb_G. PERFIL DE PERSONALIDAD - TEST DE COLORES")[0];
+                    GroupBox gbH = null;
+                    gbH = (GroupBox)FindControlInCurrentTab("gb_H. ADAPTABILIDAD, CAPACIDAD DE AFRONTE - HOMBRE BAJO LA LLUVIA")[0];
+
+                    GroupBox gbI = null;
+                    gbI = (GroupBox)FindControlInCurrentTab("gb_I. FUNCIONES COGNITIVAS.")[0];
+                    GroupBox gbJ = null;
+                    gbJ = (GroupBox)FindControlInCurrentTab("gb_J. ASPECTOS INTRA E INTERPERSONALES")[0];
+                    GroupBox gbK = null;
+                    gbK = (GroupBox)FindControlInCurrentTab("gb_K. PERFIL DE PERSONALIDAD")[0];
+                    GroupBox gbL = null;
+                    gbL = (GroupBox)FindControlInCurrentTab("gb_L.  ADAPTABILIDAD - CLIMA SOCIAL, LABORAL")[0];
+
+                    var value = GetValueControl(tagCtrl.i_ControlId, senderCtrl);
+
+
+                    RadioButton valSC = (RadioButton)FindControlInCurrentTab("N009-MF000003531")[0];
+                    RadioButton valSI = (RadioButton)FindControlInCurrentTab("N009-MF000003530")[0];
+                    RadioButton valGA = (RadioButton)FindControlInCurrentTab("N009-MF000003532")[0];
+
+                    if (tagCtrl.v_ComponentFieldsId == "N009-MF000003531")
+                    {
 
                         gbE.Enabled = true;
                         gbF.Enabled = true;
                         gbG.Enabled = true;
                         gbH.Enabled = true;
+
+                        gbI.Enabled = true;
+                        gbJ.Enabled = true;
+                        gbK.Enabled = true;
+                        gbL.Enabled = true;
+
+                        if (valSC.Checked != true)
+                        {
+                            gbE.Enabled = false;
+                            gbF.Enabled = false;
+                            gbG.Enabled = false;
+                            gbH.Enabled = false;
+
+                            gbI.Enabled = true;
+                            gbJ.Enabled = true;
+                            gbK.Enabled = true;
+                            gbL.Enabled = true;
+                        }
+                        //else
+                        //{
+                        //    gbE.Enabled = true;
+                        //    gbF.Enabled = true;
+                        //    gbG.Enabled = true;
+                        //    gbH.Enabled = true;
+                        //}
+
                     }
-                    //else
-                    //{
-                    //    gbI.Enabled = true;
-                    //    gbJ.Enabled = true;
-                    //    gbK.Enabled = true;
-                    //    gbL.Enabled = true;
-                    //}
+                    else if (tagCtrl.v_ComponentFieldsId == "N009-MF000003530")
+                    {
+                        gbE.Enabled = true;
+                        gbF.Enabled = true;
+                        gbG.Enabled = true;
+                        gbH.Enabled = true;
+
+                        gbI.Enabled = true;
+                        gbJ.Enabled = true;
+                        gbK.Enabled = true;
+                        gbL.Enabled = true;
+
+                        if (valSI.Checked != true)
+                        {
+                            gbI.Enabled = false;
+                            gbJ.Enabled = false;
+                            gbK.Enabled = false;
+                            gbL.Enabled = false;
+
+                            gbE.Enabled = true;
+                            gbF.Enabled = true;
+                            gbG.Enabled = true;
+                            gbH.Enabled = true;
+                        }
+                        //else
+                        //{
+                        //    gbI.Enabled = true;
+                        //    gbJ.Enabled = true;
+                        //    gbK.Enabled = true;
+                        //    gbL.Enabled = true;
+                        //}
+                    }
+
+
                 }
+                //else if (tagCtrl.v_ComponentId == "N009-ME000000062")
+                //{
+                //  //VER PARA OCULTAR
 
+                //    GroupBox gb6 = null;
+                //    gb6 = (GroupBox)FindControlInCurrentTab("gb_C 6. MARQUE  la respuesta adecuada; si marca \"od\", escriba a continuación un COMENTARIO")[0];
 
+                //    if (tagCtrl.v_ComponentFieldsId == "N009-MF000003195")
+                //    {
+                //        gb6.Enabled = true;
+                //        gb6.Enabled = true;
+
+                //    }
+                //    else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000760")
+                //    {
+                //        gb6.Enabled = false;
+                //        gb6.Enabled = false;
+                //    }
+                //}
             }
-            //else if (tagCtrl.v_ComponentId == "N009-ME000000062")
-            //{
-            //  //VER PARA OCULTAR
-
-            //    GroupBox gb6 = null;
-            //    gb6 = (GroupBox)FindControlInCurrentTab("gb_C 6. MARQUE  la respuesta adecuada; si marca \"od\", escriba a continuación un COMENTARIO")[0];
-
-            //    if (tagCtrl.v_ComponentFieldsId == "N009-MF000003195")
-            //    {
-            //        gb6.Enabled = true;
-            //        gb6.Enabled = true;
-
-            //    }
-            //    else if (tagCtrl.v_ComponentFieldsId == "N009-MF000000760")
-            //    {
-            //        gb6.Enabled = false;
-            //        gb6.Enabled = false;
-            //    }
-            //}
+            catch (Exception)
+            {
+                
+                //throw;
+            }
+            
 
 
         }
@@ -4840,27 +4848,36 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void grdDiagnosticoPorExamenComponente_InitializeRow(object sender, InitializeRowEventArgs e)
         {
-            var caliFinal = (PreQualification)e.Row.Cells["i_PreQualificationId"].Value;
-
-            switch (caliFinal)
+            try
             {
-                case PreQualification.SinPreCalificar:
-                    e.Row.Appearance.BackColor = Color.GreenYellow;
-                    e.Row.Appearance.BackColor2 = Color.GreenYellow;
-                    break;
-                case PreQualification.Aceptado:
-                    e.Row.Appearance.BackColor = Color.LawnGreen;
-                    e.Row.Appearance.BackColor2 = Color.LawnGreen;
-                    break;
-                case PreQualification.Rechazado:
-                    e.Row.Appearance.BackColor = Color.DarkGray;
-                    e.Row.Appearance.BackColor2 = Color.DarkGray;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                var caliFinal = (PreQualification)e.Row.Cells["i_PreQualificationId"].Value;
 
-            e.Row.Appearance.BackGradientStyle = GradientStyle.VerticalBump;
+                switch (caliFinal)
+                {
+                    case PreQualification.SinPreCalificar:
+                        e.Row.Appearance.BackColor = Color.GreenYellow;
+                        e.Row.Appearance.BackColor2 = Color.GreenYellow;
+                        break;
+                    case PreQualification.Aceptado:
+                        e.Row.Appearance.BackColor = Color.LawnGreen;
+                        e.Row.Appearance.BackColor2 = Color.LawnGreen;
+                        break;
+                    case PreQualification.Rechazado:
+                        e.Row.Appearance.BackColor = Color.DarkGray;
+                        e.Row.Appearance.BackColor2 = Color.DarkGray;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
+                e.Row.Appearance.BackGradientStyle = GradientStyle.VerticalBump;
+            }
+            catch (Exception)
+            {
+                
+                //throw;
+            }
+            
         }
 
         private void PaintGrdDiagnosticoPorExamenComponente()
@@ -6553,63 +6570,76 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void GeneratedAutoDX(string valueToAnalyze, Control senderCtrl, KeyTagControl tagCtrl)
         {
-            string componentFieldsId = tagCtrl.v_ComponentFieldsId;
-
-            // Retorna el DX (automático) generado, luego de una serie de evaluaciones.
-            var diagnosticRepository = SearchDxSugeridoOfSystem(valueToAnalyze, componentFieldsId);
-
-            DiagnosticRepositoryList findControlResult = null;
-
-            if (_tmpExamDiagnosticComponentList != null)
+            try
             {
-                // Buscar control que haya generado algun DX automático
-                findControlResult = _tmpExamDiagnosticComponentList.Find(p => p.v_ComponentFieldsId == componentFieldsId && p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
-            }
+                string componentFieldsId = tagCtrl.v_ComponentFieldsId;
 
-            // Remover DX (automático) encontrado.
-            if (findControlResult != null)
-            {
-                if (findControlResult.i_RecordType == (int)RecordType.Temporal)
-                    _tmpExamDiagnosticComponentList.Remove(findControlResult);
-                else
-                    findControlResult.i_RecordStatus = (int)RecordStatus.EliminadoLogico;
-            }
+                // Retorna el DX (automático) generado, luego de una serie de evaluaciones.
+                var diagnosticRepository = SearchDxSugeridoOfSystem(valueToAnalyze, componentFieldsId);
 
-            // Si se generó un DX (automático).
-            if (diagnosticRepository != null)
-            {
-                // Setear v_ComponentFieldValuesId en mi variable de información TAG
-                tagCtrl.v_ComponentFieldValuesId = diagnosticRepository.v_ComponentFieldValuesId;
-
-                // Pintar de rojo el fondo del control que generó el DX (automático) 
-                // en caso hubiera una alteracion si es normal NO se pinta.               
-                senderCtrl.BackColor = Color.GreenYellow;   // DX Alterado              
-
-                if (_tmpExamDiagnosticComponentList != null)
+                if (diagnosticRepository == null)
                 {
-                    // Se agrega el DX obtenido a la lista de DX general.
-                    _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
-                }
-                else
-                {
-                    _tmpExamDiagnosticComponentList = new List<DiagnosticRepositoryList>();
-                    _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
-                }
-            }
-            else        // No
-            {
-                senderCtrl.BackColor = Color.White;
-            }
+                    DiagnosticRepositoryList findControlResult = null;
 
-            if (_tmpExamDiagnosticComponentList != null)
-            {
-                // Filtar para Mostrar en la grilla solo registros que no están eliminados
-                var dataList = _tmpExamDiagnosticComponentList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+                    if (_tmpExamDiagnosticComponentList != null)
+                    {
+                        // Buscar control que haya generado algun DX automático
+                        findControlResult = _tmpExamDiagnosticComponentList.Find(p => p.v_ComponentFieldsId == componentFieldsId && p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+                    }
 
-                // Refrescar grilla                        
-                grdDiagnosticoPorExamenComponente.DataSource = dataList;
-                lblRecordCountDiagnosticoPorExamenCom.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+                    // Remover DX (automático) encontrado.
+                    if (findControlResult != null)
+                    {
+                        if (findControlResult.i_RecordType == (int)RecordType.Temporal)
+                            _tmpExamDiagnosticComponentList.Remove(findControlResult);
+                        else
+                            findControlResult.i_RecordStatus = (int)RecordStatus.EliminadoLogico;
+                    }
+
+                    // Si se generó un DX (automático).
+                    if (diagnosticRepository != null)
+                    {
+                        // Setear v_ComponentFieldValuesId en mi variable de información TAG
+                        tagCtrl.v_ComponentFieldValuesId = diagnosticRepository.v_ComponentFieldValuesId;
+
+                        // Pintar de rojo el fondo del control que generó el DX (automático) 
+                        // en caso hubiera una alteracion si es normal NO se pinta.               
+                        senderCtrl.BackColor = Color.Pink;   // DX Alterado              
+
+                        if (_tmpExamDiagnosticComponentList != null)
+                        {
+                            // Se agrega el DX obtenido a la lista de DX general.
+                            _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
+                        }
+                        else
+                        {
+                            _tmpExamDiagnosticComponentList = new List<DiagnosticRepositoryList>();
+                            _tmpExamDiagnosticComponentList.Add(diagnosticRepository);
+                        }
+                    }
+                    else        // No
+                    {
+                        senderCtrl.BackColor = Color.White;
+                    }
+
+                    if (_tmpExamDiagnosticComponentList != null)
+                    {
+                        // Filtar para Mostrar en la grilla solo registros que no están eliminados
+                        var dataList = _tmpExamDiagnosticComponentList.FindAll(p => p.i_RecordStatus != (int)RecordStatus.EliminadoLogico);
+
+                        // Refrescar grilla                        
+                        grdDiagnosticoPorExamenComponente.DataSource = dataList;
+                        lblRecordCountDiagnosticoPorExamenCom.Text = string.Format("Se encontraron {0} registros.", dataList.Count());
+                    }
+                }
             }
+            catch (Exception)
+            {
+                
+                //throw;
+            }
+            
+            
         }
 
         private string GetDataTypeControl(int ControlId)
@@ -9625,12 +9655,28 @@ namespace Sigesoft.Node.WinClient.UI.Operations
 
         private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
         }
 
         private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception)
+            {
+                
+                //throw;
+            }
         }
 
         private void btnVerEditarAntecedentes_Click_1(object sender, EventArgs e)
