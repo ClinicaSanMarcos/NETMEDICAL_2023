@@ -98,6 +98,10 @@
             this.rbXHora = new System.Windows.Forms.RadioButton();
             this.rbXExamen = new System.Windows.Forms.RadioButton();
             this.groupHora = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtTiempoDesc = new System.Windows.Forms.TextBox();
+            this.rbHoras = new System.Windows.Forms.RadioButton();
+            this.rbMinutos = new System.Windows.Forms.RadioButton();
             this.txtMontoHora = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupExamen = new System.Windows.Forms.GroupBox();
@@ -111,16 +115,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grdExamenes = new Infragistics.Win.UltraWinGrid.UltraGrid();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbHoras = new System.Windows.Forms.RadioButton();
-            this.rbMinutos = new System.Windows.Forms.RadioButton();
-            this.txtTiempoDesc = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gdDataExamsNew)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.gbExamenesSeleccionados.SuspendLayout();
             this.groupTurno.SuspendLayout();
             this.groupHora.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupExamen.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -128,7 +129,6 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdExamenes)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gdDataExamsNew
@@ -446,6 +446,8 @@
             this.lvExamenesSeleccionados.TabIndex = 0;
             this.lvExamenesSeleccionados.UseCompatibleStateImageBehavior = false;
             this.lvExamenesSeleccionados.View = System.Windows.Forms.View.Details;
+            this.lvExamenesSeleccionados.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvExamenesSeleccionados_ItemSelectionChanged);
+            this.lvExamenesSeleccionados.DoubleClick += new System.EventHandler(this.lvExamenesSeleccionados_DoubleClick);
             // 
             // chExamen
             // 
@@ -564,6 +566,49 @@
             this.groupHora.TabIndex = 159;
             this.groupHora.TabStop = false;
             this.groupHora.Text = "CONFIGURACION POR HORA";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.Azure;
+            this.groupBox3.Controls.Add(this.txtTiempoDesc);
+            this.groupBox3.Controls.Add(this.rbHoras);
+            this.groupBox3.Controls.Add(this.rbMinutos);
+            this.groupBox3.Location = new System.Drawing.Point(10, 52);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(300, 49);
+            this.groupBox3.TabIndex = 151;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DESCUENTO EN";
+            // 
+            // txtTiempoDesc
+            // 
+            this.txtTiempoDesc.Location = new System.Drawing.Point(142, 18);
+            this.txtTiempoDesc.Name = "txtTiempoDesc";
+            this.txtTiempoDesc.Size = new System.Drawing.Size(152, 20);
+            this.txtTiempoDesc.TabIndex = 150;
+            this.txtTiempoDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // rbHoras
+            // 
+            this.rbHoras.AutoSize = true;
+            this.rbHoras.Location = new System.Drawing.Point(11, 19);
+            this.rbHoras.Name = "rbHoras";
+            this.rbHoras.Size = new System.Drawing.Size(53, 17);
+            this.rbHoras.TabIndex = 148;
+            this.rbHoras.TabStop = true;
+            this.rbHoras.Text = "Horas";
+            this.rbHoras.UseVisualStyleBackColor = true;
+            // 
+            // rbMinutos
+            // 
+            this.rbMinutos.AutoSize = true;
+            this.rbMinutos.Location = new System.Drawing.Point(74, 19);
+            this.rbMinutos.Name = "rbMinutos";
+            this.rbMinutos.Size = new System.Drawing.Size(62, 17);
+            this.rbMinutos.TabIndex = 149;
+            this.rbMinutos.TabStop = true;
+            this.rbMinutos.Text = "Minutos";
+            this.rbMinutos.UseVisualStyleBackColor = true;
             // 
             // txtMontoHora
             // 
@@ -810,49 +855,6 @@
             this.grdExamenes.TabIndex = 106;
             this.grdExamenes.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.grdExamenes_AfterSelectChange);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.BackColor = System.Drawing.Color.Azure;
-            this.groupBox3.Controls.Add(this.txtTiempoDesc);
-            this.groupBox3.Controls.Add(this.rbHoras);
-            this.groupBox3.Controls.Add(this.rbMinutos);
-            this.groupBox3.Location = new System.Drawing.Point(10, 52);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(300, 49);
-            this.groupBox3.TabIndex = 151;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "DESCUENTO EN";
-            // 
-            // rbHoras
-            // 
-            this.rbHoras.AutoSize = true;
-            this.rbHoras.Location = new System.Drawing.Point(11, 19);
-            this.rbHoras.Name = "rbHoras";
-            this.rbHoras.Size = new System.Drawing.Size(53, 17);
-            this.rbHoras.TabIndex = 148;
-            this.rbHoras.TabStop = true;
-            this.rbHoras.Text = "Horas";
-            this.rbHoras.UseVisualStyleBackColor = true;
-            // 
-            // rbMinutos
-            // 
-            this.rbMinutos.AutoSize = true;
-            this.rbMinutos.Location = new System.Drawing.Point(74, 19);
-            this.rbMinutos.Name = "rbMinutos";
-            this.rbMinutos.Size = new System.Drawing.Size(62, 17);
-            this.rbMinutos.TabIndex = 149;
-            this.rbMinutos.TabStop = true;
-            this.rbMinutos.Text = "Minutos";
-            this.rbMinutos.UseVisualStyleBackColor = true;
-            // 
-            // txtTiempoDesc
-            // 
-            this.txtTiempoDesc.Location = new System.Drawing.Point(142, 18);
-            this.txtTiempoDesc.Name = "txtTiempoDesc";
-            this.txtTiempoDesc.Size = new System.Drawing.Size(152, 20);
-            this.txtTiempoDesc.TabIndex = 150;
-            this.txtTiempoDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // frmConfiguracionPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -886,6 +888,8 @@
             this.groupTurno.PerformLayout();
             this.groupHora.ResumeLayout(false);
             this.groupHora.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupExamen.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -895,8 +899,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdExamenes)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

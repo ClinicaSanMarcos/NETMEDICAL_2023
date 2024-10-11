@@ -275,83 +275,84 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
                 {
                     var _LiquidacionMedicoListPayEXAMEN = _LiquidacionMedicoListPay.FindAll(p => p.GrupoId == 0);
 
-                List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayEXAMENN = new List<LiquidacionMedicoListPay>();
+                    List<LiquidacionMedicoListPay> _LiquidacionMedicoListPayEXAMENN = new List<LiquidacionMedicoListPay>();
 
-                foreach (var item in listaPagoEXAMEN.FindAll(p=>p.v_OrdenExam == "M. Tratante"))
-                {
-                    var obj = _LiquidacionMedicoListPay.FindAll(p => p.Componente == item.Examen);
-
-                    foreach (var item2 in obj)
+                    foreach (var item in listaPagoEXAMEN.FindAll(p=>p.v_OrdenExam == "M. Tratante"))
                     {
-                        var _ObjList = _LiquidacionMedicoListPay.AsEnumerable()
-                        .Where(a => a.v_ServiceId == item2.v_ServiceId)
-                        .GroupBy(b => b.v_ServiceId)
-                        .Select(group => group.First());
+                        var obj = _LiquidacionMedicoListPay.FindAll(p => p.Componente == item.Examen);
 
-                        foreach (var item3 in _ObjList)
+                        foreach (var item2 in obj)
                         {
-                            _LiquidacionMedicoListPayEXAMENN.Add(item3);
+                            var _ObjList = _LiquidacionMedicoListPay.AsEnumerable()
+                            .Where(a => a.v_ServiceId == item2.v_ServiceId)
+                            .GroupBy(b => b.v_ServiceId)
+                            .Select(group => group.First());
+
+                            foreach (var item3 in _ObjList)
+                            {
+                                _LiquidacionMedicoListPayEXAMENN.Add(item3);
+                            }
                         }
                     }
-                }
                                 
-                foreach (var item in _LiquidacionMedicoListPayEXAMENN)
-                {
-                    DetallePagoeEXAMEN DetallePagoTurnoObj = new DetallePagoeEXAMEN();
-                    DetallePagoTurnoObj.Fecha = item.d_ServiceDate.Value;
-                    DetallePagoTurnoObj.Examen = item.Componente;
-                    DetallePagoTurnoObj.TipoComprobante = item.TipoComprobante;
-                    DetallePagoTurnoObj.Comprobante = item.Comprobante;
-                    DetallePagoTurnoObj.Monto = item.d_Total.Value;
-                    DetallePagoTurnoObj.TipoMed = "TRATANTE";
-                    DetallePagoTurnoObj.PorcMed = (decimal)listaPagoEXAMENObj.d_PorcMedicoExam.Value;
-                    DetallePagoTurnoObj.PorcClinica = (decimal)listaPagoEXAMENObj.d_PorcClinicaExam.Value;
+                    foreach (var item in _LiquidacionMedicoListPayEXAMENN)
+                    {
+                        DetallePagoeEXAMEN DetallePagoTurnoObj = new DetallePagoeEXAMEN();
+                        DetallePagoTurnoObj.Fecha = item.d_ServiceDate.Value;
+                        DetallePagoTurnoObj.Examen = item.Componente;
+                        DetallePagoTurnoObj.TipoComprobante = item.TipoComprobante;
+                        DetallePagoTurnoObj.Comprobante = item.Comprobante;
+                        DetallePagoTurnoObj.Monto = item.d_Total.Value;
+                        DetallePagoTurnoObj.TipoMed = "TRATANTE";
+                        DetallePagoTurnoObj.PorcMed = (decimal)listaPagoEXAMENObj.d_PorcMedicoExam.Value;
+                        DetallePagoTurnoObj.PorcClinica = (decimal)listaPagoEXAMENObj.d_PorcClinicaExam.Value;
                     
-                    DetallePagoTurnoObj.DescIgv_Bol = listaPagoEXAMENObj.i_DescontarBoletaExam == 1 ? "X" : "";
-                    DetallePagoTurnoObj.DescIgv_Fac = listaPagoEXAMENObj.i_DescontarFactExam == 1 ? "X" : "";
-                    DetallePagoTurnoObj.DescIgv_Rec = listaPagoEXAMENObj.i_DescontarRecbExam == 1 ? "X" : "";
+                        DetallePagoTurnoObj.DescIgv_Bol = listaPagoEXAMENObj.i_DescontarBoletaExam == 1 ? "X" : "";
+                        DetallePagoTurnoObj.DescIgv_Fac = listaPagoEXAMENObj.i_DescontarFactExam == 1 ? "X" : "";
+                        DetallePagoTurnoObj.DescIgv_Rec = listaPagoEXAMENObj.i_DescontarRecbExam == 1 ? "X" : "";
 
-                    if (item.TipoComprobante == "BOLETA")
-                    {
-                        if (listaPagoEXAMENObj.i_DescontarBoletaExam == 1)
+                        if (item.TipoComprobante == "BOLETA")
                         {
-                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            if (listaPagoEXAMENObj.i_DescontarBoletaExam == 1)
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                            else
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
                         }
-                        else
+                        else if (item.TipoComprobante == "FACTURA")
                         {
-                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            if (listaPagoEXAMENObj.i_DescontarFactExam == 1)
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                            else
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
                         }
+                        else if (item.TipoComprobante == "RECIBO")
+                        {
+                            if (listaPagoEXAMENObj.i_DescontarRecbExam == 1)
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                            else
+                            {
+                                DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
+                            }
+                        }
+                        DetallePagoEXAMENLit.Add(DetallePagoTurnoObj);
                     }
-                    else if (item.TipoComprobante == "FACTURA")
-                    {
-                        if (listaPagoEXAMENObj.i_DescontarFactExam == 1)
-                        {
-                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-                        }
-                        else
-                        {
-                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-                        }
-                    }
-                    else if (item.TipoComprobante == "RECIBO")
-                    {
-                        if (listaPagoEXAMENObj.i_DescontarRecbExam == 1)
-                        {
-                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value / decimal.Parse("1.18")) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-                        }
-                        else
-                        {
-                            DetallePagoTurnoObj.PagMed = decimal.Round(((item.d_Total.Value) * decimal.Parse(listaPagoEXAMENObj.d_PorcMedicoExam.ToString()) / 100), 2);
-                        }
-                    }
-                    DetallePagoEXAMENLit.Add(DetallePagoTurnoObj);
-                }
                 }
 
                 //solicitante
 
-                var listaPagoEXAMENObj2 = listaPagoEXAMEN.FindAll(p => p.v_OrdenExam == "M. Solicitante")[0];
+                var listaPagoEXAMENObj2 = listaPagoEXAMEN.FindAll(p => p.v_OrdenExam == "M. Solicitante").Count() == 0 ? null : listaPagoEXAMEN.FindAll(p => p.v_OrdenExam == "M. Solicitante")[0];
 
+                
                 if (listaPagoEXAMENObj2 != null)
                 {
                     var _LiquidacionMedicoListPaySolicitante = o.GetListServicesPaySolicitante_SP(pdatBeginDate, pdatEndDate, int.Parse(ddlUsuario.SelectedValue.ToString()), 0);

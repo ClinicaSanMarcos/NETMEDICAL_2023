@@ -385,5 +385,20 @@ namespace Sigesoft.Node.WinClient.UI.PAGOS_MEDICOS
 
         }
 
+        private void lvExamenesSeleccionados_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedItem = lvExamenesSeleccionados.SelectedItems[0];
+            var medicalExamId = selectedItem.SubItems[1].Text;
+
+            // Eliminacion fisica
+            lvExamenesSeleccionados.Items.Remove(selectedItem);
+            gbExamenesSeleccionados.Text = string.Format("Examenes Seleccionados {0}", lvExamenesSeleccionados.Items.Count);
+        }
+
+        private void lvExamenesSeleccionados_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            btnRemoverExamenAuxiliar.Enabled = (lvExamenesSeleccionados.SelectedItems.Count > 0);
+        }
+
     }
 }
