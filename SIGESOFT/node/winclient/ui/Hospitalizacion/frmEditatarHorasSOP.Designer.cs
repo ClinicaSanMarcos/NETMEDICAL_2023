@@ -127,6 +127,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardarTicket);
             this.Name = "frmEditatarHorasSOP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmEditatarHorasSOP";
             this.Load += new System.EventHandler(this.frmEditatarHorasSOP_Load);
             this.ResumeLayout(false);

@@ -188,6 +188,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardarTicket);
             this.Name = "frmAgregarEditarDx";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAgregarEditarDx";
             this.Load += new System.EventHandler(this.frmAgregarEditarDx_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cbDx)).EndInit();

@@ -138,6 +138,7 @@
             this.lvExamenesSeleccionados.UseCompatibleStateImageBehavior = false;
             this.lvExamenesSeleccionados.View = System.Windows.Forms.View.Details;
             this.lvExamenesSeleccionados.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvExamenesSeleccionados_ItemSelectionChanged);
+            this.lvExamenesSeleccionados.DoubleClick += new System.EventHandler(this.lvExamenesSeleccionados_DoubleClick);
             // 
             // chExamen
             // 
@@ -344,6 +345,7 @@
             this.ultraGrid1.TabIndex = 106;
             this.ultraGrid1.Text = "ultraGrid1";
             this.ultraGrid1.AfterSelectChange += new Infragistics.Win.UltraWinGrid.AfterSelectChangeEventHandler(this.ultraGrid1_AfterSelectChange);
+            this.ultraGrid1.DoubleClickRow += new Infragistics.Win.UltraWinGrid.DoubleClickRowEventHandler(this.ultraGrid1_DoubleClickRow);
             // 
             // btnRemoverExamenAuxiliar
             // 

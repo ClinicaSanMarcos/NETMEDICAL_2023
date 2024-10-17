@@ -188,6 +188,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGuardarTicket);
             this.Name = "frmAddEditProcedimientos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAddEditProcedimientos";
             this.Load += new System.EventHandler(this.frmAddEditProcedimientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cbProcedimiento)).EndInit();

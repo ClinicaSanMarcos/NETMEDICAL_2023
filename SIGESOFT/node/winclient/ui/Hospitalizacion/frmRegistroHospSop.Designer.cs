@@ -76,12 +76,12 @@
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn18 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("TicketInterno");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn19 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_FechaAlta");
             Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn33 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Productos");
-            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand5 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Productos", -1);
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn34 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Descripcion");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn35 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_Cantidad");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn36 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("EsDespachado");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn37 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_PrecioVenta");
-            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn38 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Total");
+            Infragistics.Win.UltraWinGrid.UltraGridBand ultraGridBand5 = new Infragistics.Win.UltraWinGrid.UltraGridBand("Productos", 0);
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn2 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("v_Descripcion");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn3 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_Cantidad");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn5 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("EsDespachado");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn6 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("d_PrecioVenta");
+            Infragistics.Win.UltraWinGrid.UltraGridColumn ultraGridColumn7 = new Infragistics.Win.UltraWinGrid.UltraGridColumn("Total");
             Infragistics.Win.Appearance appearance23 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance24 = new Infragistics.Win.Appearance();
             Infragistics.Win.Appearance appearance25 = new Infragistics.Win.Appearance();
@@ -1212,7 +1212,7 @@
             appearance22.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical;
             this.grdTickets.DisplayLayout.Appearance = appearance22;
             ultraGridColumn16.Header.VisiblePosition = 0;
-            ultraGridColumn16.Width = 251;
+            ultraGridColumn16.Width = 220;
             ultraGridColumn17.Header.VisiblePosition = 1;
             ultraGridColumn17.Width = 92;
             ultraGridColumn18.Header.VisiblePosition = 2;
@@ -1228,17 +1228,18 @@
             ultraGridColumn18,
             ultraGridColumn19,
             ultraGridColumn33});
-            ultraGridColumn34.Header.VisiblePosition = 0;
-            ultraGridColumn35.Header.VisiblePosition = 1;
-            ultraGridColumn36.Header.VisiblePosition = 2;
-            ultraGridColumn37.Header.VisiblePosition = 3;
-            ultraGridColumn38.Header.VisiblePosition = 4;
+            ultraGridColumn2.Header.VisiblePosition = 0;
+            ultraGridColumn2.Width = 201;
+            ultraGridColumn3.Header.VisiblePosition = 1;
+            ultraGridColumn5.Header.VisiblePosition = 2;
+            ultraGridColumn6.Header.VisiblePosition = 3;
+            ultraGridColumn7.Header.VisiblePosition = 4;
             ultraGridBand5.Columns.AddRange(new object[] {
-            ultraGridColumn34,
-            ultraGridColumn35,
-            ultraGridColumn36,
-            ultraGridColumn37,
-            ultraGridColumn38});
+            ultraGridColumn2,
+            ultraGridColumn3,
+            ultraGridColumn5,
+            ultraGridColumn6,
+            ultraGridColumn7});
             this.grdTickets.DisplayLayout.BandsSerializer.Add(ultraGridBand4);
             this.grdTickets.DisplayLayout.BandsSerializer.Add(ultraGridBand5);
             this.grdTickets.DisplayLayout.InterBandSpacing = 10;

@@ -686,39 +686,39 @@ namespace Sigesoft.Node.WinClient.UI
 
         private void ultraGrid1_AfterSelectChange(object sender, Infragistics.Win.UltraWinGrid.AfterSelectChangeEventArgs e)
         {
-            bool row = ultraGrid1.Selected.Rows.Count > 0;
-            if (!row)
-            {
-                return;
-            }
-            if (ultraGrid1.Selected.Rows[0].Cells["v_ComponentId"].Value == null)
-            {
-                btnAgregarExamenAuxiliar.Enabled =false;
+            //bool row = ultraGrid1.Selected.Rows.Count > 0;
+            //if (!row)
+            //{
+            //    return;
+            //}
+            //if (ultraGrid1.Selected.Rows[0].Cells["v_ComponentId"].Value == null)
+            //{
+            //    btnAgregarExamenAuxiliar.Enabled =false;
 
-                return;
-            }
-            else
-            {
-                btnAgregarExamenAuxiliar.Enabled = true;
-            }
+            //    return;
+            //}
+            //else
+            //{
+            //    btnAgregarExamenAuxiliar.Enabled = true;
+            //}
 
-            lvExamenesSeleccionados.SelectedItems.Clear();
+            //lvExamenesSeleccionados.SelectedItems.Clear();
 
-            if (ultraGrid1.Selected.Rows.Count == 0)
-                return;
+            //if (ultraGrid1.Selected.Rows.Count == 0)
+            //    return;
 
-            MedicalExamId = ultraGrid1.Selected.Rows[0].Cells["v_ComponentId"].Value.ToString();
-            MedicalExamName = ultraGrid1.Selected.Rows[0].Cells["v_ComponentName"].Value.ToString();
-            //ServiceComponentConcatId = ultraGrid1.Selected.Rows[0].Cells["v_ServiceComponentId"].Value.ToString();
+            //MedicalExamId = ultraGrid1.Selected.Rows[0].Cells["v_ComponentId"].Value.ToString();
+            //MedicalExamName = ultraGrid1.Selected.Rows[0].Cells["v_ComponentName"].Value.ToString();
+            ////ServiceComponentConcatId = ultraGrid1.Selected.Rows[0].Cells["v_ServiceComponentId"].Value.ToString();
 
-            if (ultraGrid1.Selected.Rows[0].Cells["v_ComponentId"].Value != null)
-            {
-                MedicalExamName = ultraGrid1.Selected.Rows[0].Cells["v_ComponentName"].Value.ToString();
-            }
-            else
-            {
-                MedicalExamName = string.Empty;
-            }
+            //if (ultraGrid1.Selected.Rows[0].Cells["v_ComponentId"].Value != null)
+            //{
+            //    MedicalExamName = ultraGrid1.Selected.Rows[0].Cells["v_ComponentName"].Value.ToString();
+            //}
+            //else
+            //{
+            //    MedicalExamName = string.Empty;
+            //}
         }
 
         private void cbLine_RowSelected(object sender, Infragistics.Win.UltraWinGrid.RowSelectedEventArgs e)
@@ -784,6 +784,66 @@ namespace Sigesoft.Node.WinClient.UI
         private void cbLine_InitializeLayout(object sender, Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs e)
         {
 
+        }
+
+        private void ultraGrid1_DoubleClickRow(object sender, Infragistics.Win.UltraWinGrid.DoubleClickRowEventArgs e)
+        {
+            foreach (Infragistics.Win.UltraWinGrid.UltraGridRow rowSelected in this.ultraGrid1.Rows)
+            {
+                var banda = e.Row.Band.Index.ToString();
+
+                if (banda == "1")
+                {
+                    if (rowSelected.Band.Index.ToString() == "0")
+                    {
+                        if (e.Row.Cells["v_ComponentId"].Value == null)
+                        {
+                            btnAgregarExamenAuxiliar.Enabled = false;
+
+                            return;
+                        }
+                        else
+                        {
+                            btnAgregarExamenAuxiliar.Enabled = true;
+                        }
+
+                        lvExamenesSeleccionados.SelectedItems.Clear();
+
+                        //if (ultraGrid1.Selected.Rows.Count == 0)
+                        //    return;
+
+                        MedicalExamId = e.Row.Cells["v_ComponentId"].Value.ToString();
+                        MedicalExamName = e.Row.Cells["v_ComponentName"].Value.ToString();
+
+                        //MedicalExamId = gdDataExamsNew.Selected.Rows[0].Cells["v_ComponentId"].Value.ToString();
+                        //MedicalExamName = gdDataExamsNew.Selected.Rows[0].Cells["v_ComponentName"].Value.ToString();
+
+                        if (e.Row.Cells["v_ComponentId"].Value != null)
+                        {
+                            MedicalExamName = e.Row.Cells["v_ComponentName"].Value.ToString();
+                        }
+                        else
+                        {
+                            MedicalExamName = string.Empty;
+                        }
+                    }
+                }
+
+
+
+            }
+
+            AddAuxiliaryExam();
+        }
+
+        private void lvExamenesSeleccionados_DoubleClick(object sender, EventArgs e)
+        {
+            var selectedItem = lvExamenesSeleccionados.SelectedItems[0];
+            var medicalExamId = selectedItem.SubItems[1].Text;
+
+            // Eliminacion fisica
+            lvExamenesSeleccionados.Items.Remove(selectedItem);
+            gbExamenesSeleccionados.Text = string.Format("Examenes Seleccionados {0}", lvExamenesSeleccionados.Items.Count);
         }
     }
 }
